@@ -1,0 +1,160 @@
+"use client";
+
+import { ExternalLink, Calendar } from "lucide-react";
+
+const experiences = [
+  {
+    title: "Senior Software Engineer",
+    company: "LII Lab",
+    companyUrl: "https://www.liilab.com/",
+    period: "Jan 2025 — Present",
+    current: true,
+    description:
+      "Leading backend and product engineering for OnePTE and OneIELTS — AI-powered English test preparation platforms.",
+    achievements: [
+      "Achieved 70% reduction in API latency and 50% decrease in infrastructure cost through strategic optimizations",
+      "Designed and maintained backend services using Django REST Framework, PostgreSQL, Redis, and Celery",
+      "Built robust systems for exam management, payment processing, and analytics",
+      "Directed requirement analysis, transforming product needs into actionable engineering tasks",
+      "Mentored engineers and ensured code quality through thorough pull request reviews",
+      "Managed cloud deployments with Docker, Nginx, GCP, and DigitalOcean",
+    ],
+    technologies: [
+      "Django",
+      "DRF",
+      "PostgreSQL",
+      "Redis",
+      "Celery",
+      "Docker",
+      "Nginx",
+      "GCP",
+      "DigitalOcean",
+      "Python",
+    ],
+  },
+  {
+    title: "Software Engineer",
+    company: "LII Lab",
+    companyUrl: "https://www.liilab.com/",
+    period: "Nov 2022 — Dec 2024",
+    current: false,
+    description:
+      "Full-stack contributions across backend, mobile, and admin products in a fast-paced startup environment.",
+    achievements: [
+      "Built APIs and backend logic for billing, exam engine, question bank, and practice workflows",
+      "Led major Flutter app development — built 50+ screens including payment, recording, notifications, Firebase Analytics, and Crashlytics",
+      "Wrote comprehensive pytest suites and Python scripts for reporting, data analysis, and operational support",
+      "Contributed to moderator and admin dashboard features with KPI-focused reporting",
+      "Supported production deployments and server operations across multiple products",
+    ],
+    technologies: [
+      "Django",
+      "DRF",
+      "PostgreSQL",
+      "Flutter",
+      "Firebase",
+      "pytest",
+      "Python",
+      "Next.js",
+    ],
+  },
+];
+
+export function Experience() {
+  return (
+    <section id="experience" className="section px-4">
+      <div className="max-w-5xl mx-auto">
+        {/* Section header */}
+        <div className="mb-12">
+          <span className="section-label">Professional Journey</span>
+          <h2 className="text-3xl md:text-4xl font-extrabold text-zinc-50 tracking-tight mt-2">
+            Work Experience
+          </h2>
+          <p className="text-zinc-500 mt-2 text-sm">
+            3+ years building production EdTech software at LII Lab
+          </p>
+        </div>
+
+        {/* Timeline cards */}
+        <div className="relative pl-6">
+          <div className="timeline-line" />
+
+          <div className="space-y-4">
+            {experiences.map((exp, index) => (
+              <div key={index} className="relative">
+                {/* Timeline dot */}
+                <div
+                  className={`absolute -left-[1.625rem] top-7 w-3 h-3 rounded-full border-2 ${
+                    exp.current
+                      ? "bg-emerald-500 border-emerald-400"
+                      : "bg-zinc-700 border-zinc-600"
+                  }`}
+                />
+
+                <div className="bento-card p-7 hover:border-zinc-600 transition-colors">
+                  {/* Header */}
+                  <div className="flex flex-col sm:flex-row sm:items-start sm:justify-between gap-3 mb-4">
+                    <div>
+                      <div className="flex items-center gap-3 mb-1.5 flex-wrap">
+                        <h3 className="text-xl font-bold text-zinc-50">
+                          {exp.title}
+                        </h3>
+                        {exp.current && (
+                          <span className="inline-flex items-center gap-1.5 px-2.5 py-0.5 bg-green-500/10 border border-green-500/20 rounded-full text-green-400 text-xs font-semibold">
+                            <span className="w-1.5 h-1.5 bg-green-400 rounded-full" />
+                            Current
+                          </span>
+                        )}
+                      </div>
+                      <a
+                        href={exp.companyUrl}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="inline-flex items-center gap-1.5 text-emerald-400 hover:text-emerald-300 font-medium text-sm transition-colors group"
+                      >
+                        {exp.company}
+                        <ExternalLink className="w-3.5 h-3.5 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform" />
+                      </a>
+                    </div>
+                    <div className="flex items-center gap-2 text-zinc-500 bg-zinc-800/60 px-3 py-1.5 rounded-xl border border-zinc-700/50 shrink-0 self-start">
+                      <Calendar className="w-3.5 h-3.5" />
+                      <span className="text-xs font-semibold tracking-wide">
+                        {exp.period}
+                      </span>
+                    </div>
+                  </div>
+
+                  <p className="text-zinc-400 text-sm mb-5 leading-relaxed">
+                    {exp.description}
+                  </p>
+
+                  {/* Achievements */}
+                  <ul className="space-y-2 mb-5">
+                    {exp.achievements.map((item, i) => (
+                      <li
+                        key={i}
+                        className="flex items-start gap-3 text-zinc-400 text-sm"
+                      >
+                        <span className="mt-1.5 w-1.5 h-1.5 bg-emerald-500/70 rounded-full shrink-0" />
+                        {item}
+                      </li>
+                    ))}
+                  </ul>
+
+                  {/* Tech */}
+                  <div className="flex flex-wrap gap-1.5 pt-4 border-t border-zinc-800">
+                    {exp.technologies.map((tech) => (
+                      <span key={tech} className="tech-badge">
+                        {tech}
+                      </span>
+                    ))}
+                  </div>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </div>
+    </section>
+  );
+}
