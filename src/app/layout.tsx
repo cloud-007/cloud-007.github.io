@@ -11,7 +11,7 @@ const inter = Inter({
 export const metadata: Metadata = {
   title: "Mazharul Islam — Senior Software Engineer",
   description:
-    "Senior Software Engineer with 3+ years building scalable EdTech platforms. Expert in Django, Flutter, and AI-driven backend systems.",
+    "Senior Software Engineer — Django, Flutter, AI-powered systems. 3+ years building production EdTech platforms with 93+ mobile releases.",
   keywords: [
     "Software Engineer",
     "Django",
@@ -21,12 +21,20 @@ export const metadata: Metadata = {
     "EdTech",
     "AI",
     "Competitive Programming",
+    "FastAPI",
+    "QTI",
+    "multi-tenant",
+    "speech recognition",
+    "NLP",
+    "Prometheus",
+    "Open to Work",
+    "AI scoring",
   ],
   authors: [{ name: "Md Mazharul Islam Emon" }],
   openGraph: {
     title: "Mazharul Islam — Senior Software Engineer",
     description:
-      "Senior Software Engineer with 3+ years building scalable EdTech platforms",
+      "Senior Software Engineer — Django, Flutter, AI-powered systems. 3+ years building production EdTech platforms with 93+ mobile releases.",
     type: "website",
   },
 };

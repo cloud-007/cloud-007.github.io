@@ -10,6 +10,7 @@ const navigation = [
   { name: "Skills", href: "#skills" },
   { name: "Projects", href: "#projects" },
   { name: "Achievements", href: "#achievements" },
+  { name: "Gallery", href: "#gallery" },
   { name: "Education", href: "#education" },
 ];
 
@@ -57,7 +58,7 @@ export function Header() {
               <Link
                 key={item.name}
                 href={item.href}
-                className={`px-3 py-1.5 text-sm rounded-xl transition-all font-medium ${
+                className={`px-2.5 py-1.5 text-sm rounded-xl transition-all font-medium ${
                   activeSection === item.href.slice(1)
                     ? "bg-emerald-500/15 text-emerald-300"
                     : "text-zinc-500 hover:text-zinc-100 hover:bg-zinc-800"
