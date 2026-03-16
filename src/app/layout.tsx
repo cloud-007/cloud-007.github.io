@@ -12,7 +12,7 @@ export const metadata: Metadata = {
   metadataBase: new URL("https://cloud-007.github.io"),
   title: "Mazharul Islam — Senior Software Engineer",
   description:
-    "Senior Software Engineer — Django, Flutter, AI-powered systems. 3+ years building production EdTech platforms with 93+ mobile releases.",
+    "Senior Software Engineer specializing in Django, Flutter, and AI-powered systems. 3+ years building scalable backend and mobile applications for EdTech platforms.",
   keywords: [
     "Software Engineer",
     "Django",
@@ -35,7 +35,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: "Mazharul Islam — Senior Software Engineer",
     description:
-      "Senior Software Engineer — Django, Flutter, AI-powered systems. 3+ years building production EdTech platforms with 93+ mobile releases.",
+      "Senior Software Engineer specializing in Django, Flutter, and AI-powered systems. 3+ years building scalable backend and mobile applications for EdTech platforms.",
     type: "website",
   },
 };
