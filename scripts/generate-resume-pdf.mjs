@@ -79,7 +79,10 @@ async function main() {
     const puppeteer = (await import("puppeteer")).default;
 
     console.log("🚀  Launching browser…");
-    browser = await puppeteer.launch({ headless: true });
+    browser = await puppeteer.launch({
+      headless: true,
+      args: ["--no-sandbox", "--disable-setuid-sandbox"],
+    });
     const page = await browser.newPage();
 
     // Wide viewport so the JS scale() hook never fires (paper is 850px)
