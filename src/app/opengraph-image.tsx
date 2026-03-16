@@ -1,8 +1,10 @@
 import { ImageResponse } from "next/og";
 
-export const dynamic = "force-static";
+export const alt = "Mazharul Islam — Senior Software Engineer";
+export const size = { width: 1200, height: 630 };
+export const contentType = "image/png";
 
-export async function GET() {
+export default function Image() {
   const techStack = [
     "Python",
     "Django",
@@ -197,9 +199,6 @@ export async function GET() {
         </div>
       </div>
     ),
-    {
-      width: 1200,
-      height: 630,
-    }
+    { width: 1200, height: 630 }
   );
 }

@@ -37,14 +37,6 @@ export const metadata: Metadata = {
     description:
       "Senior Software Engineer — Django, Flutter, AI-powered systems. 3+ years building production EdTech platforms with 93+ mobile releases.",
     type: "website",
-    images: [
-      {
-        url: "/api/og",
-        width: 1200,
-        height: 630,
-        alt: "Mazharul Islam — Senior Software Engineer",
-      },
-    ],
   },
 };
 

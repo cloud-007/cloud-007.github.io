@@ -76,13 +76,11 @@ export function Hero() {
                             <div className="flex items-center gap-2 mb-6">
                                 <span className="w-2 h-2 bg-emerald-400 rounded-full" />
                                 <span className="text-zinc-400 text-xs font-medium">
-                                    Open to new opportunities · actively
-                                    interviewing
+                                    Open to new opportunities
                                 </span>
                             </div>
                             <h1 className="text-5xl md:text-6xl font-extrabold text-zinc-50 leading-tight tracking-tight mb-5">
-                                Mazharul
-                                <br />
+                                Mazharul{" "}
                                 <span className="gradient-text">Islam</span>
                             </h1>
                             <p className="text-zinc-400 text-base leading-relaxed text-justify">
