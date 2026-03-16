@@ -14,8 +14,8 @@ const professionalProjects = [
     highlights: [
       "Architected a multi-tenant backend using django-multitenant with full data isolation per organization, custom domain routing, and per-tenant scoring configuration and feature flags",
       "Built a QTI 3.0-compliant question engine supporting 100+ question types across Academic and General curricula, with XML parsing, interaction routing, and automated band-score normalization via a strategy-pattern converter",
-      "Built an automated speech evaluation pipeline for IELTS Speaking using Speech Recognition, Pronunciation Assessment, and NLP Processing, completing within seconds of submission",
-      "Designed and built the Studio API layer for the moderator platform, covering question bank and curriculum authoring, exam template configuration, user submission review, expert evaluation queue with AI-vs-human score comparison, exam rejudge pipelines, and KPI analytics for subscriptions, user practice activity, and engagement",
+      "Built an automated speech evaluation pipeline for IELTS Speaking using Speech Recognition, Pronunciation Assessment, and NLP Processing, completing within a few seconds of submission",
+      "Designed and built the internal Studio API layer for the moderator platform, covering question bank and curriculum authoring, exam template configuration, user submission review, expert evaluation queue, exam rejudge pipelines, and KPI analytics for subscriptions, user practice activity, and engagement",
       "Integrated 5 payment gateways (Stripe, Razorpay, SSLCommerz, Google Play, Apple) with subscription lifecycle management, idempotent webhook processing, and campaign-based promotional pricing",
       "Set up production observability with health monitoring, API latency tracking, and service instrumentation; implemented device-restricted JWT auth and GDPR-compliant account deletion",
     ],
@@ -34,19 +34,19 @@ const professionalProjects = [
     label: "Professional · LiiLab",
     liveUrl: "https://onepte.com",
     description:
-      "Full-stack EdTech platform for PTE Academic and PTE Core exam prep. Designed and shipped the Flutter cross-platform app from the ground up, built the Django AI scoring backend, and delivered a GPU-backed speech processing microservice as a production system with 93+ app releases.",
+      "Full-stack EdTech platform for PTE Academic and PTE Core exam prep. Designed and shipped the Flutter cross-platform app from the ground up, built the Django AI scoring backend, and delivered a GPU-backed speech processing microservice — with 93+ production releases across Android, iOS, and Web.",
     highlights: [
+      "Led 93+ production mobile releases (Android, iOS, Web), managing release pipelines, Firebase configurations, and CI/CD across all platforms",
       "Designed the question practice and mock test system covering all four modules (Speaking, Writing, Reading, and Listening) with 20+ task types, configurable time windows, and automated question progression",
       "Built a real-time AI scoring engine evaluating spoken and written submissions using Speech Recognition, Pronunciation Assessment, and NLP Processing, delivering results within 10-15 seconds",
       "Engineered multi-platform billing across Stripe, SSLCommerz, Google Play, and Apple App Store with subscription checkout, real-time payment webhooks, transaction deduplication, and in-app purchase verification",
       "Built the Django admin and private API layer for content moderation, question bank and exam management, subscription analytics with regional reporting, exam rejudge system, and user acquisition dashboards with Google Analytics Data API integration",
-      "Extended the app to Flutter Web with full responsive desktop implementations and built multi-brand support for OnePTE and PearsonPTE from a single codebase",
-      "Led 93+ production mobile releases (Android, iOS, Web), managing release pipelines, Firebase configurations, and CI/CD across multiple brands",
+      "Extended the app to Flutter Web with full responsive desktop implementations",
     ],
     technologies: [
       "Flutter", "Dart", "Riverpod", "GoRouter", "Django", "DRF", "FastAPI",
       "PostgreSQL", "Redis", "Celery", "Speech Recognition", "NLP Processing",
-      "Stripe", "Firebase", "AWS S3", "Next.js", "TypeScript", "CI/CD",
+      "Stripe", "Firebase", "Next.js", "TypeScript", "CI/CD",
     ],
     accentFrom: "from-emerald-500",
     accentTo: "to-teal-500",
@@ -61,11 +61,11 @@ const clientProjects = [
     label: "Client",
     liveUrl: "https://www.patty-bros.co.uk/",
     description:
-      "Marketing and booking website for a South East London burger restaurant. Built a Google Sheets-driven live menu with zero CMS overhead, a serverless booking backend via Google Apps Script, and Telegram Bot notifications for instant booking alerts — from design to deployment.",
+      "Marketing and booking website for a South East London burger restaurant. Designed and shipped the full site from scratch — responsive animated pages, a Google Sheets-driven live menu with zero CMS overhead, and a fully serverless booking system with real-time Telegram notifications.",
     highlights: [
-      "Used Google Sheets as a zero-cost live CMS for the full menu, with ISR-based fetching at 5-minute revalidation, per-item availability toggling, allergen and calorie data, featured item promotion, and a static fallback for resilience",
-      "Built the booking backend entirely serverless using Google Apps Script — form submissions are logged to a Google Sheet and trigger real-time Telegram Bot notifications to the team with full booking details and formatted party info",
-      "Delivered a responsive, animated marketing site across Home, Menu, About, Locations, and Book pages using Framer Motion, Radix UI, and React Hook Form with Zod validation for the booking form",
+      "Delivered a responsive, animated marketing site across Home, Menu, About, Locations, and Book pages using Framer Motion and Radix UI, with Zod-validated booking form handling",
+      "Built a Google Sheets-driven live menu with zero CMS overhead — ISR-based fetching at 5-minute revalidation, per-item availability toggling, allergen and calorie data, featured item promotion, and a static fallback for resilience",
+      "Built the booking backend entirely serverless using Google Apps Script — form submissions are logged to a Google Sheet and trigger real-time Telegram Bot notifications with full booking details and party info",
     ],
     technologies: [
       "Next.js", "TypeScript", "Tailwind CSS", "Framer Motion", "Radix UI",
