@@ -4,7 +4,8 @@
   "private": true,
   "scripts": {
     "dev": "next dev",
-    "build": "next build",
+    "build": "next build && node scripts/generate-resume-pdf.mjs",
+    "generate-pdf": "node scripts/generate-resume-pdf.mjs",
     "start": "next start",
     "lint": "eslint"
   },
@@ -30,6 +31,7 @@
     "babel-plugin-react-compiler": "1.0.0",
     "eslint": "^9",
     "eslint-config-next": "16.0.3",
+    "puppeteer": "^24.39.1",
     "tailwindcss": "^4",
     "tw-animate-css": "^1.4.0",
     "typescript": "^5"

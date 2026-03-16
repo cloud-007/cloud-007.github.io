@@ -93,23 +93,13 @@ export function Experience() {
           </p>
         </div>
 
-        {/* Timeline cards */}
-        <div className="relative pl-6">
-          <div className="timeline-line" />
-
-          <div className="space-y-4">
+        {/* Experience cards */}
+        <div className="space-y-4">
             {experiences.map((exp, index) => (
               <div key={index} className="relative">
-                {/* Timeline dot */}
-                <div
-                  className={`absolute -left-[1.625rem] top-7 w-3 h-3 rounded-full border-2 ${
-                    exp.current
-                      ? "bg-emerald-500 border-emerald-400"
-                      : "bg-zinc-700 border-zinc-600"
-                  }`}
-                />
-
-                <div className="bento-card p-7 hover:border-zinc-600 transition-colors">
+                <div className="bento-card p-7 hover:border-zinc-600 transition-colors relative overflow-hidden">
+                  <div className={`absolute left-0 top-6 bottom-6 w-0.5 bg-gradient-to-b ${exp.current ? "from-emerald-500 to-teal-500" : "from-zinc-600 to-zinc-500"} rounded-full`} />
+                  <div className="pl-5">
                   {/* Header */}
                   <div className="flex flex-col sm:flex-row sm:items-start sm:justify-between gap-3 mb-4">
                     <div>
@@ -167,10 +157,10 @@ export function Experience() {
                       </span>
                     ))}
                   </div>
+                  </div>
                 </div>
               </div>
             ))}
-          </div>
         </div>
       </div>
     </section>

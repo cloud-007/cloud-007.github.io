@@ -4,7 +4,6 @@ import { Experience } from "@/components/experience";
 import { Skills } from "@/components/skills";
 import { Projects } from "@/components/projects";
 import { Achievements } from "@/components/achievements";
-import { Gallery } from "@/components/gallery";
 import { Education } from "@/components/education";
 import { Volunteering } from "@/components/volunteering";
 import { Github, Linkedin, Mail } from "lucide-react";
@@ -40,12 +39,6 @@ export default function Home() {
         </div>
 
         <Achievements />
-
-        <div className="max-w-5xl mx-auto px-4">
-          <div className="h-px bg-gradient-to-r from-transparent via-zinc-800 to-transparent" />
-        </div>
-
-        <Gallery />
 
         <div className="max-w-5xl mx-auto px-4">
           <div className="h-px bg-gradient-to-r from-transparent via-zinc-800 to-transparent" />
