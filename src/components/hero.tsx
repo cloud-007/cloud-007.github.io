@@ -107,9 +107,7 @@ export function Hero() {
                                 Get in touch
                             </a>
                             <a
-                                href="/resume.pdf"
-                                target="_blank"
-                                rel="noopener noreferrer"
+                                href="/resume"
                                 className="flex items-center gap-2 px-5 py-2.5 bg-zinc-800 hover:bg-zinc-700 text-zinc-200 text-sm font-semibold rounded-xl transition-colors border border-zinc-700"
                             >
                                 <FileDown className="w-4 h-4" />
