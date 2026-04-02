@@ -42,15 +42,17 @@ const socials = [
 const coreStack = [
     "Python",
     "Django",
-    "Flutter",
-    "FastAPI",
     "PostgreSQL",
-    "Docker",
-    "AWS",
+    "Redis",
+    "Celery",
+    "Flutter",
     "Next.js",
     "TypeScript",
-    "Redis",
+    "Docker",
+    "GCP",
     "CI/CD",
+    "Claude Code",
+    "Cursor",
 ];
 
 export function Hero() {
@@ -84,15 +86,16 @@ export function Hero() {
                                 <span className="gradient-text">Islam</span>
                             </h1>
                             <p className="text-zinc-400 text-base leading-relaxed text-justify">
-                                Senior Software Engineer with 3+ years of
-                                experience building scalable backend and mobile
-                                applications. Expert in Python, Django, FastAPI,
-                                and Django REST Framework for high-performance
-                                APIs. Skilled in PostgreSQL, Redis, Celery, and
-                                system optimization. Experienced in Flutter
-                                development, team collaboration, technical
-                                leadership, code reviews, and delivering
-                                reliable AI-integrated products.
+                                Full-Stack AI Engineer with 3+ years in software
+                                engineering — building scalable backends,
+                                cross-platform mobile apps, and AI-powered SaaS
+                                platforms. Ships production systems with Django,
+                                Flutter, and Next.js, and delivers faster using
+                                AI-native tooling like Claude Code and Cursor.
+                                Proven track record in multi-tenant architecture,
+                                real-time speech evaluation pipelines, and
+                                end-to-end product delivery across 93+
+                                production releases.
                             </p>
                         </div>
 
@@ -133,7 +136,7 @@ export function Hero() {
                             </div>
                             <div className="flex items-center gap-1.5 text-zinc-400 text-xs mt-1">
                                 <Briefcase className="w-3 h-3 text-zinc-500" />
-                                Senior Software Engineer · EdTech / AI
+                                Full-Stack AI Engineer · EdTech / AI
                             </div>
                         </div>
                     </div>

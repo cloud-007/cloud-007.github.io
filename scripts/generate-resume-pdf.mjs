@@ -104,8 +104,27 @@ async function main() {
       margin: { top: "0", bottom: "0", left: "0", right: "0" },
     });
 
-    writeFileSync(PDF_OUT, pdf);
-    writeFileSync(PDF_PUBLIC, pdf);
+    // Inject PDF metadata
+    const { PDFDocument } = await import("pdf-lib");
+    const pdfDoc = await PDFDocument.load(pdf);
+    pdfDoc.setTitle("Md Mazharul Islam Emon — Full-Stack AI Engineer");
+    pdfDoc.setAuthor("Md Mazharul Islam Emon");
+    pdfDoc.setSubject("Resume / CV");
+    pdfDoc.setKeywords([
+      "Full-Stack AI Engineer",
+      "Software Engineer",
+      "Django",
+      "Flutter",
+      "Python",
+      "AI",
+      "Resume",
+    ]);
+    pdfDoc.setCreator("cloud-007.github.io");
+    pdfDoc.setProducer("pdf-lib (https://github.com/Hopding/pdf-lib)");
+    const pdfBytes = await pdfDoc.save();
+
+    writeFileSync(PDF_OUT, pdfBytes);
+    writeFileSync(PDF_PUBLIC, pdfBytes);
     console.log(`✅  PDF saved → ${PDF_OUT}`);
     console.log(`✅  PDF saved → ${PDF_PUBLIC}`);
   } finally {

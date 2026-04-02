@@ -1,7 +1,7 @@
 import { ImageResponse } from "next/og";
 
 export const dynamic = "force-static";
-export const alt = "Mazharul Islam — Senior Software Engineer";
+export const alt = "Mazharul Islam — Full-Stack AI Engineer";
 export const size = { width: 1200, height: 630 };
 export const contentType = "image/png";
 
@@ -9,12 +9,14 @@ export default function Image() {
   const techStack = [
     "Python",
     "Django",
-    "Flutter",
-    "FastAPI",
     "PostgreSQL",
-    "Docker",
-    "AWS",
     "Redis",
+    "Flutter",
+    "Next.js",
+    "TypeScript",
+    "Docker",
+    "Claude Code",
+    "Cursor",
   ];
 
   return new ImageResponse(
@@ -158,7 +160,7 @@ export default function Image() {
             letterSpacing: "0.01em",
           }}
         >
-          Senior Software Engineer
+          Full-Stack AI Engineer
         </div>
 
         {/* Meta info */}
