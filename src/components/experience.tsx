@@ -7,10 +7,10 @@ const experiences = [
     title: "Senior Software Engineer",
     company: "LII Lab",
     companyUrl: "https://www.liilab.com/",
-    period: "Jan 2025 — Present",
-    current: true,
+    period: "Jan 2025 — Apr 2026",
+    current: false,
     description:
-      "Leading backend engineering and product development across two AI-powered English test preparation platforms, from system design and architecture reviews to mentoring engineers and shipping production features.",
+      "Led backend engineering and product development across two AI-powered English test preparation platforms, from system design and architecture reviews to mentoring engineers and shipping production features.",
     achievements: [
       "Architected a multi-tenant SaaS platform supporting complete data isolation per organization, domain-based tenant routing, and per-tenant scoring configuration and feature flags",
       "Designed a QTI 3.0-compliant exam engine for IELTS Academic and General modules, supporting 100+ question types with automated IELTS band-score normalization per section using a strategy-pattern scorer",

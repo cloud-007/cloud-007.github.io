@@ -3,7 +3,7 @@
 import { useRef, useEffect } from "react";
 import Link from "next/link";
 
-export default function ResumePage() {
+export default function ResumeProfessionalPage() {
   const paperRef = useRef<HTMLDivElement>(null);
   const wrapRef = useRef<HTMLDivElement>(null);
 
@@ -127,6 +127,13 @@ export default function ResumePage() {
         .rp-contact a { color: #2563EB; text-decoration: none; transition: color 0.15s; }
         .rp-contact a:hover { color: #1D4ED8; }
         .rp-sep { margin: 0 0.38rem; color: #D1D5DB; }
+        .rp-personal {
+          font-size: 0.85rem;
+          color: #6B7280;
+          line-height: 1.6;
+          margin-top: 0.4rem;
+        }
+        .rp-personal b { color: #1B2A4A; font-weight: 600; }
 
         /* ── Section ── */
         .rp-section { margin-bottom: 1.2rem; }
@@ -145,7 +152,7 @@ export default function ResumePage() {
         /* ── Summary ── */
         .rp-summary { font-size: 0.925rem; line-height: 1.6; color: #2D3748; text-align: justify; hyphens: auto; }
 
-        /* ── Skills ── */
+        /* ── Skills / Languages ── */
         .rp-skills { display: flex; flex-direction: column; gap: 0.3rem; }
         .rp-skill-row { font-size: 0.9rem; line-height: 1.55; color: #2D3748; }
         .rp-skill-key { font-weight: 600; color: #1B2A4A; }
@@ -177,21 +184,24 @@ export default function ResumePage() {
         .rp-proj-link:hover { color: #2C3E50; }
         .rp-ext-icon { width: 0.85rem; height: 0.85rem; color: #9CA3AF; flex-shrink: 0; transition: color 0.15s; position: relative; top: 1px; }
         .rp-proj-link:hover .rp-ext-icon { color: #2C3E50; }
+        .rp-desc { font-size: 0.9rem; line-height: 1.6; color: #6B7280; font-style: italic; margin: 0.18rem 0 0.35rem; }
+        .rp-prod-link { color: #2563EB; font-style: normal; font-weight: 600; text-decoration: none; border-bottom: 1px solid #DBEAFE; transition: border-color 0.15s; }
+        .rp-prod-link:hover { border-bottom-color: #2563EB; }
 
         /* ── CP grid ── */
-        .rp-cp-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 0.6rem 1.2rem; }
+        .rp-cp-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 0.6rem 1.2rem; }
         .rp-cp-item { font-size: 0.9rem; line-height: 1.6; color: #2D3748; }
         .rp-cp-item b { color: #1B2A4A; }
         .rp-cp-item a { color: #2563EB; text-decoration: none; border-bottom: 1px solid #DBEAFE; }
         .rp-cp-item a:hover { color: #1D4ED8; border-bottom-color: #2563EB; }
 
         .rp-kw { font-weight: 600; color: #1B2A4A; }
-
-        .rp-desc { font-size: 0.9rem; line-height: 1.6; color: #6B7280; font-style: italic; margin: 0.18rem 0 0.35rem; }
-        .rp-prod-link { color: #2563EB; font-style: normal; font-weight: 600; text-decoration: none; border-bottom: 1px solid #DBEAFE; transition: border-color 0.15s; }
-        .rp-prod-link:hover { border-bottom-color: #2563EB; }
-
         .rp-gpa { font-weight: 700; color: #1B2A4A; }
+
+        /* ── Signature ── */
+        .rp-sign { margin-top: 1.6rem; padding-top: 0.9rem; border-top: 1px solid #E5E7EB; display: flex; justify-content: space-between; align-items: flex-end; }
+        .rp-sign-place { font-size: 0.85rem; color: #6B7280; }
+        .rp-sign-name { font-size: 0.9rem; font-weight: 600; color: #1B2A4A; }
 
         /* ── Print ── */
         @media print {
@@ -212,6 +222,7 @@ export default function ResumePage() {
           .rp-name { font-size: 18pt; }
           .rp-subtitle { font-size: 11pt; margin-bottom: 0.2rem; }
           .rp-contact { font-size: 9pt; white-space: nowrap; }
+          .rp-personal { font-size: 9pt; margin-top: 0.25rem; }
           .rp-header { margin-bottom: 0.6rem; padding-bottom: 0.45rem; }
 
           .rp-section { margin-bottom: 0.5rem; }
@@ -235,6 +246,8 @@ export default function ResumePage() {
           .rp-proj-header { margin-bottom: 0.12rem; }
           .rp-cp-grid { gap: 0.35rem 0.9rem; }
           .rp-cp-item { font-size: 9.5pt; line-height: 1.45; }
+          .rp-sign { margin-top: 1rem; padding-top: 0.6rem; }
+          .rp-sign-place, .rp-sign-name { font-size: 9.5pt; }
 
           a { color: #1B2A4A !important; text-decoration: none; }
           .rp-prod-link { border-bottom: 1px solid #aaa; color: #1B2A4A !important; }
@@ -254,7 +267,7 @@ export default function ResumePage() {
         {/* Toolbar */}
         <div className="rp-toolbar">
           <Link href="/" className="rp-back">&#8592; Portfolio</Link>
-          <a href="/resume.pdf" download="MazharulIslam_Resume.pdf" className="rp-dl">
+          <a href="/resume-professional.pdf" download="MazharulIslamEmon_CV.pdf" className="rp-dl">
             &#8595;&nbsp;Download PDF
           </a>
         </div>
@@ -265,7 +278,7 @@ export default function ResumePage() {
 
             <header className="rp-header">
               <h1 className="rp-name">MD MAZHARUL ISLAM EMON</h1>
-              <p className="rp-subtitle">Full-Stack AI Engineer</p>
+              <p className="rp-subtitle">AI-Native Software Engineer</p>
               <p className="rp-contact">
                 +8801794405314
                 <span className="rp-sep">&bull;</span>
@@ -277,25 +290,56 @@ export default function ResumePage() {
                 <span className="rp-sep">&bull;</span>
                 Sylhet, Bangladesh
               </p>
+              <p className="rp-personal">
+                <b>Date of birth:</b> 26.07.1999
+                <span className="rp-sep">&bull;</span>
+                <b>Nationality:</b> Bangladeshi
+              </p>
             </header>
 
             <section className="rp-section">
-              <h2 className="rp-section-head">Summary</h2>
+              <h2 className="rp-section-head">Profile</h2>
               <hr className="rp-rule" />
               <p className="rp-summary">
-                Full-Stack AI Engineer with 3+ years in software engineering — building scalable backends, cross-platform mobile apps, and AI-powered SaaS platforms. Ships production systems with Django, Flutter, and Next.js, and delivers faster using AI-native tooling like Claude Code and Cursor. Proven track record in multi-tenant architecture, real-time speech evaluation pipelines, and end-to-end product delivery across 93+ production releases. Strong background in competitive programming with 2,000+ problems solved and ICPC Asia Dhaka Regional participation.
+                Software engineer with 3+ years building AI-powered, production-scale SaaS platforms used by tens of thousands of test-prep candidates across IELTS and PTE. Architected multi-tenant Django/DRF backends, real-time speech-evaluation pipelines, and Flutter/Next.js clients; shipped 90+ production releases across iOS, Android, and Web. AI-native engineer who ships faster using Claude Code and agentic workflows for code generation, refactoring, and test scaffolding. Competitive programming background: 2,000+ problems solved, ICPC Asia-Dhaka Regional finalist.
               </p>
+            </section>
+
+            <section className="rp-section">
+              <h2 className="rp-section-head">Education</h2>
+              <hr className="rp-rule" />
+              <div className="rp-block">
+                <div className="rp-block-row"><span className="rp-co">Leading University</span><span className="rp-loc">Sylhet, Bangladesh</span></div>
+                <div className="rp-block-sub">
+                  <span className="rp-role">B.Sc. in Computer Science &amp; Engineering &nbsp;&mdash;&nbsp; GPA:&nbsp;<span className="rp-gpa">3.6</span>&nbsp;/&nbsp;4.0</span>
+                  <span className="rp-dates">09/2018 &ndash; 12/2022</span>
+                </div>
+                <ul className="rp-ul">
+                  <li><span className="rp-kw">Relevant coursework:</span> Data Structures, Algorithms, Operating Systems, Computer Networks, Databases, Distributed Systems, Machine Learning.</li>
+                  <li><span className="rp-kw">Final-year project &mdash; Projecto:</span> multi-role university course &amp; proposal management system built with Django, with role-based workflows, automated notifications, and PDF/CSV reporting.</li>
+                  <li><span className="rp-kw">Leadership:</span> Founding Chair, IEEE Computer Society LU Student Branch (2022&ndash;23); ACM Coordinator, LU Computer Club (2022&ndash;23).</li>
+                </ul>
+              </div>
+            </section>
+
+            <section className="rp-section">
+              <h2 className="rp-section-head">Languages</h2>
+              <hr className="rp-rule" />
+              <div className="rp-skills">
+                <p className="rp-skill-row"><span className="rp-skill-key">Bengali: </span>Native</p>
+                <p className="rp-skill-row"><span className="rp-skill-key">English: </span>Full professional &mdash; IELTS Academic 6.5 (Listening 7.0 &middot; Reading 6.5 &middot; Writing 6.5 &middot; Speaking 6.0), Aug 2025 &middot; CEFR&nbsp;B2</p>
+              </div>
             </section>
 
             <section className="rp-section">
               <h2 className="rp-section-head">Technical Skills</h2>
               <hr className="rp-rule" />
               <div className="rp-skills">
-                <p className="rp-skill-row"><span className="rp-skill-key">Languages &amp; Frameworks: </span>Python &middot; Django &middot; Django REST Framework &middot; FastAPI &middot; Dart &middot; Flutter &middot; TypeScript &middot; Next.js &middot; React</p>
-                <p className="rp-skill-row"><span className="rp-skill-key">Databases &amp; Messaging: </span>PostgreSQL &middot; Redis &middot; Celery &middot; Celery Beat</p>
-                <p className="rp-skill-row"><span className="rp-skill-key">AI &amp; NLP: </span>Speech Recognition &middot; NLP Processing &middot; LLM Integration &middot; PyTorch &middot; WhisperX &middot; OpenAI API</p>
-                <p className="rp-skill-row"><span className="rp-skill-key">Infrastructure &amp; DevOps: </span>Docker &middot; Nginx &middot; GCP &middot; DigitalOcean &middot; CI/CD &middot; Prometheus &middot; Grafana &middot; Firebase &middot; FCM</p>
-                <p className="rp-skill-row"><span className="rp-skill-key">AI-Assisted Development: </span>Claude Code &middot; Cursor &middot; Agentic Workflows &middot; AI Pair Programming</p>
+                <p className="rp-skill-row"><span className="rp-skill-key">Languages: </span>Python &middot; TypeScript &middot; Dart &middot; SQL &middot; JavaScript &middot; C++</p>
+                <p className="rp-skill-row"><span className="rp-skill-key">Backend &amp; APIs: </span>Django &middot; Django REST Framework &middot; FastAPI &middot; REST &middot; WebSockets &middot; Celery &middot; async Python</p>
+                <p className="rp-skill-row"><span className="rp-skill-key">Frontend &amp; Mobile: </span>Flutter &middot; Riverpod &middot; Next.js &middot; React &middot; Tailwind CSS &middot; Zod</p>
+                <p className="rp-skill-row"><span className="rp-skill-key">Data &amp; Infra: </span>PostgreSQL &middot; Redis &middot; Docker &middot; Nginx &middot; GCP &middot; DigitalOcean &middot; CI/CD &middot; Prometheus &middot; Grafana</p>
+                <p className="rp-skill-row"><span className="rp-skill-key">AI / ML: </span>OpenAI API &middot; WhisperX &middot; PyTorch &middot; RAG &middot; Speech Recognition &middot; Pronunciation Assessment &middot; NLP</p>
               </div>
             </section>
 
@@ -307,75 +351,55 @@ export default function ResumePage() {
                 <div className="rp-block-row"><span className="rp-co">LII Lab</span><span className="rp-loc">Sylhet, Bangladesh</span></div>
                 <div className="rp-block-sub"><span className="rp-role">Senior Software Engineer</span><span className="rp-dates">01/2025 &ndash; 04/2026</span></div>
                 <p className="rp-desc">
-                  Led backend engineering for{" "}
-                  <a href="https://oneielts.com" className="rp-prod-link" target="_blank" rel="noopener noreferrer">OneIELTS</a> and{" "}
-                  <a href="https://onepte.com" className="rp-prod-link" target="_blank" rel="noopener noreferrer">OnePTE</a>
-                  {" "}&mdash; AI-powered English test preparation platforms.
+                  OnePTE &amp; OneIELTS &mdash; AI-powered English test-prep SaaS (Web + iOS + Android).
                 </p>
                 <ul className="rp-ul">
-                  <li>Architected <span className="rp-kw">multi-tenant SaaS backend</span> with django-multitenant — full data isolation, custom domain routing, per-tenant scoring config and feature flags.</li>
-                  <li>Designed <span className="rp-kw">QTI 3.0-compliant exam engine</span> supporting 100+ question types across IELTS Academic and General, with XML parsing, interaction routing, and strategy-pattern band-score normalization.</li>
-                  <li>Built <span className="rp-kw">real-time speech evaluation pipeline</span> integrating Speech Recognition, Pronunciation Assessment, and NLP Processing — end-to-end scoring in under 15 seconds.</li>
-                  <li>Engineered <span className="rp-kw">multi-gateway payment infrastructure</span> with 5 providers (Stripe, Razorpay, SSLCommerz, Google Play, Apple), subscription lifecycle management, and webhook idempotency.</li>
-                  <li>Built <span className="rp-kw">Studio API layer</span> for moderator platform — content authoring, expert evaluation queue, exam rejudge pipelines, and KPI analytics for subscriptions and engagement.</li>
-                  <li>Set up <span className="rp-kw">production observability stack</span> with Prometheus and Grafana — health monitoring, per-API latency instrumentation, and alerting.</li>
-                  <li>Mentored junior engineers through code reviews, PR feedback, and architectural walkthroughs.</li>
+                  <li>Architected <span className="rp-kw">multi-tenant SaaS backend</span> with django-multitenant &mdash; full data isolation, custom-domain routing, per-tenant scoring config and feature flags; scaled to two production products on a shared codebase with zero cross-tenant data leakage.</li>
+                  <li>Designed a <span className="rp-kw">QTI 3.0&ndash;compliant exam engine</span> supporting 100+ question types across IELTS Academic &amp; General with XML parsing, interaction routing, and strategy-pattern band-score normalization.</li>
+                  <li>Built a <span className="rp-kw">real-time AI speech-evaluation pipeline</span> (Speech Recognition + Pronunciation Assessment + NLP) delivering end-to-end scoring in under 15 seconds &mdash; combining WhisperX, OpenAI APIs, and custom NLP graders for fluency, lexical resource, and grammar.</li>
+                  <li>Engineered a <span className="rp-kw">multi-gateway payment platform</span> across 5 providers (Stripe, Razorpay, SSLCommerz, Google Play, Apple) with subscription lifecycle management, webhook idempotency, and transaction-level reconciliation.</li>
+                  <li>Stood up a production <span className="rp-kw">observability stack</span> with Prometheus + Grafana &mdash; health checks, per-API latency histograms, and error-rate alerting.</li>
+                  <li>Drove <span className="rp-kw">AI-native engineering practice</span> across the team &mdash; Claude Code workflows, CLAUDE.md skill/subagent design, and AI-assisted PR review; mentored junior engineers through code reviews and architecture walkthroughs.</li>
                 </ul>
-                <p className="rp-stack"><b>Stack:</b> Django &middot; DRF &middot; Python &middot; PostgreSQL &middot; Redis &middot; Celery &middot; FastAPI &middot; Docker &middot; GCP &middot; Prometheus &middot; Grafana &middot; Next.js &middot; TypeScript</p>
+                <p className="rp-stack"><b>Stack:</b> Django &middot; DRF &middot; FastAPI &middot; Python &middot; PostgreSQL &middot; Redis &middot; Celery &middot; Docker &middot; GCP &middot; Prometheus &middot; Grafana &middot; Next.js &middot; TypeScript</p>
               </div>
 
               <div className="rp-block">
                 <div className="rp-block-row"><span className="rp-co">LII Lab</span><span className="rp-loc">Sylhet, Bangladesh</span></div>
                 <div className="rp-block-sub"><span className="rp-role">Software Engineer</span><span className="rp-dates">11/2022 &ndash; 12/2024</span></div>
                 <p className="rp-desc">
-                  Full-stack ownership of{" "}
-                  <a href="https://onepte.com" className="rp-prod-link" target="_blank" rel="noopener noreferrer">OnePTE</a>
-                  {" "}&mdash; designed and shipped the Flutter app from day one and built the Django AI scoring backend.
+                  OnePTE &mdash; AI-scored PTE test-prep platform (Flutter + Django).
                 </p>
                 <ul className="rp-ul">
-                  <li>Designed and built <span className="rp-kw">Flutter cross-platform app</span> from scratch — all four PTE modules (Speaking, Writing, Reading, Listening) with 20+ task types, audio recording, and timer management.</li>
-                  <li>Built task-group-based <span className="rp-kw">mock test engine</span> with modular exam templates, configurable time allocations, automated question progression, and multi-dimensional score breakdowns.</li>
-                  <li>Engineered <span className="rp-kw">AI scoring backend</span> for spoken and written PTE tasks using Speech Recognition, Pronunciation Assessment, and NLP Processing for multi-trait evaluation.</li>
-                  <li>Integrated <span className="rp-kw">subscription billing across 4 platforms</span> (Stripe, SSLCommerz, Google Play, Apple App Store) with webhook handling, transaction deduplication, and in-app purchase verification.</li>
-                  <li>Built <span className="rp-kw">Django admin and private API</span> for content moderation, question bank management, subscription analytics with regional reporting, and user acquisition dashboards.</li>
-                  <li>Led <span className="rp-kw">93+ production releases</span> across Android, iOS, and Web — managed release pipelines, Firebase config, and CI/CD across all channels.</li>
+                  <li><span className="rp-kw">Full-stack ownership from day one</span> &mdash; designed and shipped the Flutter cross-platform app (iOS + Android) covering all four PTE modules and 20+ task types with audio capture, timer management, and offline-tolerant state via Riverpod.</li>
+                  <li>Built a <span className="rp-kw">task-group mock-test engine</span> with modular exam templates, configurable time allocations, automated question progression, and multi-dimensional score breakdowns.</li>
+                  <li>Engineered the <span className="rp-kw">AI scoring backend</span> for spoken and written PTE tasks using Speech Recognition, Pronunciation Assessment, and NLP for multi-trait evaluation.</li>
+                  <li>Integrated <span className="rp-kw">subscription billing across 4 platforms</span> (Stripe, SSLCommerz, Google Play, Apple) with webhook handling, transaction deduplication, and in-app purchase receipt verification.</li>
+                  <li>Led <span className="rp-kw">90+ production releases</span> across Android, iOS, and Web &mdash; owned release pipelines, Firebase Remote Config, and CI/CD across all channels.</li>
                 </ul>
                 <p className="rp-stack"><b>Stack:</b> Flutter &middot; Dart &middot; Riverpod &middot; Django &middot; DRF &middot; Python &middot; PostgreSQL &middot; Redis &middot; Celery &middot; Firebase &middot; Next.js &middot; TypeScript</p>
               </div>
             </section>
 
             <section className="rp-section">
-              <h2 className="rp-section-head">Projects</h2>
+              <h2 className="rp-section-head">Selected Projects</h2>
               <hr className="rp-rule" />
 
               <div className="rp-block">
                 <div className="rp-proj-header">
-                  <a href="https://www.patty-bros.co.uk" className="rp-proj-link" target="_blank" rel="noopener noreferrer">
-                    Patty Bros &mdash; Restaurant Website
+                  <a href="https://sushilabrestaurant.com" className="rp-proj-link" target="_blank" rel="noopener noreferrer">
+                    Sushi Lab &mdash; Bilingual Restaurant Ordering &amp; Marketing Platform
                     <svg className="rp-ext-icon" viewBox="0 0 14 14" fill="none"><path d="M6 2H3a1 1 0 0 0-1 1v8a1 1 0 0 0 1 1h8a1 1 0 0 0 1-1V8" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round"/><path d="M9 1h4m0 0v4m0-4L7 7" stroke="currentColor" strokeWidth="1.5" strokeLinejoin="round"/></svg>
                   </a>
-                  <span className="rp-proj-dates">2025</span>
+                  <span className="rp-proj-dates">2026</span>
                 </div>
+                <p className="rp-desc">Japanese restaurant in Chartres, France &mdash; solo end-to-end build.</p>
                 <ul className="rp-ul">
-                  <li>Built <span className="rp-kw">responsive marketing and booking site</span> for a South East London restaurant — animated pages with Framer Motion and Zod-validated booking forms.</li>
-                  <li>Integrated <span className="rp-kw">Google Sheets-driven live menu</span> with ISR revalidation, and a serverless booking backend via Google Apps Script with real-time Telegram notifications.</li>
+                  <li>Designed and shipped a production <span className="rp-kw">bilingual (FR/EN)</span> ordering + marketing site on Next.js 16 App Router with React 19 and server actions &mdash; translated URL segments and locale-aware checkout.</li>
+                  <li>Built an <span className="rp-kw">ordering engine</span> with a hydration-safe Zustand cart, scheduled-ahead time slots, per-item option pickers, and server-enforced time-of-day availability windows.</li>
+                  <li>Engineered <span className="rp-kw">triple-channel notifications</span> (Telegram bot, transactional customer email, restaurant inbox) dispatched in parallel, plus AI-discoverable SEO (JSON-LD, per-locale canonical + hreflang) and a GA4 ecommerce funnel.</li>
                 </ul>
-                <p className="rp-stack"><b>Stack:</b> Next.js &middot; TypeScript &middot; Tailwind CSS &middot; Framer Motion &middot; Google Sheets API &middot; Google Apps Script &middot; Telegram Bot API</p>
-              </div>
-
-              <div className="rp-block">
-                <div className="rp-proj-header">
-                  <a href="https://github.com/cloud-007/projecto" className="rp-proj-link" target="_blank" rel="noopener noreferrer">
-                    Projecto &mdash; University Course &amp; Proposal Management
-                    <svg className="rp-ext-icon" viewBox="0 0 14 14" fill="none"><path d="M6 2H3a1 1 0 0 0-1 1v8a1 1 0 0 0 1 1h8a1 1 0 0 0 1-1V8" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round"/><path d="M9 1h4m0 0v4m0-4L7 7" stroke="currentColor" strokeWidth="1.5" strokeLinejoin="round"/></svg>
-                  </a>
-                  <span className="rp-proj-dates">10/2022 &ndash; 12/2022</span>
-                </div>
-                <ul className="rp-ul">
-                  <li>Built <span className="rp-kw">multi-role Django web app</span> (student, supervisor, admin) for university project proposal management with AJAX-driven interactions and automated email notifications.</li>
-                  <li>Implemented <span className="rp-kw">PDF and CSV export</span> for project reports and integrated background job service for scheduled operations.</li>
-                </ul>
-                <p className="rp-stack"><b>Stack:</b> Django &middot; Python &middot; PostgreSQL &middot; AJAX &middot; jQuery &middot; Bootstrap</p>
+                <p className="rp-stack"><b>Stack:</b> Next.js 16 &middot; React 19 &middot; TypeScript &middot; Tailwind &middot; Zustand &middot; Zod &middot; React Email &middot; next-intl &middot; ZeptoMail &middot; Telegram Bot API &middot; GA4</p>
               </div>
             </section>
 
@@ -383,56 +407,22 @@ export default function ResumePage() {
               <h2 className="rp-section-head">Competitive Programming &amp; Achievements</h2>
               <hr className="rp-rule" />
               <div className="rp-cp-grid">
-                <div className="rp-cp-item">Solved <b>2,000+ problems</b> across online judges; participated in <b>300+ contests</b>.</div>
-                <div className="rp-cp-item"><b>Champion</b>, LU CSE Carnival National Hackathon 2023 &mdash; Team: LU Ovream</div>
-                <div className="rp-cp-item"><b>Runner-up (Bangladesh)</b>, IEEEXtreme 16.0 (2022) &mdash; Global Rank 149, Team: LazySquad</div>
-                <div className="rp-cp-item"><b>ICPC:</b> 87th / 1,700+ teams, Preliminary 2021; 51st, Dhaka Regional 2020</div>
-                <div className="rp-cp-item"><b>Champion</b>, LU TechStorm 4 Programming Contest 2021</div>
+                <div className="rp-cp-item">Solved <b>2,000+ problems</b> across online judges; participated in <b>300+ contests</b> over 4 years.</div>
+                <div className="rp-cp-item"><b>ICPC Asia Dhaka Regional 2020</b> &mdash; finalist (51st); Preliminary 2021 &mdash; 87th of 1,700+ teams.</div>
+                <div className="rp-cp-item"><b>Runner-up (Bangladesh)</b>, IEEEXtreme 16.0 (2022) &mdash; global rank 149 / 6,500+ teams.</div>
+                <div className="rp-cp-item"><b>Champion</b>, LU CSE Carnival National Hackathon 2023; <b>Champion</b>, LU TechStorm 4 (2021).</div>
                 <div className="rp-cp-item">
                   <a href="https://codeforces.com/profile/cloud_007" target="_blank" rel="noopener noreferrer">Codeforces</a> (Max: <b>1603</b>)
                   &nbsp;&middot;&nbsp;
                   <a href="https://www.codechef.com/users/cloud_007" target="_blank" rel="noopener noreferrer">CodeChef</a> (Max: <b>1965</b>)
-                  &nbsp;&middot;&nbsp;
-                  <a href="https://lightoj.com/user/cloud_007" target="_blank" rel="noopener noreferrer">LightOJ</a>
                 </div>
               </div>
             </section>
 
-            <section className="rp-section">
-              <h2 className="rp-section-head">Education</h2>
-              <hr className="rp-rule" />
-              <div className="rp-block">
-                <div className="rp-block-row"><span className="rp-co">Leading University</span><span className="rp-loc">Sylhet, Bangladesh</span></div>
-                <div className="rp-block-sub">
-                  <span className="rp-role">B.Sc. in Computer Science and Engineering &nbsp;&mdash;&nbsp; GPA:&nbsp;<span className="rp-gpa">3.6</span>&nbsp;/&nbsp;4.0</span>
-                  <span className="rp-dates">09/2018 &ndash; 12/2022</span>
-                </div>
-              </div>
-            </section>
-
-            <section className="rp-section">
-              <h2 className="rp-section-head">Volunteering</h2>
-              <hr className="rp-rule" />
-
-              <div className="rp-block">
-                <div className="rp-block-row"><span className="rp-co">IEEE Computer Society &mdash; LU Student Branch Chapter</span></div>
-                <div className="rp-block-sub"><span className="rp-role">Chair</span><span className="rp-dates">04/2022 &ndash; 05/2023</span></div>
-                <ul className="rp-ul">
-                  <li>Established the IEEE CS Student Branch Chapter at LU — organized seminars, webinars, and technical workshops with industry speakers.</li>
-                  <li>Grew chapter <span className="rp-kw">membership by 20%+</span> through outreach programs; delivered a multi-session <span className="rp-kw">Flutter bootcamp</span>.</li>
-                  <li>Served as problem setter and judge for inter-university programming contests.</li>
-                </ul>
-              </div>
-
-              <div className="rp-block">
-                <div className="rp-block-row"><span className="rp-co">Leading University Computer Club</span></div>
-                <div className="rp-block-sub"><span className="rp-role">ACM Coordinator</span><span className="rp-dates">01/2022 &ndash; 12/2023</span></div>
-                <ul className="rp-ul">
-                  <li>Conducted peer-to-peer DSA sessions and mentored juniors in competitive programming strategies across Codeforces, CodeChef, and LightOJ.</li>
-                  <li>Organized regular contest practice sessions to prepare members for ICPC and national competitions.</li>
-                </ul>
-              </div>
-            </section>
+            <div className="rp-sign">
+              <span className="rp-sign-place">Sylhet, Bangladesh &mdash; June 2026</span>
+              <span className="rp-sign-name">Md Mazharul Islam Emon</span>
+            </div>
 
           </div>{/* /rp-paper */}
         </div>{/* /rp-paper-wrap */}

@@ -11,9 +11,44 @@ import { fileURLToPath } from "url";
 const __dirname = fileURLToPath(new URL(".", import.meta.url));
 const ROOT = join(__dirname, "..");
 const OUT_DIR = join(ROOT, "out");
-const PDF_OUT = join(OUT_DIR, "resume.pdf");
-const PDF_PUBLIC = join(ROOT, "public", "resume.pdf");
 const PORT = 3099;
+
+// Each entry renders one route to a PDF written into both out/ and public/.
+const TARGETS = [
+  {
+    route: "/resume",
+    file: "resume.pdf",
+    meta: {
+      title: "Md Mazharul Islam Emon — Full-Stack AI Engineer",
+      subject: "Resume / CV",
+      keywords: [
+        "Full-Stack AI Engineer",
+        "Software Engineer",
+        "Django",
+        "Flutter",
+        "Python",
+        "AI",
+        "Resume",
+      ],
+    },
+  },
+  {
+    route: "/resume-professional",
+    file: "resume-professional.pdf",
+    meta: {
+      title: "Md Mazharul Islam Emon — Curriculum Vitae",
+      subject: "Academic Curriculum Vitae",
+      keywords: [
+        "Curriculum Vitae",
+        "Academic CV",
+        "Software Engineer",
+        "Computer Science",
+        "Django",
+        "Machine Learning",
+      ],
+    },
+  },
+];
 
 const MIME = {
   ".html": "text/html; charset=utf-8",
@@ -77,56 +112,54 @@ async function main() {
   let browser;
   try {
     const puppeteer = (await import("puppeteer")).default;
+    const { PDFDocument } = await import("pdf-lib");
 
     console.log("🚀  Launching browser…");
     browser = await puppeteer.launch({
       headless: true,
       args: ["--no-sandbox", "--disable-setuid-sandbox"],
     });
-    const page = await browser.newPage();
 
-    // Wide viewport so the JS scale() hook never fires (paper is 850px)
-    await page.setViewport({ width: 1280, height: 900 });
+    for (const target of TARGETS) {
+      const page = await browser.newPage();
 
-    await page.goto(`http://localhost:${PORT}/resume`, {
-      waitUntil: "networkidle0",
-      timeout: 30000,
-    });
+      // Wide viewport so the JS scale() hook never fires (paper is 850px)
+      await page.setViewport({ width: 1280, height: 900 });
 
-    // Give fonts a moment to render
-    await new Promise((r) => setTimeout(r, 1000));
+      await page.goto(`http://localhost:${PORT}${target.route}`, {
+        waitUntil: "networkidle0",
+        timeout: 30000,
+      });
 
-    console.log("📄  Generating PDF…");
-    const pdf = await page.pdf({
-      format: "A4",
-      printBackground: true,
-      // Margins are controlled entirely by @page { margin } in the print CSS
-      margin: { top: "0", bottom: "0", left: "0", right: "0" },
-    });
+      // Give fonts a moment to render
+      await new Promise((r) => setTimeout(r, 1000));
 
-    // Inject PDF metadata
-    const { PDFDocument } = await import("pdf-lib");
-    const pdfDoc = await PDFDocument.load(pdf);
-    pdfDoc.setTitle("Md Mazharul Islam Emon — Full-Stack AI Engineer");
-    pdfDoc.setAuthor("Md Mazharul Islam Emon");
-    pdfDoc.setSubject("Resume / CV");
-    pdfDoc.setKeywords([
-      "Full-Stack AI Engineer",
-      "Software Engineer",
-      "Django",
-      "Flutter",
-      "Python",
-      "AI",
-      "Resume",
-    ]);
-    pdfDoc.setCreator("cloud-007.github.io");
-    pdfDoc.setProducer("pdf-lib (https://github.com/Hopding/pdf-lib)");
-    const pdfBytes = await pdfDoc.save();
+      console.log(`📄  Generating PDF for ${target.route}…`);
+      const pdf = await page.pdf({
+        format: "A4",
+        printBackground: true,
+        // Margins are controlled entirely by @page { margin } in the print CSS
+        margin: { top: "0", bottom: "0", left: "0", right: "0" },
+      });
+      await page.close();
 
-    writeFileSync(PDF_OUT, pdfBytes);
-    writeFileSync(PDF_PUBLIC, pdfBytes);
-    console.log(`✅  PDF saved → ${PDF_OUT}`);
-    console.log(`✅  PDF saved → ${PDF_PUBLIC}`);
+      // Inject PDF metadata
+      const pdfDoc = await PDFDocument.load(pdf);
+      pdfDoc.setTitle(target.meta.title);
+      pdfDoc.setAuthor("Md Mazharul Islam Emon");
+      pdfDoc.setSubject(target.meta.subject);
+      pdfDoc.setKeywords(target.meta.keywords);
+      pdfDoc.setCreator("cloud-007.github.io");
+      pdfDoc.setProducer("pdf-lib (https://github.com/Hopding/pdf-lib)");
+      const pdfBytes = await pdfDoc.save();
+
+      const outPath = join(OUT_DIR, target.file);
+      const publicPath = join(ROOT, "public", target.file);
+      writeFileSync(outPath, pdfBytes);
+      writeFileSync(publicPath, pdfBytes);
+      console.log(`✅  PDF saved → ${outPath}`);
+      console.log(`✅  PDF saved → ${publicPath}`);
+    }
   } finally {
     if (browser) await browser.close();
     server.close();
