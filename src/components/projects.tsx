@@ -55,21 +55,22 @@ const professionalProjects = [
 
 const clientProjects = [
   {
-    name: "Petty Bros",
-    tagline: "Restaurant Website · South East London",
-    period: "2025",
+    name: "Sushi Lab",
+    tagline: "Bilingual Restaurant Ordering & Marketing Platform · Chartres, France",
+    period: "2026",
     label: "Client",
-    liveUrl: "https://www.patty-bros.co.uk/",
+    liveUrl: "https://sushilabrestaurant.com",
     description:
-      "Marketing and booking website for a South East London burger restaurant. Designed and shipped the full site from scratch — responsive animated pages, a Google Sheets-driven live menu with zero CMS overhead, and a fully serverless booking system with real-time Telegram notifications.",
+      "Production bilingual (FR/EN) ordering and marketing site for a Japanese restaurant in Chartres, France. Designed and shipped end-to-end as a solo build on Next.js 16 App Router with Turbopack, React 19, and server actions — featuring translated URL segments (/en/order, /fr/commander) and locale-aware checkout.",
     highlights: [
-      "Delivered a responsive, animated marketing site across Home, Menu, About, Locations, and Book pages using Framer Motion and Radix UI, with Zod-validated booking form handling",
-      "Built a Google Sheets-driven live menu with zero CMS overhead — ISR-based fetching at 5-minute revalidation, per-item availability toggling, allergen and calorie data, featured item promotion, and a static fallback for resilience",
-      "Built the booking backend entirely serverless using Google Apps Script — form submissions are logged to a Google Sheet and trigger real-time Telegram Bot notifications with full booking details and party info",
+      "Built an ordering engine with a hydration-safe Zustand cart, scheduled-ahead time slots, per-item option pickers, and server-enforced time-of-day availability windows (e.g., the lunch menu auto-locks outside hours)",
+      "Engineered triple-channel notifications for every order, reservation, and contact submission — Telegram bot, transactional customer email, and restaurant inbox — dispatched in parallel via React Email + ZeptoMail with strict cross-channel data parity",
+      "Implemented AI-discoverable SEO — JSON-LD (Restaurant, Menu with Schema.org availability windows, FAQ, Breadcrumb), dynamic sitemap, dynamic OG/Twitter images, geo meta tags, llms.txt + llms-full.txt for GPTBot/ClaudeBot/PerplexityBot, and a centralized canonical-URL module emitting per-locale canonical + hreflang (incl. x-default)",
+      "Instrumented a GA4 ecommerce funnel — add_to_cart, view_cart, begin_checkout, purchase, order_rejected — plus reservation, contact, language-switch, and Web Vitals events",
     ],
     technologies: [
-      "Next.js", "TypeScript", "Tailwind CSS", "Framer Motion", "Radix UI",
-      "Google Sheets API", "Google Apps Script", "Telegram Bot API", "React Hook Form", "Zod",
+      "Next.js 16", "React 19", "TypeScript", "Tailwind", "Zustand", "React Hook Form",
+      "Zod", "React Email", "next-intl", "ZeptoMail", "Telegram Bot API", "GA4",
     ],
     accentFrom: "from-sky-500",
     accentTo: "to-blue-500",

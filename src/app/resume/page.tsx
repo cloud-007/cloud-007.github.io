@@ -350,17 +350,18 @@ export default function ResumePage() {
 
               <div className="rp-block">
                 <div className="rp-proj-header">
-                  <a href="https://www.patty-bros.co.uk" className="rp-proj-link" target="_blank" rel="noopener noreferrer">
-                    Patty Bros &mdash; Restaurant Website
+                  <a href="https://sushilabrestaurant.com" className="rp-proj-link" target="_blank" rel="noopener noreferrer">
+                    Sushi Lab &mdash; Bilingual Restaurant Ordering & Marketing Platform
                     <svg className="rp-ext-icon" viewBox="0 0 14 14" fill="none"><path d="M6 2H3a1 1 0 0 0-1 1v8a1 1 0 0 0 1 1h8a1 1 0 0 0 1-1V8" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round"/><path d="M9 1h4m0 0v4m0-4L7 7" stroke="currentColor" strokeWidth="1.5" strokeLinejoin="round"/></svg>
                   </a>
-                  <span className="rp-proj-dates">2025</span>
+                  <span className="rp-proj-dates">2026</span>
                 </div>
                 <ul className="rp-ul">
-                  <li>Built <span className="rp-kw">responsive marketing and booking site</span> for a South East London restaurant — animated pages with Framer Motion and Zod-validated booking forms.</li>
-                  <li>Integrated <span className="rp-kw">Google Sheets-driven live menu</span> with ISR revalidation, and a serverless booking backend via Google Apps Script with real-time Telegram notifications.</li>
+                  <li>Shipped a <span className="rp-kw">bilingual (FR/EN) ordering and marketing site</span> for a Japanese restaurant in Chartres, France — Next.js 16 App Router, React 19, and server actions with translated URL segments (/en/order, /fr/commander) and locale-aware checkout.</li>
+                  <li>Built an <span className="rp-kw">ordering engine</span> with a hydration-safe Zustand cart, scheduled-ahead time slots, per-item option pickers, and server-enforced time-of-day availability windows.</li>
+                  <li>Engineered <span className="rp-kw">triple-channel notifications</span> (Telegram bot, customer email, restaurant inbox) via React Email + ZeptoMail, plus AI-discoverable SEO (JSON-LD, per-locale canonical + hreflang, llms.txt) and a GA4 ecommerce funnel.</li>
                 </ul>
-                <p className="rp-stack"><b>Stack:</b> Next.js &middot; TypeScript &middot; Tailwind CSS &middot; Framer Motion &middot; Google Sheets API &middot; Google Apps Script &middot; Telegram Bot API</p>
+                <p className="rp-stack"><b>Stack:</b> Next.js 16 &middot; React 19 &middot; TypeScript &middot; Tailwind &middot; Zustand &middot; React Hook Form &middot; Zod &middot; React Email &middot; next-intl &middot; ZeptoMail &middot; Telegram Bot API &middot; GA4</p>
               </div>
 
               <div className="rp-block">
