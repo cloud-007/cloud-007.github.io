@@ -134,7 +134,9 @@ export default function TreeScene({
             new THREE.PlaneGeometry(520, 130),
             new THREE.MeshBasicMaterial({ map: soilTex })
         );
-        soil.position.set(0, -65 + 0.75, -26);
+        // Top edge of the soil plane sits at world y = +3, so it buries the
+        // root crown and the trunk→root transition on every aspect ratio.
+        soil.position.set(0, -65 + 3, -26);
         scene.add(soil);
 
         /* ── Canopy tree ── */
@@ -184,18 +186,21 @@ export default function TreeScene({
             roots.options.branch.children[2] = 3;
             roots.options.branch.start[1] = 0.05;
             roots.options.branch.start[2] = 0.15;
-            roots.options.branch.angle[1] = 64;
-            roots.options.branch.angle[2] = 46;
-            roots.options.branch.angle[3] = 36;
-            roots.options.branch.gnarliness[1] = 0.35;
-            roots.options.branch.gnarliness[2] = 0.4;
-            roots.options.branch.gnarliness[3] = 0.3;
+            // Laterals dive down-and-out (45°) rather than splaying flat, so
+            // no root tip curls back up above the soil line.
+            roots.options.branch.angle[1] = 45;
+            roots.options.branch.angle[2] = 40;
+            roots.options.branch.angle[3] = 34;
+            roots.options.branch.gnarliness[1] = 0.3;
+            roots.options.branch.gnarliness[2] = 0.34;
+            roots.options.branch.gnarliness[3] = 0.28;
             roots.options.branch.length[1] = 17;
             roots.options.branch.length[2] = 13;
             roots.options.branch.length[3] = 8;
-            // Roots flee the sky: gravity bias while inverted.
+            // Strong gravity bias (roots are inverted) pulls every level down
+            // and keeps the whole system below the surface.
             roots.options.branch.force.direction.y = 1;
-            roots.options.branch.force.strength = 0.05;
+            roots.options.branch.force.strength = 0.09;
             roots.options.leaves.count = 0;
             roots.generate();
             // leaves.count is not always honored at generation time — make
@@ -204,7 +209,7 @@ export default function TreeScene({
         };
         applyRootOptions();
         roots.scale.set(1.25, -1.1, 1.25);
-        roots.position.y = 0.5;
+        roots.position.y = -0.5;
         scene.add(roots);
 
         /* ── Framing ── */
