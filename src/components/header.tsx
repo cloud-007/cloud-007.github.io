@@ -2,20 +2,25 @@
 
 import { useState, useEffect } from "react";
 import Link from "next/link";
+import { usePathname } from "next/navigation";
 import { Mail, Menu, X } from "lucide-react";
 
+/* Trail lives on the landing page; every other section lives under /about.
+   Hash links work from either page. */
 const navigation = [
-  { name: "Trail", href: "#trail" },
-  { name: "About", href: "#about" },
-  { name: "Experience", href: "#experience" },
-  { name: "Skills", href: "#skills" },
-  { name: "Projects", href: "#projects" },
-  { name: "Achievements", href: "#achievements" },
-  { name: "Education", href: "#education" },
+  { name: "Trail", href: "/", section: "trail" },
+  { name: "About", href: "/about#about", section: "about" },
+  { name: "Experience", href: "/about#experience", section: "experience" },
+  { name: "Skills", href: "/about#skills", section: "skills" },
+  { name: "Projects", href: "/about#projects", section: "projects" },
+  { name: "Achievements", href: "/about#achievements", section: "achievements" },
+  { name: "Education", href: "/about#education", section: "education" },
 ];
 
 export function Header() {
-  const [activeSection, setActiveSection] = useState("trail");
+  const pathname = usePathname();
+  const onTrailPage = pathname === "/";
+  const [activeSection, setActiveSection] = useState<string | null>(null);
   const [mobileOpen, setMobileOpen] = useState(false);
 
   useEffect(() => {
@@ -30,13 +35,16 @@ export function Header() {
       { rootMargin: "-40% 0px -55% 0px" }
     );
 
-    navigation.forEach(({ href }) => {
-      const el = document.getElementById(href.slice(1));
+    navigation.forEach(({ section }) => {
+      const el = document.getElementById(section);
       if (el) observer.observe(el);
     });
 
     return () => observer.disconnect();
   }, []);
+
+  const isActive = (item: (typeof navigation)[number]) =>
+    onTrailPage ? item.section === "trail" : activeSection === item.section;
 
   return (
     <header className="fixed top-0 left-0 right-0 z-50 px-4 pt-4">
@@ -59,7 +67,7 @@ export function Header() {
                 key={item.name}
                 href={item.href}
                 className={`px-2.5 py-1.5 text-sm rounded-xl transition-all font-medium ${
-                  activeSection === item.href.slice(1)
+                  isActive(item)
                     ? "bg-emerald-500/15 text-emerald-300"
                     : "text-zinc-500 hover:text-zinc-100 hover:bg-zinc-800"
                 }`}
@@ -101,7 +109,7 @@ export function Header() {
                 key={item.name}
                 href={item.href}
                 className={`flex items-center px-4 py-2.5 text-sm rounded-xl transition-all ${
-                  activeSection === item.href.slice(1)
+                  isActive(item)
                     ? "bg-emerald-500/15 text-emerald-300 font-medium"
                     : "text-zinc-400 hover:text-zinc-100 hover:bg-zinc-800"
                 }`}

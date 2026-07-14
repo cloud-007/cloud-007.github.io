@@ -329,22 +329,6 @@ export function LivingTrail() {
     return (
         <section id="trail" className="section px-4 pt-32">
             <div className="max-w-5xl mx-auto">
-                <div className="mb-10">
-                    <span className="section-label">
-                        <Sprout className="w-3.5 h-3.5" />
-                        The Living Trail
-                    </span>
-                    <h2 className="text-3xl md:text-4xl font-extrabold text-zinc-50 tracking-tight mt-2">
-                        A tree that grows with me
-                    </h2>
-                    <p className="text-zinc-500 mt-2 text-sm max-w-2xl">
-                        Each chapter of the journey is a limb, every entry a cluster
-                        of leaves, and obstacles are knots in the wood. How lush the
-                        canopy looks is computed from recent activity — and the sky
-                        matches the real weather over {config.location} right now.
-                    </p>
-                </div>
-
                 {/* Creed — his own words, above the tree */}
                 <figure className="relative max-w-3xl mx-auto text-center mb-12 px-2">
                     <span
