@@ -327,13 +327,15 @@ export function LivingTrail() {
               : "text-zinc-300 bg-zinc-500/10 border-zinc-500/25";
 
     return (
-        <section id="trail" className="section px-4 pt-32">
+        // Not using .section here: its padding-top would override the larger
+        // clearance needed below the fixed navbar.
+        <section id="trail" className="px-4 pb-20 pt-36 md:pt-40">
             <div className="max-w-5xl mx-auto">
                 {/* Creed — his own words, above the tree */}
                 <figure className="relative max-w-3xl mx-auto text-center mb-12 px-2">
                     <span
                         aria-hidden
-                        className="absolute -top-8 left-1/2 -translate-x-1/2 text-[7rem] leading-none font-serif text-emerald-500/10 select-none pointer-events-none"
+                        className="absolute -top-3 md:-top-8 left-1/2 -translate-x-1/2 text-[4.5rem] md:text-[7rem] leading-none font-serif text-emerald-500/10 select-none pointer-events-none"
                     >
                         &ldquo;
                     </span>
