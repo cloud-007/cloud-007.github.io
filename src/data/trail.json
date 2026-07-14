@@ -42,6 +42,14 @@
       "precision": "month"
     },
     {
+      "date": "2020-04-04",
+      "type": "win",
+      "chapter": "foundations",
+      "title": "Qualified for Google Code Jam",
+      "note": "Cleared the global qualification round in 2020 (42 pts) and again in 2022 (44 pts).",
+      "precision": "year"
+    },
+    {
       "date": "2020-12-01",
       "type": "milestone",
       "chapter": "foundations",
@@ -56,6 +64,14 @@
       "chapter": "foundations",
       "title": "Champion — LU TechStorm 4 programming contest",
       "note": "First place on home ground, with Team Catapult.",
+      "precision": "year"
+    },
+    {
+      "date": "2021-10-01",
+      "type": "learning",
+      "chapter": "foundations",
+      "title": "IEEEXtreme 14.0 & 15.0 — 24-hour global marathons",
+      "note": "Two years of the worldwide 24-hour algorithm contest (Team LURisingStar, 2020; Team SchrodenBug, 2021) — the runway to the 16.0 runner-up finish.",
       "precision": "year"
     },
     {
@@ -76,12 +92,28 @@
       "precision": "month"
     },
     {
+      "date": "2022-02-15",
+      "type": "milestone",
+      "chapter": "foundations",
+      "title": "Joint General Secretary — LU Sports Club",
+      "note": "Elected to the sports club executive; organized inter-department tournaments and university sporting events.",
+      "precision": "year"
+    },
+    {
       "date": "2022-04-01",
       "type": "milestone",
       "chapter": "foundations",
-      "title": "Chair — IEEE Computer Society, LU Student Branch",
-      "note": "Helped establish the chapter, organized technical events, and grew membership by 20%.",
+      "title": "Co-founded & chaired IEEE Computer Society, LU SB Chapter",
+      "note": "Co-founded the LU Student Branch Chapter and chaired the 2022–2023 session — organized technical events with industry speakers and grew membership by 20%.",
       "precision": "month"
+    },
+    {
+      "date": "2022-06-01",
+      "type": "milestone",
+      "chapter": "foundations",
+      "title": "Organized LU technical bootcamps (2021–2022)",
+      "note": "Ran hands-on training for juniors — the LU Research Bootcamp (2021) and the Data Communications and Flutter app-development bootcamps (2022).",
+      "precision": "year"
     },
     {
       "date": "2022-10-01",
@@ -110,6 +142,14 @@
       "precision": "month"
     },
     {
+      "date": "2023-05-01",
+      "type": "win",
+      "chapter": "foundations",
+      "title": "Outstanding Leadership Volunteer Award — IEEE",
+      "note": "Recognized by IEEE for the 2022–2023 tenure chairing the Computer Society LU Student Branch Chapter.",
+      "precision": "month"
+    },
+    {
       "date": "2023-08-01",
       "type": "win",
       "chapter": "building",
@@ -132,6 +172,24 @@
       "title": "Promoted to Senior Software Engineer",
       "note": "Led backend engineering across two AI-powered English test-prep platforms — architecture, mentoring, and production releases.",
       "learning": "Seniority is responsibility for other people's growth, not just code.",
+      "precision": "month"
+    },
+    {
+      "date": "2026-04-30",
+      "type": "milestone",
+      "chapter": "leading",
+      "title": "Closed my chapter at LII Lab",
+      "note": "After 3.5 years — the OnePTE and OneIELTS platforms, 90+ production releases, and a promotion to Senior along the way.",
+      "obstacle": "Leaving the place and people where I grew from graduate to senior engineer.",
+      "learning": "Endings are just soil for the next thing to grow in.",
+      "precision": "day"
+    },
+    {
+      "date": "2026-06-01",
+      "type": "win",
+      "chapter": "leading",
+      "title": "Delivered Sushi Lab — a solo end-to-end build",
+      "note": "Shipped a production bilingual (FR/EN) ordering and marketing platform for a Japanese restaurant in Chartres, France — Next.js 16, React 19, server actions, and locale-aware checkout.",
       "precision": "month"
     },
     {
