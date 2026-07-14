@@ -5,6 +5,7 @@ import Link from "next/link";
 import { Mail, Menu, X } from "lucide-react";
 
 const navigation = [
+  { name: "Trail", href: "#trail" },
   { name: "About", href: "#about" },
   { name: "Experience", href: "#experience" },
   { name: "Skills", href: "#skills" },
@@ -14,7 +15,7 @@ const navigation = [
 ];
 
 export function Header() {
-  const [activeSection, setActiveSection] = useState("about");
+  const [activeSection, setActiveSection] = useState("trail");
   const [mobileOpen, setMobileOpen] = useState(false);
 
   useEffect(() => {

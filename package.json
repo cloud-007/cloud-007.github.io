@@ -6,10 +6,12 @@
     "dev": "next dev",
     "build": "next build && node scripts/generate-resume-pdf.mjs",
     "generate-pdf": "node scripts/generate-resume-pdf.mjs",
+    "trail:add": "node scripts/trail-add.mjs",
     "start": "next start",
     "lint": "eslint"
   },
   "dependencies": {
+    "@dgreenheck/ez-tree": "^1.1.0",
     "@radix-ui/react-avatar": "^1.1.11",
     "@radix-ui/react-progress": "^1.1.8",
     "@radix-ui/react-separator": "^1.1.8",
@@ -21,13 +23,15 @@
     "next": "16.0.3",
     "react": "19.2.0",
     "react-dom": "19.2.0",
-    "tailwind-merge": "^3.4.0"
+    "tailwind-merge": "^3.4.0",
+    "three": "^0.185.1"
   },
   "devDependencies": {
     "@tailwindcss/postcss": "^4",
     "@types/node": "^20",
     "@types/react": "^19",
     "@types/react-dom": "^19",
+    "@types/three": "^0.185.1",
     "babel-plugin-react-compiler": "1.0.0",
     "eslint": "^9",
     "eslint-config-next": "16.0.3",

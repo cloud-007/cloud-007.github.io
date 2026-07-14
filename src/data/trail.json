@@ -1,0 +1,147 @@
+{
+  "config": {
+    "growingSince": 1999,
+    "location": "Sylhet, Bangladesh",
+    "latitude": 24.8949,
+    "longitude": 91.8687,
+    "roots": ["Sylhet", "Family", "Curiosity", "Discipline"],
+    "creed": {
+      "belief": "The only difference between the success you see and where I stand today is time.",
+      "practice": "I learn from everything — every person I work with, every place I go, everything I build. Not chasing perfect. Becoming a better version of myself, every single day."
+    },
+    "chapters": [
+      { "id": "roots", "title": "Roots", "subtitle": "School years in Sylhet" },
+      { "id": "foundations", "title": "Foundations", "subtitle": "University & competitive programming" },
+      { "id": "building", "title": "Building", "subtitle": "Professional engineering at LII Lab" },
+      { "id": "leading", "title": "Leading", "subtitle": "Seniority, mentorship & the trail" }
+    ]
+  },
+  "entries": [
+    {
+      "date": "2016-05-01",
+      "type": "milestone",
+      "chapter": "roots",
+      "title": "Completed SSC — Purba Muria High School",
+      "note": "Secondary School Certificate, Sylhet. The first checkpoint.",
+      "precision": "year"
+    },
+    {
+      "date": "2018-05-01",
+      "type": "milestone",
+      "chapter": "roots",
+      "title": "Completed HSC (Science) — Beanibazar Govt. College",
+      "note": "Higher Secondary Certificate. Chose science, and the path toward engineering.",
+      "precision": "year"
+    },
+    {
+      "date": "2018-09-01",
+      "type": "milestone",
+      "chapter": "foundations",
+      "title": "Started B.Sc. in CSE — Leading University",
+      "note": "Four years of fundamentals, contests, and late nights begin.",
+      "precision": "month"
+    },
+    {
+      "date": "2020-12-01",
+      "type": "milestone",
+      "chapter": "foundations",
+      "title": "ICPC Asia Dhaka Regional — 51st place",
+      "note": "Competing among the strongest teams in the region.",
+      "learning": "Hard problems bend to consistent practice.",
+      "precision": "year"
+    },
+    {
+      "date": "2021-06-01",
+      "type": "win",
+      "chapter": "foundations",
+      "title": "Champion — LU TechStorm 4 programming contest",
+      "note": "First place on home ground, with Team Catapult.",
+      "precision": "year"
+    },
+    {
+      "date": "2021-11-01",
+      "type": "win",
+      "chapter": "foundations",
+      "title": "ICPC Preliminary — 87th of 1,700+ teams",
+      "note": "One contest among 300+, one rank worth remembering.",
+      "precision": "year"
+    },
+    {
+      "date": "2022-01-01",
+      "type": "milestone",
+      "chapter": "foundations",
+      "title": "ACM Coordinator — Leading University Computer Club",
+      "note": "Mentored juniors in competitive programming and ran peer-to-peer DSA sessions.",
+      "learning": "Teaching a thing is the fastest way to truly learn it.",
+      "precision": "month"
+    },
+    {
+      "date": "2022-04-01",
+      "type": "milestone",
+      "chapter": "foundations",
+      "title": "Chair — IEEE Computer Society, LU Student Branch",
+      "note": "Helped establish the chapter, organized technical events, and grew membership by 20%.",
+      "precision": "month"
+    },
+    {
+      "date": "2022-10-01",
+      "type": "win",
+      "chapter": "foundations",
+      "title": "IEEEXtreme 16.0 — runner-up in Bangladesh",
+      "note": "Global rank 149 with Team LazySquad. 24 hours of non-stop problem solving.",
+      "precision": "month"
+    },
+    {
+      "date": "2022-11-01",
+      "type": "milestone",
+      "chapter": "building",
+      "title": "Joined LII Lab as Software Engineer",
+      "note": "Built the OnePTE Flutter app from day one and the Django backend powering AI scoring.",
+      "obstacle": "Owning a full product stack for the first time, while still finishing my degree.",
+      "learning": "Ship, observe, improve — ownership is the fastest teacher.",
+      "precision": "month"
+    },
+    {
+      "date": "2022-12-15",
+      "type": "milestone",
+      "chapter": "foundations",
+      "title": "Graduated — B.Sc. in Computer Science and Engineering",
+      "note": "GPA 3.6/4.0, and 2,000+ solved problems on the side.",
+      "precision": "month"
+    },
+    {
+      "date": "2023-08-01",
+      "type": "win",
+      "chapter": "building",
+      "title": "Champion — National Hackathon 2023, LU CSE Carnival",
+      "note": "Building under pressure with Team LU Ovream.",
+      "precision": "year"
+    },
+    {
+      "date": "2024-06-01",
+      "type": "milestone",
+      "chapter": "building",
+      "title": "OneIELTS development begins",
+      "note": "A second AI-powered test-prep platform — multi-tenant SaaS with a QTI 3.0 exam engine.",
+      "precision": "year"
+    },
+    {
+      "date": "2025-01-01",
+      "type": "milestone",
+      "chapter": "leading",
+      "title": "Promoted to Senior Software Engineer",
+      "note": "Led backend engineering across two AI-powered English test-prep platforms — architecture, mentoring, and production releases.",
+      "learning": "Seniority is responsibility for other people's growth, not just code.",
+      "precision": "month"
+    },
+    {
+      "date": "2026-07-14",
+      "type": "milestone",
+      "chapter": "leading",
+      "title": "The trail begins",
+      "note": "Started logging growth publicly — wins, obstacles, and lessons, one day at a time.",
+      "learning": "Consistency compounds. The tree only grows if you feed it.",
+      "precision": "day"
+    }
+  ]
+}

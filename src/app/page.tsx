@@ -1,5 +1,6 @@
 import { Header } from "@/components/header";
 import { Hero } from "@/components/hero";
+import { LivingTrail } from "@/components/living-trail";
 import { Experience } from "@/components/experience";
 import { Skills } from "@/components/skills";
 import { Projects } from "@/components/projects";
@@ -13,9 +14,16 @@ export default function Home() {
     <div className="min-h-screen bg-zinc-950">
       <Header />
       <main>
-        <Hero />
+        {/* The Living Trail is the home of this portfolio */}
+        <LivingTrail />
 
         {/* Divider */}
+        <div className="max-w-5xl mx-auto px-4">
+          <div className="h-px bg-gradient-to-r from-transparent via-zinc-800 to-transparent" />
+        </div>
+
+        <Hero />
+
         <div className="max-w-5xl mx-auto px-4">
           <div className="h-px bg-gradient-to-r from-transparent via-zinc-800 to-transparent" />
         </div>
