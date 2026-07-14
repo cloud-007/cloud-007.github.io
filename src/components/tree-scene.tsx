@@ -174,24 +174,28 @@ export default function TreeScene({
             roots.options.bark.type = "willow";
             roots.options.bark.tint = 0xcbb9a2;
             roots.options.branch.levels = 3;
-            roots.options.branch.length[0] = 21;
-            roots.options.branch.radius[0] = 2.6 + (years / 27) * 0.9;
-            roots.options.branch.taper[0] = 0.8;
+            // Short root crown: laterals must fan out right at the soil
+            // line, not several units below it.
+            roots.options.branch.length[0] = 9;
+            roots.options.branch.radius[0] = 2.8 + (years / 27) * 0.9;
+            roots.options.branch.taper[0] = 0.7;
             roots.options.branch.children[0] = Math.min(10, 4 + rootsCount);
             roots.options.branch.children[1] = 4;
             roots.options.branch.children[2] = 3;
-            roots.options.branch.angle[1] = 62;
-            roots.options.branch.angle[2] = 48;
-            roots.options.branch.angle[3] = 38;
+            roots.options.branch.start[1] = 0.05;
+            roots.options.branch.start[2] = 0.15;
+            roots.options.branch.angle[1] = 64;
+            roots.options.branch.angle[2] = 46;
+            roots.options.branch.angle[3] = 36;
             roots.options.branch.gnarliness[1] = 0.35;
             roots.options.branch.gnarliness[2] = 0.4;
             roots.options.branch.gnarliness[3] = 0.3;
             roots.options.branch.length[1] = 17;
-            roots.options.branch.length[2] = 11;
-            roots.options.branch.length[3] = 7;
+            roots.options.branch.length[2] = 13;
+            roots.options.branch.length[3] = 8;
             // Roots flee the sky: gravity bias while inverted.
             roots.options.branch.force.direction.y = 1;
-            roots.options.branch.force.strength = 0.03;
+            roots.options.branch.force.strength = 0.05;
             roots.options.leaves.count = 0;
             roots.generate();
             // leaves.count is not always honored at generation time — make
@@ -199,8 +203,8 @@ export default function TreeScene({
             if (roots.leavesMesh) roots.leavesMesh.visible = false;
         };
         applyRootOptions();
-        roots.scale.set(1.2, -1, 1.2);
-        roots.position.y = 1.2;
+        roots.scale.set(1.25, -1.1, 1.25);
+        roots.position.y = 0.5;
         scene.add(roots);
 
         /* ── Framing ── */
