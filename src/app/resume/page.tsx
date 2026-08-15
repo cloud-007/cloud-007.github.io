@@ -283,7 +283,7 @@ export default function ResumePage() {
               <h2 className="rp-section-head">Summary</h2>
               <hr className="rp-rule" />
               <p className="rp-summary">
-                Full-Stack AI Engineer with 3+ years in software engineering — building scalable backends, cross-platform mobile apps, and AI-powered SaaS platforms. Ships production systems with Django, Flutter, and Next.js, and delivers faster using AI-native tooling like Claude Code and Cursor. Proven track record in multi-tenant architecture, real-time speech evaluation pipelines, and end-to-end product delivery across 93+ production releases. Strong background in competitive programming with 2,000+ problems solved and ICPC Asia Dhaka Regional participation.
+                Full-Stack AI Engineer with 3+ years in software engineering. Builds scalable backends, cross-platform mobile apps, and AI-powered SaaS platforms. Ships production systems with Django, Flutter, and Next.js, and delivers faster using AI-native tooling like Claude Code and Cursor. Proven track record in multi-tenant architecture, real-time speech evaluation pipelines, and end-to-end product delivery across 93+ production releases. Strong background in competitive programming with 2,000+ problems solved and ICPC Asia Dhaka Regional participation.
               </p>
             </section>
 
@@ -313,12 +313,12 @@ export default function ResumePage() {
                   {" "}&mdash; AI-powered English test preparation platforms.
                 </p>
                 <ul className="rp-ul">
-                  <li>Architected <span className="rp-kw">multi-tenant SaaS backend</span> with django-multitenant — full data isolation, custom domain routing, per-tenant scoring config and feature flags.</li>
+                  <li>Architected <span className="rp-kw">multi-tenant SaaS backend</span> with django-multitenant: full data isolation, custom domain routing, per-tenant scoring config and feature flags.</li>
                   <li>Designed <span className="rp-kw">QTI 3.0-compliant exam engine</span> supporting 100+ question types across IELTS Academic and General, with XML parsing, interaction routing, and strategy-pattern band-score normalization.</li>
-                  <li>Built <span className="rp-kw">real-time speech evaluation pipeline</span> integrating Speech Recognition, Pronunciation Assessment, and NLP Processing — end-to-end scoring in under 15 seconds.</li>
+                  <li>Built <span className="rp-kw">real-time speech evaluation pipeline</span> integrating Speech Recognition, Pronunciation Assessment, and NLP Processing, with end-to-end scoring in under 15 seconds.</li>
                   <li>Engineered <span className="rp-kw">multi-gateway payment infrastructure</span> with 5 providers (Stripe, Razorpay, SSLCommerz, Google Play, Apple), subscription lifecycle management, and webhook idempotency.</li>
-                  <li>Built <span className="rp-kw">Studio API layer</span> for moderator platform — content authoring, expert evaluation queue, exam rejudge pipelines, and KPI analytics for subscriptions and engagement.</li>
-                  <li>Set up <span className="rp-kw">production observability stack</span> with Prometheus and Grafana — health monitoring, per-API latency instrumentation, and alerting.</li>
+                  <li>Built <span className="rp-kw">Studio API layer</span> for moderator platform: content authoring, expert evaluation queue, exam rejudge pipelines, and KPI analytics for subscriptions and engagement.</li>
+                  <li>Set up <span className="rp-kw">production observability stack</span> with Prometheus and Grafana: health monitoring, per-API latency instrumentation, and alerting.</li>
                   <li>Mentored junior engineers through code reviews, PR feedback, and architectural walkthroughs.</li>
                 </ul>
                 <p className="rp-stack"><b>Stack:</b> Django &middot; DRF &middot; Python &middot; PostgreSQL &middot; Redis &middot; Celery &middot; FastAPI &middot; Docker &middot; GCP &middot; Prometheus &middot; Grafana &middot; Next.js &middot; TypeScript</p>
@@ -333,12 +333,12 @@ export default function ResumePage() {
                   {" "}&mdash; designed and shipped the Flutter app from day one and built the Django AI scoring backend.
                 </p>
                 <ul className="rp-ul">
-                  <li>Designed and built <span className="rp-kw">Flutter cross-platform app</span> from scratch — all four PTE modules (Speaking, Writing, Reading, Listening) with 20+ task types, audio recording, and timer management.</li>
+                  <li>Designed and built <span className="rp-kw">Flutter cross-platform app</span> from scratch: all four PTE modules (Speaking, Writing, Reading, Listening) with 20+ task types, audio recording, and timer management.</li>
                   <li>Built task-group-based <span className="rp-kw">mock test engine</span> with modular exam templates, configurable time allocations, automated question progression, and multi-dimensional score breakdowns.</li>
                   <li>Engineered <span className="rp-kw">AI scoring backend</span> for spoken and written PTE tasks using Speech Recognition, Pronunciation Assessment, and NLP Processing for multi-trait evaluation.</li>
                   <li>Integrated <span className="rp-kw">subscription billing across 4 platforms</span> (Stripe, SSLCommerz, Google Play, Apple App Store) with webhook handling, transaction deduplication, and in-app purchase verification.</li>
                   <li>Built <span className="rp-kw">Django admin and private API</span> for content moderation, question bank management, subscription analytics with regional reporting, and user acquisition dashboards.</li>
-                  <li>Led <span className="rp-kw">93+ production releases</span> across Android, iOS, and Web — managed release pipelines, Firebase config, and CI/CD across all channels.</li>
+                  <li>Led <span className="rp-kw">93+ production releases</span> across Android, iOS, and Web; managed release pipelines, Firebase config, and CI/CD across all channels.</li>
                 </ul>
                 <p className="rp-stack"><b>Stack:</b> Flutter &middot; Dart &middot; Riverpod &middot; Django &middot; DRF &middot; Python &middot; PostgreSQL &middot; Redis &middot; Celery &middot; Firebase &middot; Next.js &middot; TypeScript</p>
               </div>
@@ -357,7 +357,7 @@ export default function ResumePage() {
                   <span className="rp-proj-dates">2026</span>
                 </div>
                 <ul className="rp-ul">
-                  <li>Shipped a <span className="rp-kw">bilingual (FR/EN) ordering and marketing site</span> for a Japanese restaurant in Chartres, France — Next.js 16 App Router, React 19, and server actions with translated URL segments (/en/order, /fr/commander) and locale-aware checkout.</li>
+                  <li>Shipped a <span className="rp-kw">bilingual (FR/EN) ordering and marketing site</span> for a Japanese restaurant in Chartres, France, on Next.js 16 App Router, React 19, and server actions with translated URL segments (/en/order, /fr/commander) and locale-aware checkout.</li>
                   <li>Built an <span className="rp-kw">ordering engine</span> with a hydration-safe Zustand cart, scheduled-ahead time slots, per-item option pickers, and server-enforced time-of-day availability windows.</li>
                   <li>Engineered <span className="rp-kw">triple-channel notifications</span> (Telegram bot, customer email, restaurant inbox) via React Email + ZeptoMail, plus AI-discoverable SEO (JSON-LD, per-locale canonical + hreflang, llms.txt) and a GA4 ecommerce funnel.</li>
                 </ul>
@@ -419,7 +419,7 @@ export default function ResumePage() {
                 <div className="rp-block-row"><span className="rp-co">IEEE Computer Society &mdash; LU Student Branch Chapter</span></div>
                 <div className="rp-block-sub"><span className="rp-role">Chair</span><span className="rp-dates">04/2022 &ndash; 05/2023</span></div>
                 <ul className="rp-ul">
-                  <li>Established the IEEE CS Student Branch Chapter at LU — organized seminars, webinars, and technical workshops with industry speakers.</li>
+                  <li>Established the IEEE CS Student Branch Chapter at LU; organized seminars, webinars, and technical workshops with industry speakers.</li>
                   <li>Grew chapter <span className="rp-kw">membership by 20%+</span> through outreach programs; delivered a multi-session <span className="rp-kw">Flutter bootcamp</span>.</li>
                   <li>Served as problem setter and judge for inter-university programming contests.</li>
                 </ul>

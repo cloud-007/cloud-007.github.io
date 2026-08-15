@@ -7,21 +7,21 @@ const education = [
     institution: "Leading University",
     location: "Sylhet, Bangladesh",
     degree: "B.Sc. in Computer Science and Engineering",
-    period: "Sep 2018 — Dec 2022",
+    period: "Sep 2018 – Dec 2022",
     detail: "GPA: 3.6 / 4.0",
   },
   {
     institution: "Beanibazar Govt. College",
     location: "Sylhet, Bangladesh",
-    degree: "Higher Secondary Certificate — Science",
-    period: "2016 — 2018",
+    degree: "Higher Secondary Certificate (Science)",
+    period: "2016 – 2018",
     detail: "",
   },
   {
     institution: "Purba Muria High School",
     location: "Sylhet, Bangladesh",
     degree: "Secondary School Certificate",
-    period: "2011 — 2016",
+    period: "2011 – 2016",
     detail: "",
   },
 ];
@@ -36,7 +36,7 @@ export function Education() {
           <h2 className="text-3xl md:text-4xl font-extrabold text-zinc-50 tracking-tight mt-2">
             Education
           </h2>
-          <p className="text-zinc-500 mt-2 text-sm">Academic journey and qualifications</p>
+          <p className="text-zinc-500 mt-2 text-sm">Degrees and qualifications</p>
         </div>
 
         <div className="space-y-3">

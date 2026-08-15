@@ -1,7 +1,7 @@
 /**
  * Growth algorithm for the Living Trail.
  *
- * The tree should reflect *momentum*, not just history. The algorithm
+ * The tree should reflect *momentum* as well as history. The algorithm
  * compares recency-weighted activity in the last 90 days against the 90
  * days before that and decides whether the trail is growing, steady, or
  * declining. It is a pure function of (entries, now), so every new entry
@@ -23,7 +23,7 @@
  *   so history builds a floor that one quiet month cannot erase)
  *   + momentum component (recent activity, max 40).
  * - Vitality (0.3–1) drives how lush the tree is drawn. It never reaches
- *   zero — the tree can wilt, but it does not die.
+ *   zero: the tree can wilt, but it does not die.
  */
 
 export type EntryType = "milestone" | "win" | "obstacle" | "learning";

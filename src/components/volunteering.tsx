@@ -5,8 +5,8 @@ import { Users, Calendar } from "lucide-react";
 const roles = [
   {
     title: "Chair",
-    org: "IEEE Computer Society — LU SB Chapter",
-    period: "Apr 2022 — May 2023",
+    org: "IEEE Computer Society, LU SB Chapter",
+    period: "Apr 2022 – May 2023",
     bullets: [
       "Helped establish the chapter and launch key community initiatives",
       "Organized seminars, webinars, and technical events with industry speakers",
@@ -18,7 +18,7 @@ const roles = [
   {
     title: "ACM Coordinator",
     org: "Leading University Computer Club",
-    period: "Jan 2022 — Dec 2023",
+    period: "Jan 2022 – Dec 2023",
     bullets: [
       "Conducted peer-to-peer sessions on Data Structures and Algorithms",
       "Mentored juniors in competitive programming and problem solving",

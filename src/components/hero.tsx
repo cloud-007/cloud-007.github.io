@@ -63,7 +63,7 @@ export function Hero() {
                 <div className="grid grid-cols-1 md:grid-cols-12 gap-3">
                     {/* ── Intro card ── */}
                     <div className="bento-card md:col-span-8 p-8 flex flex-col justify-between min-h-[300px] relative">
-                        {/* Mobile avatar — visible only below md */}
+                        {/* Mobile avatar, visible only below md */}
                         <div className="md:hidden absolute top-4 right-4 w-20 h-20 rounded-2xl overflow-hidden border-2 border-zinc-700 shrink-0">
                             <Image
                                 src="/images/profile.jpg"
@@ -87,7 +87,7 @@ export function Hero() {
                             </h1>
                             <p className="text-zinc-400 text-base leading-relaxed text-justify">
                                 Full-Stack AI Engineer with 3+ years in software
-                                engineering — building scalable backends,
+                                engineering. Builds scalable backends,
                                 cross-platform mobile apps, and AI-powered SaaS
                                 platforms. Ships production systems with Django,
                                 Flutter, and Next.js, and delivers faster using
@@ -117,7 +117,7 @@ export function Hero() {
                         </div>
                     </div>
 
-                    {/* ── Profile image card — hidden on mobile ── */}
+                    {/* Profile image card, hidden on mobile */}
                     <div className="hidden md:block bento-card md:col-span-4 overflow-hidden relative min-h-[300px]">
                         <Image
                             src="/images/profile.jpg"
@@ -141,7 +141,7 @@ export function Hero() {
                         </div>
                     </div>
 
-                    {/* ── Stats — 2×2 on mobile, 4-col on desktop ── */}
+                    {/* Stats: 2x2 on mobile, 4-col on desktop */}
                     <div className="col-span-1 md:col-span-12 grid grid-cols-2 md:grid-cols-4 gap-3">
                         {stats.map((stat) => (
                             <div
@@ -206,7 +206,7 @@ export function Hero() {
                         <div className="mt-5 pt-4 border-t border-zinc-800 flex items-center gap-2">
                             <span className="w-1.5 h-1.5 bg-emerald-400 rounded-full" />
                             <p className="text-zinc-500 text-xs">
-                                Available for new opportunities — backend,
+                                Available for new opportunities: backend,
                                 mobile & AI
                             </p>
                         </div>

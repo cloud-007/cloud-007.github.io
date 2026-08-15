@@ -6,8 +6,8 @@ const highlights = [
   {
     icon: Trophy,
     title: "ICPC Asia Dhaka Regional",
-    detail: "51st place — Dhaka Regional 2020",
-    sub: "87th / 1,700+ teams — Preliminary 2021",
+    detail: "51st place, Dhaka Regional 2020",
+    sub: "87th / 1,700+ teams, Preliminary 2021",
     color: "text-amber-400",
     bg: "bg-amber-500/10",
     border: "border-amber-500/20",
@@ -15,7 +15,7 @@ const highlights = [
   {
     icon: Award,
     title: "National Hackathon 2023",
-    detail: "Champion — LU CSE Carnival",
+    detail: "Champion, LU CSE Carnival",
     sub: "Team: LU Ovream",
     color: "text-emerald-400",
     bg: "bg-emerald-500/10",
@@ -24,7 +24,7 @@ const highlights = [
   {
     icon: Medal,
     title: "LU TechStorm 4",
-    detail: "Champion — Programming Contest 2021",
+    detail: "Champion, Programming Contest 2021",
     sub: "Team Catapult",
     color: "text-sky-400",
     bg: "bg-sky-500/10",

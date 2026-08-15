@@ -1,7 +1,7 @@
 import { ImageResponse } from "next/og";
 
 export const dynamic = "force-static";
-export const alt = "Mazharul Islam — Full-Stack AI Engineer";
+export const alt = "Mazharul Islam | Full-Stack AI Engineer";
 export const size = { width: 1200, height: 630 };
 export const contentType = "image/png";
 

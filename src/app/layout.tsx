@@ -10,9 +10,9 @@ const inter = Inter({
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://cloud-007.github.io"),
-  title: "Mazharul Islam — Full-Stack AI Engineer",
+  title: "Mazharul Islam | Full-Stack AI Engineer",
   description:
-    "Full-Stack AI Engineer with 3+ years in software engineering — building scalable backends, cross-platform mobile apps, and AI-powered SaaS platforms with Django, Flutter, and Next.js.",
+    "Full-Stack AI Engineer with 3+ years in software engineering. Builds scalable backends, cross-platform mobile apps, and AI-powered SaaS platforms with Django, Flutter, and Next.js.",
   keywords: [
     "Full-Stack AI Engineer",
     "Software Engineer",
@@ -35,9 +35,9 @@ export const metadata: Metadata = {
   ],
   authors: [{ name: "Md Mazharul Islam Emon" }],
   openGraph: {
-    title: "Mazharul Islam — Full-Stack AI Engineer",
+    title: "Mazharul Islam | Full-Stack AI Engineer",
     description:
-      "Full-Stack AI Engineer with 3+ years in software engineering — building scalable backends, cross-platform mobile apps, and AI-powered SaaS platforms with Django, Flutter, and Next.js.",
+      "Full-Stack AI Engineer with 3+ years in software engineering. Builds scalable backends, cross-platform mobile apps, and AI-powered SaaS platforms with Django, Flutter, and Next.js.",
     type: "website",
   },
 };

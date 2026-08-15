@@ -7,7 +7,7 @@ const experiences = [
     title: "Senior Software Engineer",
     company: "LII Lab",
     companyUrl: "https://www.liilab.com/",
-    period: "Jan 2025 — Apr 2026",
+    period: "Jan 2025 – Apr 2026",
     current: false,
     description:
       "Led backend engineering and product development across two AI-powered English test preparation platforms, from system design and architecture reviews to mentoring engineers and shipping production features.",
@@ -43,7 +43,7 @@ const experiences = [
     title: "Software Engineer",
     company: "LII Lab",
     companyUrl: "https://www.liilab.com/",
-    period: "Nov 2022 — Dec 2024",
+    period: "Nov 2022 – Dec 2024",
     current: false,
     description:
       "Full-stack ownership of OnePTE, designing and shipping the Flutter app from day one to a multi-brand cross-platform product, and building the Django backend powering AI scoring, exam management, and billing.",
@@ -84,7 +84,7 @@ export function Experience() {
       <div className="max-w-5xl mx-auto">
         {/* Section header */}
         <div className="mb-12">
-          <span className="section-label">Professional Journey</span>
+          <span className="section-label">Experience</span>
           <h2 className="text-3xl md:text-4xl font-extrabold text-zinc-50 tracking-tight mt-2">
             Work Experience
           </h2>

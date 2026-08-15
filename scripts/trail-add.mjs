@@ -34,7 +34,7 @@ async function ask(question, { required = false, fallback = "" } = {}) {
 
 const today = new Date().toISOString().slice(0, 10);
 
-console.log("\n🌱 Living Trail — new entry\n");
+console.log("\n🌱 Living Trail: new entry\n");
 
 const date = await ask("Date [YYYY-MM-DD]", { fallback: today });
 if (!/^\d{4}-\d{2}-\d{2}$/.test(date)) {
@@ -63,10 +63,10 @@ if (!chapterIds.includes(chapter)) {
   process.exit(1);
 }
 
-const title = await ask("Title — what happened", { required: true });
-const note = await ask("Note — a little more detail (optional)");
-const obstacle = await ask("Obstacle — what stood in the way (optional)");
-const learning = await ask("Learning — what it taught you (optional)");
+const title = await ask("Title (what happened)", { required: true });
+const note = await ask("Note, a little more detail (optional)");
+const obstacle = await ask("Obstacle, what stood in the way (optional)");
+const learning = await ask("Learning, what it taught you (optional)");
 
 rl.close();
 

@@ -247,7 +247,7 @@ export function LivingTrail() {
         ? new Date().getFullYear() - config.growingSince
         : null;
 
-    /* Deterministic seed — the same trail data always grows the same tree. */
+    /* Deterministic seed: the same trail data always grows the same tree. */
     const seed = useMemo(() => {
         let h = 2166136261;
         const key = entries.map((e) => e.date).join();
@@ -282,7 +282,7 @@ export function LivingTrail() {
             });
     }, []);
 
-    /* Journey clustered into chapters, newest chapter first, newest entry
+    /* Entries clustered into chapters, newest chapter first, newest entry
        first inside each chapter. */
     const groupedTimeline = useMemo(() => {
         return config.chapters
@@ -331,7 +331,7 @@ export function LivingTrail() {
         // clearance needed below the fixed navbar.
         <section id="trail" className="px-4 pb-20 pt-36 md:pt-40">
             <div className="max-w-5xl mx-auto">
-                {/* Creed — his own words, above the tree */}
+                {/* Creed, his own words, above the tree */}
                 <figure className="relative max-w-3xl mx-auto text-center mb-12 px-2">
                     <span
                         aria-hidden

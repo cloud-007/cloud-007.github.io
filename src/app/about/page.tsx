@@ -10,9 +10,9 @@ import { Volunteering } from "@/components/volunteering";
 import { Footer } from "@/components/footer";
 
 export const metadata: Metadata = {
-  title: "About — Md Mazharul Islam Emon",
+  title: "About | Md Mazharul Islam Emon",
   description:
-    "Experience, skills, projects, achievements, education, and volunteering of Md Mazharul Islam Emon — Full-Stack AI Engineer.",
+    "Experience, skills, projects, achievements, education, and volunteering of Md Mazharul Islam Emon, Full-Stack AI Engineer.",
 };
 
 const Divider = () => (

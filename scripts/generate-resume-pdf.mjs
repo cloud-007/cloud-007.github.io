@@ -19,7 +19,7 @@ const TARGETS = [
     route: "/resume",
     file: "resume.pdf",
     meta: {
-      title: "Md Mazharul Islam Emon — Full-Stack AI Engineer",
+      title: "Md Mazharul Islam Emon | Full-Stack AI Engineer",
       subject: "Resume / CV",
       keywords: [
         "Full-Stack AI Engineer",
@@ -36,7 +36,7 @@ const TARGETS = [
     route: "/resume-professional",
     file: "resume-professional.pdf",
     meta: {
-      title: "Md Mazharul Islam Emon — Curriculum Vitae",
+      title: "Md Mazharul Islam Emon | Curriculum Vitae",
       subject: "Academic Curriculum Vitae",
       keywords: [
         "Curriculum Vitae",

@@ -161,7 +161,7 @@ body {
   animation: fadeUp 0.5s ease-out forwards;
 }
 
-/* Living Trail — weather layers */
+/* Living Trail: weather layers */
 .trail-raindrop {
   position: absolute;
   top: -8%;

@@ -8,16 +8,16 @@ import { Tree } from "@dgreenheck/ez-tree";
  * Photoreal tree scene (three.js + EZ-Tree).
  *
  * A compact, broad-canopied tree above ground and a root system below it,
- * exposed against a dark soil cross-section. The roots are a second EZ-Tree —
- * leafless, gnarled, inverted — so they get the same PBR bark realism as the
+ * exposed against a dark soil cross-section. The roots are a second EZ-Tree
+ * (leafless, gnarled, inverted) so they get the same PBR bark realism as the
  * trunk.
  *
  * The soil line lives at world y = SOIL_Y. Everything above it is sky;
  * everything below is earth. The join between trunk and roots is made
- * seamless three ways at once:
+ * consistent three ways at once:
  *   1. trunk base radius and root crown radius are computed from ONE value,
  *   2. the roots are hard-clipped at the soil line (no tip can ever rise into
- *      the sky — a GPU guarantee, not a physics nudge), and
+ *      the sky, a GPU guarantee rather than a physics nudge), and
  *   3. a fading topsoil layer is drawn in FRONT of the trunk→root junction, so
  *      the exact transition is buried under earth the way a real trunk enters
  *      the ground, and the roots emerge from under it into the cross-section.
@@ -70,7 +70,7 @@ function makeSoilTexture(): THREE.CanvasTexture {
     g.addColorStop(1, "#080503");
     ctx.fillStyle = g;
     ctx.fillRect(0, 0, 1024, 512);
-    // fine organic speckle — subtle, fading with depth
+    // fine organic speckle, subtle, fading with depth
     for (let i = 0; i < 1800; i++) {
         const y = Math.random() * 512;
         const depth = y / 512;
@@ -112,11 +112,11 @@ function makeTopsoilTexture(): THREE.CanvasTexture {
     // the surface hides the trunk↔root junction; it fades quickly so the solid
     // root flare is revealed just beneath it.
     const g = ctx.createLinearGradient(0, 0, 0, 512);
-    g.addColorStop(0.0, "rgba(60, 44, 29, 1)");    // surface line — opaque topsoil
+    g.addColorStop(0.0, "rgba(60, 44, 29, 1)");    // surface line, opaque topsoil
     g.addColorStop(0.14, "rgba(42, 30, 20, 1)");   // narrow opaque band over the join
     g.addColorStop(0.34, "rgba(28, 19, 12, 0.5)"); // begin revealing the flare
     g.addColorStop(0.6, "rgba(16, 11, 6, 0.14)");
-    g.addColorStop(1.0, "rgba(8, 5, 3, 0)");        // transparent — cross-section
+    g.addColorStop(1.0, "rgba(8, 5, 3, 0)");        // transparent, cross-section
     ctx.fillStyle = g;
     ctx.fillRect(0, 0, 1024, 512);
     // A soft highlight right at the surface line so it catches the sky light.
@@ -125,7 +125,7 @@ function makeTopsoilTexture(): THREE.CanvasTexture {
     hl.addColorStop(1, "rgba(126, 100, 68, 0)");
     ctx.fillStyle = hl;
     ctx.fillRect(0, 0, 1024, 26);
-    // Soft, wide contact shadow under the trunk — grounds it without a hard block.
+    // Soft, wide contact shadow under the trunk; grounds it without a hard block.
     const sh = ctx.createRadialGradient(512, 24, 8, 512, 24, 320);
     sh.addColorStop(0, "rgba(0, 0, 0, 0.32)");
     sh.addColorStop(1, "rgba(0, 0, 0, 0)");
@@ -289,7 +289,7 @@ export default function TreeScene({
             roots.options.branch.radius[0] = baseRadius;
             roots.options.branch.taper[0] = 0.74;
             // Fewer but thick primary roots that fan out into denser secondaries
-            // — reads as a solid root ball, not spider legs.
+            // reads as a solid root ball, not spider legs.
             roots.options.branch.children[0] = Math.min(8, 5 + Math.round(rootsCount / 2));
             roots.options.branch.children[1] = 4;
             roots.options.branch.children[2] = 3;
@@ -309,8 +309,8 @@ export default function TreeScene({
             roots.options.leaves.count = 0;
             roots.generate();
             if (roots.leavesMesh) roots.leavesMesh.visible = false;
-            // Invert by rotation (not negative scale) so surface normals — and
-            // therefore lighting — stay correct on the roots. A gently wider
+            // Invert by rotation (not negative scale) so surface normals (and
+            // therefore lighting) stay correct on the roots. A gently wider
             // spread than the trunk reads as a natural root flare.
             roots.rotation.x = Math.PI;
             roots.scale.set(1.22, 1.05, 1.22);
@@ -366,7 +366,7 @@ export default function TreeScene({
         let raf = 0;
         let running = false;
         // Manual delta (THREE.Clock is deprecated in favour of THREE.Timer,
-        // which isn't a core export — a performance.now() delta avoids both).
+        // which isn't a core export; a performance.now() delta avoids both).
         let last = performance.now();
         let elapsed = 0;
 

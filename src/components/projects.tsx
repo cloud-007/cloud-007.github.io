@@ -6,7 +6,7 @@ const professionalProjects = [
   {
     name: "OneIELTS",
     tagline: "Multi-Tenant IELTS Academic & General Preparation Platform",
-    period: "2024 — Present",
+    period: "2024 – Present",
     label: "Professional · LiiLab",
     liveUrl: "https://oneielts.com",
     description:
@@ -30,11 +30,11 @@ const professionalProjects = [
   {
     name: "OnePTE",
     tagline: "PTE Academic & Core Exam Preparation Platform",
-    period: "2022 — Present",
+    period: "2022 – Present",
     label: "Professional · LiiLab",
     liveUrl: "https://onepte.com",
     description:
-      "Full-stack EdTech platform for PTE Academic and PTE Core exam prep. Designed and shipped the Flutter cross-platform app from the ground up, built the Django AI scoring backend, and delivered a GPU-backed speech processing microservice — with 93+ production releases across Android, iOS, and Web.",
+      "Full-stack EdTech platform for PTE Academic and PTE Core exam prep. Designed and shipped the Flutter cross-platform app from the ground up, built the Django AI scoring backend, and delivered a GPU-backed speech processing microservice, with 93+ production releases across Android, iOS, and Web.",
     highlights: [
       "Led 93+ production mobile releases (Android, iOS, Web), managing release pipelines, Firebase configurations, and CI/CD across all platforms",
       "Designed the question practice and mock test system covering all four modules (Speaking, Writing, Reading, and Listening) with 20+ task types, configurable time windows, and automated question progression",
@@ -61,12 +61,12 @@ const clientProjects = [
     label: "Client",
     liveUrl: "https://sushilabrestaurant.com",
     description:
-      "Production bilingual (FR/EN) ordering and marketing site for a Japanese restaurant in Chartres, France. Designed and shipped end-to-end as a solo build on Next.js 16 App Router with Turbopack, React 19, and server actions — featuring translated URL segments (/en/order, /fr/commander) and locale-aware checkout.",
+      "Production bilingual (FR/EN) ordering and marketing site for a Japanese restaurant in Chartres, France. Designed and shipped end-to-end as a solo build on Next.js 16 App Router with Turbopack, React 19, and server actions, with translated URL segments (/en/order, /fr/commander) and locale-aware checkout.",
     highlights: [
       "Built an ordering engine with a hydration-safe Zustand cart, scheduled-ahead time slots, per-item option pickers, and server-enforced time-of-day availability windows (e.g., the lunch menu auto-locks outside hours)",
-      "Engineered triple-channel notifications for every order, reservation, and contact submission — Telegram bot, transactional customer email, and restaurant inbox — dispatched in parallel via React Email + ZeptoMail with strict cross-channel data parity",
-      "Implemented AI-discoverable SEO — JSON-LD (Restaurant, Menu with Schema.org availability windows, FAQ, Breadcrumb), dynamic sitemap, dynamic OG/Twitter images, geo meta tags, llms.txt + llms-full.txt for GPTBot/ClaudeBot/PerplexityBot, and a centralized canonical-URL module emitting per-locale canonical + hreflang (incl. x-default)",
-      "Instrumented a GA4 ecommerce funnel — add_to_cart, view_cart, begin_checkout, purchase, order_rejected — plus reservation, contact, language-switch, and Web Vitals events",
+      "Engineered triple-channel notifications for every order, reservation, and contact submission (Telegram bot, transactional customer email, and restaurant inbox), dispatched in parallel via React Email + ZeptoMail with strict cross-channel data parity",
+      "Implemented AI-discoverable SEO: JSON-LD (Restaurant, Menu with Schema.org availability windows, FAQ, Breadcrumb), dynamic sitemap, dynamic OG/Twitter images, geo meta tags, llms.txt + llms-full.txt for GPTBot/ClaudeBot/PerplexityBot, and a centralized canonical-URL module emitting per-locale canonical + hreflang (incl. x-default)",
+      "Instrumented a GA4 ecommerce funnel (add_to_cart, view_cart, begin_checkout, purchase, order_rejected) plus reservation, contact, language-switch, and Web Vitals events",
     ],
     technologies: [
       "Next.js 16", "React 19", "TypeScript", "Tailwind", "Zustand", "React Hook Form",
@@ -82,11 +82,11 @@ const personalProjects = [
   {
     name: "Projecto",
     tagline: "University Course & Proposal Management System",
-    period: "Oct 2022 — Dec 2022",
+    period: "Oct 2022 – Dec 2022",
     liveUrl: null,
     githubUrl: "https://github.com/cloud-007/projecto",
     description:
-      "A Django web app for managing university courses and student proposals, with four distinct user roles: unregistered visitors, students, teachers, and super users — each with a tailored permission set and feature scope.",
+      "A Django web app for managing university courses and student proposals, with four distinct user roles: unregistered visitors, students, teachers, and super users, each with a tailored permission set and feature scope.",
     highlights: [
       "Built a multi-role access system where students submit course proposals, teachers supervise and mark assigned proposals with filtering and search by student ID, and super users manage the complete course and faculty lifecycle",
       "Implemented AJAX-driven interactions for live proposal filtering, dynamic form handling, and inline updates without full page reloads, using jQuery and Bootstrap for responsive layouts",
@@ -104,12 +104,12 @@ const personalProjects = [
     liveUrl: null,
     githubUrl: "https://github.com/cloud-007",
     description:
-      "A Flutter MVP connecting users with professional consultants, featuring Google Sign-In authentication, real-time chat, and consultant profile browsing — structured with Clean Architecture from day one.",
+      "A Flutter MVP connecting users with professional consultants, featuring Google Sign-In authentication, real-time chat, and consultant profile browsing, structured with Clean Architecture from day one.",
     highlights: [
       "Built end-to-end authentication with Google Sign-In, Firebase session management, and user profile creation with Apple-style onboarding flow",
       "Implemented real-time chat between users and consultants using Firebase Firestore, with message threading and consultant online status indicators",
       "Structured the codebase using Clean Architecture with Riverpod state management, separating domain, data, and presentation layers into modular packages for a scalable, testable foundation",
-      "Delivered a complete working MVP — consultant discovery, profile browsing, and in-app messaging — within a tight timeframe as a solo project",
+      "Delivered a complete working MVP (consultant discovery, profile browsing, and in-app messaging) within a tight timeframe as a solo project",
     ],
     technologies: ["Flutter", "Dart", "Firebase", "Riverpod", "Clean Architecture"],
     accentFrom: "from-zinc-600",
