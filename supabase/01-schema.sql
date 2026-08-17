@@ -13,6 +13,38 @@
 -- The views are intentionally NOT security_invoker: they run with the owner's
 -- privileges so they can read the base tables that anon cannot touch. That is
 -- the mechanism that makes the filtering non-bypassable.
+--
+-- ---------------------------------------------------------------------------
+-- Supabase will flag every view here as "Security Definer View", CRITICAL.
+-- That warning is expected, and following it would make this database less
+-- safe, not more. Do not "fix" it.
+--
+-- The lint exists because a definer view bypasses RLS, which is dangerous when
+-- it is accidental. Here it is the entire design. Setting
+-- `security_invoker = true` was tested and it breaks the site outright:
+--
+--     ERROR: permission denied for table trail_entries
+--
+-- To make invoker views work, `anon` needs SELECT on the base tables plus an
+-- RLS policy. That was tested too, and it publishes:
+--
+--     private_note        -- working notes never meant to leave the database
+--     org                 -- employers hidden behind show_org = false
+--     people              -- names, employers and LinkedIn URLs of people
+--                            who have not consented to appear
+--
+-- because the redaction lives in the view's CASE expressions, and a column
+-- grant cannot express "hide this value on rows where a flag is false".
+--
+-- What actually protects the data, verified by request against the live
+-- project rather than assumed:
+--
+--   * anon has SELECT on the public_* views and nothing else
+--   * anon has no privilege of any kind on any base table  -> 401
+--   * anon cannot INSERT, UPDATE or DELETE through a view   -> 401
+--   * each view filters to visibility = 'public' and redacts per row
+--
+-- Acknowledge the lint in the Supabase dashboard with that reasoning.
 -- ============================================================================
 
 -- ---------------------------------------------------------------------------
