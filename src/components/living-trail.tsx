@@ -22,6 +22,7 @@ import {
 import dynamic from "next/dynamic";
 import { useSiteContent } from "@/lib/use-content";
 import {
+    describePerson,
     formatEntryRange,
     TEASER_LINE,
     type TrailEntry,
@@ -242,6 +243,12 @@ function EntryCard({
     entry: TrailEntry;
     traitLabels: Record<string, string>;
 }) {
+    /* People without consent arrive with no name, only a role. Anyone with
+       neither is dropped rather than rendered as an empty slot. */
+    const people = entry.people
+        .map(describePerson)
+        .filter((p): p is string => Boolean(p));
+
     return (
         <article className="bento-card p-5" id={entry.slug}>
             <div className="flex flex-wrap items-center gap-2.5 mb-2">
@@ -291,10 +298,10 @@ function EntryCard({
                             {entry.note}
                         </p>
                     )}
-                    {entry.teammates.length > 0 && (
+                    {people.length > 0 && (
                         <p className="flex items-start gap-2 text-zinc-500 text-xs mt-2.5">
                             <Users className="w-3.5 h-3.5 mt-0.5 shrink-0" />
-                            <span>{entry.teammates.join(" · ")}</span>
+                            <span>{people.join(" · ")}</span>
                         </p>
                     )}
                     {entry.obstacle && (

@@ -50,6 +50,11 @@ tab, or the committed snapshot.
 1. **SQL Editor** -> **New query**.
 2. Paste the entire contents of `02-seed.sql`. **Run**.
 3. **New query** again, paste `03-seed-content.sql`. **Run**.
+4. **New query** again, paste `04-corrections.sql`. **Run**.
+
+`04-corrections.sql` does the things an upsert cannot: it deletes rows, changes
+visibility, and rewrites claims that turned out to be wrong. Re-running
+`01-schema.sql` first is what upgrades an existing database.
 
 Everything unverified or sensitive is seeded as `visibility = 'private'`. It is
 in your database, invisible on the site, absent from the committed snapshot, and
@@ -130,9 +135,32 @@ true on exactly one.
 |---|---|
 | `show_org` | the company name is stripped from the API response |
 | `show_outcome` | the outcome is stripped |
-| `show_teammates` | the names are stripped |
 | `teaser` | only the title survives; everything else returns null |
 | `private_note` | never published, whatever else you set |
+
+### Naming people: consent per person
+
+`trail_entries.people` holds one object per person:
+
+```json
+[{"name": "Ada Lovelace", "role": "Senior Engineering Manager",
+  "org": "Acme", "consent": false}]
+```
+
+With `consent: false` the **name and the employer never leave the database**.
+The view returns the role alone, and the entry renders as *"a Senior
+Engineering Manager"*. Role plus employer would still identify most people,
+which is why the org is withheld too. Set `consent: true` once that person has
+agreed, and the full description appears:
+
+```sql
+update trail_entries
+set people = jsonb_set(people, '{0,consent}', 'true')
+where slug = 'some-entry-slug';
+```
+
+The index (`{0,...}`) is the person's position in the array, counting from
+zero. Everyone is seeded `false`.
 
 Flipping `teaser` from `true` to `false` is how an unlaunched project reveals
 itself on launch day. No deploy.

@@ -41,6 +41,17 @@ export interface Facet {
     sort_order: number;
 }
 
+/**
+ * A person named in an entry. The database holds a consent flag per person;
+ * without it the view strips the name before the row ever leaves Postgres, so
+ * `name` is simply absent here rather than present-and-hidden.
+ */
+export interface Person {
+    name?: string;
+    role?: string;
+    org?: string;
+}
+
 export interface TrailEntry {
     id: string;
     slug: string;
@@ -56,7 +67,7 @@ export interface TrailEntry {
     learning: string | null;
     org: string | null;
     outcome: string | null;
-    teammates: string[];
+    people: Person[];
     link_url: string | null;
     link_label: string | null;
     teaser: boolean;
@@ -300,3 +311,19 @@ export function formatEntryRange(entry: {
 }
 
 export const TEASER_LINE = "Building it now. Live soon.";
+
+/**
+ * How a person reads once consent has been applied.
+ *
+ *   consented        "Ada Lovelace, Senior Engineering Manager at Acme"
+ *   not consented    "a Senior Engineering Manager"  (employer stripped too)
+ *   no role either   null, so they are simply not listed
+ */
+export function describePerson(p: Person): string | null {
+    if (p.name) {
+        const trailing = [p.role, p.org && `at ${p.org}`].filter(Boolean).join(" ");
+        return trailing ? `${p.name}, ${trailing}` : p.name;
+    }
+    if (p.role) return p.org ? `a ${p.role} at ${p.org}` : `a ${p.role}`;
+    return null;
+}

@@ -54,4 +54,8 @@ next-env.d.ts
 # Supabase SQL editor, and let the database be their home after that.
 supabase/02-seed.sql
 supabase/03-seed-content.sql
+supabase/04-corrections.sql
 supabase/REVIEW.md
+
+# JetBrains project files
+.idea/

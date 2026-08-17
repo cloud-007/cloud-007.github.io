@@ -83,8 +83,13 @@ create table if not exists trail_entries (
   show_org        boolean not null default true,
   outcome         text,
   show_outcome    boolean not null default true,
-  teammates       text[] not null default '{}',
-  show_teammates  boolean not null default true,
+
+  -- People named in this entry, each with their OWN consent flag:
+  --   [{"name": "...", "role": "...", "org": "...", "consent": true}]
+  -- Without consent BOTH the name and the employer are stripped, and only the
+  -- role survives: "a principal software engineer". Role plus employer would
+  -- still identify most people, which is not anonymity.
+  people          jsonb not null default '[]'::jsonb,
 
   -- evidence
   link_url        text,
@@ -103,9 +108,45 @@ create table if not exists trail_entries (
   updated_at      timestamptz not null default now()
 );
 
+-- Upgrade an already-created table. `create table if not exists` above is a
+-- no-op once the table exists, so column changes have to be spelled out.
+--
+-- The view has to go first: Postgres refuses to drop a column while a view
+-- selects it. Every view is rebuilt further down anyway.
+drop view if exists public_trail_entries;
+
+alter table trail_entries add column if not exists people jsonb not null default '[]'::jsonb;
+
+do $$
+begin
+  if exists (
+    select 1 from information_schema.columns
+    where table_name = 'trail_entries' and column_name = 'teammates'
+  ) then
+    -- Carry existing names across with consent = false, ALWAYS. Not inherited
+    -- from show_teammates: that flag meant "this entry may display names", not
+    -- "this person agreed to be named". Treating it as consent would publish
+    -- everyone the moment the upgrade ran, which is the exact failure this
+    -- column exists to prevent. Consent is granted per person, by hand.
+    update trail_entries e
+    set people = coalesce((
+      select jsonb_agg(jsonb_build_object(
+        'name', t, 'role', null, 'org', null, 'consent', false
+      ))
+      from unnest(e.teammates) t
+    ), '[]'::jsonb)
+    where people = '[]'::jsonb and array_length(e.teammates, 1) > 0;
+
+    alter table trail_entries drop column teammates;
+    alter table trail_entries drop column if exists show_teammates;
+  end if;
+end $$;
+
 create index if not exists trail_entries_date_idx on trail_entries (date desc);
 create index if not exists trail_entries_visibility_idx on trail_entries (visibility);
 
+comment on column trail_entries.people is
+  'Per-person consent. consent=false strips name and org, keeping role only.';
 comment on column trail_entries.show_org is
   'false => the org name is stripped in the public view, not merely hidden in the UI.';
 comment on column trail_entries.teaser is
@@ -312,6 +353,13 @@ revoke all on chapters, domains, traits, trail_entries, entry_traits,
 -- The only surface the browser sees.
 -- ---------------------------------------------------------------------------
 
+-- Dropped and recreated rather than replaced, so that adding or removing a
+-- column in any view is a re-runnable change rather than an error.
+drop view if exists public_chapters, public_domains, public_traits,
+  public_trail_entries, public_profile, public_experience, public_projects,
+  public_education, public_volunteering, public_skills, public_judge_profiles,
+  public_stats, public_growth_weights;
+
 create or replace view public_chapters as
   select id, title, subtitle, sort_order
   from chapters
@@ -346,8 +394,17 @@ create or replace view public_trail_entries as
     case when e.teaser or not e.show_org then null else e.org end   as org,
     case when e.teaser or not e.show_outcome
          then null else e.outcome end                               as outcome,
-    case when e.teaser or not e.show_teammates
-         then '{}'::text[] else e.teammates end                     as teammates,
+    case when e.teaser then '[]'::jsonb else coalesce((
+      select jsonb_agg(
+        case when coalesce((p->>'consent')::boolean, false)
+             -- consented: name, role and org all travel
+             then jsonb_strip_nulls(jsonb_build_object(
+                    'name', p->>'name', 'role', p->>'role', 'org', p->>'org'))
+             -- not consented: name AND employer stay in the database
+             else jsonb_strip_nulls(jsonb_build_object('role', p->>'role'))
+        end)
+      from jsonb_array_elements(e.people) p
+    ), '[]'::jsonb) end                                             as people,
     case when e.teaser then null else e.link_url end                as link_url,
     case when e.teaser then null else e.link_label end              as link_label,
     e.teaser,

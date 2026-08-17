@@ -2,7 +2,7 @@
 
 import { Trophy, ExternalLink } from "lucide-react";
 import { useSiteContent } from "@/lib/use-content";
-import { formatEntryRange } from "@/lib/content";
+import { describePerson, formatEntryRange } from "@/lib/content";
 
 /* Rotating accents so a growing list of wins never looks monotonous, and so
    adding a win in Supabase needs no colour decision from you. */
@@ -88,11 +88,16 @@ export function Achievements() {
                       {win.org && `${win.org} · `}
                       {formatEntryRange(win)}
                     </p>
-                    {win.teammates.length > 0 && (
-                      <p className="text-zinc-600 text-xs mt-1">
-                        {win.teammates.join(" · ")}
-                      </p>
-                    )}
+                    {(() => {
+                      const people = win.people
+                        .map(describePerson)
+                        .filter((p): p is string => Boolean(p));
+                      return people.length > 0 ? (
+                        <p className="text-zinc-600 text-xs mt-1">
+                          {people.join(" · ")}
+                        </p>
+                      ) : null;
+                    })()}
                   </div>
                 </div>
               </div>
