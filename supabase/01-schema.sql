@@ -517,6 +517,22 @@ create or replace view public_stats as
 create or replace view public_growth_weights as
   select key, value from growth_weights;
 
+-- CRITICAL. Supabase runs `alter default privileges in schema public grant all
+-- on tables to anon, authenticated`, so every view created here is
+-- automatically granted INSERT, UPDATE and DELETE to the public role. A
+-- `grant select` is ADDITIVE: it does not take those away.
+--
+-- Without this revoke, anyone holding the anon key (which is public by design
+-- and shipped in the client bundle) can UPDATE through a view, and Postgres
+-- propagates a simple-column update straight to the base table. That is write
+-- access to the whole site for anybody who views source.
+--
+-- Revoke first, then grant back exactly the read that is wanted.
+revoke all on all tables in schema public from anon, authenticated;
+revoke all on all sequences in schema public from anon, authenticated;
+alter default privileges in schema public revoke all on tables from anon, authenticated;
+alter default privileges in schema public revoke all on sequences from anon, authenticated;
+
 grant select on
   public_chapters, public_domains, public_traits, public_trail_entries,
   public_profile, public_experience, public_projects, public_education,
