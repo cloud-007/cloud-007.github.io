@@ -65,3 +65,4 @@ supabase/05-links.sql
 .playwright-mcp/
 supabase/06-refinements.sql
 supabase/07-people.sql
+supabase/08-judges-and-interviews.sql
