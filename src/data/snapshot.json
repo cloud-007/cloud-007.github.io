@@ -1,0 +1,2284 @@
+{
+    "stats": [
+        {
+            "id": "d71fb6fc-f032-4fd8-b531-feae1e0c0f87",
+            "label": "Years Exp.",
+            "value": "3+",
+            "context": "hero",
+            "sort_order": 1
+        },
+        {
+            "id": "665a6cc6-f928-4e50-8a45-f8c65eed5aba",
+            "label": "Problems Solved",
+            "value": "2000+",
+            "context": "competitive",
+            "sort_order": 1
+        },
+        {
+            "id": "2593fef3-542c-4cc5-b700-8239c3f6e3b8",
+            "label": "Contests",
+            "value": "300+",
+            "context": "competitive",
+            "sort_order": 2
+        },
+        {
+            "id": "f652e7b0-7473-4874-a9a8-88f67948eaec",
+            "label": "Contests",
+            "value": "300+",
+            "context": "hero",
+            "sort_order": 2
+        },
+        {
+            "id": "1b0d6ee4-b3f3-48f7-b50f-5cb0670b5c50",
+            "label": "Problems Solved",
+            "value": "2K+",
+            "context": "hero",
+            "sort_order": 3
+        },
+        {
+            "id": "446a9448-6db2-442c-8ee1-d95cfb3d65e5",
+            "label": "CF Rating",
+            "value": "1603",
+            "context": "competitive",
+            "sort_order": 3
+        },
+        {
+            "id": "d010df99-9255-4185-8928-dda0e796f0dc",
+            "label": "CF Peak",
+            "value": "1603",
+            "context": "hero",
+            "sort_order": 4
+        },
+        {
+            "id": "3793e421-d4b3-43b3-998b-41afb832cad2",
+            "label": "CC Rating",
+            "value": "1965",
+            "context": "competitive",
+            "sort_order": 4
+        }
+    ],
+    "judges": [
+        {
+            "id": "4c481901-7885-4f82-8dc9-919f34fa8f7b",
+            "url": "https://codeforces.com/profile/cloud_007",
+            "name": "Codeforces",
+            "handle": "cloud_007",
+            "rating": "Max 1603",
+            "sort_order": 1
+        },
+        {
+            "id": "4cd137eb-4360-4c30-a89d-eb2cfc1a941e",
+            "url": "https://www.codechef.com/users/cloud_007",
+            "name": "CodeChef",
+            "handle": "cloud_007",
+            "rating": "Max 1965",
+            "sort_order": 2
+        },
+        {
+            "id": "667da938-a243-4d78-a523-0acb03a050d2",
+            "url": "https://lightoj.com/user/cloud_007",
+            "name": "LightOJ",
+            "handle": "cloud_007",
+            "rating": null,
+            "sort_order": 3
+        },
+        {
+            "id": "a1db9bcf-0731-4257-ba18-8e8f379c84e1",
+            "url": "https://toph.co/u/cloud_007",
+            "name": "Toph",
+            "handle": "cloud_007",
+            "rating": null,
+            "sort_order": 4
+        },
+        {
+            "id": "17594988-87ee-4cfd-a4c6-7737dbc56d28",
+            "url": "https://www.stopstalk.com/user/profile/cloud_007",
+            "name": "StopStalk",
+            "handle": "cloud_007",
+            "rating": null,
+            "sort_order": 5
+        },
+        {
+            "id": "6cb32af3-5bdd-4ca5-bf58-18b315195d23",
+            "url": "https://vjudge.net/user/cloud_007",
+            "name": "Vjudge",
+            "handle": "cloud_007",
+            "rating": null,
+            "sort_order": 6
+        }
+    ],
+    "skills": [
+        {
+            "id": "da15cdec-1847-4ad8-80dc-e663314e3c0b",
+            "icon": null,
+            "group": "Languages and Frameworks",
+            "items": [
+                "Python",
+                "Django",
+                "Django REST Framework",
+                "FastAPI",
+                "Dart",
+                "Flutter",
+                "TypeScript",
+                "Next.js",
+                "React"
+            ],
+            "accent": "zinc",
+            "context": "resume",
+            "sort_order": 1
+        },
+        {
+            "id": "106e85e4-71db-4378-b4c8-c1977f708b04",
+            "icon": null,
+            "group": "Databases and Messaging",
+            "items": [
+                "PostgreSQL",
+                "Redis",
+                "Celery",
+                "Celery Beat"
+            ],
+            "accent": "zinc",
+            "context": "resume",
+            "sort_order": 2
+        },
+        {
+            "id": "454621e1-a799-4e77-bb33-a97fe4212749",
+            "icon": null,
+            "group": "AI and NLP",
+            "items": [
+                "Speech Recognition",
+                "NLP Processing",
+                "LLM Integration",
+                "PyTorch",
+                "WhisperX",
+                "OpenAI API"
+            ],
+            "accent": "zinc",
+            "context": "resume",
+            "sort_order": 3
+        },
+        {
+            "id": "a5aa6708-6ae4-4552-8bd9-34b72cd22e9e",
+            "icon": null,
+            "group": "Infrastructure and DevOps",
+            "items": [
+                "Docker",
+                "Nginx",
+                "GCP",
+                "DigitalOcean",
+                "CI/CD",
+                "Prometheus",
+                "Grafana",
+                "Firebase",
+                "FCM"
+            ],
+            "accent": "zinc",
+            "context": "resume",
+            "sort_order": 4
+        },
+        {
+            "id": "57413aa3-f01f-4d74-9f08-24fa46a1b3e7",
+            "icon": null,
+            "group": "AI-Assisted Development",
+            "items": [
+                "Claude Code",
+                "Cursor",
+                "Agentic Workflows",
+                "AI Pair Programming"
+            ],
+            "accent": "zinc",
+            "context": "resume",
+            "sort_order": 5
+        },
+        {
+            "id": "de03b3d1-ede7-4d21-840b-6c26ed4fd634",
+            "icon": "server",
+            "group": "Backend Engineering",
+            "items": [
+                "Django",
+                "Django REST Framework",
+                "FastAPI",
+                "Python",
+                "PostgreSQL",
+                "Redis",
+                "Celery",
+                "Celery Beat",
+                "Multi-tenant Architecture",
+                "JWT Auth",
+                "Query Optimization",
+                "Versioned Caching"
+            ],
+            "accent": "emerald",
+            "context": "site",
+            "sort_order": 1
+        },
+        {
+            "id": "1e5fe837-aee5-4a45-9209-f1c98f20a961",
+            "icon": "smartphone",
+            "group": "Mobile and Frontend",
+            "items": [
+                "Flutter",
+                "Dart",
+                "Riverpod",
+                "GoRouter",
+                "GetIt",
+                "Freezed",
+                "Next.js",
+                "React",
+                "TypeScript",
+                "Dio"
+            ],
+            "accent": "sky",
+            "context": "site",
+            "sort_order": 2
+        },
+        {
+            "id": "d742f606-3525-4a7d-b008-920f771cd4d5",
+            "icon": "brain",
+            "group": "AI and Speech Systems",
+            "items": [
+                "LLM Integration",
+                "Speech Recognition Pipeline",
+                "Pronunciation Assessment",
+                "NLP Processing",
+                "Semantic Similarity",
+                "Grammar Analysis",
+                "Real-time Audio Evaluation",
+                "FastAPI Microservices",
+                "PyTorch"
+            ],
+            "accent": "violet",
+            "context": "site",
+            "sort_order": 3
+        },
+        {
+            "id": "304ff50a-f36e-426d-bf95-5f6527c01a10",
+            "icon": "cloud",
+            "group": "Infrastructure and Cloud",
+            "items": [
+                "Docker",
+                "Nginx",
+                "GCP",
+                "DigitalOcean",
+                "Firebase Admin SDK",
+                "Prometheus",
+                "Grafana",
+                "CI/CD",
+                "RunPod"
+            ],
+            "accent": "zinc",
+            "context": "site",
+            "sort_order": 4
+        },
+        {
+            "id": "65bfae36-b117-4321-aad1-86f2818b38d9",
+            "icon": "flask",
+            "group": "Testing and Quality",
+            "items": [
+                "pytest",
+                "pytest-django",
+                "factory_boy",
+                "Flutter Unit Testing",
+                "Freezed + json_serializable",
+                "API Schema Validation",
+                "ESLint"
+            ],
+            "accent": "amber",
+            "context": "site",
+            "sort_order": 5
+        },
+        {
+            "id": "1cb2915a-2c86-4a14-80cd-039f578edd2b",
+            "icon": "wrench",
+            "group": "Engineering Practices",
+            "items": [
+                "System Design",
+                "Technical Leadership",
+                "Code Review",
+                "API Design",
+                "Payment Systems Integration",
+                "Performance Optimization",
+                "AI-Assisted Development",
+                "Claude Code",
+                "Cursor",
+                "Agentic Workflows",
+                "Requirement Analysis",
+                "Stakeholder Collaboration"
+            ],
+            "accent": "zinc",
+            "context": "site",
+            "sort_order": 6
+        }
+    ],
+    "traits": [
+        {
+            "slug": "built",
+            "label": "Built",
+            "sort_order": 1,
+            "description": "Wrote the software"
+        },
+        {
+            "slug": "shipped",
+            "label": "Shipped",
+            "sort_order": 2,
+            "description": "Reached real users"
+        },
+        {
+            "slug": "founded",
+            "label": "Founded",
+            "sort_order": 3,
+            "description": "Started something that did not exist"
+        },
+        {
+            "slug": "led",
+            "label": "Led",
+            "sort_order": 4,
+            "description": "Owned direction, or a team"
+        },
+        {
+            "slug": "organized",
+            "label": "Organized",
+            "sort_order": 5,
+            "description": "Ran an event, bootcamp or contest"
+        },
+        {
+            "slug": "mentored",
+            "label": "Mentored",
+            "sort_order": 6,
+            "description": "Taught juniors directly"
+        },
+        {
+            "slug": "competed",
+            "label": "Competed",
+            "sort_order": 7,
+            "description": "Entered a contest"
+        },
+        {
+            "slug": "won",
+            "label": "Won",
+            "sort_order": 8,
+            "description": "Placed first, runner-up, or was awarded"
+        },
+        {
+            "slug": "learned",
+            "label": "Learned",
+            "sort_order": 9,
+            "description": "Deliberate study, training, conversations"
+        },
+        {
+            "slug": "researched",
+            "label": "Researched",
+            "sort_order": 10,
+            "description": "Investigated it and wrote it up"
+        },
+        {
+            "slug": "taught",
+            "label": "Taught",
+            "sort_order": 11,
+            "description": "Explained publicly, at scale"
+        },
+        {
+            "slug": "interviewed",
+            "label": "Interviewed",
+            "sort_order": 12,
+            "description": "Sat a hiring process"
+        },
+        {
+            "slug": "assessed",
+            "label": "Assessed",
+            "sort_order": 13,
+            "description": "Interviewed candidates"
+        }
+    ],
+    "domains": [
+        {
+            "slug": "education",
+            "label": "Education",
+            "sort_order": 1,
+            "description": "School, university, the degree"
+        },
+        {
+            "slug": "competitive-programming",
+            "label": "Contests",
+            "sort_order": 2,
+            "description": "ICPC, IEEEXtreme, Code Jam and the rest"
+        },
+        {
+            "slug": "community",
+            "label": "Community",
+            "sort_order": 3,
+            "description": "Chapters, clubs, bootcamps, events"
+        },
+        {
+            "slug": "work",
+            "label": "Work",
+            "sort_order": 4,
+            "description": "Roles, ownership, promotions"
+        },
+        {
+            "slug": "built",
+            "label": "Built",
+            "sort_order": 5,
+            "description": "Software that exists because I wrote it"
+        },
+        {
+            "slug": "content",
+            "label": "Content",
+            "sort_order": 6,
+            "description": "theainativeengineer"
+        },
+        {
+            "slug": "interview",
+            "label": "Interviews",
+            "sort_order": 7,
+            "description": "Hiring processes, both sides of the table"
+        },
+        {
+            "slug": "network",
+            "label": "Network",
+            "sort_order": 8,
+            "description": "People I learned from"
+        },
+        {
+            "slug": "writing",
+            "label": "Writing",
+            "sort_order": 9,
+            "description": "Longer-form work"
+        }
+    ],
+    "entries": [
+        {
+            "id": "8c318eb4-cb61-41d2-989c-d4d4e74233fa",
+            "org": null,
+            "date": "2026-08-16",
+            "note": "Eighteen on databases, one on LLM cost, one long-form essay. Every one of them something I had to understand properly first.",
+            "slug": "twenty-episodes",
+            "type": "milestone",
+            "title": "Twenty episodes published",
+            "domain": "content",
+            "teaser": false,
+            "traits": [
+                "taught"
+            ],
+            "chapter": "leading",
+            "outcome": null,
+            "end_date": null,
+            "learning": "Publishing is the deadline that makes the learning real.",
+            "link_url": null,
+            "obstacle": null,
+            "precision": "day",
+            "teammates": [
+            ],
+            "link_label": null,
+            "primary_trait": "taught"
+        },
+        {
+            "id": "875c799b-b1a8-4832-ad8e-9a9ad8d81a34",
+            "org": null,
+            "date": "2026-08-14",
+            "note": "The channel had been short explainers for three months. This opened a second lane, with its own sequence.",
+            "slug": "first-essay",
+            "type": "win",
+            "title": "Published the first long-form essay",
+            "domain": "content",
+            "teaser": false,
+            "traits": [
+                "taught"
+            ],
+            "chapter": "leading",
+            "outcome": null,
+            "end_date": null,
+            "learning": "A format is a promise. Adding one means keeping two.",
+            "link_url": null,
+            "obstacle": null,
+            "precision": "day",
+            "teammates": [
+            ],
+            "link_label": null,
+            "primary_trait": "taught"
+        },
+        {
+            "id": "5e4da197-1b69-448f-8d27-f6160e8f650f",
+            "org": "Enosis",
+            "date": "2026-08-08",
+            "note": "Discussed the traits of good software, the metrics behind it, and the KPIs that matter on Google Play and the App Store.",
+            "slug": "meetup-arif",
+            "type": "learning",
+            "title": "Talked with Ariful Jannat Arif, Principal Software Engineer at Enosis",
+            "domain": "network",
+            "teaser": false,
+            "traits": [
+                "learned"
+            ],
+            "chapter": "leading",
+            "outcome": null,
+            "end_date": null,
+            "learning": "What you measure on the store is what the store rewards. Know the KPIs before you ship.",
+            "link_url": null,
+            "obstacle": null,
+            "precision": "day",
+            "teammates": [
+                "Ariful Jannat Arif"
+            ],
+            "link_label": null,
+            "primary_trait": "learned"
+        },
+        {
+            "id": "d66ed73c-8580-4209-9775-7d9a20aea3dc",
+            "org": "Optimizely",
+            "date": "2026-08-04",
+            "note": "Discussed the founder journey, the app business, what a product-based company looks like from the inside, the traits of a great product, and how to approach all of it.",
+            "slug": "meetup-saiful",
+            "type": "learning",
+            "title": "Talked with Saiful Islam, Senior Engineering Manager at Optimizely",
+            "domain": "network",
+            "teaser": false,
+            "traits": [
+                "learned"
+            ],
+            "chapter": "leading",
+            "outcome": null,
+            "end_date": null,
+            "learning": "Great products come from clear traits and a deliberate approach, not luck.",
+            "link_url": null,
+            "obstacle": null,
+            "precision": "day",
+            "teammates": [
+                "Saiful Islam"
+            ],
+            "link_label": null,
+            "primary_trait": "learned"
+        },
+        {
+            "id": "8f577c60-3cc1-4df3-b2a8-62a1c98e4df6",
+            "org": null,
+            "date": "2026-08-04",
+            "note": "Series codes and an append-only episode register, so a viewer who liked one video can find the next three. Numbered in course order, never renumbered once public.",
+            "slug": "episode-register",
+            "type": "milestone",
+            "title": "Gave the channel a curriculum",
+            "domain": "content",
+            "teaser": false,
+            "traits": [
+                "organized",
+                "taught"
+            ],
+            "chapter": "leading",
+            "outcome": null,
+            "end_date": null,
+            "learning": "A channel becomes a course the moment the order means something.",
+            "link_url": null,
+            "obstacle": null,
+            "precision": "day",
+            "teammates": [
+            ],
+            "link_label": null,
+            "primary_trait": "organized"
+        },
+        {
+            "id": "b189a543-5211-472c-a1db-fca008804e82",
+            "org": null,
+            "date": "2026-07-31",
+            "note": "Store listing, screenshots and all. From a blank Flutter project to a shipping app in a few months.",
+            "slug": "kooroo-play-release",
+            "type": "win",
+            "title": "Released our first Google Play app",
+            "domain": "built",
+            "teaser": false,
+            "traits": [
+                "shipped"
+            ],
+            "chapter": "leading",
+            "outcome": null,
+            "end_date": null,
+            "learning": "Shipping is a checklist, not a feeling.",
+            "link_url": null,
+            "obstacle": "Everything that has to be true before a store accepts an app, all at once.",
+            "precision": "day",
+            "teammates": [
+            ],
+            "link_label": null,
+            "primary_trait": "shipped"
+        },
+        {
+            "id": "6d398eb6-f388-46ad-bae6-85f0f9695449",
+            "org": null,
+            "date": "2026-07-30",
+            "note": "Stood up the production environment for a product I have been building from zero: servers, database, deploy path and readiness checks, all verified end to end.",
+            "slug": "kooroo-infra",
+            "type": "milestone",
+            "title": "Production infrastructure live for our first product",
+            "domain": "built",
+            "teaser": false,
+            "traits": [
+                "shipped"
+            ],
+            "chapter": "leading",
+            "outcome": null,
+            "end_date": null,
+            "learning": null,
+            "link_url": null,
+            "obstacle": null,
+            "precision": "day",
+            "teammates": [
+            ],
+            "link_label": null,
+            "primary_trait": "shipped"
+        },
+        {
+            "id": "826dd043-dfc3-45f1-afce-a9a06c42091e",
+            "org": "Authlab",
+            "date": "2026-07-27",
+            "note": "Discussed AI in the tech industry as a whole: how it is changing, how it is affecting us, and how we are coping with it.",
+            "slug": "meetup-shamim",
+            "type": "learning",
+            "title": "Met Hasanuzzaman Shamim, Technical Lead Software Engineer at Authlab",
+            "domain": "network",
+            "teaser": false,
+            "traits": [
+                "learned"
+            ],
+            "chapter": "leading",
+            "outcome": null,
+            "end_date": null,
+            "learning": "Meetups like this exist to widen the picture. Someone else's vantage point is the cheapest upgrade there is.",
+            "link_url": null,
+            "obstacle": null,
+            "precision": "day",
+            "teammates": [
+                "Hasanuzzaman Shamim"
+            ],
+            "link_label": null,
+            "primary_trait": "learned"
+        },
+        {
+            "id": "896f5d05-3a12-4f81-b862-e0718e278ee3",
+            "org": null,
+            "date": "2026-07-21",
+            "note": "A pipeline that turns one idea into a narrated, animated reel, gated at every step, with one promise behind it: do not explain the system, make you watch it run.",
+            "slug": "content-pipeline",
+            "type": "milestone",
+            "title": "Upgraded how theainativeengineer ships",
+            "domain": "content",
+            "teaser": false,
+            "traits": [
+                "built",
+                "taught"
+            ],
+            "chapter": "leading",
+            "outcome": null,
+            "end_date": null,
+            "learning": "Systems intuition is usually earned from outages. It can be compressed.",
+            "link_url": null,
+            "obstacle": "Most tech content tells you what to type. Almost nothing shows what actually happens underneath.",
+            "precision": "day",
+            "teammates": [
+            ],
+            "link_label": null,
+            "primary_trait": "built"
+        },
+        {
+            "id": "9485c131-7833-4b2a-984e-aa4e568c6d59",
+            "org": null,
+            "date": "2026-07-14",
+            "note": "Started logging growth publicly: wins, obstacles, and lessons, one day at a time.",
+            "slug": "portfolio-trail",
+            "type": "milestone",
+            "title": "The trail begins",
+            "domain": "built",
+            "teaser": false,
+            "traits": [
+                "built",
+                "shipped"
+            ],
+            "chapter": "leading",
+            "outcome": null,
+            "end_date": null,
+            "learning": "Consistency compounds. The tree only grows if you feed it.",
+            "link_url": "https://cloud-007.github.io",
+            "obstacle": null,
+            "precision": "day",
+            "teammates": [
+            ],
+            "link_label": "cloud-007.github.io",
+            "primary_trait": "built"
+        },
+        {
+            "id": "d41be9e7-0cf7-44c5-ad6d-f7d4d36c3e08",
+            "org": null,
+            "date": "2026-07-03",
+            "note": "A small utility that got its first stranger's star.",
+            "slug": "agent-auto-start",
+            "type": "milestone",
+            "title": "agent-auto-start",
+            "domain": "built",
+            "teaser": false,
+            "traits": [
+                "built"
+            ],
+            "chapter": "leading",
+            "outcome": null,
+            "end_date": null,
+            "learning": null,
+            "link_url": "https://github.com/cloud-007/agent-auto-start",
+            "obstacle": null,
+            "precision": "day",
+            "teammates": [
+            ],
+            "link_label": "GitHub",
+            "primary_trait": "built"
+        },
+        {
+            "id": "20baacc2-c633-442d-9258-a6f9c21bdef1",
+            "org": null,
+            "date": "2026-06-01",
+            "note": "Python asyncio with Docker-sandboxed judging for ACM and OI style contests. The tool I wished my university had.",
+            "slug": "serious-oj",
+            "type": "milestone",
+            "title": "serious-oj, a production online judge",
+            "domain": "built",
+            "teaser": false,
+            "traits": [
+                "built",
+                "shipped"
+            ],
+            "chapter": "leading",
+            "outcome": null,
+            "end_date": null,
+            "learning": null,
+            "link_url": null,
+            "obstacle": null,
+            "precision": "month",
+            "teammates": [
+            ],
+            "link_label": null,
+            "primary_trait": "built"
+        },
+        {
+            "id": "cba2ba67-8d0b-45d9-bdfb-cac42d04983c",
+            "org": "Hourglass AI",
+            "date": "2026-05-02",
+            "note": "An autonomous agent that writes pytest suites which kill surviving mutants, not just hit coverage. Built for the Hourglass AI Agent Challenge.",
+            "slug": "testforge",
+            "type": "milestone",
+            "title": "TestForge, a mutation-driven test-backfill agent",
+            "domain": "built",
+            "teaser": false,
+            "traits": [
+                "built",
+                "competed"
+            ],
+            "chapter": "leading",
+            "outcome": "Submitted",
+            "end_date": null,
+            "learning": "Coverage is a proxy. Killing mutants is the thing coverage was trying to measure.",
+            "link_url": "https://github.com/cloud-007/testforge",
+            "obstacle": null,
+            "precision": "day",
+            "teammates": [
+            ],
+            "link_label": "GitHub",
+            "primary_trait": "built"
+        },
+        {
+            "id": "7a4ab2c0-f5c9-42ef-a49c-6fd7d54baa97",
+            "org": "Sushi Lab",
+            "date": "2026-05-01",
+            "note": "A production bilingual ordering and marketing platform for a Japanese restaurant in Chartres, France: Next.js 16, React 19, server actions, translated URL segments and locale-aware checkout.",
+            "slug": "sushilab",
+            "type": "win",
+            "title": "Delivered Sushi Lab, a solo end-to-end build",
+            "domain": "built",
+            "teaser": false,
+            "traits": [
+                "shipped",
+                "built"
+            ],
+            "chapter": "leading",
+            "outcome": null,
+            "end_date": null,
+            "learning": "One person can own a whole product now. The constraint moved from hands to judgment.",
+            "link_url": "https://sushilabrestaurant.com",
+            "obstacle": null,
+            "precision": "month",
+            "teammates": [
+            ],
+            "link_label": "sushilabrestaurant.com",
+            "primary_trait": "shipped"
+        },
+        {
+            "id": "d4b9d6f6-4e83-4109-8d3a-972f9713c5f0",
+            "org": null,
+            "date": "2026-05-01",
+            "note": "Began posting regularly on Instagram, Facebook and YouTube: everything I learn, turned into short explainers for engineers.",
+            "slug": "content-start",
+            "type": "milestone",
+            "title": "Started theainativeengineer",
+            "domain": "content",
+            "teaser": false,
+            "traits": [
+                "founded",
+                "taught"
+            ],
+            "chapter": "leading",
+            "outcome": null,
+            "end_date": null,
+            "learning": "A channel is a curriculum in public. Consistency, not virality, is the job.",
+            "link_url": null,
+            "obstacle": null,
+            "precision": "month",
+            "teammates": [
+            ],
+            "link_label": null,
+            "primary_trait": "founded"
+        },
+        {
+            "id": "f30a6c90-243b-411b-bbe6-ef4904c997a7",
+            "org": null,
+            "date": "2026-05-01",
+            "note": "Detects your stack and scaffolds a tailored setup: conventions, lean permissions, an explorer subagent and a setup command. 64 passing tests.",
+            "slug": "super-init",
+            "type": "milestone",
+            "title": "super-init, an npx project initializer",
+            "domain": "built",
+            "teaser": false,
+            "traits": [
+                "built",
+                "shipped"
+            ],
+            "chapter": "leading",
+            "outcome": null,
+            "end_date": null,
+            "learning": null,
+            "link_url": null,
+            "obstacle": null,
+            "precision": "month",
+            "teammates": [
+            ],
+            "link_label": null,
+            "primary_trait": "built"
+        },
+        {
+            "id": "c4cea540-1ea5-4ced-a5ba-8e6a654ec98c",
+            "org": "LII Lab",
+            "date": "2026-04-30",
+            "note": "After 3.5 years, the OnePTE and OneIELTS platforms, 90+ production releases, and a promotion to Senior along the way.",
+            "slug": "left-liilab",
+            "type": "milestone",
+            "title": "Closed my chapter at LII Lab",
+            "domain": "work",
+            "teaser": false,
+            "traits": [
+            ],
+            "chapter": "leading",
+            "outcome": null,
+            "end_date": null,
+            "learning": "Endings are just soil for the next thing to grow in.",
+            "link_url": null,
+            "obstacle": "Leaving the place and people where I grew from graduate to senior engineer.",
+            "precision": "day",
+            "teammates": [
+            ],
+            "link_label": null,
+            "primary_trait": null
+        },
+        {
+            "id": "a51d8035-479d-4997-83b0-f8a043fa2de3",
+            "org": "NEUB",
+            "date": "2025-11-07",
+            "note": "Back in a contest hall, three years after graduating.",
+            "slug": "neub-hackathon-2025",
+            "type": "milestone",
+            "title": "NEUB ICT Fest hackathon",
+            "domain": "competitive-programming",
+            "teaser": false,
+            "traits": [
+                "competed"
+            ],
+            "chapter": "leading",
+            "outcome": null,
+            "end_date": null,
+            "learning": null,
+            "link_url": "https://github.com/cloud-007/neub-ict-fest-hackathon-2025",
+            "obstacle": null,
+            "precision": "day",
+            "teammates": [
+            ],
+            "link_label": "GitHub",
+            "primary_trait": "competed"
+        },
+        {
+            "id": "def429c6-37fd-4251-b5fa-39d4371bb8db",
+            "org": null,
+            "date": "2025-10-30",
+            "note": "Word-level timestamps and diarization, packaged so it scales to zero between jobs.",
+            "slug": "whisperx-worker",
+            "type": "milestone",
+            "title": "WhisperX as a RunPod serverless worker",
+            "domain": "built",
+            "teaser": false,
+            "traits": [
+                "built"
+            ],
+            "chapter": "leading",
+            "outcome": null,
+            "end_date": null,
+            "learning": null,
+            "link_url": "https://github.com/cloud-007/whisperx-worker-runpod",
+            "obstacle": null,
+            "precision": "month",
+            "teammates": [
+            ],
+            "link_label": "GitHub",
+            "primary_trait": "built"
+        },
+        {
+            "id": "0c3d8008-43e3-4a20-b3ed-ce34022c6c54",
+            "org": "LII Lab",
+            "date": "2025-01-01",
+            "note": "Led backend engineering across two AI-powered English test-prep platforms: architecture, mentoring, and production releases.",
+            "slug": "promoted-senior",
+            "type": "milestone",
+            "title": "Promoted to Senior Software Engineer",
+            "domain": "work",
+            "teaser": false,
+            "traits": [
+                "led"
+            ],
+            "chapter": "leading",
+            "outcome": null,
+            "end_date": null,
+            "learning": "Seniority is responsibility for other people's growth, and code comes second.",
+            "link_url": null,
+            "obstacle": null,
+            "precision": "month",
+            "teammates": [
+            ],
+            "link_label": null,
+            "primary_trait": "led"
+        },
+        {
+            "id": "bcfc5054-5c16-4fb3-88cd-7722482ad152",
+            "org": "LII Lab",
+            "date": "2024-06-01",
+            "note": "A second AI-powered test-prep platform: multi-tenant SaaS with a QTI 3.0 exam engine and 100+ question types.",
+            "slug": "oneielts-start",
+            "type": "milestone",
+            "title": "OneIELTS development begins",
+            "domain": "work",
+            "teaser": false,
+            "traits": [
+                "built"
+            ],
+            "chapter": "building",
+            "outcome": null,
+            "end_date": null,
+            "learning": null,
+            "link_url": "https://oneielts.com",
+            "obstacle": null,
+            "precision": "year",
+            "teammates": [
+            ],
+            "link_label": "oneielts.com",
+            "primary_trait": "built"
+        },
+        {
+            "id": "236ee6b5-f5a2-442e-b9ed-cf99b48b36a4",
+            "org": "LII Lab",
+            "date": "2024-01-01",
+            "note": "Release pipelines, Firebase configuration and CI/CD for Android, iOS and Web.",
+            "slug": "onepte-releases",
+            "type": "milestone",
+            "title": "93+ production releases across three platforms",
+            "domain": "work",
+            "teaser": false,
+            "traits": [
+                "shipped"
+            ],
+            "chapter": "building",
+            "outcome": null,
+            "end_date": null,
+            "learning": "Releasing often is not a risk. Releasing rarely is.",
+            "link_url": null,
+            "obstacle": null,
+            "precision": "year",
+            "teammates": [
+            ],
+            "link_label": null,
+            "primary_trait": "shipped"
+        },
+        {
+            "id": "d19e4124-653e-4c37-a5d4-0205c62889a1",
+            "org": "LII Lab",
+            "date": "2023-09-01",
+            "note": "Speech recognition, pronunciation assessment and NLP scoring, end to end in under fifteen seconds.",
+            "slug": "speech-pipeline",
+            "type": "milestone",
+            "title": "Built a real-time speech evaluation pipeline",
+            "domain": "work",
+            "teaser": false,
+            "traits": [
+                "built"
+            ],
+            "chapter": "building",
+            "outcome": null,
+            "end_date": null,
+            "learning": null,
+            "link_url": null,
+            "obstacle": "Every second of latency is a candidate deciding the product is broken.",
+            "precision": "year",
+            "teammates": [
+            ],
+            "link_label": null,
+            "primary_trait": "built"
+        },
+        {
+            "id": "8499e4ee-5250-458f-a8a8-994063c70f1b",
+            "org": "Leading University",
+            "date": "2023-08-01",
+            "note": "Building under pressure with Team LU Ovream.",
+            "slug": "hackathon-champion-2023",
+            "type": "win",
+            "title": "Champion at the National Hackathon, LU CSE Carnival",
+            "domain": "competitive-programming",
+            "teaser": false,
+            "traits": [
+                "won",
+                "built",
+                "competed"
+            ],
+            "chapter": "building",
+            "outcome": "Champion",
+            "end_date": null,
+            "learning": null,
+            "link_url": null,
+            "obstacle": null,
+            "precision": "year",
+            "teammates": [
+            ],
+            "link_label": null,
+            "primary_trait": "won"
+        },
+        {
+            "id": "ece7a58d-fe34-4d99-8848-71fa9194ca73",
+            "org": "IEEE",
+            "date": "2023-05-01",
+            "note": "Recognition for the 2022-2023 tenure chairing the Computer Society LU Student Branch Chapter.",
+            "slug": "ieee-leadership-award",
+            "type": "win",
+            "title": "IEEE Outstanding Leadership Volunteer Award",
+            "domain": "community",
+            "teaser": false,
+            "traits": [
+                "won",
+                "led"
+            ],
+            "chapter": "foundations",
+            "outcome": "Award",
+            "end_date": null,
+            "learning": null,
+            "link_url": null,
+            "obstacle": null,
+            "precision": "month",
+            "teammates": [
+            ],
+            "link_label": null,
+            "primary_trait": "won"
+        },
+        {
+            "id": "45f98ee5-69b3-40d4-9990-3c840ec0f4ba",
+            "org": "LII Lab",
+            "date": "2023-03-01",
+            "note": "All four PTE modules with 20+ task types, audio recording, timers, and a mock-test engine built from scratch in Flutter.",
+            "slug": "onepte-flutter",
+            "type": "milestone",
+            "title": "Shipped the OnePTE app across Android, iOS and Web",
+            "domain": "work",
+            "teaser": false,
+            "traits": [
+                "shipped",
+                "built"
+            ],
+            "chapter": "building",
+            "outcome": null,
+            "end_date": null,
+            "learning": null,
+            "link_url": "https://onepte.com",
+            "obstacle": null,
+            "precision": "year",
+            "teammates": [
+            ],
+            "link_label": "onepte.com",
+            "primary_trait": "shipped"
+        },
+        {
+            "id": "bf1e7ebd-076e-44c3-9eb5-2ba3fb6d93f0",
+            "org": "Leading University",
+            "date": "2022-12-15",
+            "note": "GPA 3.6 out of 4.0, and 2,000+ solved problems on the side.",
+            "slug": "graduated",
+            "type": "milestone",
+            "title": "Graduated with a B.Sc. in Computer Science and Engineering",
+            "domain": "education",
+            "teaser": false,
+            "traits": [
+                "learned"
+            ],
+            "chapter": "foundations",
+            "outcome": "GPA 3.6 / 4.0",
+            "end_date": null,
+            "learning": null,
+            "link_url": null,
+            "obstacle": null,
+            "precision": "month",
+            "teammates": [
+            ],
+            "link_label": null,
+            "primary_trait": "learned"
+        },
+        {
+            "id": "faa0e4ad-75e9-4a3a-8e92-c61c618e10fb",
+            "org": "LII Lab",
+            "date": "2022-11-01",
+            "note": "Built the OnePTE Flutter app from day one and the Django backend powering AI scoring.",
+            "slug": "joined-liilab",
+            "type": "milestone",
+            "title": "Joined LII Lab as a Software Engineer",
+            "domain": "work",
+            "teaser": false,
+            "traits": [
+                "built"
+            ],
+            "chapter": "building",
+            "outcome": null,
+            "end_date": null,
+            "learning": "Ship, observe, improve. Ownership is the fastest teacher.",
+            "link_url": null,
+            "obstacle": "Owning a full product stack for the first time, while still finishing my degree.",
+            "precision": "month",
+            "teammates": [
+            ],
+            "link_label": null,
+            "primary_trait": "built"
+        },
+        {
+            "id": "15f1ec80-8f93-4b03-aa54-f5bf891029fb",
+            "org": null,
+            "date": "2022-10-01",
+            "note": "A multi-role Django app for university project proposals: students, supervisors and admins, with PDF and CSV export and scheduled background jobs.",
+            "slug": "projecto",
+            "type": "milestone",
+            "title": "Projecto, my final-year project",
+            "domain": "built",
+            "teaser": false,
+            "traits": [
+                "built"
+            ],
+            "chapter": "foundations",
+            "outcome": null,
+            "end_date": "2022-12-31",
+            "learning": null,
+            "link_url": "https://github.com/cloud-007/projecto",
+            "obstacle": null,
+            "precision": "month",
+            "teammates": [
+            ],
+            "link_label": "GitHub",
+            "primary_trait": "built"
+        },
+        {
+            "id": "29d14630-29aa-4798-97c0-ee1384c99a9a",
+            "org": "IEEE",
+            "date": "2022-10-01",
+            "note": "Global rank 149 with Team LazySquad. Twenty-four hours of non-stop problem solving.",
+            "slug": "ieeextreme-16",
+            "type": "win",
+            "title": "Runner-up in Bangladesh at IEEEXtreme 16.0",
+            "domain": "competitive-programming",
+            "teaser": false,
+            "traits": [
+                "won",
+                "competed"
+            ],
+            "chapter": "foundations",
+            "outcome": "Runner-up, Bangladesh",
+            "end_date": null,
+            "learning": null,
+            "link_url": null,
+            "obstacle": null,
+            "precision": "month",
+            "teammates": [
+            ],
+            "link_label": null,
+            "primary_trait": "won"
+        },
+        {
+            "id": "c05f9057-1d42-47a0-a300-5673eb3d5fe9",
+            "org": null,
+            "date": "2022-09-20",
+            "note": "Years of accepted solutions, in the open.",
+            "slug": "online-judge-solutions",
+            "type": "milestone",
+            "title": "Published my online-judge solution archive",
+            "domain": "built",
+            "teaser": false,
+            "traits": [
+                "built"
+            ],
+            "chapter": "foundations",
+            "outcome": null,
+            "end_date": null,
+            "learning": null,
+            "link_url": "https://github.com/cloud-007/Online-Judge-Solutions",
+            "obstacle": null,
+            "precision": "month",
+            "teammates": [
+            ],
+            "link_label": "GitHub",
+            "primary_trait": "built"
+        },
+        {
+            "id": "fc4d35f7-1b1c-465c-a19e-dfcf52e88e8e",
+            "org": "IEEE Computer Society",
+            "date": "2022-09-05",
+            "note": "Fourteen weeks teaching juniors to ship a mobile app, while shipping one myself at work.",
+            "slug": "flutter-bootcamp",
+            "type": "milestone",
+            "title": "Organized the Flutter app development bootcamp",
+            "domain": "community",
+            "teaser": false,
+            "traits": [
+                "organized",
+                "taught"
+            ],
+            "chapter": "foundations",
+            "outcome": null,
+            "end_date": "2022-12-10",
+            "learning": null,
+            "link_url": null,
+            "obstacle": null,
+            "precision": "day",
+            "teammates": [
+            ],
+            "link_label": null,
+            "primary_trait": "organized"
+        },
+        {
+            "id": "d951caa9-25e8-46e1-9628-56d89962602f",
+            "org": "Google",
+            "date": "2022-04-01",
+            "note": "44 points in the 2022 global qualifier, two points better than 2020.",
+            "slug": "codejam-2022",
+            "type": "win",
+            "title": "Cleared the Google Code Jam qualification round again",
+            "domain": "competitive-programming",
+            "teaser": false,
+            "traits": [
+                "competed"
+            ],
+            "chapter": "foundations",
+            "outcome": "Qualified",
+            "end_date": null,
+            "learning": null,
+            "link_url": null,
+            "obstacle": null,
+            "precision": "year",
+            "teammates": [
+            ],
+            "link_label": null,
+            "primary_trait": "competed"
+        },
+        {
+            "id": "7001f99b-1fe8-4afc-bb26-05632408280f",
+            "org": "IEEE Computer Society",
+            "date": "2022-04-01",
+            "note": "Built the chapter from nothing, ran technical events with industry speakers, and grew membership by more than 20%.",
+            "slug": "ieee-cs-chapter",
+            "type": "milestone",
+            "title": "Co-founded and chaired the IEEE Computer Society LU Student Branch Chapter",
+            "domain": "community",
+            "teaser": false,
+            "traits": [
+                "founded",
+                "led",
+                "organized"
+            ],
+            "chapter": "foundations",
+            "outcome": "Chair, 2022-2023",
+            "end_date": "2023-05-01",
+            "learning": "A community is not an audience. It is a group of people who show up for each other.",
+            "link_url": null,
+            "obstacle": "Starting a chapter means proving there is demand before anyone believes you.",
+            "precision": "month",
+            "teammates": [
+            ],
+            "link_label": null,
+            "primary_trait": "founded"
+        },
+        {
+            "id": "eaa2721c-f68d-462d-aa89-d0d625596a22",
+            "org": "Leading University",
+            "date": "2022-03-05",
+            "note": "Twelve weeks of hands-on training for juniors.",
+            "slug": "datacomm-bootcamp",
+            "type": "milestone",
+            "title": "Organized the Data Communications and Industrial Networking Bootcamp",
+            "domain": "community",
+            "teaser": false,
+            "traits": [
+                "organized"
+            ],
+            "chapter": "foundations",
+            "outcome": null,
+            "end_date": "2022-05-28",
+            "learning": null,
+            "link_url": null,
+            "obstacle": null,
+            "precision": "day",
+            "teammates": [
+            ],
+            "link_label": null,
+            "primary_trait": "organized"
+        },
+        {
+            "id": "b5fd18a8-37c6-4b10-ad29-92eb80e9b5d9",
+            "org": "LU Sports Club",
+            "date": "2022-02-15",
+            "note": "Elected to the executive; organized inter-department tournaments and university sporting events.",
+            "slug": "sports-club-jgs",
+            "type": "milestone",
+            "title": "Joint General Secretary of the LU Sports Club",
+            "domain": "community",
+            "teaser": false,
+            "traits": [
+                "led",
+                "organized"
+            ],
+            "chapter": "foundations",
+            "outcome": null,
+            "end_date": null,
+            "learning": "Running an event is the same skill as running a release. Different room.",
+            "link_url": null,
+            "obstacle": null,
+            "precision": "year",
+            "teammates": [
+            ],
+            "link_label": null,
+            "primary_trait": "led"
+        },
+        {
+            "id": "a3cfb1e3-013a-40db-a0f8-db215f98a56f",
+            "org": "LU Computer Club",
+            "date": "2022-01-01",
+            "note": "Ran peer-to-peer DSA sessions and mentored juniors through Codeforces, CodeChef and LightOJ.",
+            "slug": "acm-coordinator",
+            "type": "milestone",
+            "title": "ACM Coordinator at the LU Computer Club",
+            "domain": "community",
+            "teaser": false,
+            "traits": [
+                "led",
+                "mentored"
+            ],
+            "chapter": "foundations",
+            "outcome": null,
+            "end_date": "2023-12-31",
+            "learning": "Teaching a thing is the fastest way to truly learn it.",
+            "link_url": null,
+            "obstacle": null,
+            "precision": "month",
+            "teammates": [
+            ],
+            "link_label": null,
+            "primary_trait": "led"
+        },
+        {
+            "id": "059b9d3a-66bd-477e-8a83-250d42144dd1",
+            "org": null,
+            "date": "2021-10-24",
+            "note": "Templates, algorithms and data structures, collected for competitive programming.",
+            "slug": "code-library",
+            "type": "milestone",
+            "title": "Published my contest code library",
+            "domain": "built",
+            "teaser": false,
+            "traits": [
+                "built"
+            ],
+            "chapter": "foundations",
+            "outcome": null,
+            "end_date": null,
+            "learning": null,
+            "link_url": "https://github.com/cloud-007/code-library",
+            "obstacle": null,
+            "precision": "month",
+            "teammates": [
+            ],
+            "link_label": "GitHub",
+            "primary_trait": "built"
+        },
+        {
+            "id": "7437b68b-f21a-41c8-b29e-89a3ed2cc4f4",
+            "org": null,
+            "date": "2021-10-13",
+            "note": "A rental-listing app, and the first time I shipped something with a real UI.",
+            "slug": "homehunt",
+            "type": "milestone",
+            "title": "HomeHunt, my third-year Flutter project",
+            "domain": "built",
+            "teaser": false,
+            "traits": [
+                "built"
+            ],
+            "chapter": "foundations",
+            "outcome": null,
+            "end_date": null,
+            "learning": null,
+            "link_url": "https://github.com/cloud-007/HomeHunt",
+            "obstacle": null,
+            "precision": "month",
+            "teammates": [
+            ],
+            "link_label": "GitHub",
+            "primary_trait": "built"
+        },
+        {
+            "id": "8b7c9ce0-ef74-46e3-89f3-ccf640aa1eb4",
+            "org": "IEEE",
+            "date": "2021-10-01",
+            "note": "The second twenty-four hour marathon, with Team SchrodenBug.",
+            "slug": "ieeextreme-15",
+            "type": "milestone",
+            "title": "IEEEXtreme 15.0",
+            "domain": "competitive-programming",
+            "teaser": false,
+            "traits": [
+                "competed"
+            ],
+            "chapter": "foundations",
+            "outcome": "Participation",
+            "end_date": null,
+            "learning": null,
+            "link_url": null,
+            "obstacle": null,
+            "precision": "month",
+            "teammates": [
+            ],
+            "link_label": null,
+            "primary_trait": "competed"
+        },
+        {
+            "id": "28dde9b2-1b4a-479c-b22d-d941f6b83695",
+            "org": "Leading University",
+            "date": "2021-09-20",
+            "note": "From phase-1 trainee to running the programme, in the same season.",
+            "slug": "lu-research-bootcamp-organizing",
+            "type": "milestone",
+            "title": "Organized the LU Research Bootcamp 2021",
+            "domain": "community",
+            "teaser": false,
+            "traits": [
+                "organized"
+            ],
+            "chapter": "foundations",
+            "outcome": null,
+            "end_date": "2022-01-01",
+            "learning": null,
+            "link_url": null,
+            "obstacle": null,
+            "precision": "day",
+            "teammates": [
+            ],
+            "link_label": null,
+            "primary_trait": "organized"
+        },
+        {
+            "id": "d93b1ba2-6a2a-4aa5-9932-caf8791f6c58",
+            "org": "Leading University",
+            "date": "2021-09-20",
+            "note": "Six weeks learning how research actually gets done before helping run it.",
+            "slug": "lu-research-bootcamp-training",
+            "type": "learning",
+            "title": "Completed phase-1 training at the LU Research Bootcamp",
+            "domain": "community",
+            "teaser": false,
+            "traits": [
+                "learned"
+            ],
+            "chapter": "foundations",
+            "outcome": "Completed",
+            "end_date": "2021-11-01",
+            "learning": "Learn the thing first. Then you have earned the right to organize it.",
+            "link_url": null,
+            "obstacle": null,
+            "precision": "day",
+            "teammates": [
+            ],
+            "link_label": null,
+            "primary_trait": "learned"
+        },
+        {
+            "id": "523741ac-9f2c-411c-90b2-1b5e7951b5a4",
+            "org": null,
+            "date": "2021-06-29",
+            "note": "Tutorials and references in Bangla, for people who learn faster in their first language.",
+            "slug": "bangla-programming-resources",
+            "type": "milestone",
+            "title": "Published a Bangla programming resource list",
+            "domain": "community",
+            "teaser": false,
+            "traits": [
+                "taught",
+                "built"
+            ],
+            "chapter": "foundations",
+            "outcome": null,
+            "end_date": null,
+            "learning": null,
+            "link_url": "https://github.com/cloud-007/bangla-programming-resources",
+            "obstacle": null,
+            "precision": "month",
+            "teammates": [
+            ],
+            "link_label": "GitHub",
+            "primary_trait": "taught"
+        },
+        {
+            "id": "032aa6e6-4c94-42cb-9965-45ae0adde2d5",
+            "org": "LU Computer Club",
+            "date": "2021-06-01",
+            "note": "First place on home ground, with Team Catapult.",
+            "slug": "techstorm-4",
+            "type": "win",
+            "title": "Champion at LU TechStorm 4",
+            "domain": "competitive-programming",
+            "teaser": false,
+            "traits": [
+                "won",
+                "competed"
+            ],
+            "chapter": "foundations",
+            "outcome": "Champion",
+            "end_date": null,
+            "learning": null,
+            "link_url": null,
+            "obstacle": null,
+            "precision": "year",
+            "teammates": [
+            ],
+            "link_label": null,
+            "primary_trait": "won"
+        },
+        {
+            "id": "e944585c-e1f1-4e5a-8baf-da423180dee2",
+            "org": "IEEE",
+            "date": "2020-10-01",
+            "note": "Twenty-four hours without stopping, with Team LURisingStar.",
+            "slug": "ieeextreme-14",
+            "type": "milestone",
+            "title": "IEEEXtreme 14.0, the 24-hour global marathon",
+            "domain": "competitive-programming",
+            "teaser": false,
+            "traits": [
+                "competed"
+            ],
+            "chapter": "foundations",
+            "outcome": "Participation",
+            "end_date": null,
+            "learning": null,
+            "link_url": null,
+            "obstacle": null,
+            "precision": "month",
+            "teammates": [
+            ],
+            "link_label": null,
+            "primary_trait": "competed"
+        },
+        {
+            "id": "b2e015d5-63be-46a1-b85b-0cc86148d352",
+            "org": null,
+            "date": "2020-09-30",
+            "note": "Everything I was learning about data structures, written down where anyone could read it.",
+            "slug": "personal-handbook",
+            "type": "milestone",
+            "title": "Started a public algorithm handbook",
+            "domain": "built",
+            "teaser": false,
+            "traits": [
+                "built",
+                "learned"
+            ],
+            "chapter": "foundations",
+            "outcome": null,
+            "end_date": null,
+            "learning": "Writing it down is how you find out whether you understood it.",
+            "link_url": "https://github.com/cloud-007/My-Personal-Handbook",
+            "obstacle": null,
+            "precision": "month",
+            "teammates": [
+            ],
+            "link_label": "GitHub",
+            "primary_trait": "built"
+        },
+        {
+            "id": "306d5254-0412-42e7-9161-2b65f150162a",
+            "org": "Google",
+            "date": "2020-04-04",
+            "note": "42 points in the 2020 global qualifier.",
+            "slug": "codejam-2020",
+            "type": "win",
+            "title": "Cleared the Google Code Jam qualification round",
+            "domain": "competitive-programming",
+            "teaser": false,
+            "traits": [
+                "competed"
+            ],
+            "chapter": "foundations",
+            "outcome": "Qualified",
+            "end_date": null,
+            "learning": null,
+            "link_url": null,
+            "obstacle": null,
+            "precision": "year",
+            "teammates": [
+            ],
+            "link_label": null,
+            "primary_trait": "competed"
+        },
+        {
+            "id": "3f159334-83d7-496a-b83a-c5f7daa9ce4e",
+            "org": "BAIUST",
+            "date": "2020-01-01",
+            "note": "Another university, another problem set.",
+            "slug": "computenigma-2020",
+            "type": "milestone",
+            "title": "Computenigma at BAIUST",
+            "domain": "competitive-programming",
+            "teaser": false,
+            "traits": [
+                "competed"
+            ],
+            "chapter": "foundations",
+            "outcome": "Participation",
+            "end_date": null,
+            "learning": null,
+            "link_url": null,
+            "obstacle": null,
+            "precision": "year",
+            "teammates": [
+            ],
+            "link_label": null,
+            "primary_trait": "competed"
+        },
+        {
+            "id": "dda806bd-8176-411b-a46c-22e8bdfc61a6",
+            "org": "Leading University",
+            "date": "2019-11-01",
+            "note": "Home ground, first year of competing seriously.",
+            "slug": "lu-cse-carnival-2019",
+            "type": "milestone",
+            "title": "LU CSE Carnival programming contest",
+            "domain": "competitive-programming",
+            "teaser": false,
+            "traits": [
+                "competed"
+            ],
+            "chapter": "foundations",
+            "outcome": "Participation",
+            "end_date": null,
+            "learning": null,
+            "link_url": null,
+            "obstacle": null,
+            "precision": "year",
+            "teammates": [
+            ],
+            "link_label": null,
+            "primary_trait": "competed"
+        },
+        {
+            "id": "cf8f7dee-c99a-49b3-b0b6-b31e1748869f",
+            "org": "ICPC",
+            "date": "2019-07-16",
+            "note": "Ten weeks of the 2019 preliminary contest, representing Leading University.",
+            "slug": "icpc-preliminary-2019",
+            "type": "win",
+            "title": "Honorable Mention at the ICPC Asia Dhaka Regional Online Preliminary",
+            "domain": "competitive-programming",
+            "teaser": false,
+            "traits": [
+                "won",
+                "competed"
+            ],
+            "chapter": "foundations",
+            "outcome": "Honorable Mention",
+            "end_date": "2019-09-28",
+            "learning": "Hard problems bend to consistent practice.",
+            "link_url": null,
+            "obstacle": null,
+            "precision": "day",
+            "teammates": [
+                "Abir Hasan",
+                "MD Abdul Munim",
+                "Dipta Paul (coach)"
+            ],
+            "link_label": null,
+            "primary_trait": "won"
+        },
+        {
+            "id": "1a6fc6f3-74ce-4826-aa69-2db923304152",
+            "org": "SUST",
+            "date": "2019-04-19",
+            "note": "Two days at SUST with Team LU-Newbies2. The name was honest.",
+            "slug": "lict-sust-techfest-2019",
+            "type": "milestone",
+            "title": "First inter-university contest: LICT SUST TechFest",
+            "domain": "competitive-programming",
+            "teaser": false,
+            "traits": [
+                "competed"
+            ],
+            "chapter": "foundations",
+            "outcome": "Participation",
+            "end_date": "2019-04-20",
+            "learning": "You do not find out where the bar is by reading about it.",
+            "link_url": null,
+            "obstacle": null,
+            "precision": "day",
+            "teammates": [
+            ],
+            "link_label": null,
+            "primary_trait": "competed"
+        },
+        {
+            "id": "8058f683-6c20-43c8-b274-076a5fbc77ce",
+            "org": "Leading University",
+            "date": "2018-09-01",
+            "note": "Four years of fundamentals, contests, and late nights begin.",
+            "slug": "bsc-start",
+            "type": "milestone",
+            "title": "Started a B.Sc. in Computer Science and Engineering",
+            "domain": "education",
+            "teaser": false,
+            "traits": [
+                "learned"
+            ],
+            "chapter": "foundations",
+            "outcome": null,
+            "end_date": null,
+            "learning": null,
+            "link_url": null,
+            "obstacle": null,
+            "precision": "month",
+            "teammates": [
+            ],
+            "link_label": null,
+            "primary_trait": "learned"
+        },
+        {
+            "id": "71ff4138-9244-45be-876b-87ac0384d0db",
+            "org": "Beanibazar Govt. College",
+            "date": "2018-05-01",
+            "note": "Higher Secondary Certificate. Chose science, and the path toward engineering.",
+            "slug": "hsc-beanibazar",
+            "type": "milestone",
+            "title": "Completed HSC in Science at Beanibazar Govt. College",
+            "domain": "education",
+            "teaser": false,
+            "traits": [
+                "learned"
+            ],
+            "chapter": "roots",
+            "outcome": null,
+            "end_date": null,
+            "learning": null,
+            "link_url": null,
+            "obstacle": null,
+            "precision": "year",
+            "teammates": [
+            ],
+            "link_label": null,
+            "primary_trait": "learned"
+        },
+        {
+            "id": "32da72d0-80bf-439d-a6d6-b4fb1f9b5934",
+            "org": "Purba Muria High School",
+            "date": "2016-05-01",
+            "note": "Secondary School Certificate, Sylhet. The first checkpoint.",
+            "slug": "ssc-purba-muria",
+            "type": "milestone",
+            "title": "Completed SSC at Purba Muria High School",
+            "domain": "education",
+            "teaser": false,
+            "traits": [
+                "learned"
+            ],
+            "chapter": "roots",
+            "outcome": null,
+            "end_date": null,
+            "learning": null,
+            "link_url": null,
+            "obstacle": null,
+            "precision": "year",
+            "teammates": [
+            ],
+            "link_label": null,
+            "primary_trait": "learned"
+        }
+    ],
+    "profile": {
+        "bio": "Full-Stack AI Engineer with 3+ years in software engineering. Builds scalable backends, cross-platform mobile apps, and AI-powered SaaS platforms. Ships production systems with Django, Flutter, and Next.js, and delivers faster using AI-native tooling like Claude Code and Cursor. Proven track record in multi-tenant architecture, real-time speech evaluation pipelines, and end-to-end product delivery across 93+ production releases.",
+        "name": "Md Mazharul Islam Emon",
+        "role": "Full-Stack AI Engineer",
+        "email": "mie.mazharul@gmail.com",
+        "phone": "+8801794405314",
+        "roots": [
+            "Principled",
+            "Ambitious",
+            "Family-first",
+            "Resilient",
+            "Always growing"
+        ],
+        "handle": "cloud_007",
+        "socials": [
+            {
+                "href": "https://github.com/cloud-007",
+                "label": "GitHub",
+                "handle": "@cloud-007"
+            },
+            {
+                "href": "https://www.linkedin.com/in/-mazharulislam-/",
+                "label": "LinkedIn",
+                "handle": "in/-mazharulislam-"
+            },
+            {
+                "href": "mailto:mie.mazharul@gmail.com",
+                "label": "Email",
+                "handle": "mie.mazharul@gmail.com"
+            }
+        ],
+        "latitude": 24.8949,
+        "location": "Sylhet, Bangladesh",
+        "longitude": 91.8687,
+        "avatar_url": "/images/profile.jpg",
+        "core_stack": [
+            "Python",
+            "Django",
+            "PostgreSQL",
+            "Redis",
+            "Celery",
+            "Flutter",
+            "Next.js",
+            "TypeScript",
+            "Docker",
+            "GCP",
+            "CI/CD",
+            "Claude Code",
+            "Cursor"
+        ],
+        "creed_belief": "The only difference between the success you see and where I stand today is time.",
+        "open_to_work": true,
+        "growing_since": 1999,
+        "creed_practice": "Just keep trying to become better everyday. That's all."
+    },
+    "chapters": [
+        {
+            "id": "roots",
+            "title": "Roots",
+            "subtitle": "School years in Sylhet",
+            "sort_order": 1
+        },
+        {
+            "id": "foundations",
+            "title": "Foundations",
+            "subtitle": "University, contests and community",
+            "sort_order": 2
+        },
+        {
+            "id": "building",
+            "title": "Building",
+            "subtitle": "Professional engineering at LII Lab",
+            "sort_order": 3
+        },
+        {
+            "id": "leading",
+            "title": "Leading",
+            "subtitle": "Seniority, products and the trail",
+            "sort_order": 4
+        }
+    ],
+    "projects": [
+        {
+            "id": "68053d59-9f88-4ca1-8ce5-234375ea6ca6",
+            "name": "OneIELTS",
+            "period": "2024 - 2026",
+            "teaser": false,
+            "tagline": "Multi-tenant IELTS Academic and General preparation platform",
+            "category": "professional",
+            "live_url": "https://oneielts.com",
+            "repo_url": null,
+            "on_resume": false,
+            "highlights": [
+                "Multi-tenant backend with full data isolation per organization, custom domain routing, and per-tenant scoring configuration",
+                "QTI 3.0-compliant question engine supporting 100+ question types, with XML parsing, interaction routing, and automated band-score normalization",
+                "Automated speech evaluation for IELTS Speaking, completing within a few seconds of submission",
+                "Internal Studio API for the moderator platform: authoring, expert evaluation queue, rejudge pipelines and KPI analytics",
+                "Five payment gateways with subscription lifecycle management and idempotent webhook processing",
+                "Production observability, device-restricted JWT auth, and GDPR-compliant account deletion"
+            ],
+            "sort_order": 1,
+            "description": "Enterprise-grade multi-tenant IELTS platform supporting Academic and General curricula. Architected the backend from zero, including a QTI 3.0 question engine, automated scoring across all four skill areas, multi-gateway payment infrastructure, and a production observability stack.",
+            "technologies": [
+                "Django",
+                "DRF",
+                "django-multitenant",
+                "QTI 3.0",
+                "Python",
+                "FastAPI",
+                "PostgreSQL",
+                "Redis",
+                "Celery",
+                "Prometheus",
+                "Grafana",
+                "Next.js",
+                "TypeScript",
+                "Docker"
+            ]
+        },
+        {
+            "id": "faa5aa82-ea20-4a8a-9925-2ff822533ead",
+            "name": "OnePTE",
+            "period": "2022 - 2026",
+            "teaser": false,
+            "tagline": "PTE Academic and Core exam preparation platform",
+            "category": "professional",
+            "live_url": "https://onepte.com",
+            "repo_url": null,
+            "on_resume": false,
+            "highlights": [
+                "Led 93+ production releases across Android, iOS and Web",
+                "Practice and mock test system covering all four modules with 20+ task types and automated question progression",
+                "Real-time AI scoring for spoken and written submissions, delivering results within 10 to 15 seconds",
+                "Multi-platform billing with real-time payment webhooks, transaction deduplication and in-app purchase verification",
+                "Django admin and private API for content moderation, exam management, subscription analytics and acquisition dashboards",
+                "Extended the app to Flutter Web with full responsive desktop implementations"
+            ],
+            "sort_order": 2,
+            "description": "Full-stack EdTech platform for PTE exam prep. Designed and shipped the Flutter cross-platform app from the ground up, built the Django AI scoring backend, and delivered a GPU-backed speech processing microservice, across 93+ production releases.",
+            "technologies": [
+                "Flutter",
+                "Dart",
+                "Riverpod",
+                "GoRouter",
+                "Django",
+                "DRF",
+                "FastAPI",
+                "PostgreSQL",
+                "Redis",
+                "Celery",
+                "Firebase",
+                "Next.js",
+                "TypeScript",
+                "CI/CD"
+            ]
+        },
+        {
+            "id": "aabe18ea-0b5c-4c0c-9c3b-076f2a25fb79",
+            "name": "Sushi Lab",
+            "period": "2026",
+            "teaser": false,
+            "tagline": "Bilingual restaurant ordering and marketing platform, Chartres, France",
+            "category": "client",
+            "live_url": "https://sushilabrestaurant.com",
+            "repo_url": null,
+            "on_resume": true,
+            "highlights": [
+                "Ordering engine with a hydration-safe cart, scheduled-ahead time slots, per-item option pickers, and server-enforced availability windows",
+                "Triple-channel notifications for every order, reservation and contact submission, dispatched in parallel with strict cross-channel data parity",
+                "AI-discoverable SEO: JSON-LD, dynamic sitemap, dynamic OG images, per-locale canonical and hreflang, and llms.txt",
+                "GA4 ecommerce funnel plus reservation, contact, language-switch and Web Vitals events"
+            ],
+            "sort_order": 3,
+            "description": "Production bilingual ordering and marketing site for a Japanese restaurant in Chartres. Designed and shipped end to end as a solo build on Next.js 16 App Router, React 19 and server actions, with translated URL segments and locale-aware checkout.",
+            "technologies": [
+                "Next.js 16",
+                "React 19",
+                "TypeScript",
+                "Tailwind",
+                "Zustand",
+                "React Hook Form",
+                "Zod",
+                "React Email",
+                "next-intl",
+                "Telegram Bot API",
+                "GA4"
+            ]
+        },
+        {
+            "id": "afe6fccd-7831-406d-9719-7ad8e83dfde0",
+            "name": "Projecto",
+            "period": "2022",
+            "teaser": false,
+            "tagline": "University course and proposal management system",
+            "category": "personal",
+            "live_url": null,
+            "repo_url": "https://github.com/cloud-007/projecto",
+            "on_resume": true,
+            "highlights": [
+                "Three roles with distinct permissions: student, supervisor and admin",
+                "PDF and CSV export for project reports",
+                "Background job service for scheduled operations"
+            ],
+            "sort_order": 4,
+            "description": "Multi-role Django web app for university project proposal management, with AJAX-driven interactions, automated email notifications, PDF and CSV export, and a background job service for scheduled operations.",
+            "technologies": [
+                "Django",
+                "Python",
+                "PostgreSQL",
+                "AJAX",
+                "jQuery",
+                "Bootstrap"
+            ]
+        },
+        {
+            "id": "c58ef98f-3806-4eeb-92c8-af55b5d5d22d",
+            "name": "TestForge",
+            "period": "2026",
+            "teaser": false,
+            "tagline": "Mutation-driven test-backfill agent",
+            "category": "personal",
+            "live_url": null,
+            "repo_url": "https://github.com/cloud-007/testforge",
+            "on_resume": true,
+            "highlights": [
+                "Runs mutmut, reads the surviving mutants, and writes targeted tests to kill them",
+                "Coverage is a proxy; mutation score is the thing coverage was trying to measure"
+            ],
+            "sort_order": 5,
+            "description": "An autonomous agent that writes pytest suites which kill surviving mutants rather than merely hitting coverage. Built for the Hourglass AI Agent Challenge, coding agent track.",
+            "technologies": [
+                "Python",
+                "Claude API",
+                "mutmut",
+                "pytest"
+            ]
+        },
+        {
+            "id": "62c664a8-ff7d-4422-b65e-3efed975b720",
+            "name": "serious-oj",
+            "period": "2026",
+            "teaser": false,
+            "tagline": "Production online judge",
+            "category": "personal",
+            "live_url": null,
+            "repo_url": null,
+            "on_resume": false,
+            "highlights": [
+                "Docker-sandboxed judging with per-submission resource limits",
+                "Async architecture for concurrent contest load"
+            ],
+            "sort_order": 6,
+            "description": "A judging system for ACM and OI style contests: Python asyncio with Docker-sandboxed execution, built because the tooling I wanted at university did not exist.",
+            "technologies": [
+                "Python",
+                "asyncio",
+                "Docker"
+            ]
+        },
+        {
+            "id": "fa8e9bee-7339-474e-aad3-359277b87cd2",
+            "name": "HomeHunt",
+            "period": "2021",
+            "teaser": false,
+            "tagline": "Rental listing app",
+            "category": "personal",
+            "live_url": null,
+            "repo_url": "https://github.com/cloud-007/HomeHunt",
+            "on_resume": false,
+            "highlights": [
+            ],
+            "sort_order": 7,
+            "description": "A Flutter rental-listing app, built as a third-year university project and the first thing I shipped with a real interface.",
+            "technologies": [
+                "Flutter",
+                "Dart",
+                "Firebase"
+            ]
+        }
+    ],
+    "education": [
+        {
+            "id": "8b2e5224-1c8c-4bee-9e3e-0b480484e359",
+            "degree": "B.Sc. in Computer Science and Engineering",
+            "detail": "GPA 3.6 / 4.0",
+            "period": "Sep 2018 - Dec 2022",
+            "location": "Sylhet, Bangladesh",
+            "on_resume": true,
+            "sort_order": 1,
+            "institution": "Leading University"
+        },
+        {
+            "id": "84047b28-fcb9-440e-aa31-38074559d567",
+            "degree": "Higher Secondary Certificate, Science",
+            "detail": null,
+            "period": "2016 - 2018",
+            "location": "Sylhet, Bangladesh",
+            "on_resume": false,
+            "sort_order": 2,
+            "institution": "Beanibazar Govt. College"
+        },
+        {
+            "id": "9b6d1b7f-9ff7-415b-a764-f82c8fb13366",
+            "degree": "Secondary School Certificate",
+            "detail": null,
+            "period": "2011 - 2016",
+            "location": "Sylhet, Bangladesh",
+            "on_resume": false,
+            "sort_order": 3,
+            "institution": "Purba Muria High School"
+        }
+    ],
+    "experience": [
+        {
+            "id": "fb783b4e-dc42-487f-8c6d-8fc2a0d4e8dd",
+            "role": "Senior Software Engineer",
+            "links": [
+                {
+                    "href": "https://oneielts.com",
+                    "label": "OneIELTS"
+                },
+                {
+                    "href": "https://onepte.com",
+                    "label": "OnePTE"
+                }
+            ],
+            "stack": [
+                "Django",
+                "DRF",
+                "Python",
+                "PostgreSQL",
+                "Redis",
+                "Celery",
+                "FastAPI",
+                "Docker",
+                "GCP",
+                "Prometheus",
+                "Grafana",
+                "Next.js",
+                "TypeScript"
+            ],
+            "bullets": [
+                "Architected a multi-tenant SaaS backend with django-multitenant: full data isolation, custom domain routing, per-tenant scoring config and feature flags.",
+                "Designed a QTI 3.0-compliant exam engine supporting 100+ question types across IELTS Academic and General, with XML parsing, interaction routing, and strategy-pattern band-score normalization.",
+                "Built a real-time speech evaluation pipeline integrating speech recognition, pronunciation assessment and NLP processing, with end-to-end scoring in under 15 seconds.",
+                "Engineered multi-gateway payment infrastructure across 5 providers, with subscription lifecycle management and webhook idempotency.",
+                "Built the Studio API layer for the moderator platform: content authoring, expert evaluation queue, exam rejudge pipelines, and KPI analytics.",
+                "Set up production observability with Prometheus and Grafana: health monitoring, per-API latency instrumentation, and alerting.",
+                "Mentored junior engineers through code reviews, PR feedback, and architectural walkthroughs."
+            ],
+            "company": "LII Lab",
+            "summary": "Led backend engineering for OneIELTS and OnePTE, AI-powered English test preparation platforms.",
+            "end_date": "2026-04-30",
+            "location": "Sylhet, Bangladesh",
+            "sort_order": 1,
+            "start_date": "2025-01-01",
+            "company_url": "https://www.liilab.com/"
+        },
+        {
+            "id": "81ccc039-98dc-4a38-aff8-05ed6497bdd4",
+            "role": "Software Engineer",
+            "links": [
+                {
+                    "href": "https://onepte.com",
+                    "label": "OnePTE"
+                }
+            ],
+            "stack": [
+                "Flutter",
+                "Dart",
+                "Riverpod",
+                "Django",
+                "DRF",
+                "Python",
+                "PostgreSQL",
+                "Redis",
+                "Celery",
+                "Firebase",
+                "Next.js",
+                "TypeScript"
+            ],
+            "bullets": [
+                "Designed and built the Flutter cross-platform app from scratch: all four PTE modules with 20+ task types, audio recording, and timer management.",
+                "Built a task-group-based mock test engine with modular exam templates, configurable time allocations, automated question progression, and multi-dimensional score breakdowns.",
+                "Engineered the AI scoring backend for spoken and written tasks using speech recognition, pronunciation assessment and NLP processing for multi-trait evaluation.",
+                "Integrated subscription billing across 4 platforms with webhook handling, transaction deduplication, and in-app purchase verification.",
+                "Built the Django admin and private API for content moderation, question bank management, subscription analytics with regional reporting, and user acquisition dashboards.",
+                "Led 93+ production releases across Android, iOS and Web; managed release pipelines, Firebase config, and CI/CD across all channels."
+            ],
+            "company": "LII Lab",
+            "summary": "Full-stack ownership of OnePTE: designed and shipped the Flutter app from day one and built the Django AI scoring backend.",
+            "end_date": "2024-12-31",
+            "location": "Sylhet, Bangladesh",
+            "sort_order": 2,
+            "start_date": "2022-11-01",
+            "company_url": "https://www.liilab.com/"
+        }
+    ],
+    "generatedAt": null,
+    "volunteering": [
+        {
+            "id": "5a8f9c61-aa7e-42cd-8a9c-cb97e746969a",
+            "org": "IEEE Computer Society, LU Student Branch Chapter",
+            "title": "Chair",
+            "period": "Apr 2022 - May 2023",
+            "bullets": [
+                "Co-founded the chapter and launched its first community initiatives",
+                "Organized seminars, webinars and technical events with industry speakers",
+                "Grew membership by more than 20% through outreach programmes",
+                "Delivered a multi-session Flutter bootcamp",
+                "Served as judge and problem setter for programming contests"
+            ],
+            "sort_order": 1
+        },
+        {
+            "id": "5a42f182-98e9-4a91-95c2-48f7272e09bb",
+            "org": "Leading University Computer Club",
+            "title": "ACM Coordinator",
+            "period": "Jan 2022 - Dec 2023",
+            "bullets": [
+                "Conducted peer-to-peer sessions on data structures and algorithms",
+                "Mentored juniors in competitive programming across Codeforces, CodeChef and LightOJ",
+                "Organized regular contest practice to prepare members for ICPC and national competitions"
+            ],
+            "sort_order": 2
+        },
+        {
+            "id": "0149effc-5c95-401e-bc58-4e3b456cce08",
+            "org": "Leading University Sports Club",
+            "title": "Joint General Secretary",
+            "period": "2022 - 2023",
+            "bullets": [
+                "Elected to the executive committee",
+                "Organized inter-department tournaments and university sporting events"
+            ],
+            "sort_order": 3
+        }
+    ],
+    "growthWeights": {
+        "stale_days": 60,
+        "weight_win": 4,
+        "window_days": 90,
+        "lifetime_cap": 50,
+        "momentum_cap": 50,
+        "vitality_base": 0.42,
+        "vitality_span": 0.58,
+        "half_life_days": 45,
+        "lifetime_scale": 5,
+        "momentum_scale": 1,
+        "vitality_floor": 0.3,
+        "bonus_processed": 1,
+        "vitality_target": 42,
+        "weight_learning": 2,
+        "weight_obstacle": 2,
+        "weight_milestone": 5
+    }
+}

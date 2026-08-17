@@ -1,154 +1,46 @@
 "use client";
 
-import { Github, ArrowUpRight, ExternalLink } from "lucide-react";
+import { Github, ArrowUpRight, ExternalLink, Clock } from "lucide-react";
+import { useSiteContent } from "@/lib/use-content";
+import { TEASER_LINE, type Project } from "@/lib/content";
 
-const professionalProjects = [
-  {
-    name: "OneIELTS",
-    tagline: "Multi-Tenant IELTS Academic & General Preparation Platform",
-    period: "2024 – Present",
-    label: "Professional · LiiLab",
-    liveUrl: "https://oneielts.com",
-    description:
-      "Enterprise-grade multi-tenant IELTS platform supporting Academic and General curricula. Architected the backend from zero, including a QTI 3.0 question engine, automated scoring across all four IELTS skill areas, multi-gateway payment infrastructure, and a production observability stack.",
-    highlights: [
-      "Architected a multi-tenant backend using django-multitenant with full data isolation per organization, custom domain routing, and per-tenant scoring configuration and feature flags",
-      "Built a QTI 3.0-compliant question engine supporting 100+ question types across Academic and General curricula, with XML parsing, interaction routing, and automated band-score normalization via a strategy-pattern converter",
-      "Built an automated speech evaluation pipeline for IELTS Speaking using Speech Recognition, Pronunciation Assessment, and NLP Processing, completing within a few seconds of submission",
-      "Designed and built the internal Studio API layer for the moderator platform, covering question bank and curriculum authoring, exam template configuration, user submission review, expert evaluation queue, exam rejudge pipelines, and KPI analytics for subscriptions, user practice activity, and engagement",
-      "Integrated 5 payment gateways (Stripe, Razorpay, SSLCommerz, Google Play, Apple) with subscription lifecycle management, idempotent webhook processing, and campaign-based promotional pricing",
-      "Set up production observability with health monitoring, API latency tracking, and service instrumentation; implemented device-restricted JWT auth and GDPR-compliant account deletion",
-    ],
-    technologies: [
-      "Django", "DRF", "django-multitenant", "QTI 3.0", "Python", "FastAPI",
-      "PostgreSQL", "Redis", "Celery", "Speech Recognition", "NLP Processing",
-      "Stripe", "Razorpay", "Prometheus", "Grafana", "Next.js", "TypeScript", "Docker",
-    ],
-    accentFrom: "from-emerald-500",
-    accentTo: "to-teal-500",
-  },
-  {
-    name: "OnePTE",
-    tagline: "PTE Academic & Core Exam Preparation Platform",
-    period: "2022 – Present",
-    label: "Professional · LiiLab",
-    liveUrl: "https://onepte.com",
-    description:
-      "Full-stack EdTech platform for PTE Academic and PTE Core exam prep. Designed and shipped the Flutter cross-platform app from the ground up, built the Django AI scoring backend, and delivered a GPU-backed speech processing microservice, with 93+ production releases across Android, iOS, and Web.",
-    highlights: [
-      "Led 93+ production mobile releases (Android, iOS, Web), managing release pipelines, Firebase configurations, and CI/CD across all platforms",
-      "Designed the question practice and mock test system covering all four modules (Speaking, Writing, Reading, and Listening) with 20+ task types, configurable time windows, and automated question progression",
-      "Built a real-time AI scoring engine evaluating spoken and written submissions using Speech Recognition, Pronunciation Assessment, and NLP Processing, delivering results within 10-15 seconds",
-      "Engineered multi-platform billing across Stripe, SSLCommerz, Google Play, and Apple App Store with subscription checkout, real-time payment webhooks, transaction deduplication, and in-app purchase verification",
-      "Built the Django admin and private API layer for content moderation, question bank and exam management, subscription analytics with regional reporting, exam rejudge system, and user acquisition dashboards with Google Analytics Data API integration",
-      "Extended the app to Flutter Web with full responsive desktop implementations",
-    ],
-    technologies: [
-      "Flutter", "Dart", "Riverpod", "GoRouter", "Django", "DRF", "FastAPI",
-      "PostgreSQL", "Redis", "Celery", "Speech Recognition", "NLP Processing",
-      "Stripe", "Firebase", "Next.js", "TypeScript", "CI/CD",
-    ],
-    accentFrom: "from-emerald-500",
-    accentTo: "to-teal-500",
-  },
-];
-
-const clientProjects = [
-  {
-    name: "Sushi Lab",
-    tagline: "Bilingual Restaurant Ordering & Marketing Platform · Chartres, France",
-    period: "2026",
-    label: "Client",
-    liveUrl: "https://sushilabrestaurant.com",
-    description:
-      "Production bilingual (FR/EN) ordering and marketing site for a Japanese restaurant in Chartres, France. Designed and shipped end-to-end as a solo build on Next.js 16 App Router with Turbopack, React 19, and server actions, with translated URL segments (/en/order, /fr/commander) and locale-aware checkout.",
-    highlights: [
-      "Built an ordering engine with a hydration-safe Zustand cart, scheduled-ahead time slots, per-item option pickers, and server-enforced time-of-day availability windows (e.g., the lunch menu auto-locks outside hours)",
-      "Engineered triple-channel notifications for every order, reservation, and contact submission (Telegram bot, transactional customer email, and restaurant inbox), dispatched in parallel via React Email + ZeptoMail with strict cross-channel data parity",
-      "Implemented AI-discoverable SEO: JSON-LD (Restaurant, Menu with Schema.org availability windows, FAQ, Breadcrumb), dynamic sitemap, dynamic OG/Twitter images, geo meta tags, llms.txt + llms-full.txt for GPTBot/ClaudeBot/PerplexityBot, and a centralized canonical-URL module emitting per-locale canonical + hreflang (incl. x-default)",
-      "Instrumented a GA4 ecommerce funnel (add_to_cart, view_cart, begin_checkout, purchase, order_rejected) plus reservation, contact, language-switch, and Web Vitals events",
-    ],
-    technologies: [
-      "Next.js 16", "React 19", "TypeScript", "Tailwind", "Zustand", "React Hook Form",
-      "Zod", "React Email", "next-intl", "ZeptoMail", "Telegram Bot API", "GA4",
-    ],
-    accentFrom: "from-sky-500",
-    accentTo: "to-blue-500",
-    githubUrl: null,
-  },
-];
-
-const personalProjects = [
-  {
-    name: "Projecto",
-    tagline: "University Course & Proposal Management System",
-    period: "Oct 2022 – Dec 2022",
-    liveUrl: null,
-    githubUrl: "https://github.com/cloud-007/projecto",
-    description:
-      "A Django web app for managing university courses and student proposals, with four distinct user roles: unregistered visitors, students, teachers, and super users, each with a tailored permission set and feature scope.",
-    highlights: [
-      "Built a multi-role access system where students submit course proposals, teachers supervise and mark assigned proposals with filtering and search by student ID, and super users manage the complete course and faculty lifecycle",
-      "Implemented AJAX-driven interactions for live proposal filtering, dynamic form handling, and inline updates without full page reloads, using jQuery and Bootstrap for responsive layouts",
-      "Wired automated email notifications for supervisor assignment events, keeping student team leaders informed in real time via Django's email backend",
-      "Added PDF and CSV export for proposal lists and course results, giving teachers and admins structured downloadable reports for evaluation and record-keeping",
-    ],
-    technologies: ["Django", "Python", "AJAX", "jQuery", "Bootstrap", "PostgreSQL"],
-    accentFrom: "from-zinc-600",
-    accentTo: "to-zinc-500",
-  },
-  {
-    name: "Reachout",
-    tagline: "Flutter Consultation MVP",
-    period: "Oct 2023",
-    liveUrl: null,
-    githubUrl: "https://github.com/cloud-007",
-    description:
-      "A Flutter MVP connecting users with professional consultants, featuring Google Sign-In authentication, real-time chat, and consultant profile browsing, structured with Clean Architecture from day one.",
-    highlights: [
-      "Built end-to-end authentication with Google Sign-In, Firebase session management, and user profile creation with Apple-style onboarding flow",
-      "Implemented real-time chat between users and consultants using Firebase Firestore, with message threading and consultant online status indicators",
-      "Structured the codebase using Clean Architecture with Riverpod state management, separating domain, data, and presentation layers into modular packages for a scalable, testable foundation",
-      "Delivered a complete working MVP (consultant discovery, profile browsing, and in-app messaging) within a tight timeframe as a solo project",
-    ],
-    technologies: ["Flutter", "Dart", "Firebase", "Riverpod", "Clean Architecture"],
-    accentFrom: "from-zinc-600",
-    accentTo: "to-zinc-500",
-  },
-];
-
-type ProjectCard = {
-  name: string;
-  tagline: string;
-  period: string;
-  label?: string;
-  liveUrl: string | null;
-  githubUrl?: string | null;
-  description: string;
-  highlights: string[];
-  technologies: string[];
-  accentFrom: string;
-  accentTo: string;
+/* Accent stripe per category, so the three groups read as three groups
+   without needing a colour column in the database. */
+const ACCENT: Record<Project["category"], string> = {
+  professional: "from-emerald-500 to-teal-500",
+  client: "from-sky-500 to-blue-500",
+  personal: "from-violet-500 to-fuchsia-500",
 };
 
-function FullWidthCard({ project, showPrivateBadge = false }: { project: ProjectCard; showPrivateBadge?: boolean }) {
+const GROUPS: { key: Project["category"]; label: string }[] = [
+  { key: "professional", label: "Professional" },
+  { key: "client", label: "Client" },
+  { key: "personal", label: "Personal" },
+];
+
+function FullWidthCard({ project }: { project: Project }) {
   return (
     <div className="bento-card p-7 hover:border-zinc-600 transition-colors relative overflow-hidden">
-      <div className={`absolute left-0 top-6 bottom-6 w-0.5 bg-gradient-to-b ${project.accentFrom} ${project.accentTo} rounded-full`} />
+      <div
+        className={`absolute left-0 top-6 bottom-6 w-0.5 bg-gradient-to-b ${ACCENT[project.category]} rounded-full`}
+      />
       <div className="pl-5">
         {/* Header */}
         <div className="flex flex-col sm:flex-row sm:items-start sm:justify-between gap-3 mb-3">
           <div>
             <div className="flex items-center gap-3 flex-wrap mb-1">
               <h3 className="text-xl font-bold text-zinc-50">{project.name}</h3>
-              {showPrivateBadge && (
-                <span className="px-2.5 py-0.5 bg-zinc-800 border border-zinc-700 rounded-full text-zinc-400 text-xs font-medium">
-                  Private
+
+              {project.teaser && (
+                <span className="inline-flex items-center gap-1 px-2.5 py-0.5 bg-zinc-800 border border-zinc-700 rounded-full text-zinc-400 text-xs font-medium">
+                  <Clock className="w-3 h-3" />
+                  Soon
                 </span>
               )}
-              {project.liveUrl && (
+
+              {project.live_url && (
                 <a
-                  href={project.liveUrl}
+                  href={project.live_url}
                   target="_blank"
                   rel="noopener noreferrer"
                   className="inline-flex items-center gap-1 px-2.5 py-0.5 bg-emerald-500/10 border border-emerald-500/20 rounded-full text-emerald-400 text-xs font-medium hover:bg-emerald-500/20 transition-colors"
@@ -157,9 +49,10 @@ function FullWidthCard({ project, showPrivateBadge = false }: { project: Project
                   <ExternalLink className="w-3 h-3" />
                 </a>
               )}
-              {project.githubUrl && (
+
+              {project.repo_url && (
                 <a
-                  href={project.githubUrl}
+                  href={project.repo_url}
                   target="_blank"
                   rel="noopener noreferrer"
                   className="inline-flex items-center gap-1 px-2.5 py-0.5 bg-zinc-800 border border-zinc-700 rounded-full text-zinc-400 text-xs font-medium hover:bg-zinc-700 transition-colors"
@@ -169,46 +62,82 @@ function FullWidthCard({ project, showPrivateBadge = false }: { project: Project
                 </a>
               )}
             </div>
-            <p className="text-emerald-400 text-xs font-medium">{project.tagline}</p>
-          </div>
-          <div className="flex items-center gap-2 shrink-0">
-            <span className="text-zinc-500 text-xs bg-zinc-800/60 px-3 py-1.5 rounded-xl border border-zinc-700/50">
-              {project.period}
-            </span>
-            {project.label && (
-              <span className="text-zinc-600 text-xs hidden sm:inline">{project.label}</span>
+            {project.tagline && (
+              <p className="text-emerald-400 text-xs font-medium">
+                {project.tagline}
+              </p>
             )}
           </div>
+
+          {project.period && (
+            <div className="flex items-center gap-2 shrink-0">
+              <span className="text-zinc-500 text-xs bg-zinc-800/60 px-3 py-1.5 rounded-xl border border-zinc-700/50">
+                {project.period}
+              </span>
+            </div>
+          )}
         </div>
 
-        <p className="text-zinc-400 text-sm leading-relaxed mb-5">{project.description}</p>
+        {project.teaser ? (
+          <p className="flex items-center gap-2 text-zinc-500 text-sm italic">
+            <Clock className="w-3.5 h-3.5 shrink-0" />
+            {TEASER_LINE}
+          </p>
+        ) : (
+          <>
+            {project.description && (
+              <p className="text-zinc-400 text-sm leading-relaxed mb-5">
+                {project.description}
+              </p>
+            )}
 
-        <ul className="space-y-2 mb-5">
-          {project.highlights.map((item, i) => (
-            <li key={i} className="flex items-start gap-3 text-zinc-400 text-sm">
-              <span className="mt-1.5 w-1.5 h-1.5 bg-emerald-500/70 rounded-full shrink-0" />
-              {item}
-            </li>
-          ))}
-        </ul>
+            {project.highlights.length > 0 && (
+              <ul className="space-y-2 mb-5">
+                {project.highlights.map((item, i) => (
+                  <li
+                    key={i}
+                    className="flex items-start gap-3 text-zinc-400 text-sm"
+                  >
+                    <span className="mt-1.5 w-1.5 h-1.5 bg-emerald-500/70 rounded-full shrink-0" />
+                    {item}
+                  </li>
+                ))}
+              </ul>
+            )}
 
-        <div className="flex flex-wrap gap-1.5 pt-4 border-t border-zinc-800">
-          {project.technologies.map((tech) => (
-            <span key={tech} className="tech-badge">{tech}</span>
-          ))}
-        </div>
+            {project.technologies.length > 0 && (
+              <div className="flex flex-wrap gap-1.5 pt-4 border-t border-zinc-800">
+                {project.technologies.map((tech) => (
+                  <span key={tech} className="tech-badge">
+                    {tech}
+                  </span>
+                ))}
+              </div>
+            )}
+          </>
+        )}
       </div>
     </div>
   );
 }
 
 export function Projects() {
+  const { content } = useSiteContent();
+  const { projects, profile } = content;
+
+  if (projects.length === 0) return null;
+
+  const github =
+    profile?.socials.find((s) => s.label === "GitHub")?.href ??
+    "https://github.com/cloud-007";
+  const githubHandle = github.replace(/^https?:\/\//, "");
+
   return (
     <section id="projects" className="section px-4">
       <div className="max-w-5xl mx-auto">
         {/* Section header */}
         <div className="mb-12">
-          <span className="section-label">Work & Projects</span>
+          <span className="section-label">Work and Projects</span>
           <h2 className="text-3xl md:text-4xl font-extrabold text-zinc-50 tracking-tight mt-2">
             Projects
           </h2>
@@ -217,41 +146,22 @@ export function Projects() {
           </p>
         </div>
 
-        {/* Professional */}
-        <div className="mb-8">
-          <p className="text-zinc-500 text-xs font-semibold uppercase tracking-widest mb-4">
-            Professional
-          </p>
-          <div className="space-y-4">
-            {professionalProjects.map((project, i) => (
-              <FullWidthCard key={i} project={project} showPrivateBadge />
-            ))}
-          </div>
-        </div>
-
-        {/* Client */}
-        <div className="mb-8">
-          <p className="text-zinc-500 text-xs font-semibold uppercase tracking-widest mb-4">
-            Client
-          </p>
-          <div className="space-y-4">
-            {clientProjects.map((project, i) => (
-              <FullWidthCard key={i} project={project} />
-            ))}
-          </div>
-        </div>
-
-        {/* Personal */}
-        <div>
-          <p className="text-zinc-500 text-xs font-semibold uppercase tracking-widest mb-4">
-            Personal
-          </p>
-          <div className="space-y-4">
-            {personalProjects.map((project, i) => (
-              <FullWidthCard key={i} project={project} />
-            ))}
-          </div>
-        </div>
+        {GROUPS.map(({ key, label }) => {
+          const group = projects.filter((p) => p.category === key);
+          if (group.length === 0) return null;
+          return (
+            <div key={key} className="mb-8">
+              <p className="text-zinc-500 text-xs font-semibold uppercase tracking-widest mb-4">
+                {label}
+              </p>
+              <div className="space-y-4">
+                {group.map((project) => (
+                  <FullWidthCard key={project.id} project={project} />
+                ))}
+              </div>
+            </div>
+          );
+        })}
 
         {/* GitHub CTA */}
         <div className="mt-4 bento-card p-5 flex items-center justify-between hover:border-zinc-600 transition-colors">
@@ -262,13 +172,13 @@ export function Projects() {
             </p>
           </div>
           <a
-            href="https://github.com/cloud-007"
+            href={github}
             target="_blank"
             rel="noopener noreferrer"
             className="flex items-center gap-2 px-4 py-2 bg-zinc-800 hover:bg-zinc-700 text-zinc-200 text-sm font-medium rounded-xl border border-zinc-700 transition-all group"
           >
             <Github className="w-4 h-4" />
-            github.com/cloud-007
+            {githubHandle}
             <ArrowUpRight className="w-3.5 h-3.5 text-zinc-500 group-hover:text-emerald-400 transition-colors" />
           </a>
         </div>

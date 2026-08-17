@@ -2,8 +2,33 @@
 
 import { useRef, useEffect } from "react";
 import Link from "next/link";
+import { useSiteContent } from "@/lib/use-content";
+
+const MONTHS = [
+  "01", "02", "03", "04", "05", "06",
+  "07", "08", "09", "10", "11", "12",
+];
+
+/** "01/2025 - 04/2026", the compact form a resume wants. */
+function period(start: string, end: string | null): string {
+  const fmt = (d: string) => {
+    const [y, m] = d.split("-").map(Number);
+    return `${MONTHS[m - 1]}/${y}`;
+  };
+  return `${fmt(start)} - ${end ? fmt(end) : "Present"}`;
+}
+
+function ExtIcon() {
+  return (
+    <svg className="rp-ext-icon" viewBox="0 0 14 14" fill="none">
+      <path d="M6 2H3a1 1 0 0 0-1 1v8a1 1 0 0 0 1 1h8a1 1 0 0 0 1-1V8" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" />
+      <path d="M9 1h4m0 0v4m0-4L7 7" stroke="currentColor" strokeWidth="1.5" strokeLinejoin="round" />
+    </svg>
+  );
+}
 
 export default function ResumePage() {
+  const { content } = useSiteContent();
   const paperRef = useRef<HTMLDivElement>(null);
   const wrapRef = useRef<HTMLDivElement>(null);
 
@@ -27,6 +52,27 @@ export default function ResumePage() {
     window.addEventListener("resize", scale);
     return () => window.removeEventListener("resize", scale);
   }, []);
+
+  const profile = content.profile;
+  const skills = content.skills.filter((s) => s.context === "resume");
+  const resumeProjects = content.projects.filter((p) => p.on_resume && !p.teaser);
+  const cpStats = content.stats.filter((s) => s.context === "competitive");
+  const degrees = content.education.filter((e) => e.on_resume);
+  const wins = content.entries
+    .filter((e) => !e.teaser && e.traits.includes("won"))
+    .slice()
+    .sort((a, b) => b.date.localeCompare(a.date));
+
+  /* Rendered as-is if the database is unreachable AND the snapshot is empty,
+     which should never happen, but an empty page is worse than a message. */
+  if (!profile) return null;
+
+  const contacts = [
+    ...(profile.email ? [{ href: `mailto:${profile.email}`, text: profile.email }] : []),
+    ...profile.socials
+      .filter((s) => s.label !== "Email")
+      .map((s) => ({ href: s.href, text: s.href.replace(/^https?:\/\//, "") })),
+  ];
 
   return (
     <>
@@ -264,176 +310,195 @@ export default function ResumePage() {
           <div className="rp-paper" ref={paperRef}>
 
             <header className="rp-header">
-              <h1 className="rp-name">MD MAZHARUL ISLAM EMON</h1>
-              <p className="rp-subtitle">Full-Stack AI Engineer</p>
+              <h1 className="rp-name">{profile.name}</h1>
+              <p className="rp-subtitle">{profile.role}</p>
               <p className="rp-contact">
-                +8801794405314
-                <span className="rp-sep">&bull;</span>
-                <a href="mailto:mie.mazharul@gmail.com">mie.mazharul@gmail.com</a>
-                <span className="rp-sep">&bull;</span>
-                <a href="https://github.com/cloud-007" target="_blank" rel="noopener noreferrer">github.com/cloud-007</a>
-                <span className="rp-sep">&bull;</span>
-                <a href="https://linkedin.com/in/-mazharulislam-/" target="_blank" rel="noopener noreferrer">linkedin.com/in/-mazharulislam-/</a>
-                <span className="rp-sep">&bull;</span>
-                Sylhet, Bangladesh
+                {profile.phone && (
+                  <>
+                    {profile.phone}
+                    <span className="rp-sep">&bull;</span>
+                  </>
+                )}
+                {contacts.map((c, i) => (
+                  <span key={c.href}>
+                    <a href={c.href} target="_blank" rel="noopener noreferrer">
+                      {c.text}
+                    </a>
+                    {i < contacts.length - 1 && <span className="rp-sep">&bull;</span>}
+                  </span>
+                ))}
+                {profile.location && (
+                  <>
+                    <span className="rp-sep">&bull;</span>
+                    {profile.location}
+                  </>
+                )}
               </p>
             </header>
 
             <section className="rp-section">
               <h2 className="rp-section-head">Summary</h2>
               <hr className="rp-rule" />
-              <p className="rp-summary">
-                Full-Stack AI Engineer with 3+ years in software engineering. Builds scalable backends, cross-platform mobile apps, and AI-powered SaaS platforms. Ships production systems with Django, Flutter, and Next.js, and delivers faster using AI-native tooling like Claude Code and Cursor. Proven track record in multi-tenant architecture, real-time speech evaluation pipelines, and end-to-end product delivery across 93+ production releases. Strong background in competitive programming with 2,000+ problems solved and ICPC Asia Dhaka Regional participation.
-              </p>
+              <p className="rp-summary">{profile.bio}</p>
             </section>
 
-            <section className="rp-section">
-              <h2 className="rp-section-head">Technical Skills</h2>
-              <hr className="rp-rule" />
-              <div className="rp-skills">
-                <p className="rp-skill-row"><span className="rp-skill-key">Languages &amp; Frameworks: </span>Python &middot; Django &middot; Django REST Framework &middot; FastAPI &middot; Dart &middot; Flutter &middot; TypeScript &middot; Next.js &middot; React</p>
-                <p className="rp-skill-row"><span className="rp-skill-key">Databases &amp; Messaging: </span>PostgreSQL &middot; Redis &middot; Celery &middot; Celery Beat</p>
-                <p className="rp-skill-row"><span className="rp-skill-key">AI &amp; NLP: </span>Speech Recognition &middot; NLP Processing &middot; LLM Integration &middot; PyTorch &middot; WhisperX &middot; OpenAI API</p>
-                <p className="rp-skill-row"><span className="rp-skill-key">Infrastructure &amp; DevOps: </span>Docker &middot; Nginx &middot; GCP &middot; DigitalOcean &middot; CI/CD &middot; Prometheus &middot; Grafana &middot; Firebase &middot; FCM</p>
-                <p className="rp-skill-row"><span className="rp-skill-key">AI-Assisted Development: </span>Claude Code &middot; Cursor &middot; Agentic Workflows &middot; AI Pair Programming</p>
-              </div>
-            </section>
-
-            <section className="rp-section">
-              <h2 className="rp-section-head">Professional Experience</h2>
-              <hr className="rp-rule" />
-
-              <div className="rp-block">
-                <div className="rp-block-row"><span className="rp-co">LII Lab</span><span className="rp-loc">Sylhet, Bangladesh</span></div>
-                <div className="rp-block-sub"><span className="rp-role">Senior Software Engineer</span><span className="rp-dates">01/2025 &ndash; 04/2026</span></div>
-                <p className="rp-desc">
-                  Led backend engineering for{" "}
-                  <a href="https://oneielts.com" className="rp-prod-link" target="_blank" rel="noopener noreferrer">OneIELTS</a> and{" "}
-                  <a href="https://onepte.com" className="rp-prod-link" target="_blank" rel="noopener noreferrer">OnePTE</a>
-                  {" "}&mdash; AI-powered English test preparation platforms.
-                </p>
-                <ul className="rp-ul">
-                  <li>Architected <span className="rp-kw">multi-tenant SaaS backend</span> with django-multitenant: full data isolation, custom domain routing, per-tenant scoring config and feature flags.</li>
-                  <li>Designed <span className="rp-kw">QTI 3.0-compliant exam engine</span> supporting 100+ question types across IELTS Academic and General, with XML parsing, interaction routing, and strategy-pattern band-score normalization.</li>
-                  <li>Built <span className="rp-kw">real-time speech evaluation pipeline</span> integrating Speech Recognition, Pronunciation Assessment, and NLP Processing, with end-to-end scoring in under 15 seconds.</li>
-                  <li>Engineered <span className="rp-kw">multi-gateway payment infrastructure</span> with 5 providers (Stripe, Razorpay, SSLCommerz, Google Play, Apple), subscription lifecycle management, and webhook idempotency.</li>
-                  <li>Built <span className="rp-kw">Studio API layer</span> for moderator platform: content authoring, expert evaluation queue, exam rejudge pipelines, and KPI analytics for subscriptions and engagement.</li>
-                  <li>Set up <span className="rp-kw">production observability stack</span> with Prometheus and Grafana: health monitoring, per-API latency instrumentation, and alerting.</li>
-                  <li>Mentored junior engineers through code reviews, PR feedback, and architectural walkthroughs.</li>
-                </ul>
-                <p className="rp-stack"><b>Stack:</b> Django &middot; DRF &middot; Python &middot; PostgreSQL &middot; Redis &middot; Celery &middot; FastAPI &middot; Docker &middot; GCP &middot; Prometheus &middot; Grafana &middot; Next.js &middot; TypeScript</p>
-              </div>
-
-              <div className="rp-block">
-                <div className="rp-block-row"><span className="rp-co">LII Lab</span><span className="rp-loc">Sylhet, Bangladesh</span></div>
-                <div className="rp-block-sub"><span className="rp-role">Software Engineer</span><span className="rp-dates">11/2022 &ndash; 12/2024</span></div>
-                <p className="rp-desc">
-                  Full-stack ownership of{" "}
-                  <a href="https://onepte.com" className="rp-prod-link" target="_blank" rel="noopener noreferrer">OnePTE</a>
-                  {" "}&mdash; designed and shipped the Flutter app from day one and built the Django AI scoring backend.
-                </p>
-                <ul className="rp-ul">
-                  <li>Designed and built <span className="rp-kw">Flutter cross-platform app</span> from scratch: all four PTE modules (Speaking, Writing, Reading, Listening) with 20+ task types, audio recording, and timer management.</li>
-                  <li>Built task-group-based <span className="rp-kw">mock test engine</span> with modular exam templates, configurable time allocations, automated question progression, and multi-dimensional score breakdowns.</li>
-                  <li>Engineered <span className="rp-kw">AI scoring backend</span> for spoken and written PTE tasks using Speech Recognition, Pronunciation Assessment, and NLP Processing for multi-trait evaluation.</li>
-                  <li>Integrated <span className="rp-kw">subscription billing across 4 platforms</span> (Stripe, SSLCommerz, Google Play, Apple App Store) with webhook handling, transaction deduplication, and in-app purchase verification.</li>
-                  <li>Built <span className="rp-kw">Django admin and private API</span> for content moderation, question bank management, subscription analytics with regional reporting, and user acquisition dashboards.</li>
-                  <li>Led <span className="rp-kw">93+ production releases</span> across Android, iOS, and Web; managed release pipelines, Firebase config, and CI/CD across all channels.</li>
-                </ul>
-                <p className="rp-stack"><b>Stack:</b> Flutter &middot; Dart &middot; Riverpod &middot; Django &middot; DRF &middot; Python &middot; PostgreSQL &middot; Redis &middot; Celery &middot; Firebase &middot; Next.js &middot; TypeScript</p>
-              </div>
-            </section>
-
-            <section className="rp-section">
-              <h2 className="rp-section-head">Projects</h2>
-              <hr className="rp-rule" />
-
-              <div className="rp-block">
-                <div className="rp-proj-header">
-                  <a href="https://sushilabrestaurant.com" className="rp-proj-link" target="_blank" rel="noopener noreferrer">
-                    Sushi Lab &mdash; Bilingual Restaurant Ordering & Marketing Platform
-                    <svg className="rp-ext-icon" viewBox="0 0 14 14" fill="none"><path d="M6 2H3a1 1 0 0 0-1 1v8a1 1 0 0 0 1 1h8a1 1 0 0 0 1-1V8" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round"/><path d="M9 1h4m0 0v4m0-4L7 7" stroke="currentColor" strokeWidth="1.5" strokeLinejoin="round"/></svg>
-                  </a>
-                  <span className="rp-proj-dates">2026</span>
+            {skills.length > 0 && (
+              <section className="rp-section">
+                <h2 className="rp-section-head">Technical Skills</h2>
+                <hr className="rp-rule" />
+                <div className="rp-skills">
+                  {skills.map((g) => (
+                    <p className="rp-skill-row" key={g.id}>
+                      <span className="rp-skill-key">{g.group}: </span>
+                      {g.items.join(" \u00b7 ")}
+                    </p>
+                  ))}
                 </div>
-                <ul className="rp-ul">
-                  <li>Shipped a <span className="rp-kw">bilingual (FR/EN) ordering and marketing site</span> for a Japanese restaurant in Chartres, France, on Next.js 16 App Router, React 19, and server actions with translated URL segments (/en/order, /fr/commander) and locale-aware checkout.</li>
-                  <li>Built an <span className="rp-kw">ordering engine</span> with a hydration-safe Zustand cart, scheduled-ahead time slots, per-item option pickers, and server-enforced time-of-day availability windows.</li>
-                  <li>Engineered <span className="rp-kw">triple-channel notifications</span> (Telegram bot, customer email, restaurant inbox) via React Email + ZeptoMail, plus AI-discoverable SEO (JSON-LD, per-locale canonical + hreflang, llms.txt) and a GA4 ecommerce funnel.</li>
-                </ul>
-                <p className="rp-stack"><b>Stack:</b> Next.js 16 &middot; React 19 &middot; TypeScript &middot; Tailwind &middot; Zustand &middot; React Hook Form &middot; Zod &middot; React Email &middot; next-intl &middot; ZeptoMail &middot; Telegram Bot API &middot; GA4</p>
-              </div>
+              </section>
+            )}
 
-              <div className="rp-block">
-                <div className="rp-proj-header">
-                  <a href="https://github.com/cloud-007/projecto" className="rp-proj-link" target="_blank" rel="noopener noreferrer">
-                    Projecto &mdash; University Course &amp; Proposal Management
-                    <svg className="rp-ext-icon" viewBox="0 0 14 14" fill="none"><path d="M6 2H3a1 1 0 0 0-1 1v8a1 1 0 0 0 1 1h8a1 1 0 0 0 1-1V8" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round"/><path d="M9 1h4m0 0v4m0-4L7 7" stroke="currentColor" strokeWidth="1.5" strokeLinejoin="round"/></svg>
-                  </a>
-                  <span className="rp-proj-dates">10/2022 &ndash; 12/2022</span>
+            {content.experience.length > 0 && (
+              <section className="rp-section">
+                <h2 className="rp-section-head">Professional Experience</h2>
+                <hr className="rp-rule" />
+                {content.experience.map((exp) => (
+                  <div className="rp-block" key={exp.id}>
+                    <div className="rp-block-row">
+                      <span className="rp-co">{exp.company}</span>
+                      <span className="rp-loc">{exp.location}</span>
+                    </div>
+                    <div className="rp-block-sub">
+                      <span className="rp-role">{exp.role}</span>
+                      <span className="rp-dates">
+                        {period(exp.start_date, exp.end_date)}
+                      </span>
+                    </div>
+                    {exp.summary && <p className="rp-desc">{exp.summary}</p>}
+                    <ul className="rp-ul">
+                      {exp.bullets.map((b, i) => <li key={i}>{b}</li>)}
+                    </ul>
+                    {exp.stack.length > 0 && (
+                      <p className="rp-stack">
+                        <b>Stack:</b> {exp.stack.join(" \u00b7 ")}
+                      </p>
+                    )}
+                  </div>
+                ))}
+              </section>
+            )}
+
+            {resumeProjects.length > 0 && (
+              <section className="rp-section">
+                <h2 className="rp-section-head">Projects</h2>
+                <hr className="rp-rule" />
+                {resumeProjects.map((p) => {
+                  const href = p.live_url ?? p.repo_url;
+                  return (
+                    <div className="rp-block" key={p.id}>
+                      <div className="rp-proj-header">
+                        {href ? (
+                          <a href={href} className="rp-proj-link" target="_blank" rel="noopener noreferrer">
+                            {p.name}{p.tagline ? `, ${p.tagline}` : ""}
+                            <ExtIcon />
+                          </a>
+                        ) : (
+                          <span className="rp-proj-link">{p.name}</span>
+                        )}
+                        {p.period && <span className="rp-proj-dates">{p.period}</span>}
+                      </div>
+                      <ul className="rp-ul">
+                        {p.highlights.map((h, i) => <li key={i}>{h}</li>)}
+                      </ul>
+                      {p.technologies.length > 0 && (
+                        <p className="rp-stack">
+                          <b>Stack:</b> {p.technologies.join(" \u00b7 ")}
+                        </p>
+                      )}
+                    </div>
+                  );
+                })}
+              </section>
+            )}
+
+            {(wins.length > 0 || cpStats.length > 0) && (
+              <section className="rp-section">
+                <h2 className="rp-section-head">Competitive Programming and Achievements</h2>
+                <hr className="rp-rule" />
+                <div className="rp-cp-grid">
+                  {cpStats.length > 0 && (
+                    <div className="rp-cp-item">
+                      {cpStats.map((s) => `${s.value} ${s.label.toLowerCase()}`).join(" \u00b7 ")}
+                    </div>
+                  )}
+                  {wins.map((w) => (
+                    <div className="rp-cp-item" key={w.id || w.slug}>
+                      {w.outcome && <b>{w.outcome}</b>}
+                      {w.outcome ? ", " : ""}
+                      {w.title}
+                    </div>
+                  ))}
+                  {content.judges.length > 0 && (
+                    <div className="rp-cp-item">
+                      {content.judges.map((j, i) => (
+                        <span key={j.id}>
+                          <a href={j.url} target="_blank" rel="noopener noreferrer">{j.name}</a>
+                          {j.rating ? ` (${j.rating})` : ""}
+                          {i < content.judges.length - 1 ? " \u00b7 " : ""}
+                        </span>
+                      ))}
+                    </div>
+                  )}
                 </div>
-                <ul className="rp-ul">
-                  <li>Built <span className="rp-kw">multi-role Django web app</span> (student, supervisor, admin) for university project proposal management with AJAX-driven interactions and automated email notifications.</li>
-                  <li>Implemented <span className="rp-kw">PDF and CSV export</span> for project reports and integrated background job service for scheduled operations.</li>
-                </ul>
-                <p className="rp-stack"><b>Stack:</b> Django &middot; Python &middot; PostgreSQL &middot; AJAX &middot; jQuery &middot; Bootstrap</p>
-              </div>
-            </section>
+              </section>
+            )}
 
-            <section className="rp-section">
-              <h2 className="rp-section-head">Competitive Programming &amp; Achievements</h2>
-              <hr className="rp-rule" />
-              <div className="rp-cp-grid">
-                <div className="rp-cp-item">Solved <b>2,000+ problems</b> across online judges; participated in <b>300+ contests</b>.</div>
-                <div className="rp-cp-item"><b>Champion</b>, LU CSE Carnival National Hackathon 2023 &mdash; Team: LU Ovream</div>
-                <div className="rp-cp-item"><b>Runner-up (Bangladesh)</b>, IEEEXtreme 16.0 (2022) &mdash; Global Rank 149, Team: LazySquad</div>
-                <div className="rp-cp-item"><b>ICPC:</b> 87th / 1,700+ teams, Preliminary 2021; 51st, Dhaka Regional 2020</div>
-                <div className="rp-cp-item"><b>Champion</b>, LU TechStorm 4 Programming Contest 2021</div>
-                <div className="rp-cp-item">
-                  <a href="https://codeforces.com/profile/cloud_007" target="_blank" rel="noopener noreferrer">Codeforces</a> (Max: <b>1603</b>)
-                  &nbsp;&middot;&nbsp;
-                  <a href="https://www.codechef.com/users/cloud_007" target="_blank" rel="noopener noreferrer">CodeChef</a> (Max: <b>1965</b>)
-                  &nbsp;&middot;&nbsp;
-                  <a href="https://lightoj.com/user/cloud_007" target="_blank" rel="noopener noreferrer">LightOJ</a>
-                </div>
-              </div>
-            </section>
+            {degrees.length > 0 && (
+              <section className="rp-section">
+                <h2 className="rp-section-head">Education</h2>
+                <hr className="rp-rule" />
+                {degrees.map((e) => (
+                  <div className="rp-block" key={e.id}>
+                    <div className="rp-block-row">
+                      <span className="rp-co">{e.institution}</span>
+                      <span className="rp-loc">{e.location}</span>
+                    </div>
+                    <div className="rp-block-sub">
+                      <span className="rp-role">
+                        {e.degree}
+                        {e.detail && (
+                          <>
+                            {" \u00b7 "}
+                            <span className="rp-gpa">{e.detail}</span>
+                          </>
+                        )}
+                      </span>
+                      <span className="rp-dates">{e.period}</span>
+                    </div>
+                  </div>
+                ))}
+              </section>
+            )}
 
-            <section className="rp-section">
-              <h2 className="rp-section-head">Education</h2>
-              <hr className="rp-rule" />
-              <div className="rp-block">
-                <div className="rp-block-row"><span className="rp-co">Leading University</span><span className="rp-loc">Sylhet, Bangladesh</span></div>
-                <div className="rp-block-sub">
-                  <span className="rp-role">B.Sc. in Computer Science and Engineering &nbsp;&mdash;&nbsp; GPA:&nbsp;<span className="rp-gpa">3.6</span>&nbsp;/&nbsp;4.0</span>
-                  <span className="rp-dates">09/2018 &ndash; 12/2022</span>
-                </div>
-              </div>
-            </section>
-
-            <section className="rp-section">
-              <h2 className="rp-section-head">Volunteering</h2>
-              <hr className="rp-rule" />
-
-              <div className="rp-block">
-                <div className="rp-block-row"><span className="rp-co">IEEE Computer Society &mdash; LU Student Branch Chapter</span></div>
-                <div className="rp-block-sub"><span className="rp-role">Chair</span><span className="rp-dates">04/2022 &ndash; 05/2023</span></div>
-                <ul className="rp-ul">
-                  <li>Established the IEEE CS Student Branch Chapter at LU; organized seminars, webinars, and technical workshops with industry speakers.</li>
-                  <li>Grew chapter <span className="rp-kw">membership by 20%+</span> through outreach programs; delivered a multi-session <span className="rp-kw">Flutter bootcamp</span>.</li>
-                  <li>Served as problem setter and judge for inter-university programming contests.</li>
-                </ul>
-              </div>
-
-              <div className="rp-block">
-                <div className="rp-block-row"><span className="rp-co">Leading University Computer Club</span></div>
-                <div className="rp-block-sub"><span className="rp-role">ACM Coordinator</span><span className="rp-dates">01/2022 &ndash; 12/2023</span></div>
-                <ul className="rp-ul">
-                  <li>Conducted peer-to-peer DSA sessions and mentored juniors in competitive programming strategies across Codeforces, CodeChef, and LightOJ.</li>
-                  <li>Organized regular contest practice sessions to prepare members for ICPC and national competitions.</li>
-                </ul>
-              </div>
-            </section>
+            {content.volunteering.length > 0 && (
+              <section className="rp-section">
+                <h2 className="rp-section-head">Volunteering</h2>
+                <hr className="rp-rule" />
+                {content.volunteering.map((v) => (
+                  <div className="rp-block" key={v.id}>
+                    <div className="rp-block-row">
+                      <span className="rp-co">{v.org}</span>
+                    </div>
+                    <div className="rp-block-sub">
+                      <span className="rp-role">{v.title}</span>
+                      <span className="rp-dates">{v.period}</span>
+                    </div>
+                    <ul className="rp-ul">
+                      {v.bullets.map((b, i) => <li key={i}>{b}</li>)}
+                    </ul>
+                  </div>
+                ))}
+              </section>
+            )}
 
           </div>{/* /rp-paper */}
         </div>{/* /rp-paper-wrap */}

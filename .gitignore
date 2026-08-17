@@ -32,6 +32,8 @@ yarn-error.log*
 
 # env files (can opt-in for committing if needed)
 .env*
+# ...but the template carries no secrets and belongs in the repo.
+!.env.example
 
 # vercel
 .vercel
@@ -39,3 +41,17 @@ yarn-error.log*
 # typescript
 *.tsbuildinfo
 next-env.d.ts
+
+# Supabase bootstrap files that carry PRIVATE rows.
+#
+# 02-seed.sql and 03-seed-content.sql contain every entry, including the ones
+# marked visibility='private': interview companies, unverified claims and
+# private_note text. REVIEW.md names them too. The whole point of the
+# visibility model is that this data never reaches a public repo, and these
+# files are the one place it exists in plain text.
+#
+# They are one-time bootstrap files. Keep them locally, run them in the
+# Supabase SQL editor, and let the database be their home after that.
+supabase/02-seed.sql
+supabase/03-seed-content.sql
+supabase/REVIEW.md

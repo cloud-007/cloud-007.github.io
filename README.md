@@ -21,9 +21,16 @@ with Next.js 16 (App Router, static export) and deployed to GitHub Pages.
 - **Live weather**: the sky over Sylhet is pulled from [Open-Meteo](https://open-meteo.com)
   (no API key), rendering clear / cloudy / rain / storm and day/night states,
   with a calm default sky when offline.
-- **Data-driven timeline**: the whole timeline lives in
-  [`src/data/trail.json`](src/data/trail.json) and is clustered into chapters.
-  Add entries interactively with `pnpm trail:add`.
+- **Database-driven, end to end**: every word on the site comes from Supabase.
+  The browser can only reach `public_*` views filtered to `visibility = 'public'`,
+  so a private entry, a redacted company name or an unlaunched project never
+  leaves the database. A build-time snapshot is committed as a fallback, so the
+  site renders instantly and survives an outage. See [`supabase/SETUP.md`](supabase/SETUP.md).
+- **Two-axis filtering**: every timeline entry carries a life chapter, a domain
+  (education, contests, community, work, built, content, interviews, network,
+  writing) and one or more CV competency traits (built, shipped, founded, led,
+  organized, mentored, competed, won, learned, researched, taught, interviewed,
+  assessed). The narrative arc survives filtering; it just gets shorter.
 - **Printable résumé**: an ATS-friendly `/resume` route rendered to a PDF at
   build time via Puppeteer.
 
@@ -51,7 +58,8 @@ pnpm dev          # http://localhost:3000
 | `pnpm dev` | Start the dev server |
 | `pnpm build` | Static build to `out/`, then regenerate résumé PDF(s) |
 | `pnpm generate-pdf` | Regenerate the résumé PDF(s) (needs Chrome; see below) |
-| `pnpm trail:add` | Interactively append an entry to `src/data/trail.json` |
+| `pnpm snapshot` | Regenerate the committed public snapshot from Supabase |
+| `pnpm typecheck` | Run `tsc --noEmit` |
 | `pnpm start` | Serve a production build |
 | `pnpm lint` | Run ESLint |
 
@@ -76,20 +84,29 @@ src/
 │   ├── about/page.tsx        # Full profile (hero, experience, skills, …)
 │   └── resume/page.tsx       # Printable résumé (rendered to PDF at build)
 ├── components/
-│   ├── living-trail.tsx      # Trail section: creed, sky, tree, timeline
+│   ├── living-trail.tsx      # Trail section: creed, sky, tree, filters, timeline
 │   ├── tree-scene.tsx        # three.js + EZ-Tree WebGL scene
 │   ├── header.tsx / footer.tsx
 │   ├── hero.tsx · experience.tsx · skills.tsx · projects.tsx
 │   └── achievements.tsx · education.tsx · volunteering.tsx
 ├── lib/
+│   ├── content.ts            # Types + PostgREST reads of the public_* views
+│   ├── use-content.ts        # Snapshot first, live data second
 │   ├── growth.ts             # Growth-index + vitality algorithm
 │   └── utils.ts
 └── data/
-    └── trail.json            # The timeline (entries, chapters, creed, config)
+    └── snapshot.json         # Build-time snapshot of the PUBLIC views (committed)
+supabase/
+├── 01-schema.sql             # Tables, RLS, and the public_* views
+├── 02-seed.sql               # Timeline, traits, profile, growth weights
+├── 03-seed-content.sql       # Experience, projects, education, skills
+├── SETUP.md                  # One-time setup, and day-to-day editing
+└── REVIEW.md                 # Rows held back as private, and why
 scripts/
 ├── generate-resume-pdf.mjs   # Renders résumé route(s) to PDF via Puppeteer
-└── trail-add.mjs             # `pnpm trail:add`
+└── generate-snapshot.mjs     # Writes src/data/snapshot.json before each build
 .github/workflows/deploy.yml  # Build + deploy to GitHub Pages
+.github/workflows/keepalive.yml # Weekly ping so a free Supabase project stays warm
 ```
 
 ## License

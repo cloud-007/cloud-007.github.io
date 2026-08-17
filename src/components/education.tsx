@@ -1,32 +1,14 @@
 "use client";
 
 import { GraduationCap, Calendar } from "lucide-react";
-
-const education = [
-  {
-    institution: "Leading University",
-    location: "Sylhet, Bangladesh",
-    degree: "B.Sc. in Computer Science and Engineering",
-    period: "Sep 2018 – Dec 2022",
-    detail: "GPA: 3.6 / 4.0",
-  },
-  {
-    institution: "Beanibazar Govt. College",
-    location: "Sylhet, Bangladesh",
-    degree: "Higher Secondary Certificate (Science)",
-    period: "2016 – 2018",
-    detail: "",
-  },
-  {
-    institution: "Purba Muria High School",
-    location: "Sylhet, Bangladesh",
-    degree: "Secondary School Certificate",
-    period: "2011 – 2016",
-    detail: "",
-  },
-];
+import { useSiteContent } from "@/lib/use-content";
 
 export function Education() {
+  const { content } = useSiteContent();
+  const education = content.education;
+
+  if (education.length === 0) return null;
+
   return (
     <section id="education" className="section px-4">
       <div className="max-w-5xl mx-auto">
@@ -40,9 +22,9 @@ export function Education() {
         </div>
 
         <div className="space-y-3">
-          {education.map((edu, index) => (
+          {education.map((edu) => (
             <div
-              key={index}
+              key={edu.id}
               className="bento-card p-6 hover:border-zinc-600 transition-colors"
             >
               <div className="flex flex-col sm:flex-row sm:items-start sm:justify-between gap-4">

@@ -1,0 +1,39 @@
+{
+  "permissions": {
+    "deny": [
+      "Read(.env)",
+      "Read(.env.*)",
+      "Read(**/.env)",
+      "Read(**/.env.*)",
+      "Bash(cat .env*)",
+      "Bash(cat ./.env*)",
+      "Bash(head .env*)",
+      "Bash(head ./.env*)",
+      "Bash(tail .env*)",
+      "Bash(tail ./.env*)",
+      "Bash(less .env*)",
+      "Bash(more .env*)",
+      "Bash(bat .env*)",
+      "Bash(strings .env*)",
+      "Bash(xxd .env*)",
+      "Bash(od .env*)",
+      "Bash(source .env*)",
+      "Bash(cp .env*)",
+      "Bash(grep * .env*)",
+      "Bash(rg * .env*)",
+      "Bash(awk * .env*)",
+      "Bash(sed * .env*)",
+      "Bash(dotenv *)"
+    ]
+  },
+  "sandbox": {
+    "filesystem": {
+      "denyRead": [
+        ".env",
+        ".env.local",
+        ".env.development",
+        ".env.production"
+      ]
+    }
+  }
+}
