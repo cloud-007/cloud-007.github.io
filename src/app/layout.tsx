@@ -1,6 +1,16 @@
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import "./globals.css";
+import { siteIdentity } from "@/lib/content";
+
+/* Metadata is resolved at build time, so it cannot read the live database the
+   way the page body does. It reads the snapshot instead, which is generated
+   from that same database right before the build. That keeps one copy of the
+   name, the role and the bio: hand-typing them here meant a SQL edit updated
+   the visible page while the search snippet and the share card kept serving
+   whatever was true at the last deploy. */
+const { name, role, bio } = siteIdentity;
+const title = `${name} | ${role}`;
 
 const inter = Inter({
   subsets: ["latin"],
@@ -10,9 +20,8 @@ const inter = Inter({
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://cloud-007.github.io"),
-  title: "Mazharul Islam | Full-Stack AI Engineer",
-  description:
-    "Full-Stack AI Engineer with 3+ years in software engineering. Builds scalable backends, cross-platform mobile apps, and AI-powered SaaS platforms with Django, Flutter, and Next.js.",
+  title,
+  description: bio,
   keywords: [
     "Full-Stack AI Engineer",
     "Software Engineer",
@@ -33,11 +42,10 @@ export const metadata: Metadata = {
     "Open to Work",
     "AI scoring",
   ],
-  authors: [{ name: "Md Mazharul Islam Emon" }],
+  authors: [{ name }],
   openGraph: {
-    title: "Mazharul Islam | Full-Stack AI Engineer",
-    description:
-      "Full-Stack AI Engineer with 3+ years in software engineering. Builds scalable backends, cross-platform mobile apps, and AI-powered SaaS platforms with Django, Flutter, and Next.js.",
+    title,
+    description: bio,
     type: "website",
   },
 };

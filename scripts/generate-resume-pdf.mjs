@@ -14,12 +14,18 @@ const OUT_DIR = join(ROOT, "out");
 const PORT = 3099;
 
 // Each entry renders one route to a PDF written into both out/ and public/.
+//
+// The two names here are deliberately different. /resume is portfolio-facing
+// and carries the same name as the site. /resume-professional is the formal CV
+// that goes to institutions alongside a passport, degree certificates and
+// employment records, so it keeps the full legal name and has to match them.
 const TARGETS = [
   {
     route: "/resume",
     file: "resume.pdf",
     meta: {
-      title: "Md Mazharul Islam Emon | Full-Stack AI Engineer",
+      title: "Mazharul Islam | Software Engineer",
+      author: "Mazharul Islam",
       subject: "Resume / CV",
       keywords: [
         "Full-Stack AI Engineer",
@@ -37,6 +43,7 @@ const TARGETS = [
     file: "resume-professional.pdf",
     meta: {
       title: "Md Mazharul Islam Emon | Curriculum Vitae",
+      author: "Md Mazharul Islam Emon",
       subject: "Academic Curriculum Vitae",
       keywords: [
         "Curriculum Vitae",
@@ -146,7 +153,7 @@ async function main() {
       // Inject PDF metadata
       const pdfDoc = await PDFDocument.load(pdf);
       pdfDoc.setTitle(target.meta.title);
-      pdfDoc.setAuthor("Md Mazharul Islam Emon");
+      pdfDoc.setAuthor(target.meta.author);
       pdfDoc.setSubject(target.meta.subject);
       pdfDoc.setKeywords(target.meta.keywords);
       pdfDoc.setCreator("cloud-007.github.io");

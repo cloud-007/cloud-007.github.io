@@ -8,11 +8,15 @@ import { Achievements } from "@/components/achievements";
 import { Education } from "@/components/education";
 import { Volunteering } from "@/components/volunteering";
 import { Footer } from "@/components/footer";
+import { siteIdentity } from "@/lib/content";
+
+/* Same reason as the root layout: the name and role live in one place, and
+   this page derives from it rather than keeping its own copy. */
+const { name, role } = siteIdentity;
 
 export const metadata: Metadata = {
-  title: "About | Md Mazharul Islam Emon",
-  description:
-    "Experience, skills, projects, achievements, education, and volunteering of Md Mazharul Islam Emon, Full-Stack AI Engineer.",
+  title: `About | ${name}`,
+  description: `Experience, skills, projects, achievements, education, and volunteering of ${name}, ${role}.`,
 };
 
 const Divider = () => (
