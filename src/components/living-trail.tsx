@@ -711,7 +711,7 @@ export function LivingTrail() {
                 >
                     <div className="overflow-hidden">
                         {/* Filters. Two axes: where in life, and what it proves. */}
-                        <div className="bento-card p-4 mb-6 space-y-3 sticky top-20 z-20 backdrop-blur-sm bg-zinc-900/95">
+                        <div className="bento-card p-4 mb-6 space-y-3">
                             <div>
                                 <p className="text-zinc-500 text-[11px] font-bold uppercase tracking-wider mb-2">
                                     Part of life

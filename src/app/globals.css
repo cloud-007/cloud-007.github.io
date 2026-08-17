@@ -219,3 +219,14 @@ body {
     transition-duration: 0.01ms !important;
   }
 }
+
+/* Anything clickable says so. Browsers default <button> to the arrow cursor,
+   which makes real controls feel inert. Disabled controls keep the default,
+   and non-interactive elements are untouched: the tree scene is deliberately
+   not a button, so it does not get the hand. */
+button:not(:disabled),
+[role="button"]:not([aria-disabled="true"]),
+summary,
+label[for] {
+  cursor: pointer;
+}
