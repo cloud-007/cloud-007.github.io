@@ -56,6 +56,9 @@ export interface Person {
     name?: string;
     role?: string;
     org?: string;
+    /** Profile link. Gated by consent exactly like the name: a link identifies
+     *  someone as completely as their name does. */
+    url?: string;
 }
 
 export interface TrailEntry {

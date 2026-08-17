@@ -286,11 +286,11 @@ function EntryCard({
     entry: TrailEntry;
     traitLabels: Record<string, string>;
 }) {
-    /* People without consent arrive with no name, only a role. Anyone with
-       neither is dropped rather than rendered as an empty slot. */
+    /* People without consent arrive with no name and no link, only a role.
+       Anyone with neither is dropped rather than rendered as an empty slot. */
     const people = entry.people
-        .map(describePerson)
-        .filter((p): p is string => Boolean(p));
+        .map((p) => ({ text: describePerson(p), url: p.url }))
+        .flatMap((p) => (p.text ? [{ text: p.text, url: p.url }] : []));
 
     return (
         <article
@@ -347,7 +347,25 @@ function EntryCard({
                     {people.length > 0 && (
                         <p className="flex items-start gap-2 text-zinc-500 text-xs mt-2.5">
                             <Users className="w-3.5 h-3.5 mt-0.5 shrink-0" />
-                            <span>{people.join(" · ")}</span>
+                            <span>
+                                {people.map((p, i) => (
+                                    <span key={p.text}>
+                                        {i > 0 && " · "}
+                                        {p.url ? (
+                                            <a
+                                                href={p.url}
+                                                target="_blank"
+                                                rel="noopener noreferrer"
+                                                className="text-zinc-400 hover:text-emerald-300 underline decoration-zinc-700 underline-offset-2 transition-colors"
+                                            >
+                                                {p.text}
+                                            </a>
+                                        ) : (
+                                            p.text
+                                        )}
+                                    </span>
+                                ))}
+                            </span>
                         </p>
                     )}
                     {entry.obstacle && (

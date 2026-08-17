@@ -63,3 +63,4 @@ supabase/05-links.sql
 
 # Browser-automation artifacts
 .playwright-mcp/
+supabase/06-refinements.sql

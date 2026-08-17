@@ -85,7 +85,7 @@ create table if not exists trail_entries (
   show_outcome    boolean not null default true,
 
   -- People named in this entry, each with their OWN consent flag:
-  --   [{"name": "...", "role": "...", "org": "...", "consent": true}]
+  --   [{"name": "...", "role": "...", "org": "...", "url": "...", "consent": true}]
   -- Without consent BOTH the name and the employer are stripped, and only the
   -- role survives: "a principal software engineer". Role plus employer would
   -- still identify most people, which is not anonymity.
@@ -421,8 +421,11 @@ create or replace view public_trail_entries as
         case when coalesce((p->>'consent')::boolean, false)
              -- consented: name, role and org all travel
              then jsonb_strip_nulls(jsonb_build_object(
-                    'name', p->>'name', 'role', p->>'role', 'org', p->>'org'))
-             -- not consented: name AND employer stay in the database
+                    'name', p->>'name', 'role', p->>'role',
+                    'org',  p->>'org',  'url',  p->>'url'))
+             -- Not consented: name, employer and profile link all stay in the
+             -- database. A profile link identifies someone completely, so it
+             -- is gated exactly like the name.
              else jsonb_strip_nulls(jsonb_build_object('role', p->>'role'))
         end)
       from jsonb_array_elements(e.people) p
