@@ -30,17 +30,20 @@ const OUT = resolve(here, "../src/data/snapshot.json");
 const URL_ = process.env.NEXT_PUBLIC_SUPABASE_URL;
 const KEY = process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY;
 
+// Ordering is pinned, including a tiebreak on every list that can tie. Without
+// it the snapshot re-shuffles on each build and every deploy carries a large,
+// meaningless diff that hides the real changes.
 const VIEWS = [
     ["chapters", "public_chapters", "select=*&order=sort_order"],
     ["domains", "public_domains", "select=*&order=sort_order"],
     ["traits", "public_traits", "select=*&order=sort_order"],
-    ["entries", "public_trail_entries", "select=*&order=date.desc"],
+    ["entries", "public_trail_entries", "select=*&order=date.desc,slug.asc"],
     ["profile", "public_profile", "select=*"],
     ["experience", "public_experience", "select=*&order=sort_order"],
     ["projects", "public_projects", "select=*&order=sort_order"],
     ["education", "public_education", "select=*&order=sort_order"],
     ["volunteering", "public_volunteering", "select=*&order=sort_order"],
-    ["skills", "public_skills", "select=*&order=sort_order"],
+    ["skills", "public_skills", "select=*&order=context.asc,sort_order.asc"],
     ["judges", "public_judge_profiles", "select=*&order=sort_order"],
     ["stats", "public_stats", "select=*&order=sort_order"],
     ["growthWeights", "public_growth_weights", "select=*"],
