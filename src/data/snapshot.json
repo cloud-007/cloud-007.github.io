@@ -359,14 +359,14 @@
     },
     {
       "id": "66b50068-4d8d-406c-816d-f7e1b07a820e",
-      "slug": "meetup-auth-lead",
+      "slug": "meetup-technical-lead",
       "date": "2026-07-27",
       "end_date": null,
       "precision": "day",
       "chapter": "leading",
       "domain": "network",
       "type": "learning",
-      "title": "Met a technical lead working on auth infrastructure",
+      "title": "Talked with a technical lead about how AI is reshaping the industry",
       "note": "Discussed AI in the tech industry as a whole: how it is changing, how it is affecting us, and how we are coping with it.",
       "obstacle": null,
       "learning": "Meetups like this exist to widen the picture. Someone else's vantage point is the cheapest upgrade there is.",
@@ -736,7 +736,7 @@
     {
       "id": "d371a1dc-dfb6-499e-ad6a-babaf764540f",
       "slug": "neub-hackathon-2025",
-      "date": "2025-11-07",
+      "date": "2025-11-08",
       "end_date": null,
       "precision": "day",
       "chapter": "leading",
@@ -753,7 +753,7 @@
           "role": "Associate Professor"
         },
         {
-          "role": "Managing Director"
+          "role": "Co-founder & Managing Director"
         },
         {
           "role": "Senior Software Engineer"
@@ -763,6 +763,22 @@
         {
           "url": "https://github.com/cloud-007/neub-ict-fest-hackathon-2025",
           "label": "The brief"
+        },
+        {
+          "url": "https://fest.neubcse.org/events/hackathon",
+          "label": "Event page"
+        },
+        {
+          "url": "https://fest.neubcse.org/gallery",
+          "label": "Photos"
+        },
+        {
+          "url": "https://www.voice7news.tv/education/news/25123",
+          "label": "Press"
+        },
+        {
+          "url": "https://www.facebook.com/neubcsesociety/",
+          "label": "NEUB CSE Society"
         }
       ],
       "teaser": false,
@@ -1051,10 +1067,16 @@
       "outcome": null,
       "people": [
         {
-          "role": "instructor"
+          "org": "BrainStation 23",
+          "url": "https://www.linkedin.com/in/abdullah-al-hasan-376030b1/",
+          "name": "Abdullah Al Hasan",
+          "role": "Technical Lead"
         },
         {
-          "role": "instructor"
+          "org": "BrainStation 23",
+          "url": "https://www.linkedin.com/in/hasibul-hasan-shuvo/",
+          "name": "Hasibul Hasan Shuvo",
+          "role": "Software Engineer"
         }
       ],
       "links": [
@@ -1139,7 +1161,7 @@
       "people": [],
       "links": [
         {
-          "url": "https://www.facebook.com/ieeecslu/",
+          "url": "https://www.facebook.com/ieeecslusbc",
           "label": "Facebook"
         },
         {
@@ -1172,7 +1194,10 @@
       "outcome": null,
       "people": [
         {
-          "role": "co-organizer"
+          "org": "CityFibre",
+          "url": "https://www.linkedin.com/in/dewanmohiul/",
+          "name": "Dewan Rahdi Chowdhury",
+          "role": "Senior Network Engineer"
         }
       ],
       "links": [
@@ -1337,10 +1362,14 @@
       "outcome": null,
       "people": [
         {
-          "role": "co-organizer"
+          "url": "https://www.linkedin.com/in/saidur-rahman-244a2137/",
+          "name": "Saidur Rahman",
+          "role": "trainer"
         },
         {
-          "role": "co-organizer"
+          "url": "https://www.linkedin.com/in/mdsabirhossain/",
+          "name": "Md. Sabir Hossain",
+          "role": "trainer"
         }
       ],
       "links": [
@@ -2486,5 +2515,5 @@
     "vitality_span": 0.58,
     "vitality_target": 42
   },
-  "generatedAt": "2026-08-17T11:46:28.021Z"
+  "generatedAt": "2026-08-17T12:55:01.657Z"
 }
