@@ -3,6 +3,7 @@
 import { useRef, useEffect } from "react";
 import Link from "next/link";
 import { useSiteContent } from "@/lib/use-content";
+import { safeHref } from "@/lib/content";
 
 const MONTHS = [
   "01", "02", "03", "04", "05", "06",
@@ -321,7 +322,7 @@ export default function ResumePage() {
                 )}
                 {contacts.map((c, i) => (
                   <span key={c.href}>
-                    <a href={c.href} target="_blank" rel="noopener noreferrer">
+                    <a href={safeHref(c.href) ?? "#"} target="_blank" rel="noopener noreferrer">
                       {c.text}
                     </a>
                     {i < contacts.length - 1 && <span className="rp-sep">&bull;</span>}
@@ -392,12 +393,12 @@ export default function ResumePage() {
                 <h2 className="rp-section-head">Projects</h2>
                 <hr className="rp-rule" />
                 {resumeProjects.map((p) => {
-                  const href = p.live_url ?? p.repo_url;
+                  const href = safeHref(p.live_url ?? p.repo_url);
                   return (
                     <div className="rp-block" key={p.id}>
                       <div className="rp-proj-header">
                         {href ? (
-                          <a href={href} className="rp-proj-link" target="_blank" rel="noopener noreferrer">
+                          <a href={safeHref(href) ?? "#"} className="rp-proj-link" target="_blank" rel="noopener noreferrer">
                             {p.name}{p.tagline ? `, ${p.tagline}` : ""}
                             <ExtIcon />
                           </a>
@@ -441,7 +442,7 @@ export default function ResumePage() {
                     <div className="rp-cp-item">
                       {content.judges.map((j, i) => (
                         <span key={j.id}>
-                          <a href={j.url} target="_blank" rel="noopener noreferrer">{j.name}</a>
+                          <a href={safeHref(j.url) ?? "#"} target="_blank" rel="noopener noreferrer">{j.name}</a>
                           {j.rating ? ` (${j.rating})` : ""}
                           {i < content.judges.length - 1 ? " \u00b7 " : ""}
                         </span>

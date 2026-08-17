@@ -422,7 +422,9 @@ create or replace view public_trail_entries as
              -- consented: name, role and org all travel
              then jsonb_strip_nulls(jsonb_build_object(
                     'name', p->>'name', 'role', p->>'role',
-                    'org',  p->>'org',  'url',  p->>'url'))
+                    'org',  p->>'org',
+                    'url',  case when p->>'url' ~* '^https?://'
+                                 then p->>'url' end))
              -- Not consented: name, employer and profile link all stay in the
              -- database. A profile link identifies someone completely, so it
              -- is gated exactly like the name.
@@ -430,7 +432,14 @@ create or replace view public_trail_entries as
         end)
       from jsonb_array_elements(e.people) p
     ), '[]'::jsonb) end                                             as people,
-    case when e.teaser then '[]'::jsonb else e.links end            as links,
+    -- Scheme allowlist at the source. `javascript:` in an href executes on
+    -- click, and every link here is data. The client checks again; this makes
+    -- sure an unsafe scheme is never served in the first place.
+    case when e.teaser then '[]'::jsonb else coalesce((
+      select jsonb_agg(l)
+      from jsonb_array_elements(e.links) l
+      where l->>'url' ~* '^(https?://|mailto:)'
+    ), '[]'::jsonb) end                                             as links,
     e.teaser,
     coalesce(
       (select array_agg(t.trait_slug order by t.is_primary desc, t.trait_slug)

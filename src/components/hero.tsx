@@ -12,6 +12,7 @@ import {
     type LucideIcon,
 } from "lucide-react";
 import { useSiteContent } from "@/lib/use-content";
+import { safeHref } from "@/lib/content";
 
 /* Social icons are presentation, resolved from the label the database stores. */
 const SOCIAL_ICONS: Record<string, LucideIcon> = {
@@ -139,7 +140,7 @@ export function Hero() {
                                 return (
                                 <a
                                     key={social.label}
-                                    href={social.href}
+                                    href={safeHref(social.href) ?? "#"}
                                     target="_blank"
                                     rel="noopener noreferrer"
                                     className="flex items-center justify-between p-3 rounded-xl hover:bg-zinc-800/80 transition-colors group"

@@ -2,6 +2,7 @@
 
 import { Github, Linkedin, Mail, ArrowUpRight, type LucideIcon } from "lucide-react";
 import { useSiteContent } from "@/lib/use-content";
+import { safeHref } from "@/lib/content";
 
 const SOCIAL_ICONS: Record<string, LucideIcon> = {
   GitHub: Github,
@@ -31,7 +32,7 @@ export function Footer() {
             return (
               <a
                 key={social.label}
-                href={social.href}
+                href={safeHref(social.href) ?? "#"}
                 target="_blank"
                 rel="noopener noreferrer"
                 aria-label={social.label}

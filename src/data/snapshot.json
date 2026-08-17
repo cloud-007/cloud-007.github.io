@@ -1,56 +1,56 @@
 {
     "stats": [
         {
-            "id": "9b3dea94-b696-4d76-9ab6-503e88be6592",
+            "id": "3eb082e1-6a52-495e-918d-e6211162ad42",
             "label": "Years Exp.",
             "value": "3+",
             "context": "hero",
             "sort_order": 1
         },
         {
-            "id": "77ee111b-3515-4c8e-b4b8-fa4fce897a39",
+            "id": "64aa1d28-e5e0-4921-bb9c-097ae6b0f5e2",
             "label": "Problems Solved",
             "value": "2000+",
             "context": "competitive",
             "sort_order": 1
         },
         {
-            "id": "dc9f4249-76c5-497d-9cd6-bd9ba40014b6",
+            "id": "94286259-5323-4940-9a8f-761e2e4f5182",
             "label": "Contests",
             "value": "300+",
             "context": "competitive",
             "sort_order": 2
         },
         {
-            "id": "7e792dfc-78ed-4926-ac40-1ae4ef598e68",
+            "id": "848d9059-27bf-4f84-a902-0cb8c560f05d",
             "label": "Contests",
             "value": "300+",
             "context": "hero",
             "sort_order": 2
         },
         {
-            "id": "0b5afdec-27da-44f0-9796-289bace6ae0d",
+            "id": "dd483be9-0f56-4b4d-af66-7db1f1a38dbf",
             "label": "Problems Solved",
             "value": "2K+",
             "context": "hero",
             "sort_order": 3
         },
         {
-            "id": "725837d8-5dc8-494a-8d6a-cc26578b6781",
+            "id": "37c19dfa-cac0-4c61-bfcb-1500d00f1e1b",
             "label": "CF Rating",
             "value": "1603",
             "context": "competitive",
             "sort_order": 3
         },
         {
-            "id": "22acc7df-5040-4d45-a9e2-21207723c727",
+            "id": "31d9e7bc-e860-45c4-a162-f49ef21753ca",
             "label": "CF Peak",
             "value": "1603",
             "context": "hero",
             "sort_order": 4
         },
         {
-            "id": "c67b9d83-a1ea-4afe-806b-afb7b3f42e1f",
+            "id": "d9bc195f-91b6-48c0-a997-7f11e3f2708a",
             "label": "CC Rating",
             "value": "1965",
             "context": "competitive",
@@ -59,7 +59,7 @@
     ],
     "judges": [
         {
-            "id": "0f8f9aa1-ba70-4b74-a418-d360479db336",
+            "id": "d4ee2c84-6c99-4cda-a90e-2ae03107e201",
             "url": "https://codeforces.com/profile/cloud_007",
             "name": "Codeforces",
             "handle": "cloud_007",
@@ -67,7 +67,7 @@
             "sort_order": 1
         },
         {
-            "id": "417b2807-6ad3-48c2-9d73-f3d806df0175",
+            "id": "9afa425f-35ff-4967-a29c-2cab5f6d274c",
             "url": "https://www.codechef.com/users/cloud_007",
             "name": "CodeChef",
             "handle": "cloud_007",
@@ -75,7 +75,7 @@
             "sort_order": 2
         },
         {
-            "id": "4e103124-bd10-416d-85c4-d5f39db1f1f4",
+            "id": "64e77680-53ca-4620-8d15-a70fe867b4a3",
             "url": "https://lightoj.com/user/cloud_007",
             "name": "LightOJ",
             "handle": "cloud_007",
@@ -83,7 +83,7 @@
             "sort_order": 3
         },
         {
-            "id": "d9a21a1f-70c5-40c9-9bb0-3074f94cbdbd",
+            "id": "a8a2f80c-58a7-4efc-a578-014b6d666bab",
             "url": "https://toph.co/u/cloud_007",
             "name": "Toph",
             "handle": "cloud_007",
@@ -91,7 +91,7 @@
             "sort_order": 4
         },
         {
-            "id": "fe9977a2-581d-485c-9a7e-0b2d05410a78",
+            "id": "fad05055-35ba-4cfa-9b93-486369a331ff",
             "url": "https://www.stopstalk.com/user/profile/cloud_007",
             "name": "StopStalk",
             "handle": "cloud_007",
@@ -99,7 +99,7 @@
             "sort_order": 5
         },
         {
-            "id": "7fb6201a-1907-47ce-9b9d-89a509c02c88",
+            "id": "1c9e3c8d-88ef-4352-9d4d-0bd832ff847d",
             "url": "https://vjudge.net/user/cloud_007",
             "name": "Vjudge",
             "handle": "cloud_007",
@@ -109,7 +109,7 @@
     ],
     "skills": [
         {
-            "id": "84ea9ea3-9362-4edd-8f19-e3bae1d84b30",
+            "id": "3c0707e6-f670-404f-8f4f-047d6c158188",
             "icon": null,
             "group": "Languages and Frameworks",
             "items": [
@@ -128,7 +128,7 @@
             "sort_order": 1
         },
         {
-            "id": "c251f725-caa8-4188-8aec-7185f93e403f",
+            "id": "1e36b515-f1d7-4fc2-abab-f2fd199b6c0d",
             "icon": null,
             "group": "Databases and Messaging",
             "items": [
@@ -142,7 +142,7 @@
             "sort_order": 2
         },
         {
-            "id": "16df2617-1e6c-45b3-b153-32138cafc49e",
+            "id": "c4d18a12-625b-47a9-b83e-a22adaee448c",
             "icon": null,
             "group": "AI and NLP",
             "items": [
@@ -158,7 +158,7 @@
             "sort_order": 3
         },
         {
-            "id": "1b14b9cc-f0b2-43b6-a568-b7c4080f5c03",
+            "id": "362892ae-799d-44a1-9199-da5145ca2742",
             "icon": null,
             "group": "Infrastructure and DevOps",
             "items": [
@@ -177,7 +177,7 @@
             "sort_order": 4
         },
         {
-            "id": "2c0fa17f-37bc-46ab-922f-0528095a55a1",
+            "id": "de89ac3e-0f35-41d2-ae71-670655b498a8",
             "icon": null,
             "group": "AI-Assisted Development",
             "items": [
@@ -191,7 +191,7 @@
             "sort_order": 5
         },
         {
-            "id": "299aa1fd-2071-4433-b627-75e1ae225c62",
+            "id": "0534f3bb-c5fd-43e7-828d-36369b97f9aa",
             "icon": "server",
             "group": "Backend Engineering",
             "items": [
@@ -213,7 +213,7 @@
             "sort_order": 1
         },
         {
-            "id": "181fd4b5-9533-437e-bcfc-95f153e17eb9",
+            "id": "a187ddf2-84b0-46e3-a3c8-b5d62e2ce258",
             "icon": "smartphone",
             "group": "Mobile and Frontend",
             "items": [
@@ -233,7 +233,7 @@
             "sort_order": 2
         },
         {
-            "id": "a2ed3fba-a00c-48d6-b69e-7b10a770133a",
+            "id": "3aa6261e-e63f-4e69-ae56-d2415bad7bce",
             "icon": "brain",
             "group": "AI and Speech Systems",
             "items": [
@@ -252,7 +252,7 @@
             "sort_order": 3
         },
         {
-            "id": "3e161f7a-9fe3-4423-b761-d19c2a5430d0",
+            "id": "0fd3b461-11cc-4548-afdc-7b947b95e9fe",
             "icon": "cloud",
             "group": "Infrastructure and Cloud",
             "items": [
@@ -271,7 +271,7 @@
             "sort_order": 4
         },
         {
-            "id": "9da46aaf-cd65-4575-b605-cf0c45fac7de",
+            "id": "cdd63b4e-dce0-4643-8c06-808cf2166f86",
             "icon": "flask",
             "group": "Testing and Quality",
             "items": [
@@ -288,7 +288,7 @@
             "sort_order": 5
         },
         {
-            "id": "4f9bdfda-10e7-45b5-9754-1f9fbaec6d02",
+            "id": "c47f6489-739f-4053-91a5-3b4cb01c06fa",
             "icon": "wrench",
             "group": "Engineering Practices",
             "items": [
@@ -442,7 +442,7 @@
     ],
     "entries": [
         {
-            "id": "6524e562-1c52-40bc-b9b9-b554a80dec3e",
+            "id": "678e47ca-2b52-4147-887e-3399d40ee767",
             "org": null,
             "date": "2026-08-16",
             "note": "Eighteen on databases, one on LLM cost, one long-form essay. Every one of them something I had to understand properly first.",
@@ -479,7 +479,7 @@
             "primary_trait": "taught"
         },
         {
-            "id": "e1c2895b-e1ad-470a-9e44-371b485564d4",
+            "id": "6756ec4f-c17c-4cd9-b94a-471a318a7357",
             "org": null,
             "date": "2026-08-16",
             "note": "CLI scripts for auditing and cleaning up a long-neglected Gmail account. Made public.",
@@ -508,7 +508,7 @@
             "primary_trait": "built"
         },
         {
-            "id": "5eb0cfcc-0ea8-4847-9aa7-17f3d92bae66",
+            "id": "dc2a5395-327d-495f-a377-1cb072420ca8",
             "org": null,
             "date": "2026-08-08",
             "note": "Discussed the traits of good software, the metrics behind it, and the KPIs that matter on Google Play and the App Store.",
@@ -536,35 +536,7 @@
             "primary_trait": "learned"
         },
         {
-            "id": "06e5cc8c-59d7-4263-932f-bfae93e644c3",
-            "org": null,
-            "date": "2026-08-04",
-            "note": "Discussed the founder journey, the app business, what a product-based company looks like from the inside, the traits of a great product, and how to approach all of it.",
-            "slug": "meetup-saiful",
-            "type": "learning",
-            "links": [
-            ],
-            "title": "Talked with an engineering manager about the founder journey",
-            "domain": "network",
-            "people": [
-                {
-                    "role": "Senior Engineering Manager"
-                }
-            ],
-            "teaser": false,
-            "traits": [
-                "learned"
-            ],
-            "chapter": "leading",
-            "outcome": null,
-            "end_date": null,
-            "learning": "Great products come from clear traits and a deliberate approach, not luck.",
-            "obstacle": null,
-            "precision": "day",
-            "primary_trait": "learned"
-        },
-        {
-            "id": "0eaa997d-778d-49cd-aeb3-a69beee55868",
+            "id": "563b87a7-16bb-4e95-8d4d-9b20a7954906",
             "org": null,
             "date": "2026-08-04",
             "note": "Series codes and an append-only episode register, so a viewer who liked one video can find the next three. Numbered in course order, never renumbered once public.",
@@ -602,7 +574,35 @@
             "primary_trait": "organized"
         },
         {
-            "id": "d530619e-2600-4bd8-8325-d74bf5d46fd2",
+            "id": "e4e14d6c-f925-4d38-b78e-b8463cd3f2df",
+            "org": null,
+            "date": "2026-08-04",
+            "note": "Discussed the founder journey, the app business, what a product-based company looks like from the inside, the traits of a great product, and how to approach all of it.",
+            "slug": "meetup-saiful",
+            "type": "learning",
+            "links": [
+            ],
+            "title": "Talked with an engineering manager about the founder journey",
+            "domain": "network",
+            "people": [
+                {
+                    "role": "Senior Engineering Manager"
+                }
+            ],
+            "teaser": false,
+            "traits": [
+                "learned"
+            ],
+            "chapter": "leading",
+            "outcome": null,
+            "end_date": null,
+            "learning": "Great products come from clear traits and a deliberate approach, not luck.",
+            "obstacle": null,
+            "precision": "day",
+            "primary_trait": "learned"
+        },
+        {
+            "id": "e77d7b7a-c388-4680-a786-0f3e46a7bbcd",
             "org": null,
             "date": "2026-07-31",
             "note": "Store listing, screenshots and all. From a blank Flutter project to a shipping app in a few months.",
@@ -627,7 +627,7 @@
             "primary_trait": "shipped"
         },
         {
-            "id": "c97bc2fd-5fbd-4dc1-a882-a87e58a3a015",
+            "id": "a9d5db07-eba1-4f50-b0bd-c4ddcf8e6dd0",
             "org": null,
             "date": "2026-07-30",
             "note": "Stood up the production environment for a product I have been building from zero: servers, database, deploy path and readiness checks, all verified end to end.",
@@ -652,7 +652,7 @@
             "primary_trait": "shipped"
         },
         {
-            "id": "8caeb77b-52da-428d-91e4-9b1d15b5224c",
+            "id": "4a38cd61-8402-401f-8820-d3370c1da222",
             "org": null,
             "date": "2026-07-27",
             "note": "Discussed AI in the tech industry as a whole: how it is changing, how it is affecting us, and how we are coping with it.",
@@ -680,7 +680,7 @@
             "primary_trait": "learned"
         },
         {
-            "id": "3a45c902-5f96-478c-a070-991af55dffb6",
+            "id": "5df9af23-0fee-4068-ba55-8e7907515f68",
             "org": null,
             "date": "2026-07-21",
             "note": "A pipeline that turns one idea into a narrated, animated reel, gated at every step, with one promise behind it: do not explain the system, make you watch it run.",
@@ -718,7 +718,7 @@
             "primary_trait": "built"
         },
         {
-            "id": "614fbc29-ea7d-4f2e-822e-4940f78ca55d",
+            "id": "b959d133-fd52-43d6-963e-6a3294d10615",
             "org": null,
             "date": "2026-07-14",
             "note": "Started logging growth publicly: wins, obstacles, and lessons, one day at a time.",
@@ -752,7 +752,7 @@
             "primary_trait": "built"
         },
         {
-            "id": "36507286-8163-4a58-91de-0dead998034e",
+            "id": "753a5c58-c98a-462a-af30-9c2186d3e939",
             "org": null,
             "date": "2026-07-03",
             "note": "A small utility that got its first stranger's star.",
@@ -781,7 +781,7 @@
             "primary_trait": "built"
         },
         {
-            "id": "f3509703-73e9-4a97-bb42-af3fd815d960",
+            "id": "ec5319a9-d8fc-4ca3-9e91-64bad1d451e7",
             "org": null,
             "date": "2026-06-23",
             "note": "Reads real storage data from a connected iPhone over USB and explains where the space went, including the hidden purgeable cache. Nothing leaves the machine.",
@@ -810,7 +810,7 @@
             "primary_trait": "built"
         },
         {
-            "id": "a0299c8a-80c1-4809-8520-f243580944ba",
+            "id": "1b045cb4-97cd-4fe4-abbb-dc4db1ae534f",
             "org": "CityPhone 28",
             "date": "2026-06-07",
             "note": "FR/EN for a repair shop in Chartres: a live open and closed status in Paris time, GDPR-compliant map consent, LocalBusiness structured data and per-locale hreflang.",
@@ -839,7 +839,7 @@
             "primary_trait": "built"
         },
         {
-            "id": "c2c7acfc-566b-45f5-a9ed-06545d62d087",
+            "id": "ca9c62d7-b292-4292-b398-756d22421abf",
             "org": null,
             "date": "2026-06-05",
             "note": "Turns a raw forecast into the decisions a farmer actually makes, when to plant, spray and harvest, and delivers it to a feature phone over SMS and USSD with no internet needed.",
@@ -858,6 +858,10 @@
             "title": "Built Shamba Cast, weather advice for smallholder farmers",
             "domain": "built",
             "people": [
+                {
+                    "name": "X",
+                    "role": "y"
+                }
             ],
             "teaser": false,
             "traits": [
@@ -873,7 +877,7 @@
             "primary_trait": "built"
         },
         {
-            "id": "fb9ba3e2-9848-4ced-ab1c-83e8f25b5eb7",
+            "id": "ac835785-7334-4f04-8cd7-6c3fc68e7bc7",
             "org": "Eluminatis of LU",
             "date": "2026-06-01",
             "note": "A judge for ACM and OI style contests, run by Eluminatis of LU and built on a fork of vijos. I contributed to the platform rather than authoring it.",
@@ -910,7 +914,7 @@
             "primary_trait": "built"
         },
         {
-            "id": "b627b3ff-0e58-4316-82cd-256cee1191cc",
+            "id": "6e50687b-97a2-45c1-addb-f5308603a5b9",
             "org": "Hourglass AI",
             "date": "2026-05-02",
             "note": "An autonomous agent that writes pytest suites which kill surviving mutants, not just hit coverage. Built for the Hourglass AI Agent Challenge.",
@@ -940,7 +944,7 @@
             "primary_trait": "built"
         },
         {
-            "id": "c666debf-3ccd-4dd2-a74c-f2aa2425b1a2",
+            "id": "ad2578df-48a2-4d6b-9c71-2acdb887cb8f",
             "org": "Sushi Lab",
             "date": "2026-05-01",
             "note": "A production bilingual ordering and marketing platform for a Japanese restaurant in Chartres, France: Next.js 16, React 19, server actions, translated URL segments and locale-aware checkout.",
@@ -970,7 +974,7 @@
             "primary_trait": "shipped"
         },
         {
-            "id": "1c06c9f5-9e24-471e-9c64-7ad58f79c7ff",
+            "id": "18aee725-353c-4a9d-b337-de700c133fba",
             "org": null,
             "date": "2026-05-01",
             "note": "Began posting regularly on Instagram, Facebook and YouTube: everything I learn, turned into short explainers for engineers.",
@@ -1008,7 +1012,7 @@
             "primary_trait": "founded"
         },
         {
-            "id": "be51f0bb-09a0-4fa7-a71c-cccd3de9d479",
+            "id": "6dd9ef63-1f79-463e-9ac0-e3cea8b42bc2",
             "org": "LII Lab",
             "date": "2026-04-30",
             "note": "After 3.5 years, the OnePTE and OneIELTS platforms, 90+ production releases, and a promotion to Senior along the way.",
@@ -1040,7 +1044,7 @@
             "primary_trait": null
         },
         {
-            "id": "aa9a06a1-d9d0-41b1-a5e9-4a218889a10f",
+            "id": "a2642b58-abe5-4424-a1d1-1a152f189bbf",
             "org": "North East University Bangladesh",
             "date": "2025-11-07",
             "note": "Sat on the judging panel, scoring teams on what they had built and how they explained it.",
@@ -1070,7 +1074,7 @@
             "primary_trait": "organized"
         },
         {
-            "id": "bcc00495-ca57-4c49-9a3b-5e298606cdbf",
+            "id": "500eb7b7-92a8-413d-8f15-eb0529a8f074",
             "org": "LII Lab",
             "date": "2025-01-01",
             "note": "Led backend engineering across two AI-powered English test-prep platforms: architecture, mentoring, and production releases.",
@@ -1103,7 +1107,7 @@
             "primary_trait": "led"
         },
         {
-            "id": "37aeaffa-15f4-4e07-b3e2-6f14502fe8c3",
+            "id": "b99ef01a-2d42-4369-bb25-d05e690dea85",
             "org": "Leading University Computer Club",
             "date": "2023-10-01",
             "note": "Building under pressure with Team LU Ovream.",
@@ -1138,7 +1142,7 @@
             "primary_trait": "won"
         },
         {
-            "id": "bfcd7348-6de7-45df-9fef-d08b4f84ed7e",
+            "id": "3527a022-3f53-48ab-9cec-3e1ed9b2d22d",
             "org": "IEEE",
             "date": "2023-08-01",
             "note": "Recognition for serving the IEEE Computer Society LU SB Chapter as steering committee chair for the 2022-23 session.",
@@ -1168,7 +1172,7 @@
             "primary_trait": "won"
         },
         {
-            "id": "33639ad5-0fd0-4aaf-983b-92a6550f27eb",
+            "id": "583d0e2d-7dc2-4c5b-a867-febb73a1c742",
             "org": "Leading University",
             "date": "2022-12-15",
             "note": "GPA 3.6 out of 4.0, and 2,000+ solved problems on the side.",
@@ -1193,7 +1197,7 @@
             "primary_trait": "learned"
         },
         {
-            "id": "290d4417-b9e8-4889-91fc-9e7b5640466b",
+            "id": "457afc20-2cf2-48e6-b7b3-0ea0660b0949",
             "org": "LII Lab",
             "date": "2022-11-01",
             "note": "Built the OnePTE Flutter app from day one and the Django backend powering AI scoring.",
@@ -1222,7 +1226,7 @@
             "primary_trait": "built"
         },
         {
-            "id": "b8670b8a-c0fa-406c-bf78-0fd8203aa47a",
+            "id": "ee119504-193e-4724-adf2-e37633b7d058",
             "org": null,
             "date": "2022-10-01",
             "note": "A multi-role Django app for university project proposals: students, supervisors and admins, with PDF and CSV export and scheduled background jobs.",
@@ -1251,7 +1255,7 @@
             "primary_trait": "built"
         },
         {
-            "id": "859e5779-2741-4cbd-b296-445755ad03d9",
+            "id": "8595c631-78e4-43d4-8fba-9194dfbd0d9b",
             "org": "IEEE",
             "date": "2022-10-01",
             "note": "Global rank 149 with Team LazySquad. Twenty-four hours of non-stop problem solving.",
@@ -1281,7 +1285,7 @@
             "primary_trait": "won"
         },
         {
-            "id": "cbb7d90c-4278-446f-94cc-d4fbe5d386ed",
+            "id": "55dbd5f0-eeb1-4dcb-bb9d-31cfbf2792d2",
             "org": null,
             "date": "2022-09-20",
             "note": "Years of accepted solutions, in the open.",
@@ -1318,7 +1322,7 @@
             "primary_trait": "built"
         },
         {
-            "id": "1fb4deab-3e71-474a-8a8a-c41de7550673",
+            "id": "9cebd34c-ac4b-4450-bfbd-50dae6d43c13",
             "org": "IEEE Computer Society",
             "date": "2022-09-05",
             "note": "Fourteen weeks teaching juniors to ship a mobile app, while shipping one myself at work.",
@@ -1354,7 +1358,7 @@
             "primary_trait": "organized"
         },
         {
-            "id": "c34ce4a3-7001-44dc-aeb7-5674aa2f661f",
+            "id": "5ba43225-4927-43e2-8bf8-2f3f3dc5ac10",
             "org": "ICPC",
             "date": "2022-09-01",
             "note": "The 2021 season preliminary, hosted by BUBT. Team LU_sTrongWill.",
@@ -1379,36 +1383,7 @@
             "primary_trait": "competed"
         },
         {
-            "id": "3978143e-fd98-4243-b727-6b0f96afa589",
-            "org": "Google",
-            "date": "2022-04-01",
-            "note": "44 points in the 2022 global qualifier, two points better than 2020.",
-            "slug": "codejam-2022",
-            "type": "win",
-            "links": [
-                {
-                    "url": "https://github.com/cloud-007/My-Certificates",
-                    "label": "Certificate"
-                }
-            ],
-            "title": "Cleared the Google Code Jam qualification round again",
-            "domain": "competitive-programming",
-            "people": [
-            ],
-            "teaser": false,
-            "traits": [
-                "competed"
-            ],
-            "chapter": "foundations",
-            "outcome": "Qualified",
-            "end_date": null,
-            "learning": null,
-            "obstacle": null,
-            "precision": "year",
-            "primary_trait": "competed"
-        },
-        {
-            "id": "5d5d6fd3-ad29-4d1d-b7f8-87d312bc46e6",
+            "id": "453fc8c9-952d-4b2c-a238-f7bace85c2cc",
             "org": "IEEE Computer Society",
             "date": "2022-04-01",
             "note": "Built the chapter from nothing, ran technical events with industry speakers, and grew membership by more than 20%.",
@@ -1443,7 +1418,36 @@
             "primary_trait": "founded"
         },
         {
-            "id": "cfbaa47b-0e66-491e-988d-1c46cbe35ac0",
+            "id": "ea2510ec-353a-46f7-b716-7cecb142c47f",
+            "org": "Google",
+            "date": "2022-04-01",
+            "note": "44 points in the 2022 global qualifier, two points better than 2020.",
+            "slug": "codejam-2022",
+            "type": "win",
+            "links": [
+                {
+                    "url": "https://github.com/cloud-007/My-Certificates",
+                    "label": "Certificate"
+                }
+            ],
+            "title": "Cleared the Google Code Jam qualification round again",
+            "domain": "competitive-programming",
+            "people": [
+            ],
+            "teaser": false,
+            "traits": [
+                "competed"
+            ],
+            "chapter": "foundations",
+            "outcome": "Qualified",
+            "end_date": null,
+            "learning": null,
+            "obstacle": null,
+            "precision": "year",
+            "primary_trait": "competed"
+        },
+        {
+            "id": "b2cef745-be7e-47f7-a5d1-564640e40c43",
             "org": "Leading University",
             "date": "2022-03-05",
             "note": "Twelve weeks of hands-on training for juniors.",
@@ -1475,7 +1479,7 @@
             "primary_trait": "organized"
         },
         {
-            "id": "c8faa898-08d3-456d-96c0-655ce4b14f64",
+            "id": "d285a965-c243-405c-a606-d1e9e44a5ed9",
             "org": "LU Sports Club",
             "date": "2022-02-15",
             "note": "Ran inter-department tournaments and university sporting events for a year.",
@@ -1501,7 +1505,7 @@
             "primary_trait": "led"
         },
         {
-            "id": "71fa2228-28f0-4d80-80b1-91b0103cd32f",
+            "id": "141fc1f5-5821-4604-9a7e-8e7cafbec918",
             "org": "LU Computer Club",
             "date": "2022-01-01",
             "note": "Ran peer-to-peer DSA sessions and mentored juniors through Codeforces, CodeChef and LightOJ.",
@@ -1527,7 +1531,7 @@
             "primary_trait": "led"
         },
         {
-            "id": "1e6591b6-920c-41a2-af3a-03ac902e2854",
+            "id": "e32b025d-d84a-4a6d-820b-22811325c222",
             "org": "LU Computer Club",
             "date": "2021-11-01",
             "note": "First place on home ground, with Team Catapult.",
@@ -1557,7 +1561,7 @@
             "primary_trait": "won"
         },
         {
-            "id": "9d2d5a5a-a20c-45db-b9f7-257bec4b9896",
+            "id": "e5bbd390-7f37-4b63-8e60-0a34d30a0d75",
             "org": null,
             "date": "2021-10-13",
             "note": "A rental-listing app, and the first time I shipped something with a real UI.",
@@ -1586,7 +1590,7 @@
             "primary_trait": "built"
         },
         {
-            "id": "9e91b7ed-301c-42be-a8d7-4c2ee543fead",
+            "id": "781ccf3d-689f-45f7-bda1-fa4c0f40fb87",
             "org": "IEEE",
             "date": "2021-10-01",
             "note": "The second twenty-four hour marathon. Country rank 6, global rank 164, with Team SchrodenBug.",
@@ -1615,36 +1619,7 @@
             "primary_trait": "competed"
         },
         {
-            "id": "ffcc1254-4a8b-4678-8b63-42d43c3731ec",
-            "org": "Leading University",
-            "date": "2021-09-20",
-            "note": "Six weeks learning how research actually gets done before helping run it.",
-            "slug": "lu-research-bootcamp-training",
-            "type": "learning",
-            "links": [
-                {
-                    "url": "https://github.com/cloud-007/My-Certificates",
-                    "label": "Certificate"
-                }
-            ],
-            "title": "Completed phase-1 training at the LU Research Bootcamp",
-            "domain": "community",
-            "people": [
-            ],
-            "teaser": false,
-            "traits": [
-                "learned"
-            ],
-            "chapter": "foundations",
-            "outcome": "Completed",
-            "end_date": "2021-11-01",
-            "learning": "Learn the thing first. Then you have earned the right to organize it.",
-            "obstacle": null,
-            "precision": "day",
-            "primary_trait": "learned"
-        },
-        {
-            "id": "7b641fe1-456c-4cea-bf10-b078c1ee8253",
+            "id": "4b5173e4-acca-41cb-9f92-cd988ef9b92c",
             "org": "Leading University",
             "date": "2021-09-20",
             "note": "From phase-1 trainee to running the programme, in the same season.",
@@ -1679,7 +1654,36 @@
             "primary_trait": "organized"
         },
         {
-            "id": "e71b0fb1-e8d1-4d89-98da-c60c9a9c4268",
+            "id": "f30c1779-9dd5-4b27-a091-f17b5d63a8bc",
+            "org": "Leading University",
+            "date": "2021-09-20",
+            "note": "Six weeks learning how research actually gets done before helping run it.",
+            "slug": "lu-research-bootcamp-training",
+            "type": "learning",
+            "links": [
+                {
+                    "url": "https://github.com/cloud-007/My-Certificates",
+                    "label": "Certificate"
+                }
+            ],
+            "title": "Completed phase-1 training at the LU Research Bootcamp",
+            "domain": "community",
+            "people": [
+            ],
+            "teaser": false,
+            "traits": [
+                "learned"
+            ],
+            "chapter": "foundations",
+            "outcome": "Completed",
+            "end_date": "2021-11-01",
+            "learning": "Learn the thing first. Then you have earned the right to organize it.",
+            "obstacle": null,
+            "precision": "day",
+            "primary_trait": "learned"
+        },
+        {
+            "id": "0a136071-3ee3-41a1-bc4a-3715efaee25c",
             "org": "ICPC",
             "date": "2021-05-01",
             "note": "The regional main round, hosted by CSE, University of Dhaka. Team LU_SchrodenBug.",
@@ -1709,7 +1713,7 @@
             "primary_trait": "won"
         },
         {
-            "id": "7f74689d-e36f-4909-b9f2-44fc14bb696b",
+            "id": "5ac1ab15-98f3-45eb-b20b-f2ea99628723",
             "org": "IEEE",
             "date": "2020-10-01",
             "note": "Twenty-four hours without stopping. Country rank 9, global rank 465, with Team LURisingStar.",
@@ -1742,7 +1746,7 @@
             "primary_trait": "competed"
         },
         {
-            "id": "906cf183-4e73-4837-be6b-ef8ceac0fe9b",
+            "id": "9d316257-1e98-4b00-b85a-fda5a129d217",
             "org": null,
             "date": "2020-09-30",
             "note": "Everything I was learning about data structures, written down where anyone could read it.",
@@ -1772,7 +1776,7 @@
             "primary_trait": "built"
         },
         {
-            "id": "1e79ed56-a6a4-4fc3-995d-59a8caf0ae31",
+            "id": "98b795ed-5b75-45f4-a059-814494ee5372",
             "org": "Google",
             "date": "2020-04-04",
             "note": "42 points in the 2020 global qualifier.",
@@ -1801,7 +1805,7 @@
             "primary_trait": "competed"
         },
         {
-            "id": "07b04ecd-d13f-4cbc-bf2e-6e98f010dc45",
+            "id": "fa713a1f-b1f5-4b0b-aaa5-e32e4f71ac79",
             "org": "Leading University",
             "date": "2020-02-01",
             "note": "Team LU_Untitled. Early days, and the first time the practice showed on a scoreboard.",
@@ -1830,7 +1834,7 @@
             "primary_trait": "competed"
         },
         {
-            "id": "db733347-1301-4243-a551-dc08fe4f70ac",
+            "id": "992394b4-e5e5-49fb-90b1-f15a4ee47211",
             "org": "BAIUST",
             "date": "2020-01-01",
             "note": "A contest at another university, against people who had never seen us before.",
@@ -1859,7 +1863,7 @@
             "primary_trait": "competed"
         },
         {
-            "id": "fae1e988-a65e-4a36-8a31-15347a560fc2",
+            "id": "dddb2422-7ad3-4c06-baff-0e64f5d496cb",
             "org": "Leading University",
             "date": "2019-11-01",
             "note": "Home ground, and the first year of competing seriously.",
@@ -1888,7 +1892,7 @@
             "primary_trait": "competed"
         },
         {
-            "id": "1978a013-e102-4728-bc05-20d3efbfb723",
+            "id": "7fafb198-4a31-4a48-9be3-909fa363e660",
             "org": "ICPC",
             "date": "2019-07-16",
             "note": "Representing Leading University in the online preliminary. The certificate was issued later that September.",
@@ -1927,7 +1931,7 @@
             "primary_trait": "won"
         },
         {
-            "id": "20c42e5b-c2ae-4722-ad4f-64b6b642e6c6",
+            "id": "9894aeac-2810-4ebf-a8e1-5659641516f7",
             "org": "SUST",
             "date": "2019-04-19",
             "note": "Two days at SUST with Team LU-Newbies2. The name was honest.",
@@ -1956,7 +1960,7 @@
             "primary_trait": "competed"
         },
         {
-            "id": "81d87e27-6283-4126-8299-4a61d20a40db",
+            "id": "74b5cb41-67e5-4a46-a85c-77dccba35bff",
             "org": "Leading University",
             "date": "2018-09-01",
             "note": "Four years of fundamentals, contests, and late nights begin.",
@@ -1981,7 +1985,7 @@
             "primary_trait": "learned"
         },
         {
-            "id": "e86faf18-db4d-42b8-ae02-8e95a3e3a811",
+            "id": "274a0755-86ff-4c76-ab54-c6b765ebae68",
             "org": "Beanibazar Govt. College",
             "date": "2018-05-01",
             "note": "Higher Secondary Certificate. Chose science, and the path toward engineering.",
@@ -2006,7 +2010,7 @@
             "primary_trait": "learned"
         },
         {
-            "id": "e27e856d-eb06-475a-9722-5bdb4c8ee3af",
+            "id": "5f460c87-82a8-4939-b107-21183eb3d7b6",
             "org": "Purba Muria High School",
             "date": "2016-05-01",
             "note": "Secondary School Certificate, Sylhet. The first checkpoint.",
@@ -2114,7 +2118,7 @@
     ],
     "projects": [
         {
-            "id": "2e406216-9673-4bc1-a01b-f7d510c82998",
+            "id": "94c879e4-998d-4f3f-8590-e153ed02c381",
             "name": "OneIELTS",
             "period": "2024 - 2026",
             "teaser": false,
@@ -2151,7 +2155,7 @@
             ]
         },
         {
-            "id": "c6bed1d1-b2c1-411c-8461-363ada2c8e53",
+            "id": "520d039b-fcb8-489b-a641-65cbd958fda7",
             "name": "OnePTE",
             "period": "2022 - 2026",
             "teaser": false,
@@ -2188,7 +2192,7 @@
             ]
         },
         {
-            "id": "5b2ef111-4d7a-40df-9140-dc2d6c02b474",
+            "id": "1f46633c-10a4-49ca-b0a7-84afcd1a8464",
             "name": "Sushi Lab",
             "period": "2026",
             "teaser": false,
@@ -2220,7 +2224,7 @@
             ]
         },
         {
-            "id": "34109b02-df26-40b3-a712-ac7bc058525e",
+            "id": "c59e20dd-d01e-4522-a1d6-409e1634e17f",
             "name": "Projecto",
             "period": "2022",
             "teaser": false,
@@ -2246,7 +2250,7 @@
             ]
         },
         {
-            "id": "a353fe1a-bca0-4c19-9e9b-2d2603b99b5a",
+            "id": "3047bb46-db9b-4e3d-a2c9-4678419c9a5b",
             "name": "TestForge",
             "period": "2026",
             "teaser": false,
@@ -2269,7 +2273,7 @@
             ]
         },
         {
-            "id": "38a55e30-2b45-44b0-96af-2ef1485e2be3",
+            "id": "751488ec-d843-414c-a620-736f5679848c",
             "name": "serious-oj",
             "period": "2026",
             "teaser": false,
@@ -2291,7 +2295,7 @@
             ]
         },
         {
-            "id": "b64e8872-277b-4d07-97c8-b9986b647ba9",
+            "id": "aa56e856-66d1-4aaf-81ad-e99881006acf",
             "name": "HomeHunt",
             "period": "2021",
             "teaser": false,
@@ -2311,7 +2315,7 @@
             ]
         },
         {
-            "id": "2cf7bc54-ece3-46a1-aed8-99234992b021",
+            "id": "ce0ecad6-07f4-4eb5-a2a1-f592068b8e2d",
             "name": "CityPhone 28",
             "period": "2026",
             "teaser": false,
@@ -2338,7 +2342,7 @@
     ],
     "education": [
         {
-            "id": "2c3654d1-b6fa-4aa1-9602-20d1f5ec3f0d",
+            "id": "29f10af1-734d-4b46-9a42-a0cfbb1a56e9",
             "degree": "B.Sc. in Computer Science and Engineering",
             "detail": "GPA 3.6 / 4.0",
             "period": "Sep 2018 - Dec 2022",
@@ -2348,7 +2352,7 @@
             "institution": "Leading University"
         },
         {
-            "id": "8971eef7-2525-4c1c-b5a4-a7594b145fb5",
+            "id": "dea29578-9df3-4beb-8dc2-fc53969a113b",
             "degree": "Higher Secondary Certificate, Science",
             "detail": null,
             "period": "2016 - 2018",
@@ -2358,7 +2362,7 @@
             "institution": "Beanibazar Govt. College"
         },
         {
-            "id": "c4d1bb11-5392-4a6b-b481-375c674070fb",
+            "id": "8fe9f039-9341-4e20-a70e-3161d579ad7a",
             "degree": "Secondary School Certificate",
             "detail": null,
             "period": "2011 - 2016",
@@ -2370,7 +2374,7 @@
     ],
     "experience": [
         {
-            "id": "0087229d-e537-44a2-ab78-c087d84eb495",
+            "id": "d09cdea7-c42f-4825-b9e5-d699baadd36d",
             "role": "Senior Software Engineer",
             "links": [
                 {
@@ -2415,7 +2419,7 @@
             "company_url": "https://www.liilab.com/"
         },
         {
-            "id": "5ee69261-5053-453e-82aa-dcd0d3ae541a",
+            "id": "817b1957-898b-4468-abca-2f10da82fb39",
             "role": "Software Engineer",
             "links": [
                 {
@@ -2457,7 +2461,7 @@
     "generatedAt": null,
     "volunteering": [
         {
-            "id": "a4f888b5-9578-4654-84e5-cd1b61b48fc1",
+            "id": "e0058730-c749-408e-9518-2121d68ed3c7",
             "org": "IEEE Computer Society, LU Student Branch Chapter",
             "title": "Chair",
             "period": "Apr 2022 - May 2023",
@@ -2471,7 +2475,7 @@
             "sort_order": 1
         },
         {
-            "id": "d8947d3f-f669-4f0e-902e-058469446a31",
+            "id": "b8b10b04-1685-42b2-8e0f-591ef3264e3f",
             "org": "Leading University Computer Club",
             "title": "ACM Coordinator",
             "period": "Jan 2022 - Dec 2023",
@@ -2483,7 +2487,7 @@
             "sort_order": 2
         },
         {
-            "id": "3a91d4dc-8cfd-4806-a43d-b138a8468dd2",
+            "id": "3889cc5b-eed0-448d-a504-2003cd90c279",
             "org": "Leading University Sports Club",
             "title": "Joint General Secretary",
             "period": "2022 - 2023",

@@ -336,6 +336,33 @@ export function formatEntryRange(entry: {
 export const TEASER_LINE = "Building it now. Live soon.";
 
 /**
+ * Only let http, https and mailto reach an href.
+ *
+ * Every link on this site comes out of the database, and `javascript:` in an
+ * href executes on click. Today the only writer is the site owner and the anon
+ * key is read-only, so this is not currently reachable. It is still worth
+ * closing: the anon key is public by design, and the day somebody adds an
+ * INSERT policy the gap becomes live. A returned undefined renders as plain
+ * text rather than a dead link.
+ */
+export function safeHref(url?: string | null): string | undefined {
+    if (!url) return undefined;
+    try {
+        const parsed = new URL(url, "https://example.invalid");
+        if (
+            parsed.protocol === "https:" ||
+            parsed.protocol === "http:" ||
+            parsed.protocol === "mailto:"
+        ) {
+            return url;
+        }
+    } catch {
+        /* unparseable is not safe either */
+    }
+    return undefined;
+}
+
+/**
  * How a person reads once consent has been applied.
  *
  *   consented        "Ada Lovelace, Senior Engineering Manager at Acme"

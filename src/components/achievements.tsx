@@ -2,7 +2,7 @@
 
 import { Trophy, ExternalLink } from "lucide-react";
 import { useSiteContent } from "@/lib/use-content";
-import { describePerson, formatEntryRange } from "@/lib/content";
+import { describePerson, formatEntryRange, safeHref } from "@/lib/content";
 
 /* Rotating accents so a growing list of wins never looks monotonous, and so
    adding a win in Supabase needs no colour decision from you. */
@@ -112,10 +112,10 @@ export function Achievements() {
               Online judges
             </h3>
             <div className="flex flex-wrap gap-2">
-              {judges.map((j) => (
+              {judges.filter((j) => safeHref(j.url)).map((j) => (
                 <a
                   key={j.id}
-                  href={j.url}
+                  href={safeHref(j.url)}
                   target="_blank"
                   rel="noopener noreferrer"
                   className="inline-flex items-center gap-2 px-3 py-2 bg-zinc-900 border border-zinc-800 rounded-lg text-xs font-medium text-zinc-400 hover:border-zinc-600 hover:text-zinc-200 transition-colors"

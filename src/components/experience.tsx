@@ -2,6 +2,7 @@
 
 import { ExternalLink, Calendar } from "lucide-react";
 import { useSiteContent } from "@/lib/use-content";
+import { safeHref } from "@/lib/content";
 
 const MONTHS = [
   "Jan", "Feb", "Mar", "Apr", "May", "Jun",
@@ -61,7 +62,7 @@ export function Experience() {
                         )}
                       </div>
                       <a
-                        href={exp.company_url ?? "#"}
+                        href={safeHref(exp.company_url) ?? "#"}
                         target="_blank"
                         rel="noopener noreferrer"
                         className="inline-flex items-center gap-1.5 text-emerald-400 hover:text-emerald-300 font-medium text-sm transition-colors group"
@@ -98,10 +99,10 @@ export function Experience() {
                   {/* Where the work lives */}
                   {exp.links.length > 0 && (
                     <div className="flex flex-wrap gap-2 mb-4">
-                      {exp.links.map((l) => (
+                      {exp.links.filter((l) => safeHref(l.href)).map((l) => (
                         <a
                           key={l.href}
-                          href={l.href}
+                          href={safeHref(l.href)}
                           target="_blank"
                           rel="noopener noreferrer"
                           className="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-lg border border-zinc-800 bg-zinc-900/70 text-zinc-400 text-[11px] font-semibold hover:border-emerald-500/40 hover:text-emerald-300 transition-colors"

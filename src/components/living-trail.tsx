@@ -30,6 +30,7 @@ import dynamic from "next/dynamic";
 import { useSiteContent } from "@/lib/use-content";
 import {
     describePerson,
+    safeHref,
     formatEntryRange,
     TEASER_LINE,
     type TrailEntry,
@@ -260,10 +261,12 @@ function LinkChips({ links }: { links: LinkRef[] }) {
         <div className="flex flex-wrap gap-1.5 mt-3">
             {links.map((link) => {
                 const Icon = linkIcon(link.label);
+                const href = safeHref(link.url);
+                if (!href) return null;
                 return (
                     <a
                         key={link.url + link.label}
-                        href={link.url}
+                        href={href}
                         target="_blank"
                         rel="noopener noreferrer"
                         className="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-lg border border-zinc-800 bg-zinc-900/70 text-zinc-400 text-[11px] font-semibold hover:border-emerald-500/40 hover:text-emerald-300 hover:bg-emerald-500/5 transition-colors"
@@ -289,7 +292,7 @@ function EntryCard({
     /* People without consent arrive with no name and no link, only a role.
        Anyone with neither is dropped rather than rendered as an empty slot. */
     const people = entry.people
-        .map((p) => ({ text: describePerson(p), url: p.url }))
+        .map((p) => ({ text: describePerson(p), url: safeHref(p.url) }))
         .flatMap((p) => (p.text ? [{ text: p.text, url: p.url }] : []));
 
     return (

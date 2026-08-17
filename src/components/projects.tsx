@@ -2,7 +2,7 @@
 
 import { Github, ArrowUpRight, ExternalLink, Clock } from "lucide-react";
 import { useSiteContent } from "@/lib/use-content";
-import { TEASER_LINE, type Project } from "@/lib/content";
+import { TEASER_LINE, safeHref, type Project } from "@/lib/content";
 
 /* Accent stripe per category, so the three groups read as three groups
    without needing a colour column in the database. */
@@ -38,9 +38,9 @@ function FullWidthCard({ project }: { project: Project }) {
                 </span>
               )}
 
-              {project.live_url && (
+              {safeHref(project.live_url) && (
                 <a
-                  href={project.live_url}
+                  href={safeHref(project.live_url)}
                   target="_blank"
                   rel="noopener noreferrer"
                   className="inline-flex items-center gap-1 px-2.5 py-0.5 bg-emerald-500/10 border border-emerald-500/20 rounded-full text-emerald-400 text-xs font-medium hover:bg-emerald-500/20 transition-colors"
@@ -50,9 +50,9 @@ function FullWidthCard({ project }: { project: Project }) {
                 </a>
               )}
 
-              {project.repo_url && (
+              {safeHref(project.repo_url) && (
                 <a
-                  href={project.repo_url}
+                  href={safeHref(project.repo_url)}
                   target="_blank"
                   rel="noopener noreferrer"
                   className="inline-flex items-center gap-1 px-2.5 py-0.5 bg-zinc-800 border border-zinc-700 rounded-full text-zinc-400 text-xs font-medium hover:bg-zinc-700 transition-colors"
@@ -172,7 +172,7 @@ export function Projects() {
             </p>
           </div>
           <a
-            href={github}
+            href={safeHref(github)}
             target="_blank"
             rel="noopener noreferrer"
             className="flex items-center gap-2 px-4 py-2 bg-zinc-800 hover:bg-zinc-700 text-zinc-200 text-sm font-medium rounded-xl border border-zinc-700 transition-all group"
