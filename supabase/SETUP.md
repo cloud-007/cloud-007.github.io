@@ -51,10 +51,13 @@ tab, or the committed snapshot.
 2. Paste the entire contents of `02-seed.sql`. **Run**.
 3. **New query** again, paste `03-seed-content.sql`. **Run**.
 4. **New query** again, paste `04-corrections.sql`. **Run**.
+5. **New query** again, paste `05-links.sql`. **Run**.
 
 `04-corrections.sql` does the things an upsert cannot: it deletes rows, changes
-visibility, and rewrites claims that turned out to be wrong. Re-running
-`01-schema.sql` first is what upgrades an existing database.
+visibility, and rewrites claims that turned out to be wrong. `05-links.sql`
+fills in every link an entry can carry. Re-running `01-schema.sql` first is
+what upgrades an existing database: it adds new columns and migrates the old
+ones across.
 
 Everything unverified or sensitive is seeded as `visibility = 'private'`. It is
 in your database, invisible on the site, absent from the committed snapshot, and
@@ -123,11 +126,30 @@ The fields that matter:
 | `type` | `milestone` / `win` / `learning` / `obstacle` |
 | `title` | the headline |
 | `note` | a sentence or two |
+| `links` | `[{"label": "GitHub", "url": "https://..."}]`, as many as apply |
 | `learning` | what it taught you (optional, and it raises the growth weight) |
 | `visibility` | **starts `private`.** Set `public` when you are ready. |
 
 Then add its traits in `entry_traits`: one row per trait, with `is_primary`
 true on exactly one.
+
+### Links
+
+`links` is an array, because one milestone often has several homes. The channel
+milestone points at YouTube, Instagram and Facebook at once:
+
+```json
+[{"label": "YouTube",   "url": "https://www.youtube.com/@theainativeengineer"},
+ {"label": "Instagram", "url": "https://www.instagram.com/theainativeengineer/"},
+ {"label": "Facebook",  "url": "https://www.facebook.com/theainativeengineer"}]
+```
+
+The icon is chosen from the label, so GitHub, YouTube, Instagram, Facebook,
+Certificate, Standings and Ranking all get the right one with no code change.
+Anything else falls back to a generic link icon.
+
+A filter chip with nothing behind it is hidden, so an empty domain or trait
+simply disappears from the bar rather than sitting there greyed out.
 
 ### The redaction switches
 

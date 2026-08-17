@@ -18,6 +18,13 @@ import {
     ExternalLink,
     Clock,
     X,
+    Github,
+    Youtube,
+    Instagram,
+    Facebook,
+    Award,
+    Link2,
+    type LucideIcon,
 } from "lucide-react";
 import dynamic from "next/dynamic";
 import { useSiteContent } from "@/lib/use-content";
@@ -27,6 +34,7 @@ import {
     TEASER_LINE,
     type TrailEntry,
     type EntryType,
+    type LinkRef,
 } from "@/lib/content";
 import { computeGrowth } from "@/lib/growth";
 
@@ -203,27 +211,22 @@ function Chip({
     label,
     count,
     active,
-    disabled,
     onClick,
 }: {
     label: string;
     count: number;
     active: boolean;
-    disabled: boolean;
     onClick: () => void;
 }) {
     return (
         <button
             type="button"
             onClick={onClick}
-            disabled={disabled}
             aria-pressed={active}
             className={`inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full border text-xs font-semibold transition-colors ${
                 active
                     ? "bg-emerald-500/15 border-emerald-500/40 text-emerald-200"
-                    : disabled
-                      ? "bg-zinc-900/40 border-zinc-800 text-zinc-600 cursor-not-allowed"
-                      : "bg-zinc-900/60 border-zinc-700 text-zinc-300 hover:border-zinc-500 hover:text-zinc-100"
+                    : "bg-zinc-900/60 border-zinc-700 text-zinc-300 hover:border-zinc-500 hover:text-zinc-100"
             }`}
         >
             {label}
@@ -231,6 +234,46 @@ function Chip({
                 {count}
             </span>
         </button>
+    );
+}
+
+/* ── Links ── */
+
+/* An entry can point at several places at once: a channel lives on three
+   platforms, a shipped project has both a site and a repo. The icon is picked
+   from the label so adding a link in Supabase needs no code change. */
+function linkIcon(label: string): LucideIcon {
+    const l = label.toLowerCase();
+    if (l.includes("github")) return Github;
+    if (l.includes("youtube")) return Youtube;
+    if (l.includes("instagram")) return Instagram;
+    if (l.includes("facebook")) return Facebook;
+    if (l.includes("certificate")) return Award;
+    if (l.includes("standings") || l.includes("ranking")) return Award;
+    if (l.includes(".com") || l.includes(".io")) return Link2;
+    return ExternalLink;
+}
+
+function LinkChips({ links }: { links: LinkRef[] }) {
+    if (links.length === 0) return null;
+    return (
+        <div className="flex flex-wrap gap-1.5 mt-3">
+            {links.map((link) => {
+                const Icon = linkIcon(link.label);
+                return (
+                    <a
+                        key={link.url + link.label}
+                        href={link.url}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-lg border border-zinc-800 bg-zinc-900/70 text-zinc-400 text-[11px] font-semibold hover:border-emerald-500/40 hover:text-emerald-300 hover:bg-emerald-500/5 transition-colors"
+                    >
+                        <Icon className="w-3 h-3" />
+                        {link.label}
+                    </a>
+                );
+            })}
+        </div>
     );
 }
 
@@ -250,7 +293,10 @@ function EntryCard({
         .filter((p): p is string => Boolean(p));
 
     return (
-        <article className="bento-card p-5" id={entry.slug}>
+        <article
+            id={entry.slug}
+            className="bento-card p-5 scroll-mt-28 transition-colors hover:border-zinc-600"
+        >
             <div className="flex flex-wrap items-center gap-2.5 mb-2">
                 <span
                     className={`inline-flex items-center px-2.5 py-0.5 border rounded-full text-[11px] font-semibold uppercase tracking-wider ${TYPE_BADGE[entry.type]}`}
@@ -322,17 +368,7 @@ function EntryCard({
                             </span>
                         </p>
                     )}
-                    {entry.link_url && (
-                        <a
-                            href={entry.link_url}
-                            target="_blank"
-                            rel="noopener noreferrer"
-                            className="inline-flex items-center gap-1.5 mt-3 text-emerald-300 hover:text-emerald-200 text-xs font-semibold transition-colors"
-                        >
-                            {entry.link_label ?? "See it"}
-                            <ExternalLink className="w-3 h-3" />
-                        </a>
-                    )}
+                    <LinkChips links={entry.links} />
                 </>
             )}
         </article>
@@ -576,18 +612,11 @@ export function LivingTrail() {
                             </span>
                         </div>
 
-                        <button
-                            type="button"
-                            onClick={() => setOpen((o) => !o)}
-                            aria-expanded={open}
-                            aria-controls="trail-timeline"
-                            className="block w-full cursor-pointer focus:outline-none focus-visible:ring-2 focus-visible:ring-emerald-400/60"
-                            title="Open the trail"
+                        <div
+                            ref={sceneWrapRef}
+                            className="relative w-full h-[440px] md:h-[580px]"
                         >
-                            <div
-                                ref={sceneWrapRef}
-                                className="relative w-full h-[440px] md:h-[580px]"
-                            >
+                            <div className="absolute inset-0">
                                 {nearViewport ? (
                                     <TreeScene
                                         seed={seed}
@@ -601,6 +630,7 @@ export function LivingTrail() {
                                 ) : (
                                     <TreeLoading />
                                 )}
+                            </div>
                                 {/* Named roots, anchored over the soil */}
                                 <div className="absolute bottom-3 left-0 right-0 flex justify-center gap-x-6 gap-y-1 flex-wrap px-4 pointer-events-none">
                                     {(profile?.roots ?? []).map((label) => (
@@ -613,8 +643,7 @@ export function LivingTrail() {
                                         </span>
                                     ))}
                                 </div>
-                            </div>
-                        </button>
+                        </div>
 
                         {(weather.kind === "rain" || weather.kind === "thunder") && (
                             <RainLayer heavy={weather.kind === "thunder"} />
@@ -682,26 +711,31 @@ export function LivingTrail() {
                 >
                     <div className="overflow-hidden">
                         {/* Filters. Two axes: where in life, and what it proves. */}
-                        <div className="bento-card p-4 mb-6 space-y-3">
+                        <div className="bento-card p-4 mb-6 space-y-3 sticky top-20 z-20 backdrop-blur-sm bg-zinc-900/95">
                             <div>
                                 <p className="text-zinc-500 text-[11px] font-bold uppercase tracking-wider mb-2">
                                     Part of life
                                 </p>
                                 <div className="flex flex-wrap gap-2">
-                                    {domains.map((d) => (
-                                        <Chip
-                                            key={d.slug}
-                                            label={d.label}
-                                            count={domainCounts[d.slug] ?? 0}
-                                            active={domain === d.slug}
-                                            disabled={
-                                                !domainCounts[d.slug] && domain !== d.slug
-                                            }
-                                            onClick={() =>
-                                                setDomain(domain === d.slug ? null : d.slug)
-                                            }
-                                        />
-                                    ))}
+                                    {domains
+                                        .filter(
+                                            (d) =>
+                                                (domainCounts[d.slug] ?? 0) > 0 ||
+                                                domain === d.slug,
+                                        )
+                                        .map((d) => (
+                                            <Chip
+                                                key={d.slug}
+                                                label={d.label}
+                                                count={domainCounts[d.slug] ?? 0}
+                                                active={domain === d.slug}
+                                                onClick={() =>
+                                                    setDomain(
+                                                        domain === d.slug ? null : d.slug,
+                                                    )
+                                                }
+                                            />
+                                        ))}
                                 </div>
                             </div>
 
@@ -710,20 +744,25 @@ export function LivingTrail() {
                                     What it demonstrates
                                 </p>
                                 <div className="flex flex-wrap gap-2">
-                                    {traits.map((t) => (
-                                        <Chip
-                                            key={t.slug}
-                                            label={t.label}
-                                            count={traitCounts[t.slug] ?? 0}
-                                            active={trait === t.slug}
-                                            disabled={
-                                                !traitCounts[t.slug] && trait !== t.slug
-                                            }
-                                            onClick={() =>
-                                                setTrait(trait === t.slug ? null : t.slug)
-                                            }
-                                        />
-                                    ))}
+                                    {traits
+                                        .filter(
+                                            (t) =>
+                                                (traitCounts[t.slug] ?? 0) > 0 ||
+                                                trait === t.slug,
+                                        )
+                                        .map((t) => (
+                                            <Chip
+                                                key={t.slug}
+                                                label={t.label}
+                                                count={traitCounts[t.slug] ?? 0}
+                                                active={trait === t.slug}
+                                                onClick={() =>
+                                                    setTrait(
+                                                        trait === t.slug ? null : t.slug,
+                                                    )
+                                                }
+                                            />
+                                        ))}
                                 </div>
                             </div>
 

@@ -46,6 +46,12 @@ export interface Facet {
  * without it the view strips the name before the row ever leaves Postgres, so
  * `name` is simply absent here rather than present-and-hidden.
  */
+/** Somewhere an entry points: a repo, a live site, a standings page. */
+export interface LinkRef {
+    label: string;
+    url: string;
+}
+
 export interface Person {
     name?: string;
     role?: string;
@@ -68,8 +74,7 @@ export interface TrailEntry {
     org: string | null;
     outcome: string | null;
     people: Person[];
-    link_url: string | null;
-    link_label: string | null;
+    links: LinkRef[];
     teaser: boolean;
     traits: string[];
     primary_trait: string | null;
@@ -219,6 +224,21 @@ export async function readView<T>(
     return (await res.json()) as T[];
 }
 
+/**
+ * The live database can be a migration behind the deployed code: someone runs
+ * the new build before running the new SQL. Missing array columns arrive as
+ * undefined and would take the page down on `.map`. Normalising here means a
+ * stale database renders a slightly poorer entry instead of a blank screen.
+ */
+function normalizeEntry(e: TrailEntry): TrailEntry {
+    return {
+        ...e,
+        traits: e.traits ?? [],
+        people: e.people ?? [],
+        links: e.links ?? [],
+    };
+}
+
 /** The `skills` view exposes a `group` column; the word is reserved in SQL. */
 type RawSkillGroup = SkillGroup;
 
@@ -263,7 +283,7 @@ export async function fetchSiteContent(
         chapters,
         domains,
         traits,
-        entries,
+        entries: entries.map(normalizeEntry),
         profile: profileRows[0] ?? null,
         experience,
         projects,

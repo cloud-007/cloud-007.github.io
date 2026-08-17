@@ -91,9 +91,11 @@ create table if not exists trail_entries (
   -- still identify most people, which is not anonymity.
   people          jsonb not null default '[]'::jsonb,
 
-  -- evidence
-  link_url        text,
-  link_label      text,
+  -- Evidence. An array, because one milestone can have many homes: a channel
+  -- lives on Instagram, Facebook and YouTube at once, and a shipped project
+  -- has both a live site and a repo.
+  --   [{"label": "YouTube", "url": "https://..."}]
+  links           jsonb not null default '[]'::jsonb,
 
   -- an unlaunched thing: render the title and a "live soon" line, nothing else
   teaser          boolean not null default false,
@@ -116,6 +118,24 @@ create table if not exists trail_entries (
 drop view if exists public_trail_entries;
 
 alter table trail_entries add column if not exists people jsonb not null default '[]'::jsonb;
+alter table trail_entries add column if not exists links  jsonb not null default '[]'::jsonb;
+
+-- Fold the old single link into the array, then retire the two columns.
+do $$
+begin
+  if exists (
+    select 1 from information_schema.columns
+    where table_name = 'trail_entries' and column_name = 'link_url'
+  ) then
+    update trail_entries
+    set links = jsonb_build_array(jsonb_build_object(
+      'label', coalesce(link_label, 'Link'), 'url', link_url))
+    where links = '[]'::jsonb and link_url is not null;
+
+    alter table trail_entries drop column link_url;
+    alter table trail_entries drop column if exists link_label;
+  end if;
+end $$;
 
 do $$
 begin
@@ -145,6 +165,8 @@ end $$;
 create index if not exists trail_entries_date_idx on trail_entries (date desc);
 create index if not exists trail_entries_visibility_idx on trail_entries (visibility);
 
+comment on column trail_entries.links is
+  'Evidence, as [{label, url}]. Many per entry: a channel has three homes.';
 comment on column trail_entries.people is
   'Per-person consent. consent=false strips name and org, keeping role only.';
 comment on column trail_entries.show_org is
@@ -405,8 +427,7 @@ create or replace view public_trail_entries as
         end)
       from jsonb_array_elements(e.people) p
     ), '[]'::jsonb) end                                             as people,
-    case when e.teaser then null else e.link_url end                as link_url,
-    case when e.teaser then null else e.link_label end              as link_label,
+    case when e.teaser then '[]'::jsonb else e.links end            as links,
     e.teaser,
     coalesce(
       (select array_agg(t.trait_slug order by t.is_primary desc, t.trait_slug)

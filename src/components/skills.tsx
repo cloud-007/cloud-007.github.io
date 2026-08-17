@@ -94,7 +94,7 @@ export function Skills() {
                   {cat.items.map((skill) => (
                     <span
                       key={skill}
-                      className="px-3 py-1.5 bg-zinc-900 text-zinc-400 text-xs font-medium rounded-lg border border-zinc-800 hover:border-zinc-600 hover:text-zinc-200 transition-all cursor-default"
+                      className="px-3 py-1.5 bg-zinc-900 text-zinc-400 text-xs font-medium rounded-lg border border-zinc-800 hover:border-zinc-700 transition-colors cursor-default"
                     >
                       {skill}
                     </span>

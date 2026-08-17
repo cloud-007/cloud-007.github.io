@@ -95,6 +95,24 @@ export function Experience() {
                     ))}
                   </ul>
 
+                  {/* Where the work lives */}
+                  {exp.links.length > 0 && (
+                    <div className="flex flex-wrap gap-2 mb-4">
+                      {exp.links.map((l) => (
+                        <a
+                          key={l.href}
+                          href={l.href}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-lg border border-zinc-800 bg-zinc-900/70 text-zinc-400 text-[11px] font-semibold hover:border-emerald-500/40 hover:text-emerald-300 transition-colors"
+                        >
+                          {l.label}
+                          <ExternalLink className="w-3 h-3" />
+                        </a>
+                      ))}
+                    </div>
+                  )}
+
                   {/* Tech */}
                   <div className="flex flex-wrap gap-1.5 pt-4 border-t border-zinc-800">
                     {exp.stack.map((tech) => (

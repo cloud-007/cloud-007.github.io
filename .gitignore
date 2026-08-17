@@ -59,3 +59,7 @@ supabase/REVIEW.md
 
 # JetBrains project files
 .idea/
+supabase/05-links.sql
+
+# Browser-automation artifacts
+.playwright-mcp/
