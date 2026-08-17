@@ -352,8 +352,20 @@ function EntryCard({
                             <Users className="w-3.5 h-3.5 mt-0.5 shrink-0" />
                             <span>
                                 {people.map((p, i) => (
-                                    <span key={p.text}>
-                                        {i > 0 && " · "}
+                                    /* Key carries the position AND the text.
+                                       The page renders the snapshot first and
+                                       the live fetch second, so a person can go
+                                       from "a instructor" (plain text, no link)
+                                       to a named <a> in one update. Keying on
+                                       position alone lets React patch that span
+                                       in place, and it stranded the old text
+                                       node beside the new link. A key that
+                                       changes with the text replaces the span
+                                       outright. The position prefix keeps keys
+                                       unique when two people without consent
+                                       collapse to the same string. */
+                                    <span key={`${i}-${p.text}`}>
+                                        {i > 0 ? " · " : null}
                                         {p.url ? (
                                             <a
                                                 href={p.url}
@@ -364,7 +376,7 @@ function EntryCard({
                                                 {p.text}
                                             </a>
                                         ) : (
-                                            p.text
+                                            <span>{p.text}</span>
                                         )}
                                     </span>
                                 ))}

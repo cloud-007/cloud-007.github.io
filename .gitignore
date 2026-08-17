@@ -42,28 +42,35 @@ yarn-error.log*
 *.tsbuildinfo
 next-env.d.ts
 
-# Supabase bootstrap files that carry PRIVATE rows.
-#
-# 02-seed.sql and 03-seed-content.sql contain every entry, including the ones
-# marked visibility='private': interview companies, unverified claims and
-# private_note text. REVIEW.md names them too. The whole point of the
-# visibility model is that this data never reaches a public repo, and these
-# files are the one place it exists in plain text.
-#
-# They are one-time bootstrap files. Keep them locally, run them in the
-# Supabase SQL editor, and let the database be their home after that.
-supabase/02-seed.sql
-supabase/03-seed-content.sql
-supabase/04-corrections.sql
-supabase/REVIEW.md
-
 # JetBrains project files
 .idea/
-supabase/05-links.sql
 
 # Browser-automation artifacts
 .playwright-mcp/
-supabase/06-refinements.sql
-supabase/07-people.sql
-supabase/08-judges-and-interviews.sql
-supabase/09-slugs.sql
+
+# ---------------------------------------------------------------------------
+# Supabase: everything under supabase/ is PRIVATE unless listed below.
+#
+# The data files carry rows marked visibility='private' (interview companies,
+# unverified claims, private_note text) and the names, employers and profile
+# links of people whose consent flag is still false. The whole point of the
+# visibility and consent model is that this data never reaches a public repo,
+# and these files are the one place it exists in plain text.
+#
+# They are one-time bootstrap files: run them in the Supabase SQL editor and
+# let the database be their home after that.
+#
+# This is deny-by-default on purpose. Naming each new data file was a rule that
+# only held while someone remembered it, and a forgotten line publishes names.
+# A new file here is ignored until it is added to the allowlist by hand, which
+# is the safe direction to fail in.
+#
+# To publish a file, add a `!` line. To publish a subdirectory, git must be
+# able to descend into it, so unignore the directory before its contents:
+#     !supabase/migrations/
+#     supabase/migrations/*
+#     !supabase/migrations/*-public.sql
+# ---------------------------------------------------------------------------
+supabase/*
+!supabase/01-schema.sql
+!supabase/SETUP.md
