@@ -293,7 +293,7 @@
       "chapter": "leading",
       "domain": "network",
       "type": "learning",
-      "title": "Talked with an engineering manager about the founder journey",
+      "title": "Talked with Saiful Islam about the founder journey",
       "note": "Discussed the founder journey, the app business, what a product-based company looks like from the inside, the traits of a great product, and how to approach all of it.",
       "obstacle": null,
       "learning": "Great products come from clear traits and a deliberate approach, not luck.",
@@ -301,6 +301,9 @@
       "outcome": null,
       "people": [
         {
+          "org": "Optimizely",
+          "url": "https://www.linkedin.com/in/saiful103a/",
+          "name": "Saiful Islam",
           "role": "Senior Engineering Manager"
         }
       ],
@@ -366,7 +369,7 @@
       "chapter": "leading",
       "domain": "network",
       "type": "learning",
-      "title": "Talked with a technical lead about how AI is reshaping the industry",
+      "title": "Talked with Hasanuzzaman Shamim about how AI is reshaping the industry",
       "note": "Discussed AI in the tech industry as a whole: how it is changing, how it is affecting us, and how we are coping with it.",
       "obstacle": null,
       "learning": "Meetups like this exist to widen the picture. Someone else's vantage point is the cheapest upgrade there is.",
@@ -374,6 +377,9 @@
       "outcome": null,
       "people": [
         {
+          "org": "Authlab",
+          "url": "https://www.linkedin.com/in/shamim0902/",
+          "name": "Hasanuzzaman Shamim",
           "role": "Technical Lead Software Engineer"
         }
       ],
@@ -1362,14 +1368,16 @@
       "outcome": null,
       "people": [
         {
+          "org": "Sunway University",
           "url": "https://www.linkedin.com/in/saidur-rahman-244a2137/",
           "name": "Saidur Rahman",
-          "role": "trainer"
+          "role": "Distinguished Research Professor"
         },
         {
+          "org": "CUET",
           "url": "https://www.linkedin.com/in/mdsabirhossain/",
           "name": "Md. Sabir Hossain",
-          "role": "trainer"
+          "role": "Assistant Professor"
         }
       ],
       "links": [
@@ -1752,10 +1760,10 @@
     }
   ],
   "profile": {
-    "name": "Md Mazharul Islam Emon",
+    "name": "Mazharul Islam",
     "handle": "cloud_007",
-    "role": "Full-Stack AI Engineer",
-    "bio": "Full-Stack AI Engineer with 3+ years in software engineering. Builds scalable backends, cross-platform mobile apps, and AI-powered SaaS platforms. Ships production systems with Django, Flutter, and Next.js, and delivers faster using AI-native tooling like Claude Code and Cursor. Proven track record in multi-tenant architecture, real-time speech evaluation pipelines, and end-to-end product delivery across 93+ production releases.",
+    "role": "Software Engineer",
+    "bio": "Building products and sharing what I learn along the way. Backend, frontend, mobile, infrastructure, DevOps, ML - all of it, because agents made the parts I used to hand off cheap enough to keep. One person can hold a whole product now. Still working out what that changes, which is turning out to be most of the job.",
     "location": "Sylhet, Bangladesh",
     "latitude": 24.8949,
     "longitude": 91.8687,
@@ -2515,5 +2523,5 @@
     "vitality_span": 0.58,
     "vitality_target": 42
   },
-  "generatedAt": "2026-08-17T12:55:01.657Z"
+  "generatedAt": "2026-08-17T18:50:14.190Z"
 }

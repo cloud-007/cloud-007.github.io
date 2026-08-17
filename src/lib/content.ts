@@ -199,6 +199,28 @@ export const snapshotContent = snapshot as unknown as SiteContent;
 
 export const isSupabaseConfigured = Boolean(SUPABASE_URL && SUPABASE_ANON_KEY);
 
+/**
+ * Identity for build-time metadata: page titles, meta descriptions, the
+ * OpenGraph card.
+ *
+ * Next resolves `metadata` while building, so it cannot read the live database
+ * the way the page body does. It reads the snapshot, which was generated from
+ * that same database moments earlier. The point is that these strings exist
+ * once: hand-copying them into each route meant a SQL edit updated the visible
+ * page while the search snippet and the share card kept serving the last
+ * deploy's version.
+ *
+ * The fallbacks cover a clone with no credentials, where the generator exits
+ * without writing and the snapshot can be empty. A build should still produce
+ * a page with a title rather than "undefined".
+ */
+export const siteIdentity = {
+    name: snapshotContent.profile?.name ?? "Mazharul Islam",
+    role: snapshotContent.profile?.role ?? "Software Engineer",
+    bio: snapshotContent.profile?.bio ?? "",
+    location: snapshotContent.profile?.location ?? "",
+};
+
 /* ── Fetching ─────────────────────────────────────────────────────────────── */
 
 /**

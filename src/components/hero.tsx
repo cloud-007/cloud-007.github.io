@@ -28,8 +28,9 @@ export function Hero() {
 
     if (!profile) return null;
 
-    /* "Md Mazharul Islam Emon" reads best as a given name plus a highlighted
-       surname; the split is presentational, the name itself is data. */
+    /* The name reads best as a given name plus a highlighted surname; the
+       split is presentational, the name itself is data. The honorific strip
+       is kept so an "Md." prefix would not land in the highlighted half. */
     const parts = profile.name.replace(/^Md\.?\s+/i, "").split(" ");
     const firstName = parts.slice(0, -1).join(" ") || profile.name;
     const lastName = parts.length > 1 ? parts[parts.length - 1] : "";

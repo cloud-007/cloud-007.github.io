@@ -1,7 +1,13 @@
 import { ImageResponse } from "next/og";
+import { siteIdentity } from "@/lib/content";
+
+/* The card is baked at build time, so it reads the snapshot like the rest of
+   the metadata does. Only the name and role come from data; the layout, the
+   stack chips and the location line are the card's own design. */
+const { name, role, location } = siteIdentity;
 
 export const dynamic = "force-static";
-export const alt = "Mazharul Islam | Full-Stack AI Engineer";
+export const alt = `${name} | ${role}`;
 export const size = { width: 1200, height: 630 };
 export const contentType = "image/png";
 
@@ -160,7 +166,7 @@ export default function Image() {
             letterSpacing: "0.01em",
           }}
         >
-          Full-Stack AI Engineer
+          {role}
         </div>
 
         {/* Meta info */}
@@ -171,7 +177,7 @@ export default function Image() {
             marginBottom: "44px",
           }}
         >
-          3+ years · EdTech / AI · Sylhet, Bangladesh
+          {`EdTech / AI · ${location}`}
         </div>
 
         {/* Tech badges */}

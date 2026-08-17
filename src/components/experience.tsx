@@ -34,7 +34,7 @@ export function Experience() {
             Work Experience
           </h2>
           <p className="text-zinc-500 mt-2 text-sm">
-            3+ years building production EdTech software at LII Lab
+            Building production EdTech software at LII Lab
           </p>
         </div>
 
