@@ -299,7 +299,7 @@ export default function ResumeProfessionalPage() {
               <h2 className="rp-section-head">Profile</h2>
               <hr className="rp-rule" />
               <p className="rp-summary">
-                Software engineer with 3+ years building AI-powered, production-scale SaaS platforms used by tens of thousands of test-prep candidates across IELTS and PTE. Architected multi-tenant Django/DRF backends, real-time speech-evaluation pipelines, and Flutter/Next.js clients; shipped 90+ production releases across iOS, Android, and Web. AI-native engineer who ships faster using Claude Code and agentic workflows for code generation, refactoring, and test scaffolding. Competitive programming background: 2,000+ problems solved, ICPC Dhaka Regional main round competitor.
+                Software engineer with three and a half years at LII Lab building AI-powered, production-scale SaaS platforms used by tens of thousands of test-prep candidates across IELTS and PTE. Architected multi-tenant Django/DRF backends, real-time speech-evaluation pipelines, and Flutter/Next.js clients; shipped 93+ production releases across iOS, Android, and Web. AI-native engineer who ships faster using Claude Code and agentic workflows for code generation, refactoring, and test scaffolding. Competitive programming background: 2,000+ problems solved, ICPC Dhaka Regional main round competitor.
               </p>
             </section>
 

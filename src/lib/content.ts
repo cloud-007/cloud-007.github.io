@@ -216,7 +216,7 @@ export const isSupabaseConfigured = Boolean(SUPABASE_URL && SUPABASE_ANON_KEY);
  */
 export const siteIdentity = {
     name: snapshotContent.profile?.name ?? "Mazharul Islam",
-    role: snapshotContent.profile?.role ?? "Software Engineer",
+    role: snapshotContent.profile?.role ?? "Product Engineer",
     bio: snapshotContent.profile?.bio ?? "",
     location: snapshotContent.profile?.location ?? "",
 };

@@ -22,9 +22,15 @@ export const metadata: Metadata = {
   metadataBase: new URL("https://cloud-007.github.io"),
   title,
   description: bio,
+  /* The title says "Product Engineer" because that is the accurate name for
+     the work. "Software Engineer" and "Full-Stack AI Engineer" stay here so
+     the page still answers the queries recruiters actually type. Keywords are
+     the right place for the search-shaped variants; the title is not. */
   keywords: [
-    "Full-Stack AI Engineer",
+    "Product Engineer",
     "Software Engineer",
+    "Full-Stack AI Engineer",
+    "Full-Stack Engineer",
     "Django",
     "Flutter",
     "Python",
