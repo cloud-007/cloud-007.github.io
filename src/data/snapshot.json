@@ -1762,7 +1762,7 @@
   "profile": {
     "name": "Mazharul Islam",
     "handle": "cloud_007",
-    "role": "Software Engineer",
+    "role": "Product Engineer",
     "bio": "Building products and sharing what I learn along the way. Backend, frontend, mobile, infrastructure, DevOps, ML - all of it, because agents made the parts I used to hand off cheap enough to keep. One person can hold a whole product now. Still working out what that changes, which is turning out to be most of the job.",
     "location": "Sylhet, Bangladesh",
     "latitude": 24.8949,
@@ -2523,5 +2523,5 @@
     "vitality_span": 0.58,
     "vitality_target": 42
   },
-  "generatedAt": "2026-08-17T18:50:14.190Z"
+  "generatedAt": "2026-08-17T19:02:48.589Z"
 }

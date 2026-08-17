@@ -13,6 +13,15 @@ const ROOT = join(__dirname, "..");
 const OUT_DIR = join(ROOT, "out");
 const PORT = 3099;
 
+// The portfolio resume takes its name and role from the same snapshot the site
+// builds from, so a SQL edit does not leave the PDF's own metadata behind. The
+// fallbacks match src/lib/content.ts, for a clone with no credentials.
+const snapshot = JSON.parse(
+  readFileSync(join(ROOT, "src/data/snapshot.json"), "utf8")
+);
+const siteName = snapshot?.profile?.name ?? "Mazharul Islam";
+const siteRole = snapshot?.profile?.role ?? "Product Engineer";
+
 // Each entry renders one route to a PDF written into both out/ and public/.
 //
 // The two names here are deliberately different. /resume is portfolio-facing
@@ -24,12 +33,13 @@ const TARGETS = [
     route: "/resume",
     file: "resume.pdf",
     meta: {
-      title: "Mazharul Islam | Software Engineer",
-      author: "Mazharul Islam",
+      title: `${siteName} | ${siteRole}`,
+      author: siteName,
       subject: "Resume / CV",
       keywords: [
-        "Full-Stack AI Engineer",
+        "Product Engineer",
         "Software Engineer",
+        "Full-Stack AI Engineer",
         "Django",
         "Flutter",
         "Python",
