@@ -1,112 +1,103 @@
 "use client";
 
-import { Trophy, Award, Medal, Star, ExternalLink, Target } from "lucide-react";
+import { Trophy, ExternalLink } from "lucide-react";
+import { useSiteContent } from "@/lib/use-content";
+import { describePerson, formatEntryRange, safeHref } from "@/lib/content";
 
-const highlights = [
-  {
-    icon: Trophy,
-    title: "ICPC Asia Dhaka Regional",
-    detail: "51st place, Dhaka Regional 2020",
-    sub: "87th / 1,700+ teams, Preliminary 2021",
-    color: "text-amber-400",
-    bg: "bg-amber-500/10",
-    border: "border-amber-500/20",
-  },
-  {
-    icon: Award,
-    title: "National Hackathon 2023",
-    detail: "Champion, LU CSE Carnival",
-    sub: "Team: LU Ovream",
-    color: "text-emerald-400",
-    bg: "bg-emerald-500/10",
-    border: "border-emerald-500/20",
-  },
-  {
-    icon: Medal,
-    title: "LU TechStorm 4",
-    detail: "Champion, Programming Contest 2021",
-    sub: "Team Catapult",
-    color: "text-sky-400",
-    bg: "bg-sky-500/10",
-    border: "border-sky-500/20",
-  },
-  {
-    icon: Star,
-    title: "IEEEXtreme 16.0",
-    detail: "Runner-up in Bangladesh (2022)",
-    sub: "Global Rank 149 · Team: LazySquad",
-    color: "text-emerald-400",
-    bg: "bg-emerald-500/10",
-    border: "border-emerald-500/20",
-  },
-];
-
-const cpStats = [
-  { label: "Problems Solved", value: "2000+" },
-  { label: "Contests", value: "300+" },
-  { label: "CF Rating", value: "1603" },
-  { label: "CC Rating", value: "1965" },
-];
-
-const onlineJudges = [
-  { name: "Codeforces", handle: "cloud_007", url: "https://codeforces.com/profile/cloud_007" },
-  { name: "CodeChef", handle: "cloud_007", url: "https://www.codechef.com/users/cloud_007" },
-  { name: "LightOJ", handle: "cloud_007", url: "https://lightoj.com/user/cloud_007" },
-  { name: "Toph", handle: "cloud_007", url: "https://toph.co/u/cloud_007" },
-  { name: "StopStalk", handle: "cloud_007", url: "https://www.stopstalk.com/user/profile/cloud_007" },
-  { name: "Vjudge", handle: "cloud_007", url: "https://vjudge.net/user/cloud_007" },
+/* Rotating accents so a growing list of wins never looks monotonous, and so
+   adding a win in Supabase needs no colour decision from you. */
+const ACCENTS = [
+  "text-amber-400 bg-amber-500/10 border-amber-500/20",
+  "text-emerald-400 bg-emerald-500/10 border-emerald-500/20",
+  "text-sky-400 bg-sky-500/10 border-sky-500/20",
+  "text-violet-400 bg-violet-500/10 border-violet-500/20",
 ];
 
 export function Achievements() {
+  const { content } = useSiteContent();
+
+  /* The wins are not a second copy of the trail: they ARE the trail, filtered
+     to the entries that demonstrate `won`. Add a win to the timeline and it
+     shows up here without touching this file. */
+  const wins = content.entries
+    .filter((e) => !e.teaser && e.traits.includes("won"))
+    .slice()
+    .sort((a, b) => b.date.localeCompare(a.date));
+
+  const cpStats = content.stats.filter((s) => s.context === "competitive");
+  const judges = content.judges;
+
+  if (wins.length === 0 && cpStats.length === 0) return null;
+
   return (
     <section id="achievements" className="section px-4">
       <div className="max-w-5xl mx-auto">
         {/* Section header */}
         <div className="mb-12">
-          <span className="section-label">Competitive Programming</span>
+          <span className="section-label">Track Record</span>
           <h2 className="text-3xl md:text-4xl font-extrabold text-zinc-50 tracking-tight mt-2">
             Achievements
           </h2>
           <p className="text-zinc-500 mt-2 text-sm">
-            2000+ problems solved across online judges and 300+ contests
+            {wins.length} wins across contests, hackathons and community work
           </p>
         </div>
 
         {/* CP stats */}
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-3 mb-4">
-          {cpStats.map((stat) => (
-            <div
-              key={stat.label}
-              className="bento-card p-5 flex flex-col items-center justify-center text-center"
-            >
-              <div className="text-2xl font-extrabold gradient-text mb-1">
-                {stat.value}
+        {cpStats.length > 0 && (
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-3 mb-3">
+            {cpStats.map((stat) => (
+              <div key={stat.id} className="bento-card p-5 text-center">
+                <div className="text-2xl font-extrabold gradient-text">
+                  {stat.value}
+                </div>
+                <div className="text-zinc-500 text-xs font-semibold uppercase tracking-widest mt-1">
+                  {stat.label}
+                </div>
               </div>
-              <div className="text-zinc-500 text-xs font-medium uppercase tracking-wider">
-                {stat.label}
-              </div>
-            </div>
-          ))}
-        </div>
+            ))}
+          </div>
+        )}
 
-        {/* Achievement cards */}
-        <div className="grid md:grid-cols-2 gap-3 mb-4">
-          {highlights.map((item, i) => {
-            const Icon = item.icon;
+        {/* Wins, straight from the trail */}
+        <div className="grid md:grid-cols-2 gap-3">
+          {wins.map((win, i) => {
+            const accent = ACCENTS[i % ACCENTS.length];
+            const [color, bg, border] = accent.split(" ");
             return (
-              <div key={i} className="bento-card p-6 hover:border-zinc-600 transition-colors">
+              <div
+                key={win.id || win.slug}
+                className="bento-card p-6 hover:border-zinc-600 transition-colors"
+              >
                 <div className="flex items-start gap-4">
-                  <div className={`w-10 h-10 ${item.bg} border ${item.border} rounded-xl flex items-center justify-center shrink-0`}>
-                    <Icon className={`w-5 h-5 ${item.color}`} />
+                  <div
+                    className={`w-10 h-10 ${bg} border ${border} rounded-xl flex items-center justify-center shrink-0`}
+                  >
+                    <Trophy className={`w-5 h-5 ${color}`} />
                   </div>
-                  <div>
-                    <h3 className="text-zinc-100 font-semibold text-sm mb-1">
-                      {item.title}
+                  <div className="min-w-0">
+                    <h3 className="text-zinc-50 font-bold text-base leading-snug">
+                      {win.title}
                     </h3>
-                    <p className="text-zinc-300 text-sm font-medium">
-                      {item.detail}
+                    {win.outcome && (
+                      <p className={`text-sm font-semibold mt-1 ${color}`}>
+                        {win.outcome}
+                      </p>
+                    )}
+                    <p className="text-zinc-500 text-xs mt-1.5">
+                      {win.org && `${win.org} · `}
+                      {formatEntryRange(win)}
                     </p>
-                    <p className="text-zinc-500 text-xs mt-0.5">{item.sub}</p>
+                    {(() => {
+                      const people = win.people
+                        .map(describePerson)
+                        .filter((p): p is string => Boolean(p));
+                      return people.length > 0 ? (
+                        <p className="text-zinc-600 text-xs mt-1">
+                          {people.join(" · ")}
+                        </p>
+                      ) : null;
+                    })()}
                   </div>
                 </div>
               </div>
@@ -114,39 +105,34 @@ export function Achievements() {
           })}
         </div>
 
-        {/* Online judge profiles */}
-        <div className="bento-card p-6 hover:border-zinc-600 transition-colors">
-          <div className="flex items-center gap-3 mb-5">
-            <div className="w-9 h-9 bg-emerald-500/10 border border-emerald-500/20 rounded-xl flex items-center justify-center">
-              <Target className="w-4.5 h-4.5 text-emerald-400" />
-            </div>
-            <div>
-              <h3 className="text-sm font-bold text-zinc-200 uppercase tracking-widest">
-                Online Judge Profiles
-              </h3>
-              <p className="text-zinc-500 text-xs mt-0.5">Handle: cloud_007</p>
+        {/* Online judges */}
+        {judges.length > 0 && (
+          <div className="bento-card p-6 mt-3">
+            <h3 className="text-sm font-bold text-zinc-200 uppercase tracking-widest mb-4">
+              Online judges
+            </h3>
+            <div className="flex flex-wrap gap-2">
+              {judges.filter((j) => safeHref(j.url)).map((j) => (
+                <a
+                  key={j.id}
+                  href={safeHref(j.url)}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center gap-2 px-3 py-2 bg-zinc-900 border border-zinc-800 rounded-lg text-xs font-medium text-zinc-400 hover:border-zinc-600 hover:text-zinc-200 transition-colors"
+                >
+                  <span className="font-semibold text-zinc-300">{j.name}</span>
+                  <span className="text-zinc-600">{j.handle}</span>
+                  {j.rating && (
+                    <span className="text-emerald-400 font-semibold">
+                      {j.rating}
+                    </span>
+                  )}
+                  <ExternalLink className="w-3 h-3 text-zinc-600" />
+                </a>
+              ))}
             </div>
           </div>
-          <div className="grid grid-cols-2 md:grid-cols-3 gap-2">
-            {onlineJudges.map((judge) => (
-              <a
-                key={judge.name}
-                href={judge.url}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="flex items-center justify-between p-3 rounded-xl bg-zinc-900 border border-zinc-800 hover:border-zinc-600 hover:bg-zinc-800/50 transition-all group"
-              >
-                <div>
-                  <div className="text-zinc-300 text-sm font-semibold">
-                    {judge.name}
-                  </div>
-                  <div className="text-zinc-600 text-xs">{judge.handle}</div>
-                </div>
-                <ExternalLink className="w-3.5 h-3.5 text-zinc-700 group-hover:text-emerald-400 transition-colors" />
-              </a>
-            ))}
-          </div>
-        </div>
+        )}
       </div>
     </section>
   );

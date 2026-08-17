@@ -4,6 +4,7 @@ import { useState, useEffect } from "react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { Mail, Menu, X } from "lucide-react";
+import { useSiteContent } from "@/lib/use-content";
 
 /* Trail lives on the landing page; every other section lives under /about.
    Hash links work from either page. */
@@ -18,6 +19,9 @@ const navigation = [
 ];
 
 export function Header() {
+  const { content } = useSiteContent();
+  const handle = content.profile?.handle ?? "";
+
   const pathname = usePathname();
   const onTrailPage = pathname === "/";
   const [activeSection, setActiveSection] = useState<string | null>(null);
@@ -56,7 +60,7 @@ export function Header() {
             className="text-sm font-bold text-zinc-100 hover:text-emerald-400 transition-colors tracking-tight"
           >
             <span className="text-emerald-400">{"<"}</span>
-            cloud_007
+            {handle}
             <span className="text-emerald-400">{"/>"}</span>
           </Link>
 

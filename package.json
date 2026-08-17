@@ -4,11 +4,13 @@
   "private": true,
   "scripts": {
     "dev": "next dev",
-    "build": "next build && node scripts/generate-resume-pdf.mjs",
+    "build": "node --env-file-if-exists=.env --env-file-if-exists=.env.local scripts/generate-snapshot.mjs && next build && node scripts/generate-resume-pdf.mjs",
     "generate-pdf": "node scripts/generate-resume-pdf.mjs",
-    "trail:add": "node scripts/trail-add.mjs",
     "start": "next start",
-    "lint": "eslint"
+    "lint": "eslint",
+    "snapshot": "node --env-file-if-exists=.env --env-file-if-exists=.env.local scripts/generate-snapshot.mjs",
+    "typecheck": "tsc --noEmit",
+    "test:links": "node scripts/test-safe-href.mjs"
   },
   "dependencies": {
     "@dgreenheck/ez-tree": "^1.1.0",

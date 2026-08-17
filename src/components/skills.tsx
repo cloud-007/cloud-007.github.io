@@ -1,124 +1,61 @@
 "use client";
 
-import { Server, Cloud, Smartphone, Wrench, Brain, FlaskConical } from "lucide-react";
+import {
+  Server,
+  Cloud,
+  Smartphone,
+  Wrench,
+  Brain,
+  FlaskConical,
+  type LucideIcon,
+} from "lucide-react";
+import { useSiteContent } from "@/lib/use-content";
 
-const categories = [
-  {
-    label: "Backend Engineering",
-    icon: Server,
+/* Presentation only. The database stores a key; a React component cannot be
+   stored in Postgres, and an unknown key falls back rather than crashing. */
+const ICONS: Record<string, LucideIcon> = {
+  server: Server,
+  cloud: Cloud,
+  smartphone: Smartphone,
+  wrench: Wrench,
+  brain: Brain,
+  flask: FlaskConical,
+};
+
+const ACCENTS: Record<string, { color: string; bg: string; border: string }> = {
+  emerald: {
     color: "text-emerald-400",
     bg: "bg-emerald-500/10",
     border: "border-emerald-500/20",
-    skills: [
-      "Django",
-      "Django REST Framework",
-      "FastAPI",
-      "Python",
-      "PostgreSQL",
-      "Redis",
-      "Celery",
-      "Celery Beat",
-      "Multi-tenant Architecture",
-      "JWT Auth",
-      "Query Optimization",
-      "Versioned Caching",
-    ],
   },
-  {
-    label: "Mobile & Frontend",
-    icon: Smartphone,
+  sky: {
     color: "text-sky-400",
     bg: "bg-sky-500/10",
     border: "border-sky-500/20",
-    skills: [
-      "Flutter",
-      "Dart",
-      "Riverpod",
-      "GoRouter",
-      "GetIt",
-      "Freezed",
-      "Next.js",
-      "React",
-      "TypeScript",
-      "Dio",
-    ],
   },
-  {
-    label: "AI & Speech Systems",
-    icon: Brain,
+  violet: {
     color: "text-violet-400",
     bg: "bg-violet-500/10",
     border: "border-violet-500/20",
-    skills: [
-      "LLM Integration",
-      "Speech Recognition Pipeline",
-      "Pronunciation Assessment",
-      "NLP Processing",
-      "Semantic Similarity",
-      "Grammar Analysis",
-      "Real-time Audio Evaluation",
-      "FastAPI Microservices",
-      "PyTorch",
-    ],
   },
-  {
-    label: "Infrastructure & Cloud",
-    icon: Cloud,
-    color: "text-zinc-400",
-    bg: "bg-zinc-500/10",
-    border: "border-zinc-500/20",
-    skills: [
-      "Docker",
-      "Nginx",
-      "GCP",
-      "DigitalOcean",
-      "Firebase Admin SDK",
-      "Prometheus",
-      "Grafana",
-      "CI/CD",
-      "RunPod",
-    ],
-  },
-  {
-    label: "Testing & Quality",
-    icon: FlaskConical,
+  amber: {
     color: "text-amber-400",
     bg: "bg-amber-500/10",
     border: "border-amber-500/20",
-    skills: [
-      "pytest",
-      "pytest-django",
-      "factory_boy",
-      "Flutter Unit Testing",
-      "Freezed + json_serializable",
-      "API Schema Validation",
-      "ESLint",
-    ],
   },
-  {
-    label: "Engineering Practices",
-    icon: Wrench,
+  zinc: {
     color: "text-zinc-400",
     bg: "bg-zinc-500/10",
     border: "border-zinc-500/20",
-    skills: [
-      "System Design",
-      "Technical Leadership",
-      "Code Review",
-      "API Design",
-      "Payment Systems Integration",
-      "Performance Optimization",
-      "AI-Assisted Development",
-      "Claude Code",
-      "Cursor",
-      "Agentic Workflows",
-      "Requirement Analysis",
-      "Stakeholder Collaboration",
-    ],
   },
-];
+};
 
 export function Skills() {
+  const { content } = useSiteContent();
+  const categories = content.skills.filter((s) => s.context === "site");
+
+  if (categories.length === 0) return null;
+
   return (
     <section id="skills" className="section px-4">
       <div className="max-w-5xl mx-auto">
@@ -136,22 +73,28 @@ export function Skills() {
         {/* Skills grid */}
         <div className="grid md:grid-cols-2 gap-3">
           {categories.map((cat) => {
-            const Icon = cat.icon;
+            const Icon = ICONS[cat.icon ?? ""] ?? Wrench;
+            const accent = ACCENTS[cat.accent] ?? ACCENTS.zinc;
             return (
-              <div key={cat.label} className="bento-card p-6 hover:border-zinc-600 transition-colors">
+              <div
+                key={cat.id}
+                className="bento-card p-6 hover:border-zinc-600 transition-colors"
+              >
                 <div className="flex items-center gap-3 mb-5">
-                  <div className={`w-9 h-9 ${cat.bg} border ${cat.border} rounded-xl flex items-center justify-center`}>
-                    <Icon className={`w-4.5 h-4.5 ${cat.color}`} />
+                  <div
+                    className={`w-9 h-9 ${accent.bg} border ${accent.border} rounded-xl flex items-center justify-center`}
+                  >
+                    <Icon className={`w-4.5 h-4.5 ${accent.color}`} />
                   </div>
                   <h3 className="text-sm font-bold text-zinc-200 uppercase tracking-widest">
-                    {cat.label}
+                    {cat.group}
                   </h3>
                 </div>
                 <div className="flex flex-wrap gap-2">
-                  {cat.skills.map((skill) => (
+                  {cat.items.map((skill) => (
                     <span
                       key={skill}
-                      className="px-3 py-1.5 bg-zinc-900 text-zinc-400 text-xs font-medium rounded-lg border border-zinc-800 hover:border-zinc-600 hover:text-zinc-200 transition-all cursor-default"
+                      className="px-3 py-1.5 bg-zinc-900 text-zinc-400 text-xs font-medium rounded-lg border border-zinc-800 hover:border-zinc-700 transition-colors cursor-default"
                     >
                       {skill}
                     </span>

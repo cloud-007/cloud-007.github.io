@@ -9,53 +9,31 @@ import {
     ArrowUpRight,
     MapPin,
     Briefcase,
+    type LucideIcon,
 } from "lucide-react";
+import { useSiteContent } from "@/lib/use-content";
+import { safeHref } from "@/lib/content";
 
-const stats = [
-    { label: "Years Exp.", value: "3+" },
-    { label: "Contests", value: "300+" },
-    { label: "Problems Solved", value: "2K+" },
-    { label: "CF Peak", value: "1603" },
-];
-
-const socials = [
-    {
-        icon: Github,
-        label: "GitHub",
-        handle: "@cloud-007",
-        href: "https://github.com/cloud-007",
-    },
-    {
-        icon: Linkedin,
-        label: "LinkedIn",
-        handle: "in/-mazharulislam-",
-        href: "https://www.linkedin.com/in/-mazharulislam-/",
-    },
-    {
-        icon: Mail,
-        label: "Email",
-        handle: "mie.mazharul@gmail.com",
-        href: "mailto:mie.mazharul@gmail.com",
-    },
-];
-
-const coreStack = [
-    "Python",
-    "Django",
-    "PostgreSQL",
-    "Redis",
-    "Celery",
-    "Flutter",
-    "Next.js",
-    "TypeScript",
-    "Docker",
-    "GCP",
-    "CI/CD",
-    "Claude Code",
-    "Cursor",
-];
+/* Social icons are presentation, resolved from the label the database stores. */
+const SOCIAL_ICONS: Record<string, LucideIcon> = {
+    GitHub: Github,
+    LinkedIn: Linkedin,
+    Email: Mail,
+};
 
 export function Hero() {
+    const { content } = useSiteContent();
+    const { profile } = content;
+    const stats = content.stats.filter((s) => s.context === "hero");
+
+    if (!profile) return null;
+
+    /* "Md Mazharul Islam Emon" reads best as a given name plus a highlighted
+       surname; the split is presentational, the name itself is data. */
+    const parts = profile.name.replace(/^Md\.?\s+/i, "").split(" ");
+    const firstName = parts.slice(0, -1).join(" ") || profile.name;
+    const lastName = parts.length > 1 ? parts[parts.length - 1] : "";
+
     return (
         <section id="about" className="min-h-screen pt-28 pb-16 px-4">
             <div className="max-w-5xl mx-auto">
@@ -66,42 +44,35 @@ export function Hero() {
                         {/* Mobile avatar, visible only below md */}
                         <div className="md:hidden absolute top-4 right-4 w-20 h-20 rounded-2xl overflow-hidden border-2 border-zinc-700 shrink-0">
                             <Image
-                                src="/images/profile.jpg"
+                                src={profile.avatar_url ?? "/images/profile.jpg"}
                                 fill
                                 className="object-cover"
-                                alt="Mazharul Islam"
+                                alt={profile.name}
                                 sizes="80px"
                             />
                         </div>
 
                         <div>
-                            <div className="flex items-center gap-2 mb-6">
-                                <span className="w-2 h-2 bg-emerald-400 rounded-full" />
-                                <span className="text-zinc-400 text-xs font-medium">
-                                    Open to new opportunities
-                                </span>
-                            </div>
+                            {profile.open_to_work && (
+                                <div className="flex items-center gap-2 mb-6">
+                                    <span className="w-2 h-2 bg-emerald-400 rounded-full" />
+                                    <span className="text-zinc-400 text-xs font-medium">
+                                        Open to new opportunities
+                                    </span>
+                                </div>
+                            )}
                             <h1 className="text-5xl md:text-6xl font-extrabold text-zinc-50 leading-tight tracking-tight mb-5">
-                                Mazharul{" "}
-                                <span className="gradient-text">Islam</span>
+                                {firstName}{" "}
+                                <span className="gradient-text">{lastName}</span>
                             </h1>
                             <p className="text-zinc-400 text-base leading-relaxed text-justify">
-                                Full-Stack AI Engineer with 3+ years in software
-                                engineering. Builds scalable backends,
-                                cross-platform mobile apps, and AI-powered SaaS
-                                platforms. Ships production systems with Django,
-                                Flutter, and Next.js, and delivers faster using
-                                AI-native tooling like Claude Code and Cursor.
-                                Proven track record in multi-tenant architecture,
-                                real-time speech evaluation pipelines, and
-                                end-to-end product delivery across 93+
-                                production releases.
+                                {profile.bio}
                             </p>
                         </div>
 
                         <div className="flex flex-wrap items-center gap-3 mt-6">
                             <a
-                                href="mailto:mie.mazharul@gmail.com"
+                                href={`mailto:${profile.email ?? ""}`}
                                 className="flex items-center gap-2 px-5 py-2.5 bg-emerald-700 hover:bg-emerald-500 text-white text-sm font-semibold rounded-xl transition-colors"
                             >
                                 <Mail className="w-4 h-4" />
@@ -120,8 +91,8 @@ export function Hero() {
                     {/* Profile image card, hidden on mobile */}
                     <div className="hidden md:block bento-card md:col-span-4 overflow-hidden relative min-h-[300px]">
                         <Image
-                            src="/images/profile.jpg"
-                            alt="Mazharul Islam"
+                            src={profile.avatar_url ?? "/images/profile.jpg"}
+                            alt={profile.name}
                             fill
                             className="object-cover"
                             priority
@@ -132,11 +103,11 @@ export function Hero() {
                         <div className="absolute bottom-4 left-4 right-4">
                             <div className="flex items-center gap-1.5 text-zinc-300 text-sm">
                                 <MapPin className="w-3.5 h-3.5 text-emerald-400" />
-                                Sylhet, Bangladesh
+                                {profile.location}
                             </div>
                             <div className="flex items-center gap-1.5 text-zinc-400 text-xs mt-1">
                                 <Briefcase className="w-3 h-3 text-zinc-500" />
-                                Full-Stack AI Engineer · EdTech / AI
+                                {profile.role}
                             </div>
                         </div>
                     </div>
@@ -145,7 +116,7 @@ export function Hero() {
                     <div className="col-span-1 md:col-span-12 grid grid-cols-2 md:grid-cols-4 gap-3">
                         {stats.map((stat) => (
                             <div
-                                key={stat.label}
+                                key={stat.id}
                                 className="bento-card p-5 sm:p-6 flex flex-col items-center justify-center text-center"
                             >
                                 <div className="text-3xl font-extrabold gradient-text leading-none mb-1.5">
@@ -164,17 +135,19 @@ export function Hero() {
                             Connect
                         </p>
                         <div className="flex flex-col gap-1">
-                            {socials.map((social) => (
+                            {profile.socials.map((social) => {
+                                const Icon = SOCIAL_ICONS[social.label] ?? ArrowUpRight;
+                                return (
                                 <a
                                     key={social.label}
-                                    href={social.href}
+                                    href={safeHref(social.href) ?? "#"}
                                     target="_blank"
                                     rel="noopener noreferrer"
                                     className="flex items-center justify-between p-3 rounded-xl hover:bg-zinc-800/80 transition-colors group"
                                 >
                                     <div className="flex items-center gap-3">
                                         <div className="w-8 h-8 bg-zinc-800 rounded-lg flex items-center justify-center group-hover:bg-zinc-700 transition-colors border border-zinc-700">
-                                            <social.icon className="w-3.5 h-3.5 text-zinc-400 group-hover:text-emerald-400 transition-colors" />
+                                            <Icon className="w-3.5 h-3.5 text-zinc-400 group-hover:text-emerald-400 transition-colors" />
                                         </div>
                                         <div>
                                             <div className="text-zinc-200 text-sm font-medium">
@@ -187,7 +160,8 @@ export function Hero() {
                                     </div>
                                     <ArrowUpRight className="w-3.5 h-3.5 text-zinc-700 group-hover:text-emerald-400 transition-colors" />
                                 </a>
-                            ))}
+                                );
+                            })}
                         </div>
                     </div>
 
@@ -197,7 +171,7 @@ export function Hero() {
                             Core Stack
                         </p>
                         <div className="flex flex-wrap gap-2">
-                            {coreStack.map((tech) => (
+                            {profile.core_stack.map((tech) => (
                                 <span key={tech} className="tech-badge">
                                     {tech}
                                 </span>

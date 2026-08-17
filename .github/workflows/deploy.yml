@@ -38,8 +38,15 @@ jobs:
       - name: Install Puppeteer Chrome
         run: npx puppeteer browsers install chrome
 
+      # Both values are safe in CI logs and in the client bundle: the anon key
+      # can only read the public_* views, which are filtered to
+      # visibility = 'public'. If the secrets are absent the build still
+      # succeeds and falls back to the committed snapshot.
       - name: Build
         run: pnpm build
+        env:
+          NEXT_PUBLIC_SUPABASE_URL: ${{ secrets.NEXT_PUBLIC_SUPABASE_URL }}
+          NEXT_PUBLIC_SUPABASE_ANON_KEY: ${{ secrets.NEXT_PUBLIC_SUPABASE_ANON_KEY }}
 
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3

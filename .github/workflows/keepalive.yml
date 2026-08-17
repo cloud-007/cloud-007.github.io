@@ -1,0 +1,39 @@
+name: Keep Supabase awake
+
+# Free Supabase projects can pause after a stretch with no requests. One cheap
+# read a week is enough to keep this one warm.
+#
+# If it ever does pause, nothing breaks: the site renders from the committed
+# snapshot either way. This just avoids the manual un-pause.
+
+on:
+  schedule:
+    # 06:00 UTC every Monday (noon in Dhaka).
+    - cron: "0 6 * * 1"
+  workflow_dispatch:
+
+jobs:
+  ping:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Read one row from a public view
+        env:
+          SUPABASE_URL: ${{ secrets.NEXT_PUBLIC_SUPABASE_URL }}
+          SUPABASE_ANON_KEY: ${{ secrets.NEXT_PUBLIC_SUPABASE_ANON_KEY }}
+        run: |
+          if [ -z "$SUPABASE_URL" ] || [ -z "$SUPABASE_ANON_KEY" ]; then
+            echo "Supabase secrets not configured; nothing to keep awake."
+            exit 0
+          fi
+          code=$(curl -s -o /dev/null -w "%{http_code}" \
+            -H "apikey: $SUPABASE_ANON_KEY" \
+            -H "Authorization: Bearer $SUPABASE_ANON_KEY" \
+            "$SUPABASE_URL/rest/v1/public_chapters?select=id&limit=1")
+          echo "HTTP $code"
+          # A 4xx means the key or the view is wrong and is worth failing on.
+          # A 5xx or a timeout usually means the project is already paused,
+          # which is not something this job can fix.
+          if [ "$code" -ge 400 ] && [ "$code" -lt 500 ]; then
+            echo "::error::Supabase rejected the read. Check the anon key and that 01-schema.sql has run."
+            exit 1
+          fi
