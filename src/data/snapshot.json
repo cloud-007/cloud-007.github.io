@@ -165,12 +165,12 @@
       "chapter": "leading",
       "domain": "built",
       "type": "milestone",
-      "title": "gmail-toolkit",
-      "note": "CLI scripts for auditing and cleaning up a long-neglected Gmail account. Made public.",
-      "obstacle": null,
-      "learning": null,
+      "title": "Built a Gmail pipeline toolkit to clean up my own inbox",
+      "note": "A command-line pipeline that sorts, labels and structures a Gmail account, built because doing it by hand was not going to happen. It needs real setup and it is not for non-technical users; the README is the honest version. Verify what it does before pointing it at your mail, and keep sensitive data out of it.",
+      "obstacle": "A backlog of unread mail large enough that manual triage was not a plan, only a wish.",
+      "learning": "The reason was half organisation and half curiosity, and both were served. The inbox is structured now and I understand the API I was avoiding.",
       "org": null,
-      "outcome": null,
+      "outcome": "Gmail account structured",
       "people": [],
       "links": [
         {
@@ -221,6 +221,38 @@
       "primary_trait": "taught"
     },
     {
+      "id": "80c7fec4-1253-4a63-9528-11b8a524ba1c",
+      "slug": "autonomous-ai-product-engineer",
+      "date": "2026-08-15",
+      "end_date": null,
+      "precision": "day",
+      "chapter": "leading",
+      "domain": "community",
+      "type": "learning",
+      "title": "Attended The Autonomous AI Product Engineer",
+      "note": "A Shunnek Labs session on where the product engineer role goes when the agent does the typing.",
+      "obstacle": null,
+      "learning": null,
+      "org": "Shunnek Labs",
+      "outcome": "Attendee",
+      "people": [],
+      "links": [
+        {
+          "url": "https://shunneklabs.com/events/the-autonomous-ai-product-engineer",
+          "label": "The event"
+        },
+        {
+          "url": "https://www.linkedin.com/posts/-mazharulislam-_attended-the-autonomous-ai-product-engineer-activity-7494453301221134336-ij2V",
+          "label": "LinkedIn"
+        }
+      ],
+      "teaser": false,
+      "traits": [
+        "learned"
+      ],
+      "primary_trait": "learned"
+    },
+    {
       "id": "0aa2910c-7021-4ac6-a44a-294b1e37e976",
       "slug": "meetup-principal-engineer",
       "date": "2026-08-08",
@@ -229,7 +261,7 @@
       "chapter": "leading",
       "domain": "network",
       "type": "learning",
-      "title": "Talked with a principal engineer about what makes software good",
+      "title": "Talked with Ariful Jannat Arif about what makes software good",
       "note": "Discussed the traits of good software, the metrics behind it, and the KPIs that matter on Google Play and the App Store.",
       "obstacle": null,
       "learning": "What you measure on the store is what the store rewards. Know the KPIs before you ship.",
@@ -237,6 +269,9 @@
       "outcome": null,
       "people": [
         {
+          "org": "Enosis",
+          "url": "https://www.linkedin.com/in/cse-ariful/",
+          "name": "Ariful Jannat Arif",
           "role": "Principal Software Engineer"
         }
       ],
@@ -323,17 +358,18 @@
       "chapter": "leading",
       "domain": "built",
       "type": "win",
-      "title": "Released our first Google Play app",
-      "note": "Store listing, screenshots and all. From a blank Flutter project to a shipping app in a few months.",
+      "title": "Shipped the product I had been building, on Google Play",
+      "note": "The second app on Google Play, six weeks after the first, and the one the work was actually about. Store listing, screenshots and all -- from a blank Flutter project to a shipping product in a few months.",
       "obstacle": "Everything that has to be true before a store accepts an app, all at once.",
       "learning": "Shipping is a checklist, not a feeling.",
       "org": null,
-      "outcome": null,
+      "outcome": "Live on Google Play",
       "people": [],
       "links": [],
       "teaser": false,
       "traits": [
-        "shipped"
+        "shipped",
+        "built"
       ],
       "primary_trait": "shipped"
     },
@@ -346,8 +382,8 @@
       "chapter": "leading",
       "domain": "built",
       "type": "milestone",
-      "title": "Production infrastructure live for our first product",
-      "note": "Stood up the production environment for a product I have been building from zero: servers, database, deploy path and readiness checks, all verified end to end.",
+      "title": "Production infrastructure live for the product",
+      "note": "Stood up the production environment for the product I had been building from zero: servers, database, deploy path and readiness checks, all verified end to end. Live the day before the app reached Google Play.",
       "obstacle": null,
       "learning": null,
       "org": null,
@@ -356,9 +392,38 @@
       "links": [],
       "teaser": false,
       "traits": [
-        "shipped"
+        "shipped",
+        "built"
       ],
       "primary_trait": "shipped"
+    },
+    {
+      "id": "6777b287-ddd2-47d0-9683-2ee15b1b26e0",
+      "slug": "article-cs-learning-order",
+      "date": "2026-07-29",
+      "end_date": null,
+      "precision": "day",
+      "chapter": "leading",
+      "domain": "content",
+      "type": "milestone",
+      "title": "Wrote \"Computer Science Didn't Stop Being Valuable\"",
+      "note": "The full title is \"Computer Science Didn't Stop Being Valuable. The Order You Learn It In Broke.\" The argument is that the fundamentals did not lose their worth -- the sequence people are taught them in stopped matching the way software is now built.",
+      "obstacle": null,
+      "learning": null,
+      "org": null,
+      "outcome": "Published on LinkedIn",
+      "people": [],
+      "links": [
+        {
+          "url": "https://www.linkedin.com/pulse/computer-science-didnt-stop-being-valuable-order-you-learn-islam-l593c/",
+          "label": "Read it"
+        }
+      ],
+      "teaser": false,
+      "traits": [
+        "taught"
+      ],
+      "primary_trait": "taught"
     },
     {
       "id": "66b50068-4d8d-406c-816d-f7e1b07a820e",
@@ -469,10 +534,10 @@
       "chapter": "leading",
       "domain": "built",
       "type": "milestone",
-      "title": "agent-auto-start",
-      "note": "A small utility that got its first stranger's star.",
+      "title": "Built agent-auto-start, so a session limit stops costing me the thread",
+      "note": "A small tool that restarts Claude automatically when a session limit has reset, instead of leaving the work parked until I notice.",
       "obstacle": null,
-      "learning": null,
+      "learning": "The interruptions that cost most are not the long ones, they are the ones that need you present to clear them.",
       "org": null,
       "outcome": null,
       "people": [],
@@ -487,6 +552,30 @@
         "built"
       ],
       "primary_trait": "built"
+    },
+    {
+      "id": "900b4766-141b-421d-b1bc-42ddac40611c",
+      "slug": "first-play-release",
+      "date": "2026-06-26",
+      "end_date": null,
+      "precision": "day",
+      "chapter": "leading",
+      "domain": "built",
+      "type": "win",
+      "title": "First app on Google Play",
+      "note": "Pushed to Google Play at 07:28 on 26 June 2026. A different product from the one that followed in July, smaller in scope, and it went into production and stayed there.",
+      "obstacle": "Everything a store requires before it will take an app at all -- signing, review, listing, policy -- learned on the way through rather than in advance.",
+      "learning": "The first release teaches you the pipeline, not the product. Every app after this one costs a fraction of what this one did, and that saving is the real output.",
+      "org": null,
+      "outcome": "In production",
+      "people": [],
+      "links": [],
+      "teaser": false,
+      "traits": [
+        "shipped",
+        "built"
+      ],
+      "primary_trait": "shipped"
     },
     {
       "id": "8a96f5cf-9af1-4114-950d-2bc30b601eee",
@@ -578,6 +667,29 @@
       "primary_trait": "built"
     },
     {
+      "id": "81196861-3dc9-4753-854d-c97f92c96ef5",
+      "slug": "x-active",
+      "date": "2026-06-03",
+      "end_date": null,
+      "precision": "day",
+      "chapter": "leading",
+      "domain": "content",
+      "type": "milestone",
+      "title": "Started posting on X in the open",
+      "note": "Began using X actively on 3 June 2026 -- working in public rather than posting finished things.",
+      "obstacle": null,
+      "learning": null,
+      "org": null,
+      "outcome": null,
+      "people": [],
+      "links": [],
+      "teaser": false,
+      "traits": [
+        "taught"
+      ],
+      "primary_trait": "taught"
+    },
+    {
       "id": "4e9dc76b-89f3-4dd4-9acd-d2c51dccfcfb",
       "slug": "serious-oj",
       "date": "2026-06-01",
@@ -613,6 +725,63 @@
         "shipped"
       ],
       "primary_trait": "built"
+    },
+    {
+      "id": "28d1efe2-c2bc-4e42-8dc8-3c2538808995",
+      "slug": "interview-ai-engineer-2026",
+      "date": "2026-05-16",
+      "end_date": null,
+      "precision": "day",
+      "chapter": "leading",
+      "domain": "interview",
+      "type": "learning",
+      "title": "Built a grounded legal-drafting system for an AI engineer interview",
+      "note": "A three-day take-home: retrieval-grounded legal drafting, where every generated clause has to be traceable to a source document rather than asserted. One of the three days went on a platform I had never used before.",
+      "obstacle": "Two of the three days were spent inside a domain I had never worked in -- legal drafting -- and one of those on unfamiliar tooling. The interview then pressed on architecture rather than output: why Postgres for the vector store instead of FAISS or a dedicated vector database, and a run of retrieval questions behind it.",
+      "learning": "Choosing Postgres was defensible and I could not defend it fast enough. Knowing why you did not pick the obvious tool is a separate piece of preparation from building the thing, and it is the piece that gets tested. No update came afterwards.",
+      "org": null,
+      "outcome": "No response",
+      "people": [],
+      "links": [],
+      "teaser": false,
+      "traits": [
+        "interviewed",
+        "built",
+        "learned"
+      ],
+      "primary_trait": "interviewed"
+    },
+    {
+      "id": "f140893d-924a-4323-9dd6-df887fa8846b",
+      "slug": "wordpress-meetup-authlab",
+      "date": "2026-05-09",
+      "end_date": null,
+      "precision": "day",
+      "chapter": "leading",
+      "domain": "community",
+      "type": "learning",
+      "title": "Went to a WordPress meetup to watch another domain handle the AI transition",
+      "note": "A WordPress community meetup hosted at AuthLab in Sylhet. I am not a WordPress developer and did not go to become one. I went to hear how an ecosystem I have no stake in is absorbing AI -- what its practitioners are actually changing, and how the teams around them are reorganising to match.",
+      "obstacle": null,
+      "learning": "The transition looks different from inside a domain that is not yours, and that is the only place you can see your own assumptions. The questions people were asking were not the ones I would have predicted from outside.",
+      "org": "AuthLab",
+      "outcome": "Attendee",
+      "people": [],
+      "links": [
+        {
+          "url": "https://www.meetup.com/sylhet-wordpress-meetup/",
+          "label": "Sylhet WordPress Meetup"
+        },
+        {
+          "url": "https://authlab.io",
+          "label": "AuthLab"
+        }
+      ],
+      "teaser": false,
+      "traits": [
+        "learned"
+      ],
+      "primary_trait": "learned"
     },
     {
       "id": "ea1af00f-3764-4baa-8d56-a104b3b4a17f",
@@ -718,12 +887,12 @@
       "chapter": "leading",
       "domain": "work",
       "type": "milestone",
-      "title": "Closed my chapter at LII Lab",
-      "note": "After 3.5 years, the OnePTE and OneIELTS platforms, 90+ production releases, and a promotion to Senior along the way.",
+      "title": "Closed my chapter at LII Lab after 1,276 days",
+      "note": "Joined on 1 November 2022, before graduating, and left on 30 April 2026 -- three and a half years. I was one of the core engineers behind OnePTE and OneIELTS, in the room from the earliest product conversations through to the systems running in production today: requirements into system design, backend build, deployment, monitoring, production debugging, and mentoring the juniors who came after me.",
       "obstacle": "Leaving the place and people where I grew from graduate to senior engineer.",
-      "learning": "Endings are just soil for the next thing to grow in.",
+      "learning": "The visible output is a contribution graph. The rest of it does not render: systems staying up, exams completing, payments clearing, releases going out, teammates getting better. End-to-end ownership is mostly the invisible half.",
       "org": "LII Lab",
-      "outcome": null,
+      "outcome": "1,276 days; 93+ production releases across Android, iOS and web",
       "people": [],
       "links": [
         {
@@ -736,8 +905,87 @@
         }
       ],
       "teaser": false,
-      "traits": [],
-      "primary_trait": null
+      "traits": [
+        "shipped",
+        "built",
+        "led",
+        "mentored"
+      ],
+      "primary_trait": "shipped"
+    },
+    {
+      "id": "c2e5fad4-4f81-4af6-a735-72c83f98490f",
+      "slug": "article-ai-tools-frameworks",
+      "date": "2026-04-08",
+      "end_date": null,
+      "precision": "day",
+      "chapter": "leading",
+      "domain": "content",
+      "type": "milestone",
+      "title": "Wrote \"AI Tools Are The New Frameworks\"",
+      "note": "An argument that AI tools now occupy the position frameworks used to: the layer you choose early, that quietly decides how you work for years afterwards.",
+      "obstacle": null,
+      "learning": null,
+      "org": null,
+      "outcome": "Published on Medium",
+      "people": [],
+      "links": [
+        {
+          "url": "https://medium.com/@mie.mazharul/ai-tools-are-the-new-frameworks-0abd4af884cc",
+          "label": "Read it"
+        }
+      ],
+      "teaser": false,
+      "traits": [
+        "taught"
+      ],
+      "primary_trait": "taught"
+    },
+    {
+      "id": "4e0fdb1f-c175-441a-a291-49b9a19f5614",
+      "slug": "interview-enosis-2026",
+      "date": "2026-02-20",
+      "end_date": null,
+      "precision": "day",
+      "chapter": "leading",
+      "domain": "interview",
+      "type": "milestone",
+      "title": "Sat a recorded video interview for an engineering role",
+      "note": "A one-way recorded interview, submitted 20 February 2026 at 15:17.",
+      "obstacle": null,
+      "learning": "A recorded interview is a different skill from a conversation. There is nobody to read, so you lose the one signal that tells you whether to go deeper or move on.",
+      "org": null,
+      "outcome": "No response",
+      "people": [],
+      "links": [],
+      "teaser": false,
+      "traits": [
+        "interviewed"
+      ],
+      "primary_trait": "interviewed"
+    },
+    {
+      "id": "7d4821fe-7c0d-48fb-abc6-b949cc4af863",
+      "slug": "convocation-2026",
+      "date": "2026-01-03",
+      "end_date": null,
+      "precision": "day",
+      "chapter": "leading",
+      "domain": "education",
+      "type": "milestone",
+      "title": "Walked at my convocation, three years after finishing",
+      "note": "Tassel on the left. The degree was finished in March 2023; the ceremony was January 2026. Four years of it, 2018 to 2023, and the people were the part worth showing up for.",
+      "obstacle": null,
+      "learning": null,
+      "org": "Leading University",
+      "outcome": "B.Sc. in Computer Science and Engineering",
+      "people": [],
+      "links": [],
+      "teaser": false,
+      "traits": [
+        "learned"
+      ],
+      "primary_trait": "learned"
     },
     {
       "id": "d371a1dc-dfb6-499e-ad6a-babaf764540f",
@@ -785,6 +1033,10 @@
         {
           "url": "https://www.facebook.com/neubcsesociety/",
           "label": "NEUB CSE Society"
+        },
+        {
+          "url": "https://www.linkedin.com/posts/-mazharulislam-_i-had-the-privilege-of-serving-as-one-of-activity-7394762223006449665-Jx2p",
+          "label": "LinkedIn"
         }
       ],
       "teaser": false,
@@ -793,6 +1045,92 @@
         "mentored"
       ],
       "primary_trait": "organized"
+    },
+    {
+      "id": "eefe736e-426d-416e-93dd-a3403a9caa2d",
+      "slug": "liilab-three-years",
+      "date": "2025-10-21",
+      "end_date": null,
+      "precision": "day",
+      "chapter": "building",
+      "domain": "work",
+      "type": "milestone",
+      "title": "Three years at LII Lab",
+      "note": "Three years with the same team, on the same two products. Long enough to maintain what I had built, which is the part of the job that teaches you what you got wrong.",
+      "obstacle": null,
+      "learning": "Three years in one place is where you meet your own decisions again. Nothing tells you the cost of a shortcut like having to live beside it.",
+      "org": "LII Lab",
+      "outcome": null,
+      "people": [],
+      "links": [],
+      "teaser": false,
+      "traits": [
+        "built"
+      ],
+      "primary_trait": "built"
+    },
+    {
+      "id": "4a410815-0994-4535-89d7-9899719656bc",
+      "slug": "cps-academy-session",
+      "date": "2025-08-31",
+      "end_date": null,
+      "precision": "day",
+      "chapter": "building",
+      "domain": "community",
+      "type": "milestone",
+      "title": "Taught CV building and interview preparation at CPS Academy",
+      "note": "A two-hour evening session: why a CV matters, how to build one that survives a skim, how to prepare for interviews, and how to handle questions without performing. Slides published afterwards.",
+      "obstacle": null,
+      "learning": "Most people preparing for interviews are not under-skilled, they are under-narrated. The session that helps is the one about how to say what you already did.",
+      "org": "CPS Academy",
+      "outcome": "Speaker",
+      "people": [],
+      "links": [
+        {
+          "url": "https://www.linkedin.com/posts/-mazharulislam-_cv-building-and-interview-preparation-activity-7368122879407812609-CD_2",
+          "label": "LinkedIn"
+        }
+      ],
+      "teaser": false,
+      "traits": [
+        "taught",
+        "mentored"
+      ],
+      "primary_trait": "taught"
+    },
+    {
+      "id": "83cacd20-2f40-439f-8319-2250a6542741",
+      "slug": "oneielts-multi-tenancy",
+      "date": "2025-08-22",
+      "end_date": null,
+      "precision": "day",
+      "chapter": "building",
+      "domain": "work",
+      "type": "milestone",
+      "title": "Took OneIELTS multi-tenant so it could sell to institutes",
+      "note": "Rebuilt OneIELTS as a B2B product for IELTS institutes: tenant architecture, data isolation, a large dataset migration, strict per-tenant access control, and white-label support in the web app.",
+      "obstacle": "Nobody on the team had built a SaaS product before, and every existing app and website user had to go through the migration without noticing it happened.",
+      "learning": "Multi-tenancy is decided once, at the isolation boundary, and every other decision follows from it. Getting that one right is most of the work; getting it wrong is a rewrite.",
+      "org": "LII Lab",
+      "outcome": "Shipped, zero disruption to existing users",
+      "people": [],
+      "links": [
+        {
+          "url": "https://oneielts.com",
+          "label": "oneielts.com"
+        },
+        {
+          "url": "https://www.linkedin.com/posts/-mazharulislam-_the-past-few-days-have-been-wonderful-filled-activity-7364580818503024641-eLSd",
+          "label": "LinkedIn"
+        }
+      ],
+      "teaser": false,
+      "traits": [
+        "built",
+        "led",
+        "shipped"
+      ],
+      "primary_trait": "built"
     },
     {
       "id": "ff00bcda-ccf8-43d2-a085-7cebca7ceeae",
@@ -850,6 +1188,194 @@
       "primary_trait": "led"
     },
     {
+      "id": "11081366-a0ab-4e4d-817c-18512f6199c9",
+      "slug": "lu-iujpc-2024",
+      "date": "2024-12-09",
+      "end_date": null,
+      "precision": "day",
+      "chapter": "building",
+      "domain": "community",
+      "type": "milestone",
+      "title": "Judged and set problems for LU IUJPC: Sylhet Division 2024",
+      "note": "Inter-university junior programming contest for the Sylhet division. Thirty-five teams competed; the field solved 6 of the 11 problems, which is roughly the spread a problem set is aiming for. Hosted on SeriousOJ.",
+      "obstacle": null,
+      "learning": "A problem set is judged by its distribution, not by its hardest problem. Eleven problems where the field clears six is a set that separated people instead of just defeating them.",
+      "org": "Leading University",
+      "outcome": "Judge and problem setter",
+      "people": [
+        {
+          "role": "Creator of SeriousOJ"
+        },
+        {
+          "role": "Software Engineer III"
+        },
+        {
+          "role": "Judge and problem setter"
+        },
+        {
+          "role": "Judge and problem setter"
+        },
+        {
+          "role": "Judge and problem setter"
+        },
+        {
+          "role": "Judge and problem setter"
+        }
+      ],
+      "links": [
+        {
+          "url": "https://lnkd.in/gmFG3JT3",
+          "label": "Replay contest"
+        },
+        {
+          "url": "https://www.linkedin.com/posts/-mazharulislam-_activity-7272093596932042754-dWtA",
+          "label": "LinkedIn"
+        }
+      ],
+      "teaser": false,
+      "traits": [
+        "organized"
+      ],
+      "primary_trait": "organized"
+    },
+    {
+      "id": "6706f0b6-d1e1-43a5-8b42-73eb114f9971",
+      "slug": "lu-cse-alumni-meet-2024",
+      "date": "2024-11-13",
+      "end_date": null,
+      "precision": "day",
+      "chapter": "building",
+      "domain": "network",
+      "type": "learning",
+      "title": "Reconnected with LU CSE alumni across six batches",
+      "note": "An evening with Leading University CSE alumni spanning the 4th batch through the 53rd, arranged through the alumni association. I first met one of them two years earlier at a university webinar, while I was Chair of the IEEE Computer Society chapter.",
+      "obstacle": null,
+      "learning": "A department's real output is not its curriculum, it is a network that keeps answering thirty batches later.",
+      "org": "LU CSE Alumni Association",
+      "outcome": null,
+      "people": [],
+      "links": [
+        {
+          "url": "https://www.linkedin.com/posts/-mazharulislam-_im-grateful-for-the-opportunity-to-reconnect-activity-7262499678217228288-UWtD",
+          "label": "LinkedIn"
+        }
+      ],
+      "teaser": false,
+      "traits": [
+        "learned"
+      ],
+      "primary_trait": "learned"
+    },
+    {
+      "id": "405ac10f-6d49-48a7-ab96-35474837c9e1",
+      "slug": "intra-ieee-contest-2024",
+      "date": "2024-09-01",
+      "end_date": null,
+      "precision": "month",
+      "chapter": "building",
+      "domain": "community",
+      "type": "milestone",
+      "title": "Judged and set problems for the Intra IEEE Programming Contest",
+      "note": "Judge and problem setter for the intra-university programming contest at Leading University, run by the IEEE Computer Society LU SB Chapter.",
+      "obstacle": null,
+      "learning": null,
+      "org": "IEEE Computer Society LU SB Chapter",
+      "outcome": "Judge and problem setter",
+      "people": [],
+      "links": [
+        {
+          "url": "https://www.linkedin.com/posts/-mazharulislam-_programmingcontest-ieee-problemsetter-activity-7263197953056481281-RQQ-",
+          "label": "LinkedIn"
+        }
+      ],
+      "teaser": false,
+      "traits": [
+        "organized"
+      ],
+      "primary_trait": "organized"
+    },
+    {
+      "id": "0f64bee5-edeb-421d-aab1-2e73c164201d",
+      "slug": "ieee-cs-internal-contest-2024",
+      "date": "2024-05-17",
+      "end_date": null,
+      "precision": "day",
+      "chapter": "building",
+      "domain": "community",
+      "type": "milestone",
+      "title": "Set two contests for the IEEE CS chapter on short notice",
+      "note": "Two contests for chapter members, junior and senior category, eight problems each, two hours, hosted on HackerRank. Organised and problem-set by the judge panel from scratch.",
+      "obstacle": "The whole thing came together on short notice -- the panel had to organise the event and author sixteen problems in the time available.",
+      "learning": null,
+      "org": "IEEE Computer Society LU SB Chapter",
+      "outcome": "Judge and problem setter",
+      "people": [
+        {
+          "role": "Judge and problem setter"
+        },
+        {
+          "role": "Judge and problem setter"
+        },
+        {
+          "role": "Judge and problem setter"
+        },
+        {
+          "role": "Judge and problem setter"
+        }
+      ],
+      "links": [
+        {
+          "url": "https://lnkd.in/gnFPPfKY",
+          "label": "Junior leaderboard"
+        },
+        {
+          "url": "https://lnkd.in/g-gb42T8",
+          "label": "Senior leaderboard"
+        },
+        {
+          "url": "https://www.linkedin.com/posts/-mazharulislam-_im-excited-to-share-that-we-recently-concluded-activity-7197654624688881665-WiTF",
+          "label": "LinkedIn"
+        }
+      ],
+      "teaser": false,
+      "traits": [
+        "organized"
+      ],
+      "primary_trait": "organized"
+    },
+    {
+      "id": "484bd25b-df65-4219-937d-52beb9ebee12",
+      "slug": "wordcamp-sylhet-2024",
+      "date": "2024-05-11",
+      "end_date": null,
+      "precision": "day",
+      "chapter": "building",
+      "domain": "community",
+      "type": "learning",
+      "title": "Went to WordCamp Sylhet to look outside my own domain",
+      "note": "Conference day at the SUST central auditorium. First WordCamp, and deliberately nothing to do with backend engineering -- I went to see how a different discipline organises itself.",
+      "obstacle": null,
+      "learning": "Worth it, and I would go again. The sessions were cut short by the schedule, the last panel most of all, which is its own lesson about running an event: the programme is a budget, and the panel is what gets spent.",
+      "org": "WordCamp Sylhet",
+      "outcome": "Attendee",
+      "people": [],
+      "links": [
+        {
+          "url": "https://sylhet.wordcamp.org/2024/",
+          "label": "WordCamp Sylhet"
+        },
+        {
+          "url": "https://www.linkedin.com/posts/-mazharulislam-_q-first-time-participating-in-wordcamp-activity-7195077384641945601-c361",
+          "label": "LinkedIn"
+        }
+      ],
+      "teaser": false,
+      "traits": [
+        "learned"
+      ],
+      "primary_trait": "learned"
+    },
+    {
       "id": "77f14034-3203-48a1-bc75-d642e24c478e",
       "slug": "hackathon-champion-2023",
       "date": "2023-10-01",
@@ -859,12 +1385,16 @@
       "domain": "competitive-programming",
       "type": "win",
       "title": "Champion at the National Hackathon, LU CSE Carnival",
-      "note": "Building under pressure with Team LU Ovream.",
+      "note": "My first hackathon, and we won it. Two people, one build, top spot at the National Hackathon of LU CSE Carnival Season 2.",
       "obstacle": null,
       "learning": null,
       "org": "Leading University Computer Club",
       "outcome": "Champion",
-      "people": [],
+      "people": [
+        {
+          "role": "Teammate"
+        }
+      ],
       "links": [
         {
           "url": "https://github.com/cloud-007/hackathon-cse-carnival-2",
@@ -873,6 +1403,10 @@
         {
           "url": "https://github.com/cloud-007/My-Certificates",
           "label": "Certificate"
+        },
+        {
+          "url": "https://www.linkedin.com/posts/-mazharulislam-_champion-national-hackathon-lu-cse-carnival-activity-7119672777514651648-KPSJ",
+          "label": "LinkedIn"
         }
       ],
       "teaser": false,
@@ -884,16 +1418,44 @@
       "primary_trait": "won"
     },
     {
+      "id": "dc997fac-92f2-442b-a75c-09735beaaacd",
+      "slug": "article-git-reflog",
+      "date": "2023-09-28",
+      "end_date": null,
+      "precision": "day",
+      "chapter": "building",
+      "domain": "content",
+      "type": "milestone",
+      "title": "Wrote up how to recover deleted local commits in Git",
+      "note": "A step-by-step piece on getting commits back after they have been deleted locally -- reflog, and the fact that Git almost never actually loses anything you committed.",
+      "obstacle": null,
+      "learning": "The article people needed was not the clever one. It was the one written the day I needed it myself.",
+      "org": null,
+      "outcome": null,
+      "people": [],
+      "links": [
+        {
+          "url": "https://www.linkedin.com/pulse/recovering-deleted-local-commits-git-step-by-step-guide-emon/",
+          "label": "Read it"
+        }
+      ],
+      "teaser": false,
+      "traits": [
+        "taught"
+      ],
+      "primary_trait": "taught"
+    },
+    {
       "id": "677e9b98-9677-4f77-8a1e-0fa489631e5f",
       "slug": "ieee-leadership-award",
-      "date": "2023-08-01",
+      "date": "2023-08-02",
       "end_date": null,
-      "precision": "month",
+      "precision": "day",
       "chapter": "foundations",
       "domain": "community",
       "type": "win",
       "title": "IEEE Outstanding Leadership Volunteer Award",
-      "note": "Recognition for serving the IEEE Computer Society LU SB Chapter as steering committee chair for the 2022-23 session.",
+      "note": "Outstanding Leadership Volunteer Award, for serving the IEEE Computer Society LU SB Chapter as Chair on the 2022-23 steering committee.",
       "obstacle": null,
       "learning": null,
       "org": "IEEE",
@@ -903,6 +1465,10 @@
         {
           "url": "https://github.com/cloud-007/My-Certificates",
           "label": "Certificate"
+        },
+        {
+          "url": "https://www.linkedin.com/posts/-mazharulislam-_received-the-outstanding-leadership-volunteer-activity-7092561642915254273-tT1m",
+          "label": "LinkedIn"
         }
       ],
       "teaser": false,
@@ -911,6 +1477,68 @@
         "led"
       ],
       "primary_trait": "won"
+    },
+    {
+      "id": "fd949f38-fb24-42e4-bbc1-e4a44db407c8",
+      "slug": "ieee-cs-first-election",
+      "date": "2023-05-12",
+      "end_date": null,
+      "precision": "day",
+      "chapter": "foundations",
+      "domain": "community",
+      "type": "milestone",
+      "title": "Handed the chapter over through the first election in the university's history",
+      "note": "As Chair, I did not appoint a successor. The executive committee was elected -- the first committee at Leading University ever chosen by a vote rather than by handover.",
+      "obstacle": null,
+      "learning": "The real test of founding something is whether it survives you leaving. An election is the only handover that proves it can.",
+      "org": "IEEE Computer Society LU SB Chapter",
+      "outcome": "Outgoing Chair",
+      "people": [],
+      "links": [
+        {
+          "url": "https://www.linkedin.com/posts/-mazharulislam-_ieee-computersociety-ieeecslusbc-activity-7062695941320937473-7_RM",
+          "label": "LinkedIn"
+        }
+      ],
+      "teaser": false,
+      "traits": [
+        "led",
+        "organized"
+      ],
+      "primary_trait": "led"
+    },
+    {
+      "id": "1e4991c8-ea41-4c04-bbe6-699281f06879",
+      "slug": "science-fair-judge-2023",
+      "date": "2023-03-19",
+      "end_date": null,
+      "precision": "day",
+      "chapter": "foundations",
+      "domain": "community",
+      "type": "milestone",
+      "title": "Judged a school science fair",
+      "note": "Judged the science fair at Shahjalal Jameya Islamiya Kamil Madrasha in Pathantula, Sylhet, brought in through the IEEE Computer Society LU SB Chapter's STEM outreach.",
+      "obstacle": null,
+      "learning": "First time questioning rather than presenting. Asking a fifteen-year-old why their project works, without leading them to the answer, is a harder interview technique than any I had used.",
+      "org": "Shahjalal Jameya Islamiya Kamil Madrasha",
+      "outcome": "Judge",
+      "people": [
+        {
+          "role": "Lecturer, Department of CSE"
+        }
+      ],
+      "links": [
+        {
+          "url": "https://www.linkedin.com/posts/-mazharulislam-_i-am-proud-and-honored-to-serve-as-a-judge-activity-7043268936938786816-waxD",
+          "label": "LinkedIn"
+        }
+      ],
+      "teaser": false,
+      "traits": [
+        "organized",
+        "mentored"
+      ],
+      "primary_trait": "organized"
     },
     {
       "id": "8acf01f7-6ad9-4894-a476-d35e40458f87",
@@ -922,7 +1550,7 @@
       "domain": "education",
       "type": "milestone",
       "title": "Graduated with a B.Sc. in Computer Science and Engineering",
-      "note": "GPA 3.6 out of 4.0, and 2,000+ solved problems on the side.",
+      "note": "Four years, finished officially in December 2022, with the final-year project defence following in March 2023. I had been at LII Lab for two months by the time the degree completed.",
       "obstacle": null,
       "learning": null,
       "org": "Leading University",
@@ -962,6 +1590,34 @@
         "built"
       ],
       "primary_trait": "built"
+    },
+    {
+      "id": "9e6c4682-977c-4b63-8cb9-d32cf0235bd0",
+      "slug": "clap-2022",
+      "date": "2022-10-01",
+      "end_date": "2022-10-02",
+      "precision": "day",
+      "chapter": "foundations",
+      "domain": "community",
+      "type": "learning",
+      "title": "Completed CLAP, the IEEE Region 10 leadership programme",
+      "note": "Shortlisted for the Career and Leadership Aid Program 2022, run by IEEE Young Professionals across Region 10. Two days, run in clusters, with people from across the region.",
+      "obstacle": null,
+      "learning": "The value was not the curriculum. It was two days in a room with people solving the same problems in countries that resource them completely differently.",
+      "org": "IEEE Young Professionals Region 10",
+      "outcome": null,
+      "people": [],
+      "links": [
+        {
+          "url": "https://www.linkedin.com/posts/-mazharulislam-_ive-successfully-completed-the-two-days-activity-6982411348970262528-jhHL",
+          "label": "LinkedIn"
+        }
+      ],
+      "teaser": false,
+      "traits": [
+        "learned"
+      ],
+      "primary_trait": "learned"
     },
     {
       "id": "80670270-09b4-4c10-8511-25113c9ca0ab",
@@ -1057,6 +1713,35 @@
       "primary_trait": "built"
     },
     {
+      "id": "ebfd63e3-dca6-4092-b55c-5379074bfafd",
+      "slug": "first-problem-setter",
+      "date": "2022-09-13",
+      "end_date": null,
+      "precision": "day",
+      "chapter": "foundations",
+      "domain": "community",
+      "type": "milestone",
+      "title": "Set problems for a contest for the first time",
+      "note": "The first time a problem I authored went in front of contestants rather than the other way round.",
+      "obstacle": "Right up to the moment the contest started I could not tell whether my problem was too easy or about right. There is no way to test that on yourself -- you already know the answer.",
+      "learning": "Setting a problem is a calibration skill, not a difficulty skill. Writing something hard is easy; writing something that separates a field is not.",
+      "org": null,
+      "outcome": "Problem setter",
+      "people": [],
+      "links": [
+        {
+          "url": "https://www.linkedin.com/posts/-mazharulislam-_first-ever-experience-as-a-problem-setter-activity-6975293923363602432-Uw8z",
+          "label": "LinkedIn"
+        }
+      ],
+      "teaser": false,
+      "traits": [
+        "organized",
+        "learned"
+      ],
+      "primary_trait": "organized"
+    },
+    {
       "id": "60380d43-173d-4193-8e3e-7fe60b9ee7c2",
       "slug": "flutter-bootcamp",
       "date": "2022-09-05",
@@ -1089,6 +1774,10 @@
         {
           "url": "https://github.com/cloud-007/My-Certificates",
           "label": "Certificate"
+        },
+        {
+          "url": "https://www.linkedin.com/posts/bootcamp-flutter-mobileappdevelopment-share-6964654508354285568-xW4S",
+          "label": "LinkedIn"
         }
       ],
       "teaser": false,
@@ -1361,29 +2050,34 @@
       "domain": "community",
       "type": "milestone",
       "title": "Organized the LU Research Bootcamp 2021",
-      "note": "From phase-1 trainee to running the programme, in the same season.",
+      "note": "The first research bootcamp of its kind in Bangladesh, run by the IEEE Computer Society LU SB Chapter. Participants came from twelve different universities, and registrations reached beyond the country into China and India.",
       "obstacle": null,
       "learning": null,
       "org": "Leading University",
-      "outcome": null,
+      "outcome": "Twelve universities; participants from three countries",
       "people": [
         {
           "org": "Sunway University",
-          "url": "https://www.linkedin.com/in/saidur-rahman-244a2137/",
           "name": "Saidur Rahman",
-          "role": "Distinguished Research Professor"
+          "role": "Distinguished Research Professor and Head, School of Science and Technology"
         },
         {
-          "org": "CUET",
-          "url": "https://www.linkedin.com/in/mdsabirhossain/",
+          "org": "Chittagong University of Engineering and Technology",
           "name": "Md. Sabir Hossain",
-          "role": "Assistant Professor"
+          "role": "Assistant Professor, Department of CSE"
+        },
+        {
+          "role": "Lecturer, Department of CSE"
         }
       ],
       "links": [
         {
           "url": "https://github.com/cloud-007/My-Certificates",
           "label": "Certificate"
+        },
+        {
+          "url": "https://www.linkedin.com/posts/-mazharulislam-_lurb2021-ieeecslusbc-researchbootcamp-activity-6921523004724183040-LS-p",
+          "label": "LinkedIn"
         }
       ],
       "teaser": false,
@@ -1448,6 +2142,71 @@
         "competed"
       ],
       "primary_trait": "won"
+    },
+    {
+      "id": "71a14aaf-7920-4b1f-a3c0-7b1c5c665b3c",
+      "slug": "codeforces-expert",
+      "date": "2021-04-12",
+      "end_date": null,
+      "precision": "day",
+      "chapter": "foundations",
+      "domain": "competitive-programming",
+      "type": "win",
+      "title": "Reached Expert on Codeforces",
+      "note": "Crossed 1600 after Codeforces Round 714, Division 2. Expert is the rating band where the problems stop rewarding pattern-matching and start requiring a proof before you type.",
+      "obstacle": "The rating had sat one band below for a long time before this contest moved it.",
+      "learning": null,
+      "org": null,
+      "outcome": "Expert, 1600+",
+      "people": [],
+      "links": [
+        {
+          "url": "https://codeforces.com/contest/1513",
+          "label": "The contest"
+        },
+        {
+          "url": "https://codeforces.com/profile/cloud_007",
+          "label": "Codeforces"
+        },
+        {
+          "url": "https://www.linkedin.com/posts/-mazharulislam-_one-touch-and-i-ignite-waited-one-activity-6787824548101394432-9azk",
+          "label": "LinkedIn"
+        }
+      ],
+      "teaser": false,
+      "traits": [
+        "won",
+        "competed"
+      ],
+      "primary_trait": "won"
+    },
+    {
+      "id": "1dd90eaf-492e-41ad-b43e-48598cced512",
+      "slug": "codechef-peak",
+      "date": "2021-01-25",
+      "end_date": null,
+      "precision": "day",
+      "chapter": "foundations",
+      "domain": "competitive-programming",
+      "type": "milestone",
+      "title": "Peak CodeChef rating of 1964",
+      "note": "January Cook-Off 2021, Division 2. Global rank 127, and the highest rating I reached on CodeChef.",
+      "obstacle": null,
+      "learning": null,
+      "org": "CodeChef",
+      "outcome": "Global rank 127",
+      "people": [],
+      "links": [
+        {
+          "url": "https://www.codechef.com/users/cloud_007",
+          "label": "CodeChef"
+        }
+      ],
+      "teaser": false,
+      "traits": [
+        "competed"
+      ],
+      "primary_trait": "competed"
     },
     {
       "id": "19302d35-27dd-4690-99a4-b16ff60d7e70",
@@ -2523,5 +3282,5 @@
     "vitality_span": 0.58,
     "vitality_target": 42
   },
-  "generatedAt": "2026-08-17T19:02:48.589Z"
+  "generatedAt": "2026-08-18T08:38:55.497Z"
 }
