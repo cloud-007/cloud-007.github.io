@@ -157,6 +157,67 @@
   ],
   "entries": [
     {
+      "id": "2412274c-648a-4ff4-b55a-efacdbe05fad",
+      "slug": "paderborn-msc-enrollment",
+      "date": "2026-09-04",
+      "end_date": null,
+      "precision": "day",
+      "chapter": "leading",
+      "domain": "education",
+      "type": "milestone",
+      "title": "Enrolled in M.Sc. Computer Science at Paderborn University",
+      "note": "Enrolled on 4 September 2026 for Winter Semester 2026/27. Now based in Paderborn, Germany, studying alongside independent software projects.",
+      "obstacle": null,
+      "learning": null,
+      "org": "Paderborn University",
+      "outcome": "Enrolled",
+      "people": [],
+      "links": [
+        {
+          "url": "https://www.uni-paderborn.de/en/",
+          "label": "University"
+        }
+      ],
+      "teaser": false,
+      "traits": [
+        "learned"
+      ],
+      "primary_trait": "learned"
+    },
+    {
+      "id": "50bcfe5d-4a25-4327-906b-c0f53cda875e",
+      "slug": "instagram-200-followers",
+      "date": "2026-08-23",
+      "end_date": null,
+      "precision": "day",
+      "chapter": "leading",
+      "domain": "content",
+      "type": "milestone",
+      "title": "Two hundred followers, and the first reel past a hundred likes",
+      "note": "The Instagram side of theainativeengineer crossed 200 followers, with 36,000 views across the preceding 30 days. One reel broke a hundred likes for the first time: 145 likes, 145 saves, 25 shares.",
+      "obstacle": null,
+      "learning": "As many saves as likes. A like is applause and it costs nothing; a save is someone deciding they will need this again. On a channel that exists to teach, the save is the vote that counts.",
+      "org": null,
+      "outcome": null,
+      "people": [],
+      "links": [
+        {
+          "url": "https://www.instagram.com/theainativeengineer/",
+          "label": "Instagram"
+        },
+        {
+          "url": "https://www.instagram.com/p/DcVjj42AIhQ/",
+          "label": "The reel"
+        }
+      ],
+      "teaser": false,
+      "traits": [
+        "taught",
+        "shipped"
+      ],
+      "primary_trait": "taught"
+    },
+    {
       "id": "3cb5f58e-a49a-4f68-b1d1-d7f90cd36f22",
       "slug": "gmail-toolkit",
       "date": "2026-08-16",
@@ -682,7 +743,12 @@
       "org": null,
       "outcome": null,
       "people": [],
-      "links": [],
+      "links": [
+        {
+          "url": "https://x.com/mie_mazharul",
+          "label": "X"
+        }
+      ],
       "teaser": false,
       "traits": [
         "taught"
@@ -2522,10 +2588,10 @@
     "name": "Mazharul Islam",
     "handle": "cloud_007",
     "role": "Product Engineer",
-    "bio": "Building products and sharing what I learn along the way. Backend, frontend, mobile, infrastructure, DevOps, ML - all of it, because agents made the parts I used to hand off cheap enough to keep. One person can hold a whole product now. Still working out what that changes, which is turning out to be most of the job.",
-    "location": "Sylhet, Bangladesh",
-    "latitude": 24.8949,
-    "longitude": 91.8687,
+    "bio": "I build backend services, web and mobile applications, and applied AI workflows. I have 3.5 years of production experience at LII Lab and am now studying Computer Science at Paderborn University. Based in Paderborn, Germany, I am open to working-student roles in software development, backend engineering or applied AI, up to 20 hours per week.",
+    "location": "Paderborn, Germany",
+    "latitude": 51.71905,
+    "longitude": 8.75439,
     "email": "mie.mazharul@gmail.com",
     "phone": null,
     "avatar_url": "/images/profile.jpg",
@@ -2550,6 +2616,11 @@
         "href": "https://www.linkedin.com/in/-mazharulislam-/",
         "label": "LinkedIn",
         "handle": "in/-mazharulislam-"
+      },
+      {
+        "href": "https://x.com/mie_mazharul",
+        "label": "X",
+        "handle": "@mie_mazharul"
       },
       {
         "href": "mailto:mie.mazharul@gmail.com",
@@ -2634,7 +2705,7 @@
         "Engineered the AI scoring backend for spoken and written tasks using speech recognition, pronunciation assessment and NLP processing for multi-trait evaluation.",
         "Integrated subscription billing across 4 platforms with webhook handling, transaction deduplication, and in-app purchase verification.",
         "Built the Django admin and private API for content moderation, question bank management, subscription analytics with regional reporting, and user acquisition dashboards.",
-        "Led 93+ production releases across Android, iOS and Web; managed release pipelines, Firebase config, and CI/CD across all channels."
+        "Contributed to 93+ production releases across Android, iOS and Web during the full November 2022 to April 2026 LII Lab tenure; managed release pipelines, Firebase config, and CI/CD across all channels."
       ],
       "stack": [
         "Flutter",
@@ -2816,28 +2887,6 @@
       "sort_order": 5
     },
     {
-      "id": "6e5b66e5-812f-43ea-a758-1457feb1257a",
-      "name": "serious-oj",
-      "tagline": "Production online judge",
-      "category": "personal",
-      "period": "2026",
-      "description": "A judging system for ACM and OI style contests: Python asyncio with Docker-sandboxed execution, built because the tooling I wanted at university did not exist.",
-      "highlights": [
-        "Docker-sandboxed judging with per-submission resource limits",
-        "Async architecture for concurrent contest load"
-      ],
-      "technologies": [
-        "Python",
-        "asyncio",
-        "Docker"
-      ],
-      "live_url": null,
-      "repo_url": null,
-      "teaser": false,
-      "on_resume": false,
-      "sort_order": 6
-    },
-    {
       "id": "0c3aa5cb-3fea-48f0-b7af-8e996a4a385d",
       "name": "HomeHunt",
       "tagline": "Rental listing app",
@@ -2884,12 +2933,22 @@
   ],
   "education": [
     {
+      "id": "159ad96b-b29e-4aba-acef-6d0e119c8310",
+      "institution": "Paderborn University",
+      "degree": "M.Sc. Computer Science",
+      "location": "Paderborn, Germany",
+      "period": "Oct 2026 - present",
+      "detail": "Enrolled for Winter Semester 2026/27.",
+      "on_resume": true,
+      "sort_order": 0
+    },
+    {
       "id": "ac2b10b6-269e-4db5-8808-2e17ddc6b766",
       "institution": "Leading University",
       "degree": "B.Sc. in Computer Science and Engineering",
       "location": "Sylhet, Bangladesh",
-      "period": "Sep 2018 - Dec 2022",
-      "detail": "GPA 3.6 / 4.0",
+      "period": "Degree awarded 2023",
+      "detail": "CGPA 3.60 / 4.00",
       "on_resume": true,
       "sort_order": 1
     },
@@ -3208,17 +3267,17 @@
   ],
   "stats": [
     {
-      "id": "25791ebb-6fd3-4d81-8ae1-b9473256cc32",
-      "label": "Years Exp.",
-      "value": "3+",
-      "context": "hero",
-      "sort_order": 1
-    },
-    {
       "id": "7f0b2c85-87ca-435a-8d9e-f684e5df8b76",
       "label": "Problems Solved",
       "value": "2000+",
       "context": "competitive",
+      "sort_order": 1
+    },
+    {
+      "id": "25791ebb-6fd3-4d81-8ae1-b9473256cc32",
+      "label": "Years Exp.",
+      "value": "3.5",
+      "context": "hero",
       "sort_order": 1
     },
     {
@@ -3250,17 +3309,17 @@
       "sort_order": 3
     },
     {
-      "id": "26e7db3b-3edb-4520-a56f-700dc167de31",
-      "label": "CF Peak",
-      "value": "1603",
-      "context": "hero",
-      "sort_order": 4
-    },
-    {
       "id": "33a28408-52ea-4697-8193-58c40d0d4866",
       "label": "CC Rating",
       "value": "1965",
       "context": "competitive",
+      "sort_order": 4
+    },
+    {
+      "id": "26e7db3b-3edb-4520-a56f-700dc167de31",
+      "label": "CF Peak",
+      "value": "1603",
+      "context": "hero",
       "sort_order": 4
     }
   ],
@@ -3282,5 +3341,5 @@
     "vitality_span": 0.58,
     "vitality_target": 42
   },
-  "generatedAt": "2026-08-18T08:53:01.674Z"
+  "generatedAt": "2026-10-13T19:31:18.453Z"
 }

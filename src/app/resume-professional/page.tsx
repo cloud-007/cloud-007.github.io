@@ -278,7 +278,7 @@ export default function ResumeProfessionalPage() {
 
             <header className="rp-header">
               <h1 className="rp-name">MD MAZHARUL ISLAM EMON</h1>
-              <p className="rp-subtitle">AI-Native Software Engineer</p>
+              <p className="rp-subtitle">Software Engineer | M.Sc. Computer Science student</p>
               <p className="rp-contact">
                 <a href="mailto:mie.mazharul@gmail.com">mie.mazharul@gmail.com</a>
                 <span className="rp-sep">&bull;</span>
@@ -286,7 +286,7 @@ export default function ResumeProfessionalPage() {
                 <span className="rp-sep">&bull;</span>
                 <a href="https://linkedin.com/in/-mazharulislam-/" target="_blank" rel="noopener noreferrer">linkedin.com/in/-mazharulislam-/</a>
                 <span className="rp-sep">&bull;</span>
-                Sylhet, Bangladesh
+                Paderborn, Germany
               </p>
               <p className="rp-personal">
                 <b>Date of birth:</b> 26.07.1999
@@ -299,7 +299,7 @@ export default function ResumeProfessionalPage() {
               <h2 className="rp-section-head">Profile</h2>
               <hr className="rp-rule" />
               <p className="rp-summary">
-                Software engineer with three and a half years at LII Lab building AI-powered, production-scale SaaS platforms used by tens of thousands of test-prep candidates across IELTS and PTE. Architected multi-tenant Django/DRF backends, real-time speech-evaluation pipelines, and Flutter/Next.js clients; shipped 93+ production releases across iOS, Android, and Web. AI-native engineer who ships faster using Claude Code and agentic workflows for code generation, refactoring, and test scaffolding. Competitive programming background: 2,000+ problems solved, ICPC Dhaka Regional main round competitor.
+                Software engineer with 3.5 years of production experience at LII Lab, now studying Computer Science at Paderborn University. Built Python backends and Flutter applications for IELTS and PTE preparation, including speech scoring, subscription billing and multi-tenant delivery. Recent independent work includes document retrieval, grounded LLM drafting and web products. Seeking a working-student role in software development, backend engineering or applied AI, up to 20 hours per week.
               </p>
             </section>
 
@@ -307,10 +307,18 @@ export default function ResumeProfessionalPage() {
               <h2 className="rp-section-head">Education</h2>
               <hr className="rp-rule" />
               <div className="rp-block">
+                <div className="rp-block-row"><span className="rp-co">Paderborn University</span><span className="rp-loc">Paderborn, Germany</span></div>
+                <div className="rp-block-sub">
+                  <span className="rp-role">M.Sc. Computer Science</span>
+                  <span className="rp-dates">10/2026 &ndash; present</span>
+                </div>
+                <p className="rp-desc">Enrolled for Winter Semester 2026/27.</p>
+              </div>
+              <div className="rp-block">
                 <div className="rp-block-row"><span className="rp-co">Leading University</span><span className="rp-loc">Sylhet, Bangladesh</span></div>
                 <div className="rp-block-sub">
                   <span className="rp-role">B.Sc. in Computer Science &amp; Engineering &nbsp;-&nbsp; GPA:&nbsp;<span className="rp-gpa">3.6</span>&nbsp;/&nbsp;4.0</span>
-                  <span className="rp-dates">09/2018 &ndash; 12/2022</span>
+                  <span className="rp-dates">Degree awarded 2023</span>
                 </div>
                 <ul className="rp-ul">
                   <li><span className="rp-kw">Relevant coursework:</span> Data Structures, Algorithms, Operating Systems, Computer Networks, Databases, Distributed Systems, Machine Learning.</li>
@@ -325,7 +333,8 @@ export default function ResumeProfessionalPage() {
               <hr className="rp-rule" />
               <div className="rp-skills">
                 <p className="rp-skill-row"><span className="rp-skill-key">Bengali: </span>Native</p>
-                <p className="rp-skill-row"><span className="rp-skill-key">English: </span>Full professional: IELTS Academic 6.5 (Listening 7.0 &middot; Reading 6.5 &middot; Writing 6.5 &middot; Speaking 6.0), Aug 2025 &middot; CEFR&nbsp;B2</p>
+                <p className="rp-skill-row"><span className="rp-skill-key">English: </span>IELTS Academic 6.5 (Listening 7.0 &middot; Reading 6.5 &middot; Writing 6.5 &middot; Speaking 6.0), Aug 2025</p>
+                <p className="rp-skill-row"><span className="rp-skill-key">German: </span>No working proficiency</p>
               </div>
             </section>
 
@@ -418,7 +427,7 @@ export default function ResumeProfessionalPage() {
             </section>
 
             <div className="rp-sign">
-              <span className="rp-sign-place">Sylhet, Bangladesh: June 2026</span>
+              <span className="rp-sign-place">Paderborn, Germany: October 2026</span>
               <span className="rp-sign-name">Md Mazharul Islam Emon</span>
             </div>
 

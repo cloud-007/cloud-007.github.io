@@ -467,8 +467,8 @@ export function LivingTrail() {
         return (h >>> 0) % 100000;
     }, [entries]);
 
-    const latitude = profile?.latitude ?? 24.8949;
-    const longitude = profile?.longitude ?? 91.8687;
+    const latitude = profile?.latitude ?? 51.71905;
+    const longitude = profile?.longitude ?? 8.75439;
 
     useEffect(() => {
         const url =
@@ -638,7 +638,7 @@ export function LivingTrail() {
                         <div className="absolute top-4 right-4 z-10 flex items-center gap-2 px-3 py-1.5 rounded-full bg-zinc-950/60 border border-zinc-700/60 backdrop-blur-sm">
                             <WeatherIcon className="w-3.5 h-3.5 text-emerald-300" />
                             <span className="text-zinc-200 text-xs font-medium">
-                                {(profile?.location ?? "Sylhet").split(",")[0]}
+                                {(profile?.location ?? "Paderborn").split(",")[0]}
                                 {weather.temp !== null && ` · ${weather.temp}°C`}
                                 {` · ${SKY_LABEL[weather.kind]}`}
                                 {!weatherLive && " (offline)"}

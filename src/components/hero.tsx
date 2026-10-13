@@ -181,8 +181,8 @@ export function Hero() {
                         <div className="mt-5 pt-4 border-t border-zinc-800 flex items-center gap-2">
                             <span className="w-1.5 h-1.5 bg-emerald-400 rounded-full" />
                             <p className="text-zinc-500 text-xs">
-                                Available for new opportunities: backend,
-                                mobile & AI
+                                Open to working-student roles: software,
+                                backend & applied AI
                             </p>
                         </div>
                     </div>
