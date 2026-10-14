@@ -64,10 +64,10 @@ function makeSoilTexture(): THREE.CanvasTexture {
     c.height = 512;
     const ctx = c.getContext("2d")!;
     const g = ctx.createLinearGradient(0, 0, 0, 512);
-    g.addColorStop(0, "#3a2a1c");
-    g.addColorStop(0.08, "#2c2015");
-    g.addColorStop(0.5, "#191009");
-    g.addColorStop(1, "#080503");
+    g.addColorStop(0, "#303d2c");
+    g.addColorStop(0.08, "#283323");
+    g.addColorStop(0.5, "#1d281c");
+    g.addColorStop(1, "#101b13");
     ctx.fillStyle = g;
     ctx.fillRect(0, 0, 1024, 512);
     // fine organic speckle, subtle, fading with depth
@@ -112,16 +112,16 @@ function makeTopsoilTexture(): THREE.CanvasTexture {
     // the surface hides the trunk↔root junction; it fades quickly so the solid
     // root flare is revealed just beneath it.
     const g = ctx.createLinearGradient(0, 0, 0, 512);
-    g.addColorStop(0.0, "rgba(60, 44, 29, 1)");    // surface line, opaque topsoil
-    g.addColorStop(0.14, "rgba(42, 30, 20, 1)");   // narrow opaque band over the join
-    g.addColorStop(0.34, "rgba(28, 19, 12, 0.5)"); // begin revealing the flare
+    g.addColorStop(0.0, "rgba(54, 65, 42, 1)");    // surface line, opaque topsoil
+    g.addColorStop(0.14, "rgba(36, 49, 30, 1)");   // narrow opaque band over the join
+    g.addColorStop(0.34, "rgba(27, 39, 25, 0.5)"); // begin revealing the flare
     g.addColorStop(0.6, "rgba(16, 11, 6, 0.14)");
     g.addColorStop(1.0, "rgba(8, 5, 3, 0)");        // transparent, cross-section
     ctx.fillStyle = g;
     ctx.fillRect(0, 0, 1024, 512);
     // A soft highlight right at the surface line so it catches the sky light.
     const hl = ctx.createLinearGradient(0, 0, 0, 26);
-    hl.addColorStop(0, "rgba(126, 100, 68, 0.55)");
+    hl.addColorStop(0, "rgba(159, 171, 112, 0.5)");
     hl.addColorStop(1, "rgba(126, 100, 68, 0)");
     ctx.fillStyle = hl;
     ctx.fillRect(0, 0, 1024, 26);
@@ -161,24 +161,32 @@ export default function TreeScene({
         const container = containerRef.current;
         if (!container) return;
 
-        const renderer = new THREE.WebGLRenderer({ antialias: true, alpha: true });
-        renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
+        let renderer: THREE.WebGLRenderer;
+        try {
+            renderer = new THREE.WebGLRenderer({ antialias: true, alpha: true });
+        } catch {
+            // Keep the illustrated fallback when WebGL is unavailable.
+            return;
+        }
+        renderer.setPixelRatio(Math.min(window.devicePixelRatio, window.innerWidth < 700 ? 1.5 : 2));
         renderer.outputColorSpace = THREE.SRGBColorSpace;
         renderer.toneMapping = THREE.ACESFilmicToneMapping;
-        renderer.toneMappingExposure = 1.25;
+        renderer.toneMappingExposure = 1.4;
         // Per-material clip planes keep the root system strictly underground.
         renderer.localClippingEnabled = true;
         container.appendChild(renderer.domElement);
+        container.dataset.ready = "true";
         renderer.domElement.style.display = "block";
         renderer.domElement.style.width = "100%";
         renderer.domElement.style.height = "100%";
 
         const scene = new THREE.Scene();
         const camera = new THREE.PerspectiveCamera(35, 1, 0.1, 600);
+        const cameraTarget = new THREE.Vector3(0, 5, 0);
 
         // Shared radius drives BOTH the trunk base and the root crown, so the
         // two meshes are the same thickness where they meet the soil line.
-        const baseRadius = 2.6 + (years / 27) * 0.9;
+        const baseRadius = 1.8 + Math.min(years / 27, 1.5) * 0.7;
 
         // Roots render only below the soil line; canopy only above it.
         const belowSoil = new THREE.Plane(new THREE.Vector3(0, -1, 0), SOIL_Y);
@@ -206,9 +214,12 @@ export default function TreeScene({
         fill.position.set(-60, 20, 40);
         scene.add(fill);
         // dim uplight so the root ball reads against the dark soil
-        const rootLight = new THREE.PointLight(0xd8c4a0, 0.7, 160, 1.6);
+        const rootLight = new THREE.DirectionalLight(0xe3d3b0, 1.2);
         rootLight.position.set(0, -22, 46);
         scene.add(rootLight);
+        const rim = new THREE.DirectionalLight(0xb5d7a7, 1.1);
+        rim.position.set(-35, 50, -35);
+        scene.add(rim);
 
         /* ── Soil cross-section backdrop (behind the roots) ──
            Top edge sits exactly on the soil line so sky meets earth cleanly. */
@@ -242,26 +253,23 @@ export default function TreeScene({
         const tree = new Tree();
         const applyTreeOptions = () => {
             const { vitality: vit } = paramsRef.current;
-            tree.loadPreset("Oak Medium");
-            tree.options.seed = seed;
-            // Compact but broad: short stout trunk, wide strong limbs.
-            tree.options.branch.length[0] = 22;
+            tree.loadPreset("Oak Large");
+            // Keep the mature oak's balanced silhouette; density reflects the
+            // accumulated trail without changing the tree's identity.
+            tree.options.seed = 23399;
+            tree.options.branch.length[0] = 38;
             tree.options.branch.radius[0] = baseRadius;
-            tree.options.branch.taper[0] = 0.6;
+            tree.options.branch.length[1] = 26;
+            tree.options.branch.length[2] = 15;
             tree.options.branch.children[0] = Math.min(9, 5 + chaptersCount);
-            tree.options.branch.children[1] = 5;
-            tree.options.branch.angle[1] = 60;
-            tree.options.branch.gnarliness[1] = 0.16;
-            tree.options.branch.length[1] = 17;
-            tree.options.branch.force.direction.y = 1;
-            tree.options.branch.force.strength = 0.02;
-            tree.options.leaves.count = Math.round(
-                20 + Math.min(46, entriesCount * 1.6) + vit * 18
-            );
-            tree.options.leaves.size = 2.7;
-            tree.options.leaves.sizeVariance = 0.7;
-            // Healthy: warm bright green. Low vitality: dry olive.
-            tree.options.leaves.tint = lerpColor(0xb8a860, 0xe6f7cc, vit);
+            tree.options.branch.children[1] = 6;
+            tree.options.branch.children[2] = 3;
+            tree.options.branch.force.strength = -0.015;
+            tree.options.bark.tint = 0xe8d3ae;
+            tree.options.leaves.count = Math.round(22 + Math.min(16, entriesCount * 0.2) + vit * 8);
+            tree.options.leaves.size = 4.8;
+            tree.options.leaves.sizeVariance = 0.45;
+            tree.options.leaves.tint = lerpColor(0xb6c594, 0xe0f2bb, vit);
             tree.generate();
         };
         applyTreeOptions();
@@ -290,9 +298,9 @@ export default function TreeScene({
             roots.options.branch.taper[0] = 0.74;
             // Fewer but thick primary roots that fan out into denser secondaries
             // reads as a solid root ball, not spider legs.
-            roots.options.branch.children[0] = Math.min(8, 5 + Math.round(rootsCount / 2));
-            roots.options.branch.children[1] = 4;
-            roots.options.branch.children[2] = 3;
+            roots.options.branch.children[0] = Math.min(7, 4 + Math.round(rootsCount / 2));
+            roots.options.branch.children[1] = 3;
+            roots.options.branch.children[2] = 2;
             roots.options.branch.start[1] = 0.06;
             roots.options.branch.start[2] = 0.18;
             roots.options.branch.angle[1] = 44;
@@ -331,6 +339,7 @@ export default function TreeScene({
                 });
             });
             scene.add(roots);
+            resize();
             renderFrame();
         };
 
@@ -338,10 +347,26 @@ export default function TreeScene({
         const resize = () => {
             const w = container.clientWidth;
             const h = container.clientHeight;
+            if (!w || !h) return;
             renderer.setSize(w, h, false);
             camera.aspect = w / h;
-            camera.position.set(0, 5, 168);
-            camera.lookAt(0, 5, 0);
+            // Fit the actual generated silhouette on narrow and wide screens.
+            const bounds = new THREE.Box3().setFromObject(tree);
+            bounds.min.y = SOIL_Y;
+            if (rootsBuilt) {
+                const rootBounds = new THREE.Box3().setFromObject(roots);
+                rootBounds.max.y = SOIL_Y;
+                bounds.union(rootBounds);
+            } else {
+                bounds.min.y = -55;
+            }
+            const height = bounds.max.y - bounds.min.y;
+            const width = Math.max(Math.abs(bounds.min.x), Math.abs(bounds.max.x)) * 2;
+            const halfFov = THREE.MathUtils.degToRad(camera.fov / 2);
+            const distance = Math.max(height / (2 * Math.tan(halfFov)), width / (2 * Math.tan(halfFov) * camera.aspect)) * 1.12;
+            cameraTarget.set(0, (bounds.min.y + bounds.max.y) / 2, 0);
+            camera.position.set(0, cameraTarget.y, distance);
+            camera.lookAt(cameraTarget);
             camera.updateProjectionMatrix();
         };
 
@@ -349,13 +374,13 @@ export default function TreeScene({
             const { isDay: day } = paramsRef.current;
             // Night keeps a lifted floor so the tree stays a legible silhouette
             // with a hint of green, rather than going near-black.
-            hemi.intensity = day ? 1.4 : 0.6;
-            hemi.color.set(day ? 0xbdd7f2 : 0x3a4a66);
-            hemi.groundColor.set(day ? 0x2a1c10 : 0x241a2e);
-            sun.intensity = day ? 1.7 : 0.3;
+            hemi.intensity = day ? 2.1 : 1.35;
+            hemi.color.set(day ? 0xdcebd5 : 0xa4c8b7);
+            hemi.groundColor.set(0x484b30);
+            sun.intensity = day ? 2.3 : 1.0;
             sun.color.set(day ? 0xfff2dd : 0xaec2e6);
-            fill.intensity = day ? 0.5 : 0.22;
-            rootLight.intensity = day ? 0.95 : 0.5;
+            fill.intensity = day ? 0.85 : 0.6;
+            rootLight.intensity = day ? 1.5 : 1.1;
         };
         applyLighting();
 
@@ -378,8 +403,8 @@ export default function TreeScene({
             elapsed += (now - last) / 1000;
             last = now;
             tree.update(elapsed); // built-in wind sway
-            camera.position.x = Math.sin(elapsed * 0.1) * 2.2;
-            camera.lookAt(0, 6, 0);
+            camera.position.x = Math.sin(elapsed * 0.08) * 0.5;
+            camera.lookAt(cameraTarget);
             renderFrame();
             raf = requestAnimationFrame(loop);
         };
@@ -410,16 +435,17 @@ export default function TreeScene({
         start();
 
         // Build the (heavier) root system once the canopy is on screen.
-        const idle =
-            (window as unknown as { requestIdleCallback?: typeof requestIdleCallback })
-                .requestIdleCallback ?? ((cb: () => void) => setTimeout(cb, 60));
-        const rootsHandle = idle(() => buildRoots());
+        const hasIdleCallback = typeof window.requestIdleCallback === "function";
+        const rootsHandle = hasIdleCallback
+            ? window.requestIdleCallback(() => buildRoots())
+            : window.setTimeout(() => buildRoots(), 60);
 
         refreshRef.current = () => {
             applyTreeOptions();
             tree.position.y = SOIL_Y;
             applyClip(tree, [aboveSoil]);
             applyLighting();
+            resize();
             renderFrame();
         };
 
@@ -427,15 +453,14 @@ export default function TreeScene({
             stop();
             ro.disconnect();
             io.disconnect();
-            const cancelIdle =
-                (window as unknown as { cancelIdleCallback?: (h: number) => void })
-                    .cancelIdleCallback;
-            if (cancelIdle && typeof rootsHandle === "number") cancelIdle(rootsHandle);
+            if (hasIdleCallback) window.cancelIdleCallback(rootsHandle);
+            else window.clearTimeout(rootsHandle);
             refreshRef.current = null;
             soilTex.dispose();
             topsoilTex.dispose();
             renderer.dispose();
             container.removeChild(renderer.domElement);
+            delete container.dataset.ready;
             scene.traverse((obj) => {
                 const mesh = obj as THREE.Mesh;
                 if (mesh.geometry) mesh.geometry.dispose();
@@ -461,7 +486,19 @@ export default function TreeScene({
             ref={containerRef}
             className="w-full h-full"
             role="img"
-            aria-label={`Photoreal growth tree with ${entriesCount} entries and a deep root system`}
-        />
+            aria-label={`A mature oak with a broad canopy and visible roots, representing ${entriesCount} documented milestones in engineering, learning and community`}
+        >
+            <div className="tree-fallback" aria-hidden="true">
+                <svg viewBox="0 0 400 460" fill="none">
+                    <path d="M200 270V150M200 215L150 175M200 193L244 145M200 250L263 213M200 239L128 211" stroke="#b5a383" strokeWidth="12" strokeLinecap="round" />
+                    <path d="M200 267L178 313L134 352M200 267L222 310L266 348M200 267V360M178 313L169 352M222 310L232 368M200 311L184 376" stroke="#a5997b" strokeWidth="5" strokeLinecap="round" />
+                    <ellipse cx="200" cy="140" rx="113" ry="86" fill="#65895c" />
+                    <ellipse cx="148" cy="173" rx="67" ry="59" fill="#739b66" />
+                    <ellipse cx="245" cy="165" rx="77" ry="66" fill="#83a975" />
+                    <ellipse cx="199" cy="109" rx="76" ry="63" fill="#93b684" />
+                    <path d="M30 270H370" stroke="#80916c" />
+                </svg>
+            </div>
+        </div>
     );
 }

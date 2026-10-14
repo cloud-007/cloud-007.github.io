@@ -1,7 +1,10 @@
 # Living Trail: Supabase setup
 
-Everything on this site reads from Supabase. This is the one-time setup. Takes
-about ten minutes, and you never need to touch code again to change content.
+Supabase supplies the public source records. This guide describes the database
+setup. Reviewed professional copy and corrections live in
+`src/data/editorial.json` and are composed over both live reads and the build
+snapshot. Edit that file when a reviewed value should change; changing only the
+database will not replace a matching editorial correction.
 
 ## What you are building
 

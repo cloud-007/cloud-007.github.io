@@ -1,23 +1,10 @@
-/**
- * Site content, sourced from Supabase.
- *
- * There is no hardcoded copy anywhere in the components any more. Everything
- * the site renders comes from the `public_*` views, which are the only surface
- * the anon key can reach. A row marked private, a redacted org name, a teaser
- * project: none of it is filtered here. It never arrives.
- *
- * Two paths feed the same shape:
- *
- *   snapshot.json   generated at build time from the public views, committed,
- *                   imported directly so the first paint is instant and the
- *                   page still works if Supabase is asleep or unreachable.
- *
- *   live fetch      runs on mount and replaces the snapshot when it answers.
- *
- * If the live fetch fails, the snapshot simply stays. The page never blanks.
+/** Public Supabase views and a build snapshot provide the source records.
+ * Versioned editorial copy is applied to both paths by applyEditorial.
+ * Private rows and unconsented identities never enter the public views.
  */
 
 import snapshot from "@/data/snapshot.json";
+import { applyEditorial } from "./editorial";
 
 const SUPABASE_URL = process.env.NEXT_PUBLIC_SUPABASE_URL;
 const SUPABASE_ANON_KEY = process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY;
@@ -195,7 +182,7 @@ export interface SiteContent {
 
 /* ── The committed fallback ───────────────────────────────────────────────── */
 
-export const snapshotContent = snapshot as unknown as SiteContent;
+export const snapshotContent = applyEditorial(snapshot as unknown as SiteContent);
 
 export const isSupabaseConfigured = Boolean(SUPABASE_URL && SUPABASE_ANON_KEY);
 
@@ -304,7 +291,7 @@ export async function fetchSiteContent(
         readView<{ key: string; value: number }>("public_growth_weights", "select=*", signal),
     ]);
 
-    return {
+    return applyEditorial({
         chapters,
         domains,
         traits,
@@ -319,7 +306,7 @@ export async function fetchSiteContent(
         stats,
         growthWeights: Object.fromEntries(weights.map((w) => [w.key, w.value])),
         generatedAt: new Date().toISOString(),
-    };
+    });
 }
 
 /* ── Small helpers the components share ───────────────────────────────────── */

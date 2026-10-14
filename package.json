@@ -10,7 +10,8 @@
     "lint": "eslint",
     "snapshot": "node --env-file-if-exists=.env --env-file-if-exists=.env.local scripts/generate-snapshot.mjs",
     "typecheck": "tsc --noEmit",
-    "test:links": "node scripts/test-safe-href.mjs"
+    "test:links": "node scripts/test-safe-href.mjs",
+    "test:content": "node scripts/test-editorial.mjs"
   },
   "dependencies": {
     "@dgreenheck/ez-tree": "^1.1.0",

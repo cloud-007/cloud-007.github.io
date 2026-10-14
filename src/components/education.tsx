@@ -5,7 +5,7 @@ import { useSiteContent } from "@/lib/use-content";
 
 export function Education() {
   const { content } = useSiteContent();
-  const education = content.education;
+  const education = content.education.filter((item) => item.on_resume);
 
   if (education.length === 0) return null;
 

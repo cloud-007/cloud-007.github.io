@@ -1,17 +1,9 @@
 import { Header } from "@/components/header";
-import { LivingTrail } from "@/components/living-trail";
+import { Hero } from "@/components/hero";
+import { Projects } from "@/components/projects";
+import { CurrentWork } from "@/components/current-work";
 import { Footer } from "@/components/footer";
 
 export default function Home() {
-  return (
-    <div className="min-h-screen bg-zinc-950">
-      <Header />
-      <main>
-        {/* The Living Trail is the home of this portfolio; everything else
-            lives under /about */}
-        <LivingTrail />
-      </main>
-      <Footer />
-    </div>
-  );
+  return <><Header /><main id="main-content"><Hero home /><Projects selected /><CurrentWork /></main><Footer /></>;
 }

@@ -20,9 +20,7 @@ export default function Image() {
     "Flutter",
     "Next.js",
     "TypeScript",
-    "Docker",
-    "Claude Code",
-    "Cursor",
+    "FastAPI",
   ];
 
   return new ImageResponse(
@@ -177,7 +175,7 @@ export default function Image() {
             marginBottom: "44px",
           }}
         >
-          {`EdTech / AI · ${location}`}
+          {`Backend / Applied AI · ${location}`}
         </div>
 
         {/* Tech badges */}

@@ -31,10 +31,10 @@ export function Experience() {
         <div className="mb-12">
           <span className="section-label">Experience</span>
           <h2 className="text-3xl md:text-4xl font-extrabold text-zinc-50 tracking-tight mt-2">
-            Work Experience
+            Engineering experience
           </h2>
           <p className="text-zinc-500 mt-2 text-sm">
-            Building production EdTech software at LII Lab
+            Independent product work and 3.5 years building production software at LII Lab.
           </p>
         </div>
 
@@ -61,15 +61,15 @@ export function Experience() {
                           </span>
                         )}
                       </div>
-                      <a
-                        href={safeHref(exp.company_url) ?? "#"}
+                      {safeHref(exp.company_url) ? <a
+                        href={safeHref(exp.company_url)}
                         target="_blank"
                         rel="noopener noreferrer"
                         className="inline-flex items-center gap-1.5 text-emerald-400 hover:text-emerald-300 font-medium text-sm transition-colors group"
                       >
                         {exp.company}
                         <ExternalLink className="w-3.5 h-3.5 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform" />
-                      </a>
+                      </a> : <p className="text-emerald-400 text-sm font-medium">{exp.company}</p>}
                     </div>
                     <div className="flex items-center gap-2 text-zinc-500 bg-zinc-800/60 px-3 py-1.5 rounded-xl border border-zinc-700/50 shrink-0 self-start">
                       <Calendar className="w-3.5 h-3.5" />

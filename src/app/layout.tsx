@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import "./globals.css";
 import { siteIdentity } from "@/lib/content";
+import { SiteContentProvider } from "@/lib/use-content";
 
 /* Metadata is resolved at build time, so it cannot read the live database the
    way the page body does. It reads the snapshot instead, which is generated
@@ -22,10 +23,6 @@ export const metadata: Metadata = {
   metadataBase: new URL("https://cloud-007.github.io"),
   title,
   description: bio,
-  /* The title says "Product Engineer" because that is the accurate name for
-     the work. "Software Engineer" and "Full-Stack AI Engineer" stay here so
-     the page still answers the queries recruiters actually type. Keywords are
-     the right place for the search-shaped variants; the title is not. */
   keywords: [
     "Product Engineer",
     "Software Engineer",
@@ -62,8 +59,11 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
-      <body className={`${inter.className} antialiased`}>{children}</body>
+    <html lang="en" data-theme="system" data-scroll-behavior="smooth" suppressHydrationWarning>
+      <head>
+        <script dangerouslySetInnerHTML={{ __html: `try{var t=localStorage.getItem('portfolio-theme-v1');document.documentElement.dataset.theme=t==='light'||t==='dark'?t:'system'}catch(e){}` }} />
+      </head>
+      <body className={`${inter.className} antialiased`}><SiteContentProvider>{children}</SiteContentProvider></body>
     </html>
   );
 }

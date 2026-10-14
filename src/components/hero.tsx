@@ -1,193 +1,42 @@
 "use client";
 
 import Image from "next/image";
-import {
-    Github,
-    Linkedin,
-    Mail,
-    FileDown,
-    ArrowUpRight,
-    MapPin,
-    Briefcase,
-    type LucideIcon,
-} from "lucide-react";
+import Link from "next/link";
+import { ArrowDown, ArrowUpRight, MapPin } from "lucide-react";
 import { useSiteContent } from "@/lib/use-content";
 import { safeHref } from "@/lib/content";
+import { editorial } from "@/lib/editorial";
 
-/* Social icons are presentation, resolved from the label the database stores. */
-const SOCIAL_ICONS: Record<string, LucideIcon> = {
-    GitHub: Github,
-    LinkedIn: Linkedin,
-    Email: Mail,
-};
-
-export function Hero() {
-    const { content } = useSiteContent();
-    const { profile } = content;
-    const stats = content.stats.filter((s) => s.context === "hero");
-
-    if (!profile) return null;
-
-    /* The name reads best as a given name plus a highlighted surname; the
-       split is presentational, the name itself is data. The honorific strip
-       is kept so an "Md." prefix would not land in the highlighted half. */
-    const parts = profile.name.replace(/^Md\.?\s+/i, "").split(" ");
-    const firstName = parts.slice(0, -1).join(" ") || profile.name;
-    const lastName = parts.length > 1 ? parts[parts.length - 1] : "";
-
-    return (
-        <section id="about" className="min-h-screen pt-28 pb-16 px-4">
-            <div className="max-w-5xl mx-auto">
-                {/* Bento grid */}
-                <div className="grid grid-cols-1 md:grid-cols-12 gap-3">
-                    {/* ── Intro card ── */}
-                    <div className="bento-card md:col-span-8 p-8 flex flex-col justify-between min-h-[300px] relative">
-                        {/* Mobile avatar, visible only below md */}
-                        <div className="md:hidden absolute top-4 right-4 w-20 h-20 rounded-2xl overflow-hidden border-2 border-zinc-700 shrink-0">
-                            <Image
-                                src={profile.avatar_url ?? "/images/profile.jpg"}
-                                fill
-                                className="object-cover"
-                                alt={profile.name}
-                                sizes="80px"
-                            />
-                        </div>
-
-                        <div>
-                            {profile.open_to_work && (
-                                <div className="flex items-center gap-2 mb-6">
-                                    <span className="w-2 h-2 bg-emerald-400 rounded-full" />
-                                    <span className="text-zinc-400 text-xs font-medium">
-                                        Open to new opportunities
-                                    </span>
-                                </div>
-                            )}
-                            <h1 className="text-5xl md:text-6xl font-extrabold text-zinc-50 leading-tight tracking-tight mb-5">
-                                {firstName}{" "}
-                                <span className="gradient-text">{lastName}</span>
-                            </h1>
-                            <p className="text-zinc-400 text-base leading-relaxed text-justify">
-                                {profile.bio}
-                            </p>
-                        </div>
-
-                        <div className="flex flex-wrap items-center gap-3 mt-6">
-                            <a
-                                href={`mailto:${profile.email ?? ""}`}
-                                className="flex items-center gap-2 px-5 py-2.5 bg-emerald-700 hover:bg-emerald-500 text-white text-sm font-semibold rounded-xl transition-colors"
-                            >
-                                <Mail className="w-4 h-4" />
-                                Get in touch
-                            </a>
-                            <a
-                                href="/resume"
-                                className="flex items-center gap-2 px-5 py-2.5 bg-zinc-800 hover:bg-zinc-700 text-zinc-200 text-sm font-semibold rounded-xl transition-colors border border-zinc-700"
-                            >
-                                <FileDown className="w-4 h-4" />
-                                Resume
-                            </a>
-                        </div>
-                    </div>
-
-                    {/* Profile image card, hidden on mobile */}
-                    <div className="hidden md:block bento-card md:col-span-4 overflow-hidden relative min-h-[300px]">
-                        <Image
-                            src={profile.avatar_url ?? "/images/profile.jpg"}
-                            alt={profile.name}
-                            fill
-                            className="object-cover"
-                            priority
-                            sizes="350px"
-                            fetchPriority="high"
-                        />
-                        <div className="absolute inset-0 bg-gradient-to-t from-zinc-950/70 via-transparent to-transparent" />
-                        <div className="absolute bottom-4 left-4 right-4">
-                            <div className="flex items-center gap-1.5 text-zinc-300 text-sm">
-                                <MapPin className="w-3.5 h-3.5 text-emerald-400" />
-                                {profile.location}
-                            </div>
-                            <div className="flex items-center gap-1.5 text-zinc-400 text-xs mt-1">
-                                <Briefcase className="w-3 h-3 text-zinc-500" />
-                                {profile.role}
-                            </div>
-                        </div>
-                    </div>
-
-                    {/* Stats: 2x2 on mobile, 4-col on desktop */}
-                    <div className="col-span-1 md:col-span-12 grid grid-cols-2 md:grid-cols-4 gap-3">
-                        {stats.map((stat) => (
-                            <div
-                                key={stat.id}
-                                className="bento-card p-5 sm:p-6 flex flex-col items-center justify-center text-center"
-                            >
-                                <div className="text-3xl font-extrabold gradient-text leading-none mb-1.5">
-                                    {stat.value}
-                                </div>
-                                <div className="text-zinc-500 text-xs font-medium uppercase tracking-wider">
-                                    {stat.label}
-                                </div>
-                            </div>
-                        ))}
-                    </div>
-
-                    {/* ── Socials card ── */}
-                    <div className="bento-card md:col-span-5 p-6">
-                        <p className="text-zinc-500 text-xs font-semibold uppercase tracking-widest mb-4">
-                            Connect
-                        </p>
-                        <div className="flex flex-col gap-1">
-                            {profile.socials.map((social) => {
-                                const Icon = SOCIAL_ICONS[social.label] ?? ArrowUpRight;
-                                return (
-                                <a
-                                    key={social.label}
-                                    href={safeHref(social.href) ?? "#"}
-                                    target="_blank"
-                                    rel="noopener noreferrer"
-                                    className="flex items-center justify-between p-3 rounded-xl hover:bg-zinc-800/80 transition-colors group"
-                                >
-                                    <div className="flex items-center gap-3">
-                                        <div className="w-8 h-8 bg-zinc-800 rounded-lg flex items-center justify-center group-hover:bg-zinc-700 transition-colors border border-zinc-700">
-                                            <Icon className="w-3.5 h-3.5 text-zinc-400 group-hover:text-emerald-400 transition-colors" />
-                                        </div>
-                                        <div>
-                                            <div className="text-zinc-200 text-sm font-medium">
-                                                {social.label}
-                                            </div>
-                                            <div className="text-zinc-500 text-xs">
-                                                {social.handle}
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <ArrowUpRight className="w-3.5 h-3.5 text-zinc-700 group-hover:text-emerald-400 transition-colors" />
-                                </a>
-                                );
-                            })}
-                        </div>
-                    </div>
-
-                    {/* ── Core stack card ── */}
-                    <div className="bento-card md:col-span-7 p-6">
-                        <p className="text-zinc-500 text-xs font-semibold uppercase tracking-widest mb-4">
-                            Core Stack
-                        </p>
-                        <div className="flex flex-wrap gap-2">
-                            {profile.core_stack.map((tech) => (
-                                <span key={tech} className="tech-badge">
-                                    {tech}
-                                </span>
-                            ))}
-                        </div>
-                        <div className="mt-5 pt-4 border-t border-zinc-800 flex items-center gap-2">
-                            <span className="w-1.5 h-1.5 bg-emerald-400 rounded-full" />
-                            <p className="text-zinc-500 text-xs">
-                                Open to working-student roles: software,
-                                backend & applied AI
-                            </p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-    );
+export function Hero({ home = false }: { home?: boolean }) {
+  const { content } = useSiteContent();
+  const profile = content.profile;
+  if (!profile) return null;
+  return (
+    <section id="about" className={`profile-hero page-width ${home ? "home-hero" : "about-hero"}`}>
+      <div className="hero-copy">
+        <p className="intro-name">{home ? profile.name : "About Mazharul"}<span className="intro-role">{profile.role}</span></p>
+        <h1>{home ? editorial.headline : "An engineer who stays with the problem."}</h1>
+        <p className="hero-description">{home ? "I build Python backends, web and mobile applications, and applied AI workflows. From the first product decision to the systems running in production." : profile.bio}</p>
+        {home && <p className="hero-context">Previously Senior Software Engineer at LII Lab. Now studying M.Sc. Computer Science at Paderborn University.</p>}
+        <div className="hero-actions">
+          <Link href="/#projects" className="button-primary">View selected work <ArrowDown size={16} /></Link>
+          <a href="/resume.pdf" download className="text-link">Download CV <ArrowUpRight size={16} /></a>
+        </div>
+        {profile.open_to_work && <p className="availability"><span aria-hidden="true" />{editorial.availability}</p>}
+      </div>
+      <aside className="hero-aside">
+        <div className="portrait-frame">
+          <Image src={profile.avatar_url ?? "/images/profile.jpg"} alt={profile.name} width={800} height={800} priority sizes="(max-width: 700px) 140px, 330px" />
+        </div>
+        <p className="portrait-location"><MapPin size={14} />{profile.location}</p>
+        <p className="portrait-note">Backend depth.<br /> Product ownership.<br /> A habit of shipping.</p>
+        <div className="hero-socials">{profile.socials.filter((social) => ["GitHub", "LinkedIn"].includes(social.label) && safeHref(social.href)).map((social) => <a key={social.label} href={safeHref(social.href)} target="_blank" rel="noopener noreferrer">{social.label}<ArrowUpRight size={13} /></a>)}</div>
+      </aside>
+      <dl className="proof-strip">
+        <div><dt>3.5 years</dt><dd>Production experience at LII Lab</dd></div>
+        <div><dt>93+ releases</dt><dd>Contributed across the LII Lab tenure</dd></div>
+        <div><dt>End to end</dt><dd>Backend, mobile and product delivery</dd></div>
+      </dl>
+    </section>
+  );
 }

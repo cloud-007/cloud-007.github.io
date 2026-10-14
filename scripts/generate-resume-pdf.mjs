@@ -19,8 +19,9 @@ const PORT = 3099;
 const snapshot = JSON.parse(
   readFileSync(join(ROOT, "src/data/snapshot.json"), "utf8")
 );
-const siteName = snapshot?.profile?.name ?? "Mazharul Islam";
-const siteRole = snapshot?.profile?.role ?? "Product Engineer";
+const editorial = JSON.parse(readFileSync(join(ROOT, "src/data/editorial.json"), "utf8"));
+const siteName = editorial.profile?.name ?? snapshot?.profile?.name ?? "Mazharul Islam";
+const siteRole = editorial.profile?.role ?? snapshot?.profile?.role ?? "Software & Product Engineer";
 
 // Each entry renders one route to a PDF written into both out/ and public/.
 //

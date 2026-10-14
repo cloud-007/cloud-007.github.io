@@ -29,14 +29,14 @@ export default function AboutPage() {
   return (
     <div className="min-h-screen bg-zinc-950">
       <Header />
-      <main>
+      <main id="main-content">
         <Hero />
         <Divider />
         <Experience />
         <Divider />
-        <Skills />
-        <Divider />
         <Projects />
+        <Divider />
+        <Skills />
         <Divider />
         <Achievements />
         <Divider />

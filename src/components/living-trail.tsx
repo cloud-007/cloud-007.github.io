@@ -11,9 +11,6 @@ import {
     ChevronDown,
     Mountain,
     Lightbulb,
-    TrendingUp,
-    TrendingDown,
-    MoveRight,
     Users,
     ExternalLink,
     Clock,
@@ -101,16 +98,10 @@ const SKY_LABEL: Record<SkyKind, string> = {
 };
 
 function skyGradient(w: Weather): string {
-    if (!w.isDay) return "linear-gradient(to bottom, #020617, #0f172a 55%, #1e293b)";
-    switch (w.kind) {
-        case "clear":
-            return "linear-gradient(to bottom, #0c4a6e, #0369a1 50%, #7dd3fc)";
-        case "clouds":
-            return "linear-gradient(to bottom, #1e293b, #334155 55%, #64748b)";
-        case "rain":
-        case "thunder":
-            return "linear-gradient(to bottom, #0f172a, #1e293b 55%, #475569)";
-    }
+    if (!w.isDay) return "radial-gradient(ellipse at 50% 18%, #315446, #172e23 65%, #112319)";
+    return w.kind === "clear"
+        ? "radial-gradient(ellipse at 45% 10%, #617d65, #324e3c 60%, #1f3828)"
+        : "radial-gradient(ellipse at 50% 5%, #4c6657, #2d4435 65%, #1c3022)";
 }
 
 /* ── Weather overlays ── */
@@ -173,37 +164,7 @@ function StarsLayer() {
 }
 
 function CloudsLayer({ dense }: { dense: boolean }) {
-    const clouds = useMemo(() => {
-        const rand = seeded("clouds");
-        return Array.from({ length: dense ? 5 : 3 }, (_, i) => ({
-            id: i,
-            top: 4 + rand() * 22,
-            scale: 0.8 + rand() * 1.4,
-            duration: 60 + rand() * 50,
-            delay: -rand() * 60,
-            opacity: dense ? 0.5 : 0.3,
-        }));
-    }, [dense]);
-    return (
-        <div className="absolute inset-0 overflow-hidden pointer-events-none" aria-hidden>
-            {clouds.map((c) => (
-                <Cloud
-                    key={c.id}
-                    className="trail-cloud text-slate-300"
-                    style={{
-                        top: `${c.top}%`,
-                        width: 70 * c.scale,
-                        height: 44 * c.scale,
-                        opacity: c.opacity,
-                        animationDuration: `${c.duration}s`,
-                        animationDelay: `${c.delay}s`,
-                    }}
-                    fill="currentColor"
-                    strokeWidth={0}
-                />
-            ))}
-        </div>
-    );
+    return <div className={`tree-haze ${dense ? "tree-haze-dense" : ""}`} aria-hidden="true" />;
 }
 
 /* ── Filter chip ── */
@@ -456,16 +417,16 @@ export function LivingTrail() {
     const growingSince = profile?.growing_since ?? 1999;
     const years = mounted ? new Date().getFullYear() - growingSince : null;
 
-    /* Deterministic seed: the same trail data always grows the same tree. */
+    /* A stable identity seed keeps the same tree as new milestones are added. */
     const seed = useMemo(() => {
         let h = 2166136261;
-        const key = entries.map((e) => e.date).join();
+        const key = profile?.handle ?? profile?.name ?? "mazharul";
         for (let i = 0; i < key.length; i++) {
             h ^= key.charCodeAt(i);
             h = Math.imul(h, 16777619);
         }
         return (h >>> 0) % 100000;
-    }, [entries]);
+    }, [profile?.handle, profile?.name]);
 
     const latitude = profile?.latitude ?? 51.71905;
     const longitude = profile?.longitude ?? 8.75439;
@@ -560,28 +521,16 @@ export function LivingTrail() {
         return match ? [match[1], match[2]] : [belief, ""];
     }, [belief]);
 
-    const trend = growth?.trend ?? "steady";
-    const TrendIcon =
-        trend === "growing"
-            ? TrendingUp
-            : trend === "declining"
-              ? TrendingDown
-              : MoveRight;
-    const trendStyle =
-        trend === "growing"
-            ? "text-emerald-300 bg-emerald-500/10 border-emerald-500/25"
-            : trend === "declining"
-              ? "text-amber-300 bg-amber-500/10 border-amber-500/25"
-              : "text-zinc-300 bg-zinc-500/10 border-zinc-500/25";
-
     const filtering = Boolean(domain || trait);
 
     return (
         // Not using .section here: its padding-top would override the larger
         // clearance needed below the fixed navbar.
         <section id="trail" className="px-4 pb-20 pt-36 md:pt-40">
-            <div className="max-w-5xl mx-auto">
+            <div className="max-w-6xl mx-auto">
                 {/* Creed, his own words, above the tree */}
+                <h1 className="text-3xl md:text-5xl font-semibold tracking-tight text-center mb-4">The growth trail</h1>
+                <p className="text-center text-zinc-400 text-sm max-w-xl mx-auto mb-12">Work, learning and community, connected by the values underneath.</p>
                 <figure className="relative max-w-3xl mx-auto text-center mb-12 px-2">
                     <span
                         aria-hidden
@@ -612,9 +561,10 @@ export function LivingTrail() {
                 </figure>
 
                 {/* Sky + tree */}
-                <div className="bento-card overflow-hidden relative">
+                <div className="tree-composition bento-card overflow-hidden relative">
+                    <div className="tree-canvas-panel">
                     <div
-                        className="relative transition-[background] duration-1000"
+                        className="scene-chrome relative transition-[background] duration-1000"
                         style={{ background: skyGradient(weather) }}
                     >
                         {!weather.isDay && <StarsLayer />}
@@ -647,7 +597,7 @@ export function LivingTrail() {
 
                         <div
                             ref={sceneWrapRef}
-                            className="relative w-full h-[440px] md:h-[580px]"
+                            className="tree-viewport relative w-full"
                         >
                             <div className="absolute inset-0">
                                 {nearViewport ? (
@@ -657,25 +607,14 @@ export function LivingTrail() {
                                         chaptersCount={chapters.length}
                                         rootsCount={profile?.roots.length ?? 5}
                                         years={years ?? 27}
-                                        vitality={growth?.vitality ?? 0.85}
+                                        vitality={0.78 + (growth?.vitality ?? 0.85) * 0.22}
                                         isDay={weather.isDay}
                                     />
                                 ) : (
                                     <TreeLoading />
                                 )}
                             </div>
-                                {/* Named roots, anchored over the soil */}
-                                <div className="absolute bottom-3 left-0 right-0 flex justify-center gap-x-6 gap-y-1 flex-wrap px-4 pointer-events-none">
-                                    {(profile?.roots ?? []).map((label) => (
-                                        <span
-                                            key={label}
-                                            className="text-[13px] font-semibold tracking-wide"
-                                            style={{ color: "rgba(190, 168, 140, 0.75)" }}
-                                        >
-                                            {label}
-                                        </span>
-                                    ))}
-                                </div>
+
                         </div>
 
                         {(weather.kind === "rain" || weather.kind === "thunder") && (
@@ -683,40 +622,32 @@ export function LivingTrail() {
                         )}
                     </div>
 
+                    </div>
+                    <aside className="tree-story">
+                        <p className="work-category">A life with several branches</p>
+                        <h2>Built on more than code.</h2>
+                        <p>Products, classrooms and communities have all shaped how I work. Explore a branch to see the milestones behind it.</p>
+                        <div className="tree-branches">
+                            {[
+                                { slug: "built", label: "Products & tools" },
+                                { slug: "work", label: "Engineering work" },
+                                { slug: "education", label: "Learning" },
+                                { slug: "community", label: "Community" },
+                                { slug: "content", label: "Teaching & explaining" },
+                            ].map((branch) => <button key={branch.slug} type="button" aria-pressed={domain === branch.slug} onClick={() => {
+                                setDomain(branch.slug); setTrait(null); setOpen(true);
+                                requestAnimationFrame(() => document.getElementById("trail-timeline")?.scrollIntoView({ behavior: window.matchMedia("(prefers-reduced-motion: reduce)").matches ? "instant" : "smooth", block: "start" }));
+                            }}><span>{branch.label}</span><span>{entries.filter((entry) => entry.domain === branch.slug).length}<ChevronDown size={12} /></span></button>)}
+                        </div>
+                        <div className="tree-values"><h3>What keeps me grounded</h3><ul>{(profile?.roots ?? []).map((root) => <li key={root}>{root}</li>)}</ul></div>
+                    </aside>
                     {/* Stats bar */}
-                    <div className="flex flex-wrap items-center justify-between gap-3 px-5 py-4 border-t border-zinc-800 bg-zinc-900/60">
+                    <div className="tree-caption flex flex-wrap items-center justify-between gap-3 px-5 py-4 border-t border-zinc-800 bg-zinc-900/60">
                         <div className="flex flex-wrap items-center gap-x-3 gap-y-2">
                             <p className="text-zinc-400 text-sm" suppressHydrationWarning>
-                                <span className="text-emerald-300 font-semibold">
-                                    Growing for {years ?? "27"} years
-                                </span>
-                                {" · "}
-                                {entries.length} entries
-                                {growth &&
-                                    growth.daysSinceLastEntry >= 0 &&
-                                    ` · last grew ${
-                                        growth.daysSinceLastEntry === 0
-                                            ? "today"
-                                            : growth.daysSinceLastEntry === 1
-                                              ? "yesterday"
-                                              : `${growth.daysSinceLastEntry} days ago`
-                                    }`}
+                                <span className="text-emerald-300 font-semibold">{entries.length} milestones documented</span>
+                                {entries[0] && ` · Latest entry: ${formatEntryRange(entries[0])}`}
                             </p>
-                            {growth && (
-                                <span
-                                    className={`inline-flex items-center gap-1.5 px-2.5 py-1 border rounded-full text-xs font-semibold ${trendStyle}`}
-                                    title={`History ${Math.round(growth.lifetimeScore)} of 50, momentum ${Math.round(growth.momentumScore)} of 50. Momentum compares the last 90 days against the 90 before.`}
-                                >
-                                    <TrendIcon className="w-3.5 h-3.5" />
-                                    Growth index {growth.score}
-                                    {" · "}
-                                    {trend === "growing"
-                                        ? "growing"
-                                        : trend === "declining"
-                                          ? "slowing down"
-                                          : "steady"}
-                                </span>
-                            )}
                         </div>
                         <button
                             type="button"
@@ -736,6 +667,7 @@ export function LivingTrail() {
                 {/* Timeline, clustered by chapter */}
                 <div
                     id="trail-timeline"
+                    inert={!open}
                     className={`grid transition-all duration-500 ease-in-out ${
                         open
                             ? "grid-rows-[1fr] opacity-100 mt-4"

@@ -1,6 +1,5 @@
 "use client";
 
-import { useRef, useEffect } from "react";
 import Link from "next/link";
 import { useSiteContent } from "@/lib/use-content";
 import { safeHref } from "@/lib/content";
@@ -30,30 +29,6 @@ function ExtIcon() {
 
 export default function ResumePage() {
   const { content } = useSiteContent();
-  const paperRef = useRef<HTMLDivElement>(null);
-  const wrapRef = useRef<HTMLDivElement>(null);
-
-  useEffect(() => {
-    const scale = () => {
-      const paper = paperRef.current;
-      const wrap = wrapRef.current;
-      if (!paper || !wrap) return;
-      const available = wrap.clientWidth;
-      const s = Math.min(1, available / 850);
-      if (s < 1) {
-        paper.style.transform = `scale(${s})`;
-        paper.style.transformOrigin = "top left";
-        wrap.style.height = `${paper.offsetHeight * s}px`;
-      } else {
-        paper.style.transform = "";
-        wrap.style.height = "";
-      }
-    };
-    scale();
-    window.addEventListener("resize", scale);
-    return () => window.removeEventListener("resize", scale);
-  }, []);
-
   const profile = content.profile;
   const skills = content.skills.filter((s) => s.context === "resume");
   const resumeProjects = content.projects.filter((p) => p.on_resume && !p.teaser);
@@ -62,7 +37,7 @@ export default function ResumePage() {
   const wins = content.entries
     .filter((e) => !e.teaser && e.traits.includes("won"))
     .slice()
-    .sort((a, b) => b.date.localeCompare(a.date));
+    .sort((a, b) => b.date.localeCompare(a.date)).slice(0, 3);
 
   /* Rendered as-is if the database is unreachable AND the snapshot is empty,
      which should never happen, but an empty page is worse than a message. */
@@ -140,7 +115,7 @@ export default function ResumePage() {
 
         /* ── A4 paper card ── */
         .rp-paper {
-          width: 850px;
+          width: 100%;
           background: #fff;
           padding: 2.1rem 2.6rem 2.4rem;
           box-shadow: 0 2px 12px rgba(0,0,0,0.13);
@@ -240,6 +215,18 @@ export default function ResumePage() {
 
         .rp-gpa { font-weight: 700; color: #1B2A4A; }
 
+        @media screen and (max-width: 600px) {
+          .rp-root { padding: 1rem 0.75rem 2rem; }
+          .rp-paper { padding: 1.5rem 1.1rem; }
+          .rp-name { font-size: 1.5rem; }
+          .rp-contact { overflow-wrap: anywhere; }
+          .rp-summary { text-align: left; hyphens: none; }
+          .rp-block-row, .rp-block-sub, .rp-proj-header { flex-direction: column; align-items: flex-start; gap: 0.15rem; }
+          .rp-cp-grid { grid-template-columns: minmax(0,1fr); }
+          .rp-proj-link { overflow-wrap: anywhere; }
+          .rp-toolbar { flex-wrap: wrap; }
+        }
+
         /* ── Print ── */
         @media print {
           @page { size: A4; margin: 0.55in; }
@@ -262,6 +249,9 @@ export default function ResumePage() {
           .rp-header { margin-bottom: 0.6rem; padding-bottom: 0.45rem; }
 
           .rp-section { margin-bottom: 0.5rem; }
+          .rp-projects { break-before: page; }
+          .rp-cp-grid { display: block; }
+          .rp-cp-item { margin-bottom: 0.18rem; }
           .rp-section-head { font-size: 9pt; letter-spacing: 0.1em; break-after: avoid; }
           .rp-rule { margin-bottom: 0.35rem; break-after: avoid; }
 
@@ -307,8 +297,8 @@ export default function ResumePage() {
         </div>
 
         {/* Paper wrap */}
-        <div className="rp-paper-wrap" ref={wrapRef}>
-          <div className="rp-paper" ref={paperRef}>
+        <div className="rp-paper-wrap">
+          <div className="rp-paper">
 
             <header className="rp-header">
               <h1 className="rp-name">{profile.name}</h1>
@@ -389,8 +379,8 @@ export default function ResumePage() {
             )}
 
             {resumeProjects.length > 0 && (
-              <section className="rp-section">
-                <h2 className="rp-section-head">Projects</h2>
+              <section className="rp-section rp-projects">
+                <h2 className="rp-section-head">Selected projects</h2>
                 <hr className="rp-rule" />
                 {resumeProjects.map((p) => {
                   const href = safeHref(p.live_url ?? p.repo_url);
@@ -433,18 +423,16 @@ export default function ResumePage() {
                   )}
                   {wins.map((w) => (
                     <div className="rp-cp-item" key={w.id || w.slug}>
-                      {w.outcome && <b>{w.outcome}</b>}
-                      {w.outcome ? ", " : ""}
                       {w.title}
                     </div>
                   ))}
                   {content.judges.length > 0 && (
                     <div className="rp-cp-item">
-                      {content.judges.map((j, i) => (
+                      {content.judges.slice(0, 2).map((j, i) => (
                         <span key={j.id}>
                           <a href={safeHref(j.url) ?? "#"} target="_blank" rel="noopener noreferrer">{j.name}</a>
                           {j.rating ? ` (${j.rating})` : ""}
-                          {i < content.judges.length - 1 ? " \u00b7 " : ""}
+                          {i < Math.min(content.judges.length, 2) - 1 ? " \u00b7 " : ""}
                         </span>
                       ))}
                     </div>
@@ -484,7 +472,7 @@ export default function ResumePage() {
               <section className="rp-section">
                 <h2 className="rp-section-head">Volunteering</h2>
                 <hr className="rp-rule" />
-                {content.volunteering.map((v) => (
+                {content.volunteering.slice(0, 2).map((v) => (
                   <div className="rp-block" key={v.id}>
                     <div className="rp-block-row">
                       <span className="rp-co">{v.org}</span>
@@ -493,9 +481,7 @@ export default function ResumePage() {
                       <span className="rp-role">{v.title}</span>
                       <span className="rp-dates">{v.period}</span>
                     </div>
-                    <ul className="rp-ul">
-                      {v.bullets.map((b, i) => <li key={i}>{b}</li>)}
-                    </ul>
+
                   </div>
                 ))}
               </section>

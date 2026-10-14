@@ -30,12 +30,12 @@ export function Volunteering() {
               className="bento-card p-7 hover:border-zinc-600 transition-colors"
             >
               {/* Header */}
-              <div className="flex items-start justify-between gap-3 mb-4">
-                <div className="flex items-start gap-3">
+              <div className="flex flex-col items-start gap-3 mb-4">
+                <div className="flex min-w-0 items-start gap-3">
                   <div className="w-9 h-9 bg-emerald-500/10 border border-emerald-500/20 rounded-xl flex items-center justify-center shrink-0 mt-0.5">
                     <Users className="w-4 h-4 text-emerald-400" />
                   </div>
-                  <div>
+                  <div className="min-w-0">
                     <h3 className="text-zinc-50 font-bold text-base leading-tight">
                       {role.title}
                     </h3>

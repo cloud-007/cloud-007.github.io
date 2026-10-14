@@ -1,8 +1,9 @@
 # Mazharul Islam, Portfolio
 
-A personal portfolio built around the **Living Trail**: a 3D growth tree whose
-canopy and roots are driven by a real growth algorithm and live weather. Built
-with Next.js 16 (App Router, static export) and deployed to GitHub Pages.
+A portfolio for Mazharul Islam, a software and product engineer based in Paderborn.
+The homepage introduces selected work; `/about` holds the full professional profile,
+`/work/[slug]` contains case studies, and `/trail` keeps the personal growth story.
+Built with Next.js 16 (App Router, static export) and deployed to GitHub Pages.
 
 **Live:** [cloud-007.github.io](https://cloud-007.github.io)
 
@@ -13,19 +14,26 @@ with Next.js 16 (App Router, static export) and deployed to GitHub Pages.
   a matching root system is hard-clipped at the soil line so it reads as one
   continuous form. The heavy scene is code-split and only mounts as it nears the
   viewport, with the canopy painted first and the roots built in an idle callback.
-- **Growth algorithm** ([`src/lib/growth.ts`](src/lib/growth.ts)): every entry
-  in the trail is weighted by type and decayed on a 45-day half-life. A
-  recency-weighted **growth index (0–100)** and **trend** (growing / steady /
-  declining) are computed client-side and drive how lush and green the tree is
-  drawn. History builds a floor; recent activity supplies the momentum.
-- **Live weather**: the sky over Sylhet is pulled from [Open-Meteo](https://open-meteo.com)
+- **Living oak**: a balanced canopy, visible root hierarchy, automatic camera
+  fitting, restrained wind, an illustrated fallback for unavailable WebGL, and
+  readable branch controls for products, work, learning, community and teaching.
+  The labels report documented milestones, not a score of personal worth.
+  Accumulated work keeps the canopy healthy through quiet posting periods.
+- **Live weather**: the sky over Paderborn is pulled from [Open-Meteo](https://open-meteo.com)
   (no API key), rendering clear / cloudy / rain / storm and day/night states,
   with a calm default sky when offline.
-- **Database-driven, end to end**: every word on the site comes from Supabase.
-  The browser can only reach `public_*` views filtered to `visibility = 'public'`,
-  so a private entry, a redacted company name or an unlaunched project never
-  leaves the database. A build-time snapshot is committed as a fallback, so the
-  site renders instantly and survives an outage. See [`supabase/SETUP.md`](supabase/SETUP.md).
+- **Public data with reviewed editorial copy**: Supabase `public_*` views and
+  `src/data/snapshot.json` supply public records. `src/data/editorial.json` holds
+  reviewed profile copy, corrections and new public projects. The same composition
+  runs over the snapshot and live response, so stale data cannot undo a correction.
+  Existing teaser rows remain redacted. One provider shares the refresh across
+  sections. See [`supabase/SETUP.md`](supabase/SETUP.md).
+- **System, light and dark themes**: semantic colors, remembered selection and
+  an early theme script to avoid a wrong-theme flash. Keyboard focus and reduced
+  motion are supported.
+- **Selected work**: three case studies identify responsibility, context and
+  technical decisions. SushiLab uses a screenshot of its public website; the
+  other visuals are labeled workflow overviews, not simulated product screenshots.
 - **Two-axis filtering**: every timeline entry carries a life chapter, a domain
   (education, contests, community, work, built, content, interviews, network,
   writing) and one or more CV competency traits (built, shipped, founded, led,
@@ -60,6 +68,8 @@ pnpm dev          # http://localhost:3000
 | `pnpm generate-pdf` | Regenerate the résumé PDF(s) (needs Chrome; see below) |
 | `pnpm snapshot` | Regenerate the committed public snapshot from Supabase |
 | `pnpm typecheck` | Run `tsc --noEmit` |
+| `pnpm test:content` | Check editorial composition, deduplication and teaser redaction |
+| `pnpm test:links` | Check the URL scheme allowlist |
 | `pnpm start` | Serve a production build |
 | `pnpm lint` | Run ESLint |
 
@@ -79,9 +89,11 @@ Pages is configured with **Settings → Pages → Source = GitHub Actions**.
 src/
 ├── app/
 │   ├── layout.tsx            # Root layout + metadata
-│   ├── globals.css           # Theme (dark, emerald accent)
-│   ├── page.tsx              # Home, the Living Trail
+│   ├── globals.css           # Semantic light/dark theme and responsive styles
+│   ├── page.tsx              # Professional introduction and selected work
 │   ├── about/page.tsx        # Full profile (hero, experience, skills, …)
+│   ├── trail/page.tsx        # Personal journey and living tree
+│   ├── work/[slug]/page.tsx  # Static case-study pages
 │   └── resume/page.tsx       # Printable résumé (rendered to PDF at build)
 ├── components/
 │   ├── living-trail.tsx      # Trail section: creed, sky, tree, filters, timeline
@@ -91,7 +103,7 @@ src/
 │   └── achievements.tsx · education.tsx · volunteering.tsx
 ├── lib/
 │   ├── content.ts            # Types + PostgREST reads of the public_* views
-│   ├── use-content.ts        # Snapshot first, live data second
+│   ├── use-content.tsx       # Shared snapshot-first provider with reviewed copy
 │   ├── growth.ts             # Growth-index + vitality algorithm
 │   └── utils.ts
 └── data/
@@ -112,3 +124,20 @@ scripts/
 ## License
 
 All rights reserved. © Md. Mazharul Islam Emon.
+
+## Editing reviewed copy
+
+Edit `src/data/editorial.json` for the current professional profile, reviewed
+project/experience corrections, selected explainers and public additions. Existing
+records are patched by their public IDs; project additions are deduplicated by ID
+or name. Teaser rows are never expanded by an editorial patch. Add only material
+intended for this public portfolio. Do not copy private seeds, account screenshots
+or application records into these files.
+
+`src/data/case-studies.ts` contains the three project narratives and workflow
+labels. Keep responsibility and project status explicit. The screenshot in
+`public/images/work/` comes from the public SushiLab homepage, captured October 2026.
+
+The raw Supabase snapshot generator remains unchanged. The editorial layer applies
+after both snapshot import and live refresh, including the web resume and build-time
+metadata. The formal `/resume-professional` document remains a separate academic CV.

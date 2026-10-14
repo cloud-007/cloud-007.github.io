@@ -66,7 +66,7 @@ export function Skills() {
             Technical Skills
           </h2>
           <p className="text-zinc-500 mt-2 text-sm">
-            Tools and technologies I use to build scalable systems
+            Technologies used across the work above.
           </p>
         </div>
 
@@ -86,7 +86,7 @@ export function Skills() {
                   >
                     <Icon className={`w-4.5 h-4.5 ${accent.color}`} />
                   </div>
-                  <h3 className="text-sm font-bold text-zinc-200 uppercase tracking-widest">
+                  <h3 className="text-sm font-semibold text-zinc-200">
                     {cat.group}
                   </h3>
                 </div>

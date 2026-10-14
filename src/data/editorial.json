@@ -1,0 +1,439 @@
+{
+  "reviewedAt": "2026-10-14",
+  "headline": "Building products from idea to production.",
+  "availability": "Open to software, backend and applied AI opportunities.",
+  "profile": {
+    "role": "Software & Product Engineer",
+    "bio": "I build Python backends, web and mobile applications, and applied AI workflows. Previously Senior Software Engineer at LII Lab, with 3.5 years of production experience. Now based in Paderborn, Germany, studying M.Sc. Computer Science and building independent software products.",
+    "core_stack": [
+      "Python",
+      "Django",
+      "FastAPI",
+      "PostgreSQL",
+      "Redis",
+      "Celery",
+      "Flutter",
+      "Next.js",
+      "TypeScript"
+    ],
+    "creed_practice": "Keep learning. Keep building. A little better every day."
+  },
+  "projectPatches": [
+    {
+      "id": "bf44ef39-1e77-4884-b781-a53d2dbc5223",
+      "period": "Oct 2024 – Apr 2026",
+      "description": null,
+      "highlights": [],
+      "technologies": [],
+      "tagline": "IELTS preparation platform"
+    },
+    {
+      "id": "efd3472b-f662-4771-87be-991a14e0cdf2",
+      "period": "May 2023 – Apr 2026",
+      "description": "Developed the Flutter learning application and Python assessment services for PTE preparation as part of the LII Lab engineering team.",
+      "highlights": [
+        "Built timed practice, audio recording and reusable mock-test workflows.",
+        "Connected spoken and written assessment workflows to scoring services.",
+        "Implemented purchase verification and transaction deduplication.",
+        "Contributed to 93+ production releases across the full November 2022–April 2026 LII Lab tenure."
+      ],
+      "technologies": [
+        "Flutter",
+        "Dart",
+        "Riverpod",
+        "Python",
+        "Django",
+        "PostgreSQL",
+        "Redis",
+        "Celery",
+        "Firebase"
+      ]
+    },
+    {
+      "id": "59d7f854-bcdd-4819-816a-ecf591a70e82",
+      "period": "2026 – present",
+      "description": "Rebuilt a restaurant’s website around its real operating needs: a clear route from menu to order, confirmations for customers and staff, and a practical initial scope.",
+      "highlights": [
+        "Replaced cluttered navigation with clear routes to the menu, delivery and takeaway.",
+        "Connected orders and reservations to customer confirmations, restaurant email and Telegram alerts.",
+        "Supported French and English, mobile and desktop, schedule-ahead orders and lunch-hour availability.",
+        "Kept the initial scope lean and continued iterating on how customers used the site."
+      ],
+      "technologies": [
+        "Next.js",
+        "React",
+        "TypeScript",
+        "Zustand",
+        "next-intl"
+      ]
+    },
+    {
+      "id": "56509bcd-be98-4c73-be3c-19729339d552",
+      "highlights": [
+        "Computed opening status in Paris time.",
+        "Loaded the map after explicit consent.",
+        "Added LocalBusiness structured data and locale-specific canonical and hreflang links."
+      ]
+    },
+    {
+      "id": "33064fcc-4416-4d87-8f7b-83a7610d5414",
+      "on_resume": false
+    },
+    {
+      "id": "252a3b8b-c9f4-4ffd-9b8f-0d007802366a",
+      "on_resume": false
+    }
+  ],
+  "experiencePatches": [
+    {
+      "id": "a4635d5c-306d-4ebb-be4d-ffad295d3f6f",
+      "summary": "Led backend engineering for OneIELTS and OnePTE at LII Lab.",
+      "bullets": [
+        "Built backend services for assessment, content management and subscriptions.",
+        "Implemented tenant isolation, custom domain routing and configurable scoring for a short-lived institute-focused version of OneIELTS.",
+        "Integrated speech recognition, pronunciation assessment and NLP services.",
+        "Implemented subscription billing across five providers with idempotent payment webhooks.",
+        "Added API monitoring with Prometheus and Grafana; reviewed code and supported junior engineers."
+      ],
+      "stack": [
+        "Python",
+        "Django",
+        "FastAPI",
+        "PostgreSQL",
+        "Redis",
+        "Celery",
+        "Prometheus",
+        "Grafana"
+      ]
+    },
+    {
+      "id": "496ebda1-3cfd-42e4-9666-3a62670d7679",
+      "summary": "Developed Flutter learning applications and Django assessment services.",
+      "bullets": [
+        "Built practice and mock-test workflows with audio recording, timed progression and score breakdowns.",
+        "Connected mobile clients to assessment APIs and implemented purchase verification.",
+        "Built question-bank administration and learning analytics.",
+        "Contributed to 93+ production releases across the full November 2022–April 2026 LII Lab tenure."
+      ],
+      "stack": [
+        "Flutter",
+        "Dart",
+        "Riverpod",
+        "Python",
+        "Django",
+        "PostgreSQL",
+        "Firebase"
+      ]
+    }
+  ],
+  "entryPatches": [
+    {
+      "slug": "graduated",
+      "date": "2023-07-01",
+      "precision": "month",
+      "note": "B.Sc. in Computer Science and Engineering, awarded July 2023. The final-year project defence took place in March 2023.",
+      "title": "B.Sc. in Computer Science and Engineering awarded"
+    },
+    {
+      "slug": "convocation-2026",
+      "title": "Attended my B.Sc. convocation",
+      "note": "Returned to Leading University for the January 2026 ceremony after completing the degree awarded in July 2023."
+    },
+    {
+      "slug": "liilab-three-years",
+      "title": "Approaching three years at LII Lab",
+      "note": "Joined in November 2022. By October 2025, I was maintaining the systems I had helped build and seeing the long-term effects of those decisions."
+    },
+    {
+      "slug": "interview-ai-engineer-2026",
+      "title": "Built Grounded Legal Drafting for an AI Engineer take-home",
+      "note": "Built a document-to-draft workflow linking generated claims to source spans, pages and evidence regions, with parsing, OCR, hybrid retrieval and an evidence-review interface.",
+      "obstacle": "Working in an unfamiliar domain under a three-day deadline.",
+      "learning": "Building a working system and explaining its architectural tradeoffs require separate preparation.",
+      "outcome": "Interview take-home",
+      "links": [
+        {
+          "label": "GitHub",
+          "url": "https://github.com/cloud-007/grounded-legal-drafting"
+        }
+      ]
+    },
+    {
+      "slug": "oneielts-multi-tenancy",
+      "title": "Built an institute-focused version of OneIELTS",
+      "note": "Developed tenant isolation, custom domain routing and configurable scoring for an institute-focused version of OneIELTS. This version was used briefly.",
+      "outcome": "Short-lived product iteration",
+      "obstacle": null,
+      "learning": null
+    }
+  ],
+  "newProjects": [
+    {
+      "id": "grounded-legal-drafting",
+      "name": "Grounded Legal Drafting",
+      "tagline": "Document-to-draft workflow with traceable evidence",
+      "category": "personal",
+      "period": "2026",
+      "description": "An AI Engineer take-home project that connects generated claims to source spans, pages and evidence regions.",
+      "highlights": [
+        "Built parsing, entity extraction and hybrid vector/keyword retrieval.",
+        "Checked generated claims against supporting evidence.",
+        "Captured operator edits and reused style rules during regeneration."
+      ],
+      "technologies": [
+        "Python",
+        "FastAPI",
+        "SQLite",
+        "OCR",
+        "Gradio"
+      ],
+      "live_url": null,
+      "repo_url": "https://github.com/cloud-007/grounded-legal-drafting",
+      "teaser": false,
+      "on_resume": true
+    },
+    {
+      "id": "crosspost",
+      "name": "crosspost",
+      "tagline": "Publishing that can resume after partial failure",
+      "category": "personal",
+      "period": "2026",
+      "description": "A CLI for validating media and publishing to YouTube, Facebook and Instagram, with a per-account ledger for safe retries.",
+      "highlights": [
+        "Validated media and platform requirements before uploading.",
+        "Added dry-run previews to inspect the intended publication.",
+        "Tracked successful posts so retries can resume without repeating completed uploads."
+      ],
+      "technologies": [
+        "Python",
+        "OAuth",
+        "YouTube API",
+        "Meta APIs"
+      ],
+      "live_url": null,
+      "repo_url": "https://github.com/cloud-007/crosspost",
+      "teaser": false,
+      "on_resume": true
+    }
+  ],
+  "newExperience": [
+    {
+      "id": "independent-engineering",
+      "company": "Independent projects & client work",
+      "company_url": null,
+      "role": "Independent Product Engineer",
+      "location": "Paderborn, Germany",
+      "start_date": "2026-05-01",
+      "end_date": null,
+      "summary": "Building and maintaining web products and applied AI tools alongside independent technical education. Client delivery, personal projects and interview take-homes are identified separately in the work below.",
+      "bullets": [
+        "Delivered SushiLab, a bilingual restaurant ordering website, and continued improving its ordering flows.",
+        "Built a document-to-draft workflow with source-linked evidence for an AI Engineer take-home.",
+        "Built crosspost with media validation, dry-run previews and resumable publishing.",
+        "Create technical explainers as theainativeengineer."
+      ],
+      "stack": [
+        "Python",
+        "FastAPI",
+        "Next.js",
+        "TypeScript",
+        "LLM APIs"
+      ],
+      "links": [
+        {
+          "label": "SushiLab",
+          "href": "https://sushilabrestaurant.com"
+        },
+        {
+          "label": "Selected work",
+          "href": "/#projects"
+        }
+      ]
+    }
+  ],
+  "newEntries": [
+    {
+      "id": "sushilab-pickup-offer",
+      "slug": "sushilab-pickup-offer",
+      "date": "2026-10-13",
+      "end_date": null,
+      "precision": "day",
+      "chapter": "leading",
+      "domain": "built",
+      "type": "milestone",
+      "title": "Extended SushiLab with a pickup-only offer",
+      "note": "Added a localized buy-one-get-one offer to the restaurant ordering flow, keeping pickup eligibility separate from delivery and carrying the offer into cart and order details.",
+      "obstacle": null,
+      "learning": "A promotion changes more than the menu card. Its rules need to agree across the cart, totals and order details.",
+      "org": "Sushi Lab",
+      "outcome": "Product maintenance",
+      "people": [],
+      "links": [
+        {
+          "label": "Website",
+          "url": "https://sushilabrestaurant.com"
+        }
+      ],
+      "teaser": false,
+      "traits": [
+        "built",
+        "shipped"
+      ],
+      "primary_trait": "shipped"
+    }
+  ],
+  "skillPatches": [
+    {
+      "id": "0aa18cac-738e-4ae7-b891-f9dffce366a1",
+      "group": "Backend engineering",
+      "items": [
+        "Python",
+        "Django",
+        "Django REST Framework",
+        "FastAPI",
+        "PostgreSQL",
+        "Redis",
+        "Celery"
+      ]
+    },
+    {
+      "id": "7ded25cd-22c4-4560-8c81-b1aa338e44f7",
+      "group": "Mobile and frontend",
+      "items": [
+        "Flutter",
+        "Dart",
+        "Riverpod",
+        "Next.js",
+        "React",
+        "TypeScript"
+      ]
+    },
+    {
+      "id": "cf984907-7f28-473e-8c5a-4b15d3854983",
+      "group": "Ai and speech systems",
+      "items": [
+        "Speech evaluation",
+        "LLM API integration",
+        "OCR pipelines",
+        "Hybrid retrieval",
+        "Structured outputs"
+      ]
+    },
+    {
+      "id": "4296d64e-7e0a-443d-b809-2fbd2e09407e",
+      "group": "Infrastructure and cloud",
+      "items": [
+        "Git",
+        "Docker",
+        "Google Cloud",
+        "Firebase",
+        "Prometheus",
+        "Grafana"
+      ]
+    },
+    {
+      "id": "cb361fc3-5d43-412c-8932-c87866d891e9",
+      "group": "Testing and quality",
+      "items": [
+        "pytest",
+        "pytest-django",
+        "API schema validation",
+        "Flutter unit testing"
+      ]
+    },
+    {
+      "id": "6d1c1f1b-7639-4c31-b4b4-2dea5a797dbd",
+      "group": "Engineering practices",
+      "items": [
+        "System design",
+        "API design",
+        "Code review",
+        "Payment integration",
+        "AI-assisted development"
+      ]
+    },
+    {
+      "id": "f8309550-6804-4c53-8151-bec0570b41c5",
+      "group": "Languages and Frameworks",
+      "items": [
+        "Python",
+        "Django",
+        "FastAPI",
+        "Flutter",
+        "Next.js",
+        "TypeScript"
+      ]
+    },
+    {
+      "id": "786b32b8-b1df-49f7-bb24-862fb284a7a5",
+      "group": "Databases and Messaging",
+      "items": [
+        "PostgreSQL",
+        "Redis",
+        "Celery"
+      ]
+    },
+    {
+      "id": "fcc1751d-ff29-4485-8659-b8b21aa6e473",
+      "group": "AI and NLP",
+      "items": [
+        "Speech evaluation",
+        "LLM APIs",
+        "OCR",
+        "Hybrid retrieval",
+        "Structured outputs"
+      ]
+    },
+    {
+      "id": "b70a442c-1add-4729-b637-045037ee5b12",
+      "group": "Infrastructure and DevOps",
+      "items": [
+        "Git",
+        "Docker",
+        "Google Cloud",
+        "Firebase",
+        "Prometheus",
+        "Grafana"
+      ]
+    },
+    {
+      "id": "2b4dc685-ca02-4a3a-9216-24327cf0721b",
+      "group": "AI-Assisted Development",
+      "items": [
+        "Claude Code",
+        "Cursor",
+        "Agentic workflows"
+      ]
+    }
+  ],
+  "explainers": [
+    {
+      "title": "How do I make a request safe to retry?",
+      "topic": "Idempotency and retries",
+      "url": "https://youtube.com/shorts/gieXZC7O-Ls"
+    },
+    {
+      "title": "What happens when 1M users hit your API?",
+      "topic": "Load and scaling",
+      "url": "https://youtube.com/shorts/N2NqH4aLzZg"
+    },
+    {
+      "title": "What does a load balancer do when a server dies?",
+      "topic": "Health checks and failover",
+      "url": "https://youtube.com/shorts/q8yD3gcsmAc"
+    }
+  ],
+  "statPatches": [
+    {
+      "id": "25777cfc-f44a-47e5-aaa5-a5c0684a06fb",
+      "label": "Codeforces peak"
+    },
+    {
+      "id": "33a28408-52ea-4697-8193-58c40d0d4866",
+      "label": "CodeChef peak"
+    }
+  ],
+  "titleOnlyProjects": [
+    "OneIELTS"
+  ]
+}
