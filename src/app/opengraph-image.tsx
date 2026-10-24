@@ -1,10 +1,10 @@
 import { ImageResponse } from "next/og";
-import { siteIdentity } from "@/lib/content";
+import { siteIdentity, snapshotContent } from "@/lib/content";
+import { editorial } from "@/lib/editorial";
 
-/* The card is baked at build time, so it reads the snapshot like the rest of
-   the metadata does. Only the name and role come from data; the layout, the
-   stack chips and the location line are the card's own design. */
+// Use the same reviewed profile and copy as the homepage at build time.
 const { name, role, location } = siteIdentity;
+const profile = snapshotContent.profile;
 
 export const dynamic = "force-static";
 export const alt = `${name} | ${role}`;
@@ -12,16 +12,7 @@ export const size = { width: 1200, height: 630 };
 export const contentType = "image/png";
 
 export default function Image() {
-  const techStack = [
-    "Python",
-    "Django",
-    "PostgreSQL",
-    "Redis",
-    "Flutter",
-    "Next.js",
-    "TypeScript",
-    "FastAPI",
-  ];
+  const techStack = profile?.core_stack ?? [];
 
   return new ImageResponse(
     (
@@ -84,13 +75,13 @@ export default function Image() {
             width: "100%",
             background:
               "linear-gradient(to right, #34d399, #2dd4bf, transparent)",
-            marginBottom: "44px",
+            marginBottom: "28px",
             display: "flex",
           }}
         />
 
         {/* Status badge */}
-        <div
+        {profile?.open_to_work && <div
           style={{
             display: "flex",
             alignItems: "center",
@@ -116,9 +107,9 @@ export default function Image() {
               fontWeight: "600",
             }}
           >
-            Open to new opportunities
+            {editorial.availability}
           </div>
-        </div>
+        </div>}
 
         {/* Name */}
         <div
@@ -132,25 +123,13 @@ export default function Image() {
         >
           <span
             style={{
-              fontSize: "76px",
+              fontSize: name.length > 24 ? "56px" : "72px",
               fontWeight: "800",
               color: "#fafafa",
-              lineHeight: "1",
+              lineHeight: "1.1",
             }}
           >
-            Mazharul
-          </span>
-          <span
-            style={{
-              fontSize: "76px",
-              fontWeight: "800",
-              lineHeight: "1",
-              backgroundImage: "linear-gradient(135deg, #34d399, #2dd4bf)",
-              backgroundClip: "text",
-              color: "transparent",
-            }}
-          >
-            Islam
+            {name}
           </span>
         </div>
 
@@ -167,15 +146,19 @@ export default function Image() {
           {role}
         </div>
 
+        <div style={{ fontSize: "30px", color: "#34d399", marginBottom: "18px" }}>
+          {editorial.headline}
+        </div>
+
         {/* Meta info */}
         <div
           style={{
             fontSize: "16px",
             color: "#52525b",
-            marginBottom: "44px",
+            marginBottom: "28px",
           }}
         >
-          {`Backend / Applied AI · ${location}`}
+          {location}
         </div>
 
         {/* Tech badges */}
@@ -206,6 +189,6 @@ export default function Image() {
         </div>
       </div>
     ),
-    { width: 1200, height: 630 }
+    size
   );
 }
