@@ -299,7 +299,7 @@ export default function ResumeProfessionalPage() {
               <h2 className="rp-section-head">Profile</h2>
               <hr className="rp-rule" />
               <p className="rp-summary">
-                Software engineer with 3.5 years of production experience at LII Lab, now studying Computer Science at Paderborn University. Built Python backends and Flutter applications for IELTS and PTE preparation, including speech scoring, subscription billing and multi-tenant delivery. Recent independent work includes document retrieval, grounded LLM drafting and web products. Seeking a working-student role in software development, backend engineering or applied AI, up to 20 hours per week.
+                Software engineer with 3.5 years of production experience at LII Lab, now studying Computer Science at Paderborn University. Built Python backends and Flutter applications for IELTS and PTE preparation, including speech scoring, subscription billing and multi-tenant delivery. Recent independent work includes document retrieval, grounded LLM drafting and web products. Seeking a working-student role in software development, backend engineering or applied AI.
               </p>
             </section>
 
